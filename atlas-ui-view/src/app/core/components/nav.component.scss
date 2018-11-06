@@ -1,0 +1,19 @@
+.sidenav-container {
+  height: 100%;
+  min-height: 630px;
+}
+
+.sidenav {
+  width: 200px;
+  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+  position: absolute;
+}
+
+mat-card {
+  margin: 5px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+}
