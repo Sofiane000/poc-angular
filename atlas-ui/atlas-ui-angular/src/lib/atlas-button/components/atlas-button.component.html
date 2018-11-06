@@ -1,0 +1,9 @@
+<button kendoButton (click)="onButtonClick($event)"
+[disabled]="isDisabled"
+[icon]="iconValue"
+[imageUrl]="imageUrl"
+[iconClass]="iconClass"
+[primary]="primary"
+[look]="look"
+[toggleable]="toggleable"
+(selectedChange)="onSelectedChange($event)" (focus)="onFocus($event)" (blur)="onBlur($event)">{{text}}</button>
