@@ -8,6 +8,7 @@ import { EditFormComponent } from './components/edit-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DetailComponent } from './components/detail.component';
 import { MatTabsModule } from '@angular/material';
+import { PeopleService } from './services/people.service';
 
 @NgModule({
   declarations: [GridExampleComponent, EditFormComponent, DetailComponent],
@@ -22,7 +23,8 @@ import { MatTabsModule } from '@angular/material';
   ],
   providers: [
     UserService,
-    AtlasDialogService
+    AtlasDialogService,
+    PeopleService
   ]
 })
 export class GridModule { }

@@ -4,6 +4,7 @@ import { IColumnSetting, AtlasDialogService } from 'atlas-ui-angular';
 import { EditFormComponent } from './edit-form.component';
 import { Router } from '@angular/router';
 import { USER_DATA } from '../models/user';
+import { PeopleService } from '../services/people.service';
 const saveAction = { text: 'Save', primary: true };
 const cancelAction = { text: 'Cancel' };
 @Component({
@@ -28,14 +29,16 @@ export class GridExampleComponent implements OnInit {
   };
 
   columnsData: IColumnSetting[];
-  service: UserService;
+  peopleServiceChild: PeopleService;
+  userServiceChild: UserService;
   selectedKeys: any[] = [];
   selectBy = 'cf_LoginID';
   @ViewChild('container', { read: ViewContainerRef })
   public containerRef: ViewContainerRef;
-  constructor(private userService: UserService, private atlasDialogService: AtlasDialogService,
+  constructor(private userService: UserService, private peopleService: PeopleService, private atlasDialogService: AtlasDialogService,
     private router: Router) {
-    this.service = userService;
+    this.peopleServiceChild = peopleService;
+    this.userServiceChild = userService;
   }
   ngOnInit() {
     this.columnsData = this.columnsData = [
