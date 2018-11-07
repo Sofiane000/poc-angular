@@ -33,7 +33,7 @@
     </h2>
     <div>
       <atlas-button [iconClass]="'k-icon k-i-edit k-i-pencil'" [text]="!isEditable ?'Enable Editing':'Disable Editing'"
-        (click)="isEditable = !isEditable" [look]="isEditable ? 'outline':''"></atlas-button>
+        (click)="isEditable = !isEditable" [look]="isEditable ? 'outline':''" buttonColor="grey"></atlas-button>
       <atlas-button [iconClass]="!isPageable ? 'k-icon k-i-delicious':''" [text]="!isPageable ? 'Enable Paging':'Disable Paging'"
         (click)="isPageable = !isPageable"></atlas-button>
       <atlas-button [iconClass]="'k-icon k-i-sort-asc'" [text]="!isSortable ?  'Enable Sorting' : 'Disable Sorting'"

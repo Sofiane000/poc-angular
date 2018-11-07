@@ -15,6 +15,7 @@ export class AtlasButtonComponent implements OnInit {
   @Input() primary: boolean;
   @Input() look: string;
   @Input() toggleable: boolean;
+  @Input() buttonColor: string;
   @Output() selectionChange: EventEmitter<{}> = new EventEmitter<{}>();
   @Output() blur: EventEmitter<any> = new EventEmitter<any>();
   @Output() focus: EventEmitter<any> = new EventEmitter<any>();
