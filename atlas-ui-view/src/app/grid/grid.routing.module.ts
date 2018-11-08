@@ -5,7 +5,7 @@ import { DetailComponent } from './components/detail.component';
 
 const appRoutes: Routes = [
   { path: '', component: GridExampleComponent },
-  { path: 'details', component: DetailComponent },
+  { path: ':id/details', component: DetailComponent }
 ];
 
 @NgModule({
