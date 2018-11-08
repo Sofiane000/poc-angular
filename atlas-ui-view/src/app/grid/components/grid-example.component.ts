@@ -91,7 +91,8 @@ export class GridExampleComponent implements OnInit {
 
   viewHandler({ dataItem }) {
     this.userService.selectedUser = dataItem;
-    this.router.navigate(['/grid/details']);
+    this.router.navigate(['/grid/' + dataItem.LoginSK + '/details']);
+    // this.router.navigate(['/grid/details']);
   }
   showEditDialog(dataItem) {
     const isNew = dataItem ? false : true;
