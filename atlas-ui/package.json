@@ -7,7 +7,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "packagr": "ng-packagr -p ./atlas-ui-angular/package.json",
-    "build_lib": "ng build atlas-ui-angular",
+    "build_lib": "rimraf -rf dist && ng build atlas-ui-angular",
     "npm_pack": "cd dist/atlas-ui-angular && npm pack",
     "package": "npm run build_lib && npm run npm_pack"
   },
@@ -24,7 +24,7 @@
     "@angular/router": "^7.0.2",
     "@progress/kendo-theme-default": "^2.59.0",
     "@progress/kendo-theme-material": "^1.4.0",
-    "atlas-ui-angular": "file:dist/atlas-ui-angular/atlas-ui-angular-0.0.1.tgz",
+    "jquery": "^3.3.1",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
     "rxjs": "~6.3.3",
