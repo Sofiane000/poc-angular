@@ -1,13 +1,14 @@
 export const TREE_DATA = [
   {
     "TenantTaxnmySK": 6,
-    "ParentTenantTaxnmySK": 0,
+    "ParentTenantTaxnmySK": null,
     "TenantTaxnmyName": "Global",
     "TenantTaxnmyType": "Global",
     "EfctvStartDt": "1900-01-01",
     "EfctvEndDt": "9999-12-31",
     "RootDomain": "5",
     "daTableRowId": "AAAAAAAJGMU=",
+    "expanded": true,
     "children": [
       {
         "TenantTaxnmySK": 1,

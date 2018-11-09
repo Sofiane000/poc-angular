@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-12">
     <h2>Tree View</h2>
-    <atlas-tree [data]="treeData" [isTreeViewExpandable]="true" [isTreeViewHierarchyBinding]="true" textFields="TenantTaxnmyName" children ="children"></atlas-tree>
+    <atlas-tree [treeViewOptions]="treeViewOptions" [options]="dataSourceOptions" filterBy="TenantTaxnmyName" [isEditable]="true" [isFilterable]="true" [menuItems]="contextMenuItems" [showToolbar]="true" [showRefresh]="true"></atlas-tree>
   </div>
 </div>

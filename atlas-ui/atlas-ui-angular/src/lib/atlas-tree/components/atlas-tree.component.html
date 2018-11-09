@@ -1,7 +1,16 @@
-<kendo-treeview [nodes]="data"
-                [textField]="textFields"
-                kendoTreeViewExpandable="isTreeViewExpandable"
-                kendoTreeViewHierarchyBinding="isTreeViewHierarchyBinding"
-                [childrenField]="children"
-                [hasChildren]="hasChildren">
-</kendo-treeview>
+<div class="k-header k-grid-toolbar" *ngIf="showToolbar">
+  <button kendoButton [icon]="'add'" (click)="addClicked($event)" *ngIf="isEditable"></button>
+  <button kendoButton [icon]="'edit'" (click)="editSelectedRow()" *ngIf="isEditable"></button>
+  <button kendoButton [icon]="'close'" (click)="removeSelectedRow()" *ngIf="isEditable"></button>
+  <div class="refresh-wrapper" *ngIf="showRefresh">
+    <button kendoButton [icon]="'refresh'" (click)="refreshTree()"></button>
+  </div>
+  <div class='k-textbox k-space-right search-wrapper' *ngIf="isFilterable">
+    <input id='search' type='text' placeholder='Search' [(ngModel)]="filterValue" (keyup)="onFilterSubmit()" />
+    <span class='k-icon k-i-search' (click)="onFilterSubmit()"></span>
+  </div>
+
+</div>
+<div id="treelist" #treeView></div>
+<kendo-contextmenu #treemenu [items]="menuItems" (select)="onSelect($event)">
+</kendo-contextmenu>
