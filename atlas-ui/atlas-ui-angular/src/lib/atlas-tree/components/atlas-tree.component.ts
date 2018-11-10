@@ -1,182 +1,60 @@
 import {
-  Component, OnInit, ViewChild, Input,
-  AfterViewInit, OnDestroy, ElementRef, NgZone,
-  ViewEncapsulation, ChangeDetectionStrategy
+    Component, ViewChild, Input, Output, EventEmitter
 } from '@angular/core';
 import { ContextMenuComponent } from '@progress/kendo-angular-menu';
-declare var kendo: any;
+import { TreeViewComponent } from '@progress/kendo-angular-treeview';
 @Component({
-  selector: 'atlas-tree',
-  templateUrl: './atlas-tree.component.html',
-  styleUrls: ['./atlas-tree.component.css'],
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'atlas-tree',
+    templateUrl: './atlas-tree.component.html',
+    styleUrls: ['./atlas-tree.component.css'],
 })
-export class AtlasTreeComponent implements OnInit, AfterViewInit, OnDestroy {
-  @Input() options: any;
-  @Input() treeViewOptions: any;
-  @Input() filterBy: any;
-  @Input() isFilterable: boolean;
-  @Input() isEditable: boolean;
-  @Input() menuItems: any[];
-  @Input() showToolbar: boolean;
-  @Input() showRefresh: boolean;
-  @ViewChild('treeView')
-  treeView: ElementRef;
-  @ViewChild('treemenu')
-  public gridContextMenu: ContextMenuComponent;
+export class AtlasTreeComponent {
+    contextItem: any;
+    @ViewChild('treemenu')
+    gridContextMenu: ContextMenuComponent;
+    @ViewChild(TreeViewComponent)
+    treeViewComponent: TreeViewComponent;
+    @Input() data: any[];
+    @Input() showToolbar: boolean;
+    @Input() isEditable: boolean;
+    @Input() showRefresh: boolean;
+    @Input() isFilterable: boolean;
+    @Input() filterValue: boolean;
+    @Input() menuItems: any[];
+    @Input() isTreeViewExpandable: boolean;
+    @Input() isTreeViewHierarchyBinding: boolean;
+    @Input() textFields;
+    @Input() children;
+    @Input() hasChildren;
+    @Output() remove: EventEmitter<any> = new EventEmitter<any>();
+    @Output() edit: EventEmitter<any> = new EventEmitter<any>();
+    @Output() addMenuSelect: EventEmitter<any> = new EventEmitter<any>();
+    @Output() refresh: EventEmitter<any> = new EventEmitter<any>();
+    constructor() {
 
-
-  filterValue: string;
-  private _treeView: any;
-  contextItem: any;
-
-  constructor(private zone: NgZone, private elementRef: ElementRef) { }
-
-  ngOnInit() {
-    const dataSource = new kendo.data.TreeListDataSource(this.options);
-
-    this.treeViewOptions.dataSource = dataSource;
-  }
-
-  ngAfterViewInit() {
-    const treeList = kendo.jQuery(this.treeView.nativeElement);
-    this.zone.runOutsideAngular(() => {
-      this._treeView = treeList
-        .kendoTreeList(this.treeViewOptions)
-        .data('kendoTreeList');
-    });
-  }
-
-  ngOnDestroy(): void {
-    kendo.destroy(this.elementRef.nativeElement);
-  }
-
-  get dataSource(): any {
-    return this._treeView && this._treeView.dataSource;
-  }
-
-  get content(): JQuery {
-    return this._treeView && this._treeView.content;
-  }
-
-  get thead(): JQuery {
-    return this._treeView && this._treeView.thead;
-  }
-
-  get tbody(): JQuery {
-    return this._treeView && this._treeView.tbody;
-  }
-
-  addClicked(event) {
-    event.preventDefault();
-    this.gridContextMenu.show({ left: event.pageX, top: event.pageY });
-  }
-  onSelect({ item }): void {
-    if (item.text === 'Add Sibling') {
-      this.addSibling();
-    } else {
-      this.addChild();
     }
-  }
-
-  addSibling() {
-    // to do
-    this.addRow();
-  }
-
-  addChild() {
-    const dataItem = this._treeView.select();
-    if (dataItem.length > 0) {
-      this.addRow(dataItem);
-    } else {
-      this.addRow();
+    onFilterSubmit() {
+        console.log(this.treeViewComponent);
     }
-  }
-  refreshTree() {
-    this.dataSource.read();
-  }
-  editSelectedRow() {
-    const dataItem = this._treeView.select();
-    if (dataItem.length > 0) {
-      this.editRow(dataItem);
+    onNodeClick(event: any): void {
+        const originalEvent = event.originalEvent;
+        originalEvent.preventDefault();
+        this.contextItem = event.item.dataItem;
     }
-  }
-  removeSelectedRow() {
-    const dataItem = this._treeView.select();
-    if (dataItem.length > 0) {
-      this._treeView.removeRow(dataItem);
+    onAddSelect({ item }): void {
+        this.addMenuSelect.emit(item);
     }
-  }
-  onFilterSubmit() {
-    if (this.filterValue) {
-      this._treeView.dataSource.filter({
-        field: this.filterBy,
-        operator: 'contains',
-        value: this.filterValue
-      });
-    } else {
-      this._treeView.dataSource.filter({});
+    addClicked(event) {
+        event.preventDefault();
+        this.gridContextMenu.show({ left: event.pageX, top: event.pageY });
     }
-  }
-  public addRow(parentRow: string | Element | JQuery = ''): void {
-    return this._treeView && this._treeView.addRow(parentRow);
-  }
-
-  public editRow(row: string | JQuery): void {
-    if (!row) {
-      return;
+    removeClicked() {
+        this.remove.emit();
     }
-
-    const internalRow = row instanceof jQuery ? row : kendo.jQuery(row);
-    return this._treeView && this._treeView.editRow(internalRow);
-  }
-
-  public removeRow(row: string | Element | JQuery): void {
-    if (!row) {
-      return;
+    editClicked() {
+        this.edit.emit();
     }
-
-    const internalRow = row instanceof jQuery ? row : kendo.jQuery(row);
-    return this._treeView && this._treeView.removeRow(internalRow);
-  }
-
-  public expand(row: string | Element | JQuery): void {
-    if (!row) {
-      return;
+    refreshClicked() {
+        this.refresh.emit();
     }
-
-    const internalRow = row instanceof jQuery ? row : kendo.jQuery(row);
-    return this._treeView && this._treeView.expand(internalRow);
-  }
-
-  public select(row: string | Element | JQuery): JQuery {
-    if (!row) {
-      return;
-    }
-
-    const internalRow = row instanceof jQuery ? row : kendo.jQuery(row);
-    return this._treeView && this._treeView.select(internalRow);
-  }
-
-  public itemFor(model: kendo.data.TreeListModel | Object): JQuery {
-    if (!model) {
-      return;
-    }
-
-    return this._treeView && this._treeView.itemFor(model);
-  }
-
-  public dataItem(row: string | Element | JQuery): kendo.data.TreeListModel {
-    if (!row) {
-      return;
-    }
-
-    const internalRow = row instanceof jQuery ? row : kendo.jQuery(row);
-    return this._treeView && this._treeView.dataItem(internalRow);
-  }
-
-  public clearSelection(): void {
-    return this._treeView && this._treeView.clearSelection();
-  }
 }

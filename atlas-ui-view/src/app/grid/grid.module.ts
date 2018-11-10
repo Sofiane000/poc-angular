@@ -18,12 +18,11 @@ import { PeopleService } from './services/people.service';
     ReactiveFormsModule,
     GridRoutingModule,
     AtlasGridModule,
-    AtlasDialogModule.forRoot(),
-    MatTabsModule
+    MatTabsModule,
+    AtlasDialogModule.forRoot()
   ],
   providers: [
     UserService,
-    AtlasDialogService,
     PeopleService
   ]
 })

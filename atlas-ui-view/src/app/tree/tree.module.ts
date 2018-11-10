@@ -2,16 +2,23 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TreeExampleComponent } from './tree-example/tree-example.component';
 import { TreeRoutingModule } from './tree.routing.module';
-import { AtlasTreeModule } from 'atlas-ui-angular';
-import { FormsModule } from '@angular/forms';
+import { AtlasTreeModule, AtlasDialogModule } from 'atlas-ui-angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditDialogTreeFormComponent } from './tree-example/edit-dialog-tree.component';
 
 @NgModule({
-  declarations: [TreeExampleComponent],
+  declarations: [
+    TreeExampleComponent,
+    EditDialogTreeFormComponent
+  ],
+  entryComponents: [EditDialogTreeFormComponent],
   imports: [
     CommonModule,
     FormsModule,
     TreeRoutingModule,
-    AtlasTreeModule
+    AtlasTreeModule,
+    ReactiveFormsModule,
+    AtlasDialogModule.forRoot()
   ]
 })
 export class TreeModule { }

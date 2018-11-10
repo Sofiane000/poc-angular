@@ -1,14 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AtlasTreeComponent } from '../../lib/atlas-tree/components/atlas-tree.component';
+import { BakAtlasTreeComponent } from '../../lib/atlas-tree/components/bak-atlas-tree.component';
 import { AtlasTreeModule } from '../../lib/atlas-tree/atlas-tree.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 
 
 describe('AtlasTreeComponent', () => {
-  let component: AtlasTreeComponent;
-  let fixture: ComponentFixture<AtlasTreeComponent>;
+  let component: BakAtlasTreeComponent;
+  let fixture: ComponentFixture<BakAtlasTreeComponent>;
   let tree;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -19,7 +19,7 @@ describe('AtlasTreeComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AtlasTreeComponent);
+    fixture = TestBed.createComponent(BakAtlasTreeComponent);
     component = fixture.componentInstance;
     tree = fixture.debugElement.query(By.css('tree'));
     component.filterBy = 'Name';
@@ -77,7 +77,6 @@ describe('AtlasTreeComponent', () => {
         }
       }
     };
-    
     component.treeViewOptions = {
       height: 540,
       columns: [

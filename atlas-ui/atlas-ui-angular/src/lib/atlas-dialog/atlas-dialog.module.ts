@@ -2,6 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DialogModule, DialogService, DialogsModule, DialogSettings } from '@progress/kendo-angular-dialog';
 import { DialogContainerService } from '@progress/kendo-angular-dialog/dist/es2015/dialog/dialog-container.service';
+import { AtlasDialogService } from './services/atlas-dialog.service';
 
 
 @NgModule({
@@ -20,7 +21,9 @@ export class AtlasDialogModule {
             ngModule: AtlasDialogModule,
             providers: [
                 DialogContainerService,
-                DialogService]
+                DialogService,
+                AtlasDialogService
+            ]
         };
     }
 }
