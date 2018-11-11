@@ -1,8 +1,55 @@
-<form class="form-signin">
-  <h2>Login</h2>
-  <label for="username" class="sr-only">Username</label>
-  <input type="text" required autofocus id="username" #username placeholder="Username/Email" />
-  <label for="password" class="sr-only">Password</label>
-  <input type="password" class="form-control" required autofocus id="password" #password placeholder="Password" />
-  <button type="button" (click)="login(username.value, password.value)">Login</button>
-</form>
+<mat-grid-list cols="3">
+  <mat-grid-tile></mat-grid-tile>
+
+  <!-- Writing markup for login starts -->
+  <mat-grid-tile class='login-element'>
+    <div class="login-container">
+
+      <!-- Template Header starts -->
+      <div class="login-box-header" style="text-align: center">
+        <h2>Atlas</h2>
+      </div>
+      <!-- Template Header ends -->
+
+      <!-- Template Body starts -->
+      <div class="login-box-body" style="width: 420px">
+
+        <!-- Markup for getting Username starts -->
+        <mat-grid-list cols="10" rowHeight="75px">
+          <mat-grid-tile [rowspan]="1" class="login-icon">
+            <mat-icon>lock</mat-icon>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="8">
+            <mat-form-field class="login-input">
+              <input matInput placeholder="Username" [(ngModel)]="username" type="username" name="username" required>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <!-- Markup for getting Username ends -->
+
+        <!-- Markup for getting Password starts -->
+        <mat-grid-list cols="10" rowHeight="100px">
+          <mat-grid-tile [rowspan]="1" class="login-icon">
+            <mat-icon>remove_red_eye</mat-icon>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="8">
+            <mat-form-field class="login-input">
+              <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <!-- Markup for getting Password ends -->
+
+        <button mat-raised-button class="login-button" (click)="login()">
+          <mat-icon>input</mat-icon> Login
+        </button>
+
+      </div>
+      <!-- Template Body ends -->
+
+    </div>
+  </mat-grid-tile>
+  <!-- Writing markup for login ends -->
+  <mat-grid-tile></mat-grid-tile>
+
+</mat-grid-list>
