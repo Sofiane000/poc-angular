@@ -9,16 +9,16 @@
       </a>
       <span class="menu-spacer"></span>
       <div class="button-header">
-        <a [routerLink]="[{ outlets: { sidebar: ['tasks'] } }]" routerLinkActive="active" (click)="onClickRoutes()"
+        <a [routerLink]="[{ outlets: { sidebar: ['tasks'] } }]" [class.active]="selectedOption ==='Tasks'" (click)="onClickRoutes('Tasks')"
           mat-icon-button title="Tasks">
           <mat-icon aria-label="Tasks">archive</mat-icon>
         </a>
-        <a [routerLink]="[{ outlets: { sidebar: ['document'] } }]" href="#" mat-icon-button title="Document Viewer"
-          routerLinkActive="active">
+        <a [routerLink]="[{ outlets: { sidebar: ['document'] } }]" [class.active]="selectedOption ==='Document'"
+          mat-icon-button title="Document Viewer" (click)="onClickRoutes('Document')">
           <mat-icon aria-label="Document Viewer">folder</mat-icon>
         </a>
-        <a href="#" mat-icon-button title="New Task" routerLinkActive="active">
-          <mat-icon aria-label="New Task">assignment</mat-icon>
+        <a mat-icon-button title="Notifications" routerLinkActive="active">
+          <mat-icon aria-label="Notifications">notifications</mat-icon>
         </a>
         <a mat-icon-button title="User Details" [matMenuTriggerFor]="menu">
           <mat-icon aria-label="User Details">person</mat-icon>

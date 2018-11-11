@@ -1,19 +1,29 @@
 
-import { Component, Output, EventEmitter, HostBinding } from '@angular/core';
+import { Component, Output, EventEmitter, HostBinding, Input } from '@angular/core';
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-    @Output() toggleLeftNav: EventEmitter<any> = new EventEmitter<any>();
-    @Output() routeChanged: EventEmitter<any> = new EventEmitter<any>();
+    @Input() isSideBarOpened: boolean;
+    selectedOption: string;
+    @Output() toggleMenu: EventEmitter<any> = new EventEmitter<any>();
+    @Output() toggleSideBar: EventEmitter<any> = new EventEmitter<any>();
 
     @HostBinding('class.mat-elevation-z6') someField = true;
     toggleNav() {
-        this.toggleLeftNav.emit();
+        this.toggleMenu.emit();
     }
-    onClickRoutes() {
-        this.routeChanged.emit();
+    onClickRoutes(option: string) {
+        if (!this.isSideBarOpened) {
+            this.toggleSideBar.emit();
+        }
+        if (this.selectedOption === option) {
+            this.selectedOption = '';
+            this.toggleSideBar.emit();
+        } else {
+            this.selectedOption = option;
+        }
     }
 }
