@@ -6,7 +6,8 @@ const appRoutes: Routes = [
   { path: 'grid', loadChildren: '../grid/grid.module#GridModule' },
   { path: 'button', loadChildren: '../button/button.module#ButtonModule' },
   { path: 'tree', loadChildren: '../tree/tree.module#TreeModule' },
-
+  { path: 'tasks', loadChildren: '../tasks/tasks.module#TasksModule', outlet: 'sidebar' },
+  { path: 'document', loadChildren: '../doc-viewer/doc-viewer.module#DocViewerModule', outlet: 'sidebar' },
 ];
 
 @NgModule({

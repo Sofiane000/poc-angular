@@ -2,8 +2,11 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
-import { NavComponent } from './components/nav.component';
+import { CoreComponent } from './components/core.component';
 import { CoreRoutingModule } from './core.routing.module';
+import { HeaderComponent } from './components/header/header.component';
+import { LeftNavComponent } from './components/left-nav/left-nav.component';
+import { RightSideBarComponent } from './components/right-side-bar/right-side-bar.component';
 
 @NgModule({
   imports: [
@@ -11,10 +14,13 @@ import { CoreRoutingModule } from './core.routing.module';
     CoreRoutingModule,
     SharedModule
   ],
-  declarations: [NavComponent],
+  declarations: [CoreComponent, HeaderComponent, LeftNavComponent, RightSideBarComponent],
   exports: [
     RouterModule,
-    NavComponent
+    CoreComponent,
+    HeaderComponent,
+    LeftNavComponent,
+    RightSideBarComponent
   ],
   providers: [
   ]
