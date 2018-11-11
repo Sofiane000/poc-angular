@@ -140,7 +140,7 @@ export class TreeExampleComponent implements OnInit {
   editHandler(event) {
     this.showAddEditDialog(this.treeView.contextItem);
   }
-  showAddEditDialog(dataItem: any) {
+  showAddEditDialog(dataItem: any, isSibling?: boolean) {
     const isNew = dataItem ? false : true;
     const dialogRef = this.dialogService.open({
       appendTo: this.containerRef,
@@ -159,7 +159,16 @@ export class TreeExampleComponent implements OnInit {
       if (dialogResult.text && dialogResult.text.toLowerCase() === 'save') {
         const item = editForm.editForm.value;
         if (isNew) {
-          this.addItem(this.treeView.contextItem, this.treeView.data, item);
+          if (isSibling) {
+            this.addItem(this.treeView.contextItem, this.treeView.data, item);
+          } else {
+            if (this.treeView.contextItem) {
+              this.treeView.contextItem.children = this.treeView.contextItem.children || [];
+              const child = Object.assign({}, item);
+              this.treeView.contextItem.children.push(child);
+              this.treeView.contextItem = null;
+            }
+          }
         } else {
           Object.assign(this.treeView.contextItem, item);
           this.treeView.contextItem = null;
@@ -170,18 +179,10 @@ export class TreeExampleComponent implements OnInit {
   addHandler(event) {
     if (event.text === 'Add Sibling') {
       if (this.treeView.contextItem) {
-        this.showAddEditDialog(null);
+        this.showAddEditDialog(null, true);
       }
     } else {
-      // call service method to save.
-      if (this.treeView.contextItem) {
-        this.treeView.contextItem.children = this.treeView.contextItem.children || [];
-        const item = Object.assign({}, this.treeView.contextItem);
-        item.children = null;
-        this.treeView.contextItem.children.push(item);
-        this.treeView.contextItem.expanded = true;
-        this.treeView.contextItem = null;
-      }
+      this.showAddEditDialog(null, false);
     }
   }
   removeItem(dataItem: any, items: any[]): void {
