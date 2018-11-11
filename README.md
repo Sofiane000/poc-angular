@@ -1,4 +1,4 @@
-## Atlas-ui-demo
+## Angular-Atlas-demo
 
 This project make use of atlas-ui components.
 It consists of two project one for reusable components and other one for the hosting application.
