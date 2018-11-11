@@ -1,6 +1,13 @@
-<atlas-grid [isFilterable]="false" [state]="gridState" [columns]="columnsData" [gridService]="peopleServiceChild" [isSortable]="false"
-  [isPageable]="false" [selectable]="selectableSettings" [showSelectAll]="false" (add)="addHandler($event)" (edit)="editHandler($event)"
-  (viewDetail)="viewHandler($event)" (remove)="removeHandler($event)" [isEditable]="true" [selectedKeys]="selectedKeys"></atlas-grid>
+<div class="row">
+  <div class="col-md-12">
+    <h2>Users</h2>
+    <atlas-grid [isFilterable]="false" [state]="gridState" [columns]="columnsData" [gridService]="peopleServiceChild"
+      [isSortable]="false" [isPageable]="false" [selectable]="selectableSettings" [showSelectAll]="false" (add)="addHandler($event)"
+      (edit)="editHandler($event)" (viewDetail)="viewHandler($event)" (remove)="removeHandler($event)" [isEditable]="true"
+      [selectedKeys]="selectedKeys"></atlas-grid>
+  </div>
+</div>
+
 <!-- 
   <atlas-grid [isFilterable]="false" [state]="gridState" [columns]="columnsData" [gridService]="userServiceChild" [isSortable]="false"
   [isPageable]="false" [selectable]="selectableSettings" [showSelectAll]="false" (add)="addHandler($event)" (edit)="editHandler($event)"
