@@ -1,4 +1,5 @@
-<a mat-list-item [ngStyle]="{'padding-left': (depth * 30) + 'px'}" (click)="onItemSelected(item)" [ngClass]="{'active': item.MenuURI ? router.isActive(item.MenuURI, true): false, 'expanded': expanded}">
+<a mat-list-item [ngStyle]="{'padding-left': (depth * 30) + 'px'}" (click)="onItemSelected(item)"
+  [ngClass]="{'active': item.MenuURI ? router.isActive(item.MenuURI, true): false, 'expanded': expanded}">
   <span fxFlex *ngIf="item.ttMenu && item.ttMenu.length">
     <span fxFlex></span>
     <mat-icon [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">

@@ -19,7 +19,7 @@ import { IMenuItem } from '../../models/menu-item';
 })
 export class MenuItemComponent implements OnInit {
 
-    expanded: boolean;
+    expanded = true;
     @HostBinding('attr.aria-expanded') ariaExpanded = this.expanded;
     @Input() item: IMenuItem;
     @Input() depth: number;

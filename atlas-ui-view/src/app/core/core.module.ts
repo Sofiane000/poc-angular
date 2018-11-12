@@ -13,6 +13,7 @@ import { AuthenticationService } from './services/authentication.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { FormsModule } from '@angular/forms';
 import { LoginGuardService } from './services/login-guard.service';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,7 @@ import { LoginGuardService } from './services/login-guard.service';
     SharedModule
   ],
   declarations: [HeaderComponent, MenuComponent, SideBarComponent,
-    ContentComponent, MenuItemComponent, LoginComponent],
+    ContentComponent, MenuItemComponent, LoginComponent, HomeComponent],
   exports: [
     RouterModule,
     HeaderComponent,
@@ -30,7 +31,8 @@ import { LoginGuardService } from './services/login-guard.service';
     SideBarComponent,
     ContentComponent,
     MenuItemComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   providers: [
     AuthenticationService,

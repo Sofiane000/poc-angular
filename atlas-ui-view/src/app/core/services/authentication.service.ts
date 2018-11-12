@@ -9,7 +9,7 @@ export class AuthenticationService {
 
     login() {
         sessionStorage.setItem('isAuthenticated', 'true');
-        this.router.navigate(['administration/users']);
+        this.router.navigate(['/']);
     }
 
     logout() {
