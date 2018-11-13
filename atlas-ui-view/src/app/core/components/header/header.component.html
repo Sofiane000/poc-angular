@@ -9,12 +9,12 @@
       </a>
       <span class="menu-spacer"></span>
       <div class="button-header">
-        <a [routerLink]="[{ outlets: { sidebar: ['tasks'] } }]" [class.active]="selectedOption ==='Tasks'" (click)="onClickRoutes('Tasks')"
+        <a [class.active]="selectedOption ==='tasks'" (click)="onClickRoutes('tasks')"
           mat-icon-button title="Tasks">
           <mat-icon aria-label="Tasks">archive</mat-icon>
         </a>
-        <a [routerLink]="[{ outlets: { sidebar: ['document'] } }]" [class.active]="selectedOption ==='Document'"
-          mat-icon-button title="Document Viewer" (click)="onClickRoutes('Document')">
+        <a [class.active]="selectedOption ==='document'"
+          mat-icon-button title="Document Viewer" (click)="onClickRoutes('document')">
           <mat-icon aria-label="Document Viewer">folder</mat-icon>
         </a>
         <a mat-icon-button title="Notifications" routerLinkActive="active">

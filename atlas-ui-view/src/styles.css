@@ -10,3 +10,16 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.no-margin {
+  margin: 0px !important;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.mat-list-item-content {
+  padding: 0 8px !important;
+  font-size: 14px !important;
+}
