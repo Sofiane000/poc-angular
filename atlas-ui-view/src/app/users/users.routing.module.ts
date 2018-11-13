@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UsersGridComponent } from './components/user-grid/users-grid.component';
+import { UsersGridComponent } from './components/users-grid/users-grid.component';
 import { UsersDetailComponent } from './components/users-detail/users-detail.component';
 
 const appRoutes: Routes = [

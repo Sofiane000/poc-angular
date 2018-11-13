@@ -7,7 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material';
 import { PeopleService } from './services/people.service';
 import { UsersDialogFormComponent } from './components/users-dialog/users-dialog.component';
-import { UsersGridComponent } from './components/user-grid/users-grid.component';
+import { UsersGridComponent } from './components/users-grid/users-grid.component';
 import { UsersDetailComponent } from './components/users-detail/users-detail.component';
 
 @NgModule({

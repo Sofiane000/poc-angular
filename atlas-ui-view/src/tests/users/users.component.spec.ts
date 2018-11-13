@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UsersGridComponent } from 'src/app/users/components/user-grid/users-grid.component';
+import { UsersGridComponent } from 'src/app/users/components/users-grid/users-grid.component';
 import { UsersModule } from 'src/app/users/users.module';
 let mockRouter: any;
 class MockRouter {

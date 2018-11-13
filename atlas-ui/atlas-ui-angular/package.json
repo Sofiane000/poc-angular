@@ -7,10 +7,7 @@
     "@angular/cdk": "^7.0.2",
     "@progress/kendo-theme-default": "^2.59.0",
     "@progress/kendo-theme-material": "^1.4.0",
-    "rxjs-compat": "^6.3.3",
-    "jquery": "^3.3.1",
-    "@types/node": "~10.12.2",
-    "@types/jquery": "^3.3.22"
+    "rxjs-compat": "^6.3.3"
   },
   "dependencies": {
     "@progress/kendo-angular-buttons": "^4.2.0",
@@ -26,14 +23,10 @@
     "@progress/kendo-angular-excel-export": "^2.2.0",
     "@progress/kendo-angular-dateinputs": "^3.5.1",
     "@progress/kendo-angular-popup": "^2.5.0",
-    "@progress/kendo-angular-dialog": "^3.8.0",
-    "@progress/kendo-ui": "^2018.3.1107",
-    "@types/kendo-ui": "^2018.3.0"
+    "@progress/kendo-angular-dialog": "^3.8.0"
   },
   "whitelistedNonPeerDependencies": [
     "tslib",
-    "@types/kendo-ui",
-    "@progress/kendo-ui",
     "@progress/kendo-angular-buttons",
     "@progress/kendo-angular-grid",
     "@progress/kendo-angular-l10n",

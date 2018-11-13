@@ -34,7 +34,6 @@ export class AtlasTreeComponent {
 
     }
     onFilterSubmit() {
-        console.log(this.treeViewComponent);
     }
     onNodeClick(event: any): void {
         const originalEvent = event.originalEvent;
