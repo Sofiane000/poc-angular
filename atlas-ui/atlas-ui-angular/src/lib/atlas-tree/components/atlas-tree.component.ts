@@ -9,6 +9,7 @@ import { TreeViewComponent } from '@progress/kendo-angular-treeview';
     styleUrls: ['./atlas-tree.component.css'],
 })
 export class AtlasTreeComponent {
+    expandedKeys: any[] = ['0'];
     contextItem: any;
     @ViewChild('treemenu')
     gridContextMenu: ContextMenuComponent;

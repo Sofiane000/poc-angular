@@ -16,7 +16,8 @@
                 kendoTreeViewHierarchyBinding="isTreeViewHierarchyBinding"
                 (nodeClick)="onNodeClick($event)"
                 [childrenField]="children"
-                [hasChildren]="hasChildren">
+                [hasChildren]="hasChildren"
+                [(expandedKeys)]="expandedKeys">
 </kendo-treeview>
 <kendo-contextmenu #treemenu [items]="menuItems" (select)="onAddSelect($event)">
 </kendo-contextmenu>
