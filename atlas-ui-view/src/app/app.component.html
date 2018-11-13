@@ -1,18 +1,18 @@
 <!-- Header -->
-<app-header *ngIf="isAuthorized" (toggleMenu)="toggleMenu()" (toggleSideBar)="sidebar.toggle()" [isSideBarOpened]="isSideBarOpened"></app-header>
+<atlas-header *ngIf="isAuthorized" (toggleMenu)="toggleMenu()" (toggleSideBar)="sidebar.toggle()" [isSideBarOpened]="isSideBarOpened"></atlas-header>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav *ngIf="isAuthorized" #menu class="sidenav" fixedInViewport="true" [attr.role]="(isHandset | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
     <!-- Menu -->
-    <app-menu></app-menu>
+    <atlas-menu [menuItems]="menuItems"></atlas-menu>
   </mat-sidenav>
   <mat-sidenav-content>
     <!-- Main content -->
-    <app-content></app-content>
+    <atlas-content></atlas-content>
   </mat-sidenav-content>
   <mat-sidenav *ngIf="isAuthorized" #sidebar class="sidenav right-sidebar" [(opened)]="isSideBarOpened" mode="side"
     position="end">
     <!-- Side bar with different routes -->
-    <app-side-bar (toggleSideBar)="toggleSidebar()"></app-side-bar>
+    <atlas-sidebar (toggleSideBar)="toggleSidebar()"></atlas-sidebar>
   </mat-sidenav>
 </mat-sidenav-container>

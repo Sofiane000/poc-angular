@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { APP_BASE_HREF } from '@angular/common';
-import { CoreModule } from './core/core.module';
-import { SharedModule } from './shared/shared.module';
-
+import { AtlasContentModule, AtlasSideBarModule, AtlasHeaderModule, AtlasMenuModule } from 'atlas-ui-angular';
+import { AppRoutingModule } from './app.routing.module';
+import { SharedModule } from './modules/shared/shared.module';
+import { AuthModule } from './modules/auth/auth.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -18,11 +19,16 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     FormsModule,
     SharedModule,
-    CoreModule,
+    AppRoutingModule,
+    AuthModule,
     BrowserAnimationsModule,
     LayoutModule,
+    AtlasContentModule,
+    AtlasSideBarModule,
+    AtlasHeaderModule,
+    AtlasMenuModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: ''}],
+  providers: [{ provide: APP_BASE_HREF, useValue: '' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

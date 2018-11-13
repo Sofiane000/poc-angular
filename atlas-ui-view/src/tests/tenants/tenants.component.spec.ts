@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TenantsModule } from 'src/app/tenants/tenants.module';
-import { TenantsTreeComponent } from 'src/app/tenants/components/tenants-tree/tenants-tree.component';
+import { TenantsTreeComponent } from 'src/app/modules/prod-admin/tenants/components/tenants-tree/tenants-tree.component';
+import { TenantsModule } from 'src/app/modules/prod-admin/tenants/tenants.module';
 
 describe('TenantsTreeComponent', () => {
   let component: TenantsTreeComponent;
