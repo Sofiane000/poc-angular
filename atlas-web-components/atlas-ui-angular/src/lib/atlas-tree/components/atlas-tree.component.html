@@ -5,9 +5,10 @@
   <div class="refresh-wrapper" *ngIf="showRefresh">
     <button kendoButton [icon]="'refresh'" (click)="refreshClicked()"></button>
   </div>
-  <div class='k-textbox k-space-right search-wrapper' *ngIf="isFilterable">
-    <input id='search' type='text' placeholder='Search' [(ngModel)]="filterValue" (keyup)="onFilterSubmit()" />
-    <span class='k-icon k-i-search' (click)="onFilterSubmit()"></span>
+  <div class="k-textbox search-wrapper" *ngIf="isFilterable">
+    <span class='k-icon k-i-search'></span>
+    <input id="searchinput" type="search" [(ngModel)]="filterValue" (keyup)="onFilterSubmit()" />
+    <span *ngIf="filterValue?.length > 0" id="searchclear" class="k-icon k-i-close" (click)="onSearchClose()"></span>
   </div>
 </div>
 <kendo-treeview [nodes]="partialData" [textField]="textFields" kendoTreeViewExpandable="isTreeViewExpandable"

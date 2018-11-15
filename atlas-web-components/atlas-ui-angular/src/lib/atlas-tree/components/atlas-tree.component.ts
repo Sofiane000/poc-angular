@@ -38,6 +38,10 @@ export class AtlasTreeComponent implements OnInit {
     ngOnInit(): void {
         this.partialData = this.data.map(item => item);
     }
+    onSearchClose() {
+        this.filterValue = '';
+        this.onFilterSubmit();
+    }
     onFilterSubmit() {
         this.partialData = this.search(this.data, this.filterValue);
         if (this.filterValue && this.filterValue.trim().length > 0) {
