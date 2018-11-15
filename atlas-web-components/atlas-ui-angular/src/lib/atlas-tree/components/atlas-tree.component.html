@@ -10,7 +10,7 @@
     <span class='k-icon k-i-search' (click)="onFilterSubmit()"></span>
   </div>
 </div>
-<kendo-treeview [nodes]="data" [textField]="textFields" kendoTreeViewExpandable="isTreeViewExpandable"
+<kendo-treeview [nodes]="partialData" [textField]="textFields" kendoTreeViewExpandable="isTreeViewExpandable"
   kendoTreeViewHierarchyBinding="isTreeViewHierarchyBinding" (nodeClick)="onNodeClick($event)" [childrenField]="children"
   [hasChildren]="hasChildren" [(expandedKeys)]="expandedKeys">
   <ng-template kendoTreeViewNodeTemplate let-dataItem>
