@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-9">
+    <div class="col-md-12">
+      <h2>
+        Focus/Blur button example
+      </h2>
+    </div>
+    <div class="col-md-12">
+      <atlas-button iconValue="plus" text="Button" (blur)="onBlurFocus('Blur event')" (focus)="onBlurFocus('Focus Event')"
+        [look]="'bare'" primary="true"></atlas-button>
+      <atlas-button iconValue="minus" text="Remove events" (click)="onRemoveClick()" [look]="'bare'"></atlas-button>
+
+      <div class="example-config">
+        <h5>Events Log</h5>
+        <ul class="event-log">
+          <li *ngFor="let event of events.reverse()">{{ event }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <h2>
+      Alert button
+    </h2>
+    <atlas-button (click)="openAlert()" [primary]="true">Open Alert box</atlas-button>
+  </div>
+  <br />
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h2>
+      Buttons with Customizable Grid
+    </h2>
+    <div>
+      <atlas-button [iconClass]="'k-icon k-i-edit k-i-pencil'" [text]="!isEditable ?'Enable Editing':'Disable Editing'"
+        (click)="isEditable = !isEditable" [look]="isEditable ? 'outline':''" buttonColor="grey"></atlas-button>
+      <atlas-button [iconClass]="!isPageable ? 'k-icon k-i-delicious':''" [text]="!isPageable ? 'Enable Paging':'Disable Paging'"
+        (click)="isPageable = !isPageable"></atlas-button>
+      <atlas-button [iconClass]="'k-icon k-i-sort-asc'" [text]="!isSortable ?  'Enable Sorting' : 'Disable Sorting'"
+        (click)="isSortable = !isSortable" [look]="'flat'" [primary]="!isSortable ? false:true"></atlas-button>
+      <atlas-button [iconClass]="!colorChange?  'k-icon k-i-checkbox
+        k-i-shape-rect' : 'k-icon k-i-checkbox-checked'"
+        text="Toggle Header Color" (click)="changeHeaderColor(colorChange ? false:true)" [primary]="colorChange?true:false"></atlas-button>
+      <atlas-button [iconClass]="'k-icon k-i-select-box'" [text]="!selectableSettings.enabled ? 'Enable Selection' : 'Disable Selection'"
+        (click)="selectableSettings.enabled = !selectableSettings.enabled"></atlas-button>
+      <atlas-button [iconClass]="'k-icon k-i-filter'" [text]="!isFilterable ? 'Enable filter' : 'Disable filter'"
+        (click)="isFilterable = !isFilterable"></atlas-button>
+      <br />
+      <atlas-grid [isFilterable]="isFilterable" [state]="gridState" [columns]="columnsData" [gridService]="service"
+        [isSortable]="isSortable" [isPageable]="isPageable" [isEditable]="isEditable" [selectable]="selectableSettings"
+       [selectedKeys]="selectedKeys"></atlas-grid>
+    </div>
+    <br />
+  </div>
+</div>
