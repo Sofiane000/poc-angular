@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UsersRoutingModule } from './users.routing.module';
-import { AtlasGridModule, AtlasDialogModule } from 'atlas-ui-angular';
+import { AtlasGridModule, AtlasDialogModule, AtlasHeaderModule, AtlasPageHeaderModule, AtlasPageContentModule } from 'atlas-ui-angular';
 import { UserService } from './services/user.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material';
@@ -18,6 +18,8 @@ import { UsersDetailComponent } from './components/users-detail/users-detail.com
     ReactiveFormsModule,
     UsersRoutingModule,
     AtlasGridModule,
+    AtlasPageHeaderModule,
+    AtlasPageContentModule,
     MatTabsModule,
     AtlasDialogModule.forRoot()
   ],

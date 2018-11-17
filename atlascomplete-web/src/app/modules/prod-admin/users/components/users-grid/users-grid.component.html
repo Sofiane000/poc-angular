@@ -1,10 +1,13 @@
 <div class="row">
   <div class="col-md-12">
-    <h2>Users</h2>
-    <atlas-grid [isFilterable]="false" [state]="gridState" [columns]="columnsData" [gridService]="peopleServiceChild"
-      [isSortable]="false" [isPageable]="false" [selectable]="selectableSettings" [showSelectAll]="false" (add)="addHandler($event)"
-      (edit)="editHandler($event)" (viewDetail)="viewHandler($event)" (remove)="removeHandler($event)" [isEditable]="true"
-      [selectedKeys]="selectedKeys"></atlas-grid>
+    <atlas-page-header title="Users Page" fontSize="x-large" [backGroundColor]="'#673ab7'" textAlign="left" [color]="'white'">
+    </atlas-page-header>
+    <atlas-page-content>
+      <atlas-grid [isFilterable]="false" [state]="gridState" [columns]="columnsData" [gridService]="peopleServiceChild"
+        [isSortable]="false" [isPageable]="false" [selectable]="selectableSettings" [showSelectAll]="false" (add)="addHandler($event)"
+        (edit)="editHandler($event)" (viewDetail)="viewHandler($event)" (remove)="removeHandler($event)" [isEditable]="true"
+        [selectedKeys]="selectedKeys"></atlas-grid>
+    </atlas-page-content>
   </div>
 </div>
 

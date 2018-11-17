@@ -1,18 +1,3 @@
-.document-header {
-  font-weight: 200;
-  font-size: x-large;
-  color: white;
-}
-
-header {
-  background-color: #673ab7;
-  height: 38px;
-}
-
-mat-icon {
-  vertical-align: text-bottom;
-}
-
 .notification-icon {
   font-size: 100px;
   width: 100px;
