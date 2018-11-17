@@ -21,6 +21,8 @@ This command will take care of building and packaging of the module.
 Run--
 npm install to install the all packages except Atlas-ui-angular
 
+
+
 ## How to add reference to atlas-ui-angular
 After npm install run the below command
 npm install ../atlas-web-components/dist/atlas-ui-angular/atlas-ui-angular-0.0.1.tgz

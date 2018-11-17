@@ -9,12 +9,12 @@
       </a>
       <span class="menu-spacer"></span>
       <div class="button-header">
-        <a [class.active]="selectedOption ==='tasks'" (click)="onClickRoutes('tasks')"
+        <a [class.active]="selectedOption ==='tasks'" (click)="onClickRoutes('Tasks')"
           mat-icon-button title="Tasks">
           <mat-icon aria-label="Tasks">archive</mat-icon>
         </a>
         <a [class.active]="selectedOption ==='document'"
-          mat-icon-button title="Document Viewer" (click)="onClickRoutes('document')">
+          mat-icon-button title="Document Viewer" (click)="onClickRoutes('Document')">
           <mat-icon aria-label="Document Viewer">folder</mat-icon>
         </a>
         <a mat-icon-button title="Notifications" routerLinkActive="active">
