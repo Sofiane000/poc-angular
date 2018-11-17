@@ -21,4 +21,13 @@ export * from './lib/atlas-menu/atlas-menu.module';
 export * from './lib/atlas-menu/components/atlas-menu.component';
 export * from './lib/atlas-menu/components/atlas-menu-item.component';
 export * from './lib/atlas-menu/models/menu-item';
-
+export * from './lib/layout/atlas-page-layout/atlas-page-header/atlas-page-header.module';
+export * from './lib/layout/atlas-page-layout/atlas-page-header/components/atlas-page-header.component';
+export * from './lib/layout/atlas-page-layout/atlas-page-content/atlas-page-content.module';
+export * from './lib/layout/atlas-page-layout/atlas-page-content/components/atlas-page-content.component';
+export * from './lib/layout/atlas-tab-layout/atlas-tab-layout.module';
+export * from './lib/layout/atlas-tab-layout/components/atlas-tab-layout.component';
+export * from './lib/layout/atlas-dialog-layout/atlas-dialog-layout.module';
+export * from './lib/layout/atlas-dialog-layout/components/atlas-dialog-layout.component';
+export * from './lib/layout/atlas-page-layout/atlas-page-footer/atlas-page-footer.module';
+export * from './lib/layout/atlas-page-layout/atlas-page-footer/components/atlas-page-footer.component';
