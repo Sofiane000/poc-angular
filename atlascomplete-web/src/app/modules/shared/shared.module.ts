@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatToolbarModule, MatButtonModule,
+import {
+  MatToolbarModule, MatButtonModule,
   MatSidenavModule, MatIconModule, MatListModule,
   MatCardModule, MatMenuModule, MatTabsModule,
-   MatFormFieldModule, MatProgressSpinnerModule,
-   MatInputModule, MatGridListModule, MatSnackBarModule } from '@angular/material';
+  MatFormFieldModule, MatProgressSpinnerModule,
+  MatInputModule, MatGridListModule, MatSnackBarModule
+} from '@angular/material';
+import { CanDeactivateGuard } from './services/can-deactivate.guard';
+import { ModuleWithProviders } from '@angular/compiler/src/core';
 
 @NgModule({
   declarations: [],
@@ -41,4 +45,13 @@ import { MatToolbarModule, MatButtonModule,
 
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: SharedModule,
+      providers: [
+        CanDeactivateGuard
+      ]
+    };
+  }
+}

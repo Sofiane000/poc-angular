@@ -1,0 +1,45 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div class="atlas-toolbar">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="toggleNav()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <a aria-label="Atlas" title="Atlas" mat-button routerlink="/" tabindex="0" aria-disabled="false"><span class="mat-button-wrapper"><img
+            alt="Atlas" class="atlas-logo" src="../../../favicon.ico"><span>Atlas</span></span>
+      </a>
+      <span class="menu-spacer"></span>
+      <div class="button-header">
+        <a [class.active]="selectedOption ==='tasks'" (click)="onClickRoutes('Tasks')"
+          mat-icon-button title="Tasks">
+          <mat-icon aria-label="Tasks">archive</mat-icon>
+        </a>
+        <a [class.active]="selectedOption ==='document'"
+          mat-icon-button title="Document Viewer" (click)="onClickRoutes('Document')">
+          <mat-icon aria-label="Document Viewer">folder</mat-icon>
+        </a>
+        <a mat-icon-button title="Notifications" routerLinkActive="active">
+          <mat-icon aria-label="Notifications">notifications</mat-icon>
+        </a>
+        <a mat-icon-button title="User Details" [matMenuTriggerFor]="menu">
+          <mat-icon aria-label="User Details">person</mat-icon>
+        </a>
+        <mat-menu #menu="matMenu" [overlapTrigger]="false">
+          <button mat-menu-item>
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>people_outline</mat-icon>
+            <span>Connecting</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>

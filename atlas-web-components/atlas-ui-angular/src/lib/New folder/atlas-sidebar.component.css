@@ -1,0 +1,19 @@
+.sidebar-button {
+  float: right;
+}
+
+mat-icon {
+  color: white;
+  vertical-align: text-bottom;
+}
+
+.tasks-header {
+  font-weight: 200;
+  font-size: x-large;
+  color: white;
+}
+
+.sidebar-header {
+  background-color: #673ab7;
+  height: 38px;
+}

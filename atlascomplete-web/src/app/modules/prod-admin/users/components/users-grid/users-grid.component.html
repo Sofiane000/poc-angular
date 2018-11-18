@@ -1,19 +1,12 @@
-<div class="row">
-  <div class="col-md-12">
-    <atlas-page-header title="Users Page" fontSize="x-large" [backGroundColor]="'#673ab7'" textAlign="left" [color]="'white'">
-    </atlas-page-header>
-    <atlas-page-content>
-      <atlas-grid [isFilterable]="false" [state]="gridState" [columns]="columnsData" [gridService]="peopleServiceChild"
-        [isSortable]="false" [isPageable]="false" [selectable]="selectableSettings" [showSelectAll]="false" (add)="addHandler($event)"
-        (edit)="editHandler($event)" (viewDetail)="viewHandler($event)" (remove)="removeHandler($event)" [isEditable]="true"
-        [selectedKeys]="selectedKeys"></atlas-grid>
-    </atlas-page-content>
-  </div>
-</div>
+<atlas-page-header title="Users Page" fontSize="x-large" [backGroundColor]="'white'" textAlign="center" [color]="'black'">
+</atlas-page-header>
+<atlas-page-content [type]="'grid'">
+  <atlas-grid [isFilterable]="true" [state]="gridState" [columns]="columnsData" [gridService]="peopleServiceChild"
+    [isSortable]="true" [isPageable]="true" [selectable]="selectableSettings" [showSelectAll]="true" (add)="addHandler($event)"
+    (edit)="editHandler($event)" (viewDetail)="viewHandler($event)" (remove)="removeHandler($event)" [isEditable]="true"
+    [selectedKeys]="selectedKeys" height="500"></atlas-grid>
+</atlas-page-content>
 
-<!-- 
-  <atlas-grid [isFilterable]="false" [state]="gridState" [columns]="columnsData" [gridService]="userServiceChild" [isSortable]="false"
-  [isPageable]="false" [selectable]="selectableSettings" [showSelectAll]="false" (add)="addHandler($event)" (edit)="editHandler($event)"
-  (viewDetail)="viewHandler($event)" (remove)="removeHandler($event)" [isEditable]="true" [selectedKeys]="selectedKeys"></atlas-grid> -->
+<atlas-page-footer [canSave]="true" [showNumRecords]="true"></atlas-page-footer>
 <br />
 <ng-container #container></ng-container>

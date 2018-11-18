@@ -5,7 +5,7 @@ import { Input, Component } from '@angular/core';
     selector: 'app-users-dialog-form',
     templateUrl: './users-dialog.component.html',
     styles: [
-      'input[type=text] { width: 100%; }'
+        'input[type=text] { width: 100%; }'
     ]
 })
 export class UsersDialogFormComponent {

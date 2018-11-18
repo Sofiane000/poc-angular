@@ -1,0 +1,24 @@
+<atlas-page-header title="Roles" fontSize="x-large" [backGroundColor]="'white'" textAlign="center" [color]="'black'">
+</atlas-page-header>
+<atlas-page-content>
+  <div class="col-md-6 userDiv">
+    <label class="userLabel">User Role</label>
+    <span class="userSpan">Internal</span>
+  </div>
+  <div class="col-md-6 userDiv">
+    <label class="userLabel">Active</label>
+    <span class="userSpan">{{userDetail.UserActvtnInd}}</span>
+  </div>
+  <div class="col-md-6 userDiv">
+    <label class="userLabel">Status</label>
+    <span class="userSpan">{{userDetail.RecStat}}</span>
+  </div>
+  <div class="col-md-6 userDiv">
+    <label class="userLabel">User Stat Code</label>
+    <span class="userSpan">{{userDetail.UserStatTypeCode}}</span>
+  </div>
+  <div class="col-md-6 userDiv">
+    <label class="userLabel">User Stat Description</label>
+    <span class="userSpan">{{userDetail.cf_UserStatTypeDesc}}</span>
+  </div>
+</atlas-page-content>

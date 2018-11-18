@@ -1,22 +1,25 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef, HostListener } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { IColumnSetting, AtlasDialogService } from 'atlas-ui-angular';
 import { Router } from '@angular/router';
 import { PeopleService } from '../../services/people.service';
 import { UsersDialogFormComponent } from '../users-dialog/users-dialog.component';
+import { ComponentCanDeactivate } from 'src/app/modules/shared/components/component-can-deactivate';
 const saveAction = { text: 'Save', primary: true };
 const cancelAction = { text: 'Cancel' };
 @Component({
   selector: 'app-users-grid',
-  templateUrl: './users-grid.component.html'
+  templateUrl: './users-grid.component.html',
+  styleUrls: ['./users-grid.component.css']
 })
-export class UsersGridComponent implements OnInit {
+export class UsersGridComponent extends ComponentCanDeactivate implements OnInit {
+  isDialogClosed = true;
   gridState: any = {
     skip: 0,
-    take: 100,
+    take: 5,
     filter: {
       logic: 'and',
-      filters: [{ field: 'firstName', operator: 'contains', value: '' }]
+      filters: [{ field: 'FirstName', operator: 'contains', value: '' }]
     }
   };
 
@@ -35,15 +38,20 @@ export class UsersGridComponent implements OnInit {
   public containerRef: ViewContainerRef;
   constructor(private userService: UserService, private peopleService: PeopleService, private atlasDialogService: AtlasDialogService,
     private router: Router) {
+    super();
     this.peopleServiceChild = peopleService;
     this.userServiceChild = userService;
   }
   ngOnInit() {
+    this.initialization();
+  }
+  initialization() {
     this.columnsData = this.columnsData = [
       {
         field: 'FirstName',
         title: 'First Name',
-        width: 40
+        width: 80,
+        isFilterable: true
       },
       {
         field: 'LastName',
@@ -89,10 +97,11 @@ export class UsersGridComponent implements OnInit {
 
   viewHandler({ dataItem }) {
     this.userService.selectedUser = dataItem;
-    this.router.navigate(['/administration/users/' + dataItem.LoginSK + '/details']);
+    this.router.navigate(['/administration/users/' + dataItem.LoginSK + '/details/tenants']);
     // this.router.navigate(['/grid/details']);
   }
   showEditDialog(dataItem) {
+    this.isDialogClosed = false;
     const isNew = dataItem ? false : true;
     const dialogRef = this.atlasDialogService.open({
       appendTo: this.containerRef,
@@ -112,9 +121,11 @@ export class UsersGridComponent implements OnInit {
       if (dialogResult.text && dialogResult.text.toLowerCase() === 'save') {
         this.selectedKeys = [];
       }
+      this.isDialogClosed = true;
     });
   }
   removeHandler(dataItem) {
+    this.isDialogClosed = false;
     const dialog = this.atlasDialogService.open({
       appendTo: this.containerRef,
       title: 'Please confirm',
@@ -134,6 +145,10 @@ export class UsersGridComponent implements OnInit {
       } else {
         this.selectedKeys = [];
       }
+      this.isDialogClosed = true;
     });
+  }
+  canDeactivate() {
+    return this.isDialogClosed;
   }
 }
