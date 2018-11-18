@@ -6,5 +6,6 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./atlas-page-content.component.css']
 })
 export class AtlasPageContentComponent {
-
+    @Input()
+    type: string;
 }

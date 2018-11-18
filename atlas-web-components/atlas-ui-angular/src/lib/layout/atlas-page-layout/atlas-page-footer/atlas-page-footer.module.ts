@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material';
 import { AtlasPageFooterComponent } from './components/atlas-page-footer.component';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
 @NgModule({
     declarations: [
         AtlasPageFooterComponent
     ],
     imports: [
         CommonModule,
-        MatButtonModule
+        ButtonsModule
     ],
     exports: [
         AtlasPageFooterComponent

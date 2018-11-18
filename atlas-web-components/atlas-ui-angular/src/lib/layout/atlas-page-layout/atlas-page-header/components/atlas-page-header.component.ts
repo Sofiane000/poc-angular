@@ -1,5 +1,5 @@
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 @Component({
     selector: 'atlas-page-header',
     templateUrl: './atlas-page-header.component.html',
@@ -7,13 +7,20 @@ import { Component, Input } from '@angular/core';
 })
 export class AtlasPageHeaderComponent {
     @Input()
-    backGroundColor: string;
+    backGroundColor = 'grey';
     @Input()
-    fontSize: string;
+    fontSize = 'x-large';
     @Input()
-    textAlign: string;
+    textAlign = 'left';
     @Input()
-    title: string;
+    title = 'Page Header';
     @Input()
-    color: string;
+    color = 'Black';
+    @Input()
+    showBackBtn = false;
+    @Output()
+    goBack: EventEmitter<any> = new EventEmitter<any>();
+    onGoBack(event) {
+        this.goBack.emit(event);
+    }
 }

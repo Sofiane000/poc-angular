@@ -1,3 +1,11 @@
 header {
   height: 38px;
 }
+
+.back-btn {
+  float: left;
+}
+
+.k-button-icontext .k-icon {
+  margin: 0px;
+}

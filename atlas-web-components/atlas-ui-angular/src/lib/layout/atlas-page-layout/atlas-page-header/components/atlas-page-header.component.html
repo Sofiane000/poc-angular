@@ -1,3 +1,4 @@
-<header [style.backgroundColor]="backGroundColor" [style.textAlign]="textAlign" [style.fontSize]="fontSize" [style.color]="color">
-    {{title}}
+<header [style.backgroundColor]="backGroundColor" [style.textAlign]="textAlign" [style.fontSize]="fontSize"
+  [style.color]="color">
+  <button *ngIf="showBackBtn" class="back-btn" kendoButton [iconClass]="'k-icon k-i-arrow-left'" (click)="onGoBack($event)" title="Go Back"></button>{{title}}
 </header>
