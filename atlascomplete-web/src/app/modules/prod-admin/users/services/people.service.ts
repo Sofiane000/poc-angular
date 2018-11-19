@@ -31,7 +31,7 @@ export class PeopleService extends AtlasGridService {
     }
 
     getUserById(loginSk: Number) {
-      return this.dataAccess.get(`/${loginSk}`).pipe(map((response) => {
+      return this.dataAccess.get(`${loginSk}`).pipe(map((response) => {
         return response.data;
       }));
     }
