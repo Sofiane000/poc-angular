@@ -44,10 +44,11 @@ export class AtlasGridComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.gridService.query(this.state);
     this.gridServiceSubscription = this.gridService.subscribe(response => {
-      this.data = response;
-      this.gridDataResult = process(this.data, this.state);
+      if (response) {
+        this.data = response;
+        this.gridDataResult = process(this.data, this.state);
+      }
     });
-
   }
 
   dataStateChange(event: DataStateChangeEvent) {
