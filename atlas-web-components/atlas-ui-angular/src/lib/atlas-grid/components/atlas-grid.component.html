@@ -20,11 +20,11 @@
         [filterable]="column.isFilterable" [format]="column.format" [filter]="column.type" [headerClass]="column.headerClass"
         [headerStyle]="column.headerStyle" [media]="column.media" [style]="column.style">
       </kendo-grid-column>
-      <kendo-grid-column title="Details" width="40" *ngIf="isEditable">
+      <kendo-grid-command-column title="Details" width="40" *ngIf="isEditable">
         <ng-template kendoGridCellTemplate>
           <button kendoGridEditCommand [iconClass]="'k-icon k-i-arrow-right'"></button>
         </ng-template>
-      </kendo-grid-column>
+    </kendo-grid-command-column>
     </kendo-grid>
 
   </div>

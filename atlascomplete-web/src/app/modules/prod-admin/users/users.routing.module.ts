@@ -10,7 +10,7 @@ import { CanDeactivateGuard } from '../../shared/services/can-deactivate.guard';
 const appRoutes: Routes = [
   { path: '', component: UsersGridComponent, canDeactivate: [CanDeactivateGuard] },
   {
-    path: ':id/details', component: UsersDetailComponent, children: [
+    path: ':id', component: UsersDetailComponent, children: [
       { path: 'tenants', component: UsersDetailTenantsComponent },
       { path: 'roles', component: UsersDetailRolesComponent },
       { path: 'properties', component: UsersDetailPropertiesComponent }

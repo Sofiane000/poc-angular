@@ -50,18 +50,18 @@ export class UsersGridComponent extends ComponentCanDeactivate implements OnInit
       {
         field: 'FirstName',
         title: 'First Name',
-        width: 80,
+        width: 60,
         isFilterable: true
       },
       {
         field: 'LastName',
         title: 'Last Name',
-        width: 40
+        width: 50
       },
       {
         field: 'cf_LoginID',
         title: 'Username',
-        width: 40,
+        width: 50,
       },
       {
         field: 'cf_UserType',
@@ -71,17 +71,17 @@ export class UsersGridComponent extends ComponentCanDeactivate implements OnInit
       {
         field: 'cf_TenantTaxnmyName',
         title: 'Tenants',
-        width: 90
+        width: 70
       },
       {
         field: 'UserStatTypeCode',
         title: 'Status',
-        width: 30,
+        width: 40,
       },
       {
         field: 'UserActvtnInd',
         title: 'Active',
-        width: 30,
+        width: 40,
         showTemplate: true
       }
     ];
@@ -97,7 +97,7 @@ export class UsersGridComponent extends ComponentCanDeactivate implements OnInit
 
   viewHandler({ dataItem }) {
     this.userService.selectedUser = dataItem;
-    this.router.navigate(['/administration/users/' + dataItem.LoginSK + '/details/tenants']);
+    this.router.navigate(['/administration/users/' + dataItem.LoginSK + '/tenants']);
     // this.router.navigate(['/grid/details']);
   }
   showEditDialog(dataItem) {
