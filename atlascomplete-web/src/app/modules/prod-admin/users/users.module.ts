@@ -15,6 +15,7 @@ import { UsersDetailTenantsComponent } from './components/users-detail-tenants/u
 import { UsersDetailPropertiesComponent } from './components/users-detail-properties/users-detail-properties.component';
 import { UsersDetailRolesComponent } from './components/users-detail-roles/users-detail-roles.component';
 import { SharedModule } from '../../shared/shared.module';
+import {DataAccessFactory} from "atlas-web-services";
 
 @NgModule({
   declarations: [UsersDetailComponent, UsersDialogFormComponent, UsersGridComponent,
@@ -38,4 +39,9 @@ import { SharedModule } from '../../shared/shared.module';
     PeopleService
   ]
 })
-export class UsersModule { }
+export class UsersModule {
+  constructor(private dataAccessFactory: DataAccessFactory) {
+    // initialise applicable services for data-access
+    this.dataAccessFactory.createService('idm.users').module('idm').url('users');
+  }
+}

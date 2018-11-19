@@ -3,15 +3,16 @@ import { AtlasGridService } from 'atlas-ui-angular';
 
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import {HttpClient} from "@angular/common/http";
-import {AtlasResponse} from "./people.service";
+import { DataAccessFactory, DataAccessService } from "atlas-web-services";
 
 @Injectable()
 export class UserService extends AtlasGridService {
   selectedUser: any;
+  dataAccess: DataAccessService;
 
-  constructor(private http: HttpClient) {
+  constructor(dataAccessFactory: DataAccessFactory) {
     super();
+    this.dataAccess = dataAccessFactory.getService('idm.users');
   }
 
   query(state: any): void {
@@ -24,13 +25,14 @@ export class UserService extends AtlasGridService {
   }
 
   getUsers() {
-    return this.http.get<AtlasResponse>('/api/idm/users').pipe(map((response) => {
+    return this.dataAccess.get().pipe(map((response) => {
       return response.data;
     }));
   }
 
   getUserById(loginSk: Number) {
-    return this.http.get<AtlasResponse>('/api/idm/users/' + loginSk).pipe(map((response) => {
+    return this.dataAccess.get(`${loginSk}`).pipe(map((response) => {
       return response.data;
     }));
-  }}
+  }
+}

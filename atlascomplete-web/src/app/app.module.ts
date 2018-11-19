@@ -10,6 +10,8 @@ import { AtlasContentModule, AtlasSideBarModule, AtlasHeaderModule, AtlasMenuMod
 import { AppRoutingModule } from './app.routing.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { DataAccessFactory } from "atlas-web-services";
+import {environment} from "../environments/environment";
 @NgModule({
   declarations: [
     AppComponent
@@ -31,4 +33,9 @@ import { AuthModule } from './modules/auth/auth.module';
   providers: [{ provide: APP_BASE_HREF, useValue: '' }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  // initialize data-access base URL
+  constructor(private dataAccessFactory: DataAccessFactory) {
+    this.dataAccessFactory.baseUrl = environment.baseUrl;
+  }
+}
