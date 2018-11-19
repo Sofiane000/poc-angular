@@ -29,7 +29,7 @@ npm install ../atlas-web-components/dist/atlas-ui-angular/atlas-ui-angular-0.0.1
 
 ## How to add reference to atlas-web-services
 After npm install run the below command
-npm install ../atlas-services/atlas-web-services-1.0.0tgz
+npm install ../atlas-services/dist/atlas-web-services/atlas-web-services-0.0.1.tgz
 
 ## Run Test Case 
 Run-- npm run test on terminal in host directory where package.json is present.This will run tests for host application.

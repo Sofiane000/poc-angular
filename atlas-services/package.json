@@ -1,6 +1,6 @@
 {
   "name": "atlas-web-services",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,9 +8,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "packagr": "ng-packagr -p ./atlas-services/package.json",
+     "packagr": "ng-packagr -p ./projects/atlas-web-services/ng-package.json",
     "build_lib": "rimraf -rf dist && ng build atlas-web-services",
-    "npm_pack": "npm pack",
+
+    "npm_pack": "cd dist/atlas-web-services && npm pack",
+
     "package": "npm run build_lib && npm run npm_pack"
   },
   "private": true,
