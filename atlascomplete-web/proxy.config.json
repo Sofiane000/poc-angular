@@ -1,0 +1,8 @@
+{
+    "/api/idm/*": {
+      "target": "http://localhost:4201",
+      "secure": false,
+      "logLevel": "info",
+      "changeOrigin": true
+  }
+}

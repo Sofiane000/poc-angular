@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { USER_DATA } from '../../models/user';
+import {PeopleService} from "../../services/people.service";
 
 @Component({
   selector: 'app-users-detail-tenants',
@@ -9,12 +9,12 @@ import { USER_DATA } from '../../models/user';
 })
 export class UsersDetailTenantsComponent implements OnInit {
   userDetail: any;
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private peopleService: PeopleService) { }
 
   ngOnInit() {
     this.route.parent.params.subscribe(params => {
-      const id = +params['id'];
-      this.userDetail = USER_DATA.find(user => user.LoginSK === id);
+      const loginSk = +params['id'];
+      this.peopleService.getUserById(loginSk).subscribe(userDetail => this.userDetail = userDetail);
     });
   }
 }
