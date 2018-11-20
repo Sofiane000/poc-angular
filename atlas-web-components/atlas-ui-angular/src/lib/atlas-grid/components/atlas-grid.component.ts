@@ -17,10 +17,14 @@ export class AtlasGridComponent implements OnInit, OnDestroy {
   data: any[];
   showAddModel: boolean;
   selectedRowIndex: number;
+  baseUrl = window.location.href;
   @Input() columns: IColumnSetting[];
   @Input() isPageable: boolean;
   @Input() isFilterable: boolean;
   @Input() isSortable: boolean;
+  @Input() routeParamProperty: string;
+  @Input() routeUrl: string;
+
   @Input() state: State;
   @Input() height: string;
   @Input() isLoading: boolean;
@@ -49,6 +53,7 @@ export class AtlasGridComponent implements OnInit, OnDestroy {
         this.gridDataResult = process(this.data, this.state);
       }
     });
+
   }
 
   dataStateChange(event: DataStateChangeEvent) {

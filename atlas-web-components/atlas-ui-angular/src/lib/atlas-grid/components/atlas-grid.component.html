@@ -3,8 +3,7 @@
     <kendo-grid [data]="gridDataResult" [height]="height" [filter]="state.filter" [pageSize]="state?.take" [skip]="state?.skip"
       [sort]="state?.sort" [sortable]="isSortable" [pageable]="isPageable" [filterable]="isFilterable" [loading]="gridService.isLoading"
       (dataStateChange)="dataStateChange($event)" [selectable]="selectable" (edit)="onViewDetail($event)" (remove)="onRemove($event)"
-      (add)="onAdd($event)" [kendoGridSelectBy]="selectBy" [selectedKeys]="selectedKeys" (selectionChange)="onSelectionChange($event)"
-      >
+      (add)="onAdd($event)" [kendoGridSelectBy]="selectBy" [selectedKeys]="selectedKeys" (selectionChange)="onSelectionChange($event)">
 
       <ng-template kendoGridToolbarTemplate *ngIf="isEditable">
         <div>
@@ -21,10 +20,10 @@
         [headerStyle]="column.headerStyle" [media]="column.media" [style]="column.style">
       </kendo-grid-column>
       <kendo-grid-command-column title="Details" width="40" *ngIf="isEditable">
-        <ng-template kendoGridCellTemplate>
-          <button kendoGridEditCommand [iconClass]="'k-icon k-i-arrow-right'"></button>
+        <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+          <button kendoGridEditCommand [iconClass]="'k-icon k-i-arrow-right'" [title]="baseUrl + '/'+ dataItem[routeParamProperty]+routeUrl"></button>
         </ng-template>
-    </kendo-grid-command-column>
+      </kendo-grid-command-column>
     </kendo-grid>
 
   </div>
