@@ -28,7 +28,10 @@ export class UsersGridComponent extends ComponentCanDeactivate implements OnInit
     mode: 'single',
     checkboxOnly: true
   };
-
+  sortable: any = {
+    allowUnsort: true,
+    mode: 'multiple'
+  };
   columnsData: IColumnSetting[];
   peopleServiceChild: PeopleService;
   userServiceChild: UserService;
@@ -56,33 +59,41 @@ export class UsersGridComponent extends ComponentCanDeactivate implements OnInit
       {
         field: 'LastName',
         title: 'Last Name',
-        width: 50
+        width: 60,
+        isFilterable: true
       },
       {
         field: 'cf_LoginID',
         title: 'Username',
-        width: 50,
+        width: 60,
+        isFilterable: true
       },
       {
         field: 'cf_UserType',
         title: 'UserType',
-        width: 40,
+        width: 60,
+        isFilterable: true
       },
       {
         field: 'cf_TenantTaxnmyName',
         title: 'Tenants',
-        width: 70
+        width: 60,
+        isFilterable: true
       },
       {
         field: 'UserStatTypeCode',
         title: 'Status',
-        width: 40,
+        width: 60,
+        isFilterable: true,
       },
       {
         field: 'UserActvtnInd',
         title: 'Active',
-        width: 40,
-        showTemplate: true
+        width: 60,
+        showTemplate: true,
+        isFilterable: true,
+        type: 'boolean'
+
       }
     ];
   }

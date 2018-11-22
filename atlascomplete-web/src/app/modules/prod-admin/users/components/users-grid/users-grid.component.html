@@ -1,8 +1,8 @@
 <atlas-page-header title="Users Page" fontSize="x-large" [backGroundColor]="'white'" textAlign="center" [color]="'black'">
 </atlas-page-header>
 <atlas-page-content [type]="'grid'">
-  <atlas-grid [isFilterable]="true" [state]="gridState" [columns]="columnsData" [gridService]="peopleServiceChild"
-    [isSortable]="true" [isPageable]="true" [selectable]="selectableSettings" [showSelectAll]="true" (add)="addHandler($event)"
+  <atlas-grid [isFilterable]="'menu'" [state]="gridState" [columns]="columnsData" [gridService]="peopleServiceChild"
+    [isSortable]="sortable" [isPageable]="true" [selectable]="selectableSettings" [showSelectAll]="true" (add)="addHandler($event)"
     (edit)="editHandler($event)" (viewDetail)="viewHandler($event)" (remove)="removeHandler($event)" [isEditable]="true"
     [selectedKeys]="selectedKeys" height="500" routeParamProperty = "LoginSK" routeUrl="/tenants"></atlas-grid>
 </atlas-page-content>
