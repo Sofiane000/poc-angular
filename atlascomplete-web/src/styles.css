@@ -15,6 +15,10 @@ body {
   margin: 0px !important;
 }
 
+.k-popup {
+  padding: 0px;
+}
+
 .no-padding {
   padding: 0px !important;
 }
@@ -22,4 +26,16 @@ body {
 .mat-list-item-content {
   padding: 0 8px !important;
   font-size: 14px !important;
+}
+
+.k-grid-header .k-header .k-link .k-icon {
+  position: absolute;
+  left: -8px;
+  top: 20px;
+}
+
+.k-grid-header .k-header .k-link .k-sort-order {
+  position: absolute;
+  left: 12px;
+  top: 15px;
 }
