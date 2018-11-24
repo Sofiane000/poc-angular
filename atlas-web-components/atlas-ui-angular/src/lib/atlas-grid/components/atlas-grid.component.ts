@@ -1,11 +1,12 @@
 import { Component, OnInit, Input, OnDestroy, EventEmitter, Output } from '@angular/core';
 import { IColumnSetting } from '../models/grid-column-setting';
-import { State, process } from '@progress/kendo-data-query';
+import { State, process, GroupDescriptor } from '@progress/kendo-data-query';
 import { DataStateChangeEvent, GridDataResult } from '@progress/kendo-angular-grid';
 import { AtlasGridService } from '../services/atlas-grid.service';
 import { Subscription } from 'rxjs';
 import { DialogService, DialogRef, DialogCloseResult } from '@progress/kendo-angular-dialog';
 import { AtlasDialogService } from '../../atlas-dialog/services/atlas-dialog.service';
+import { ExcelExportData } from '@progress/kendo-angular-excel-export';
 
 @Component({
   selector: 'atlas-grid',
@@ -18,6 +19,12 @@ export class AtlasGridComponent implements OnInit, OnDestroy {
   showAddModel: boolean;
   selectedRowIndex: number;
   baseUrl = window.location.href;
+  @Input() pdfOption: any;
+  @Input() excelOption: any;
+  @Input() isGroupable: boolean;
+  @Input() showExcelExport: boolean;
+  @Input() showPdfExport: boolean;
+  @Input() groupDescriptor: GroupDescriptor[];
   @Input() columns: IColumnSetting[];
   @Input() isPageable: boolean;
   @Input() isFilterable: boolean;
@@ -43,7 +50,9 @@ export class AtlasGridComponent implements OnInit, OnDestroy {
   @Output() viewDetail: EventEmitter<any> = new EventEmitter<any>();
 
   private gridServiceSubscription: Subscription;
-  constructor(private dialogService: AtlasDialogService) { }
+  constructor(private dialogService: AtlasDialogService) {
+    this.allData = this.allData.bind(this);
+  }
 
   ngOnInit() {
     this.gridService.query(this.state);
@@ -59,8 +68,15 @@ export class AtlasGridComponent implements OnInit, OnDestroy {
   dataStateChange(event: DataStateChangeEvent) {
     this.state = event;
     this.gridService.query(event);
-    this.gridDataResult = process(this.data, this.state);
   }
+  allData(): ExcelExportData {
+    const result: ExcelExportData = {
+      data: this.data,
+      group: this.state.group
+    };
+    return result;
+  }
+
   refreshGrid() {
     this.state.skip = 0;
     this.gridService.query(this.state);

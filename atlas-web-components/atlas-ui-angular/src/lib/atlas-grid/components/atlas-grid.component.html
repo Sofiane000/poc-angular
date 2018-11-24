@@ -3,14 +3,17 @@
     <kendo-grid [data]="gridDataResult" [height]="height" [filter]="state.filter" [pageSize]="state?.take" [skip]="state?.skip"
       [sort]="state?.sort" [sortable]="isSortable" [pageable]="isPageable" [filterable]="isFilterable" [loading]="gridService.isLoading"
       (dataStateChange)="dataStateChange($event)" [selectable]="selectable" (edit)="onViewDetail($event)" (remove)="onRemove($event)"
-      (add)="onAdd($event)" [kendoGridSelectBy]="selectBy" [selectedKeys]="selectedKeys" (selectionChange)="onSelectionChange($event)">
+      (add)="onAdd($event)" [kendoGridSelectBy]="selectBy" [selectedKeys]="selectedKeys" (selectionChange)="onSelectionChange($event)"
+      [groupable]="isGroupable" [group]="state?.group">
 
       <ng-template kendoGridToolbarTemplate *ngIf="isEditable">
         <div>
-          <button kendoGridAddCommand [icon]="'plus'"></button>
-          <button kendoButton [icon]="'edit'" [disabled]="selectedKeys.length == 0" (click)="editSelectedRow()"></button>
-          <button kendoButton [icon]="'delete'" [disabled]="selectedKeys.length == 0" (click)="removeDataItem()"></button>
-          <button kendoButton [icon]="'refresh'" (click)="refreshGrid()"></button>
+          <button title="Add" kendoGridAddCommand [icon]="'plus'"></button>
+          <button title="Edit" kendoButton [icon]="'edit'" [disabled]="selectedKeys.length == 0" (click)="editSelectedRow()"></button>
+          <button title="Delete" kendoButton [icon]="'delete'" [disabled]="selectedKeys.length == 0" (click)="removeDataItem()"></button>
+          <button title="Refresh" kendoButton [icon]="'refresh'" (click)="refreshGrid()"></button>
+          <button title="Export as pdf" *ngIf="showPdfExport" kendoGridPDFCommand icon="file-pdf"></button>
+          <button title="Export as excel" *ngIf="showExcelExport" kendoGridExcelCommand icon="file-excel"></button>
         </div>
       </ng-template>
 
@@ -24,7 +27,53 @@
           <button kendoGridEditCommand [iconClass]="'k-icon k-i-arrow-right'" [title]="baseUrl + '/'+ dataItem[routeParamProperty]+routeUrl"></button>
         </ng-template>
       </kendo-grid-command-column>
+      <kendo-grid-pdf [fileName]="pdfOption?.fileName"
+        [allPages]="pdfOption?.allPages"
+        [paperSize]="pdfOption?.paperSize"
+        [repeatHeaders]="pdfOption?.repeatHeaders"
+        [landscape]="pdfOption?.landscape"
+        [author]="pdfOption?.author"
+        [avoidLinks]="pdfOption?.avoidLinks"
+        [creator]="pdfOption?.creator"
+        [date]="pdfOption?.date"
+        [forcePageBreak]="pdfOption?.forcePageBreak"
+        [forceProxy]="pdfOption?.forceProxy"
+        [imageResolution]="pdfOption?.imageResolution"
+        [keepTogether]="pdfOption?.keepTogether"
+        [keywords]="pdfOption?.keywords"
+        [landscape]="pdfOption?.landscape"
+        [margin]="pdfOption?.margin"
+        [paperSize]="pdfOption?.paperSize"
+        [producer]="pdfOption?.producer"
+        [proxyData]="pdfOption?.proxyData"
+        [proxyTarget]="pdfOption?.proxyTarget"
+        [title]="pdfOption?.title"
+        [subject]="pdfOption?.subject"
+        [scale]="pdfOption?.scale"
+        [repeatHeaders]="pdfOption?.repeatHeaders"
+        [proxyURL]="pdfOption?.proxyURL">
+        <ng-template kendoGridPDFTemplate let-pageNum="pageNum" let-totalPages="totalPages">
+          <div class="page-template">
+             <div class="header">
+               <div style="float: right">Page {{ pageNum }} of {{ totalPages }}</div>
+               {{pdfOption?.title}}
+             </div>
+             <div class="footer">
+               Page {{ pageNum }} of {{ totalPages }}
+             </div>
+           </div>
+         </ng-template>
+      </kendo-grid-pdf>
+      <kendo-grid-excel
+      [fileName]="excelOption?.fileName"
+      [creator]="excelOption?.creator"
+      [date]="excelOption?.date"
+      [filterable]="excelOption?.filterable"
+      [forceProxy]="excelOption?.forceProxy"
+      [headerPaddingCellOptions]="excelOption?.headerPaddingCellOptions"
+      [paddingCellOptions]="excelOption?.paddingCellOptions"
+      [proxyURL]="excelOption?.proxyURL"
+      [fetchData]="allData"></kendo-grid-excel>
     </kendo-grid>
-
   </div>
 </div>

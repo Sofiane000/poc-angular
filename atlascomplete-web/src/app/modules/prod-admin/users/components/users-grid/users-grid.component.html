@@ -1,10 +1,30 @@
 <atlas-page-header title="Users Page" fontSize="x-large" [backGroundColor]="'white'" textAlign="center" [color]="'black'">
 </atlas-page-header>
 <atlas-page-content [type]="'grid'">
-  <atlas-grid [isFilterable]="'menu'" [state]="gridState" [columns]="columnsData" [gridService]="peopleServiceChild"
-    [isSortable]="sortable" [isPageable]="true" [selectable]="selectableSettings" [showSelectAll]="true" (add)="addHandler($event)"
-    (edit)="editHandler($event)" (viewDetail)="viewHandler($event)" (remove)="removeHandler($event)" [isEditable]="true"
-    [selectedKeys]="selectedKeys" height="500" routeParamProperty = "LoginSK" routeUrl="/tenants"></atlas-grid>
+  <atlas-grid
+  [isFilterable]="'menu'"
+  [state]="gridState" 
+  [columns]="columnsData"
+  [gridService]="peopleServiceChild"
+  [isSortable]="sortable"
+  [isPageable]="true" 
+  [selectable]="selectableSettings"
+  [showSelectAll]="true"
+  [isEditable]="true"
+  [selectedKeys]="selectedKeys"
+  [isGroupable]="true"
+  [pdfOption]="pdfOption"
+  [excelOption]="excelOption"
+  showExcelExport="true"
+  showPdfExport="true"
+  height="500"
+  routeParamProperty = "LoginSK"
+  routeUrl="/tenants"
+  (add)="addHandler($event)"
+  (edit)="editHandler($event)"
+  (viewDetail)="viewHandler($event)" 
+  (remove)="removeHandler($event)"
+></atlas-grid>
 </atlas-page-content>
 
 <atlas-page-footer [canSave]="true" [showNumRecords]="true"></atlas-page-footer>

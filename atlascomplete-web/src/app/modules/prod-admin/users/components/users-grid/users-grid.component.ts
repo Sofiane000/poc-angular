@@ -22,7 +22,18 @@ export class UsersGridComponent extends ComponentCanDeactivate implements OnInit
       filters: [{ field: 'FirstName', operator: 'contains', value: '' }]
     }
   };
-
+  pdfOption: any = {
+    fileName: 'Atlas-user-grid.pdf',
+    allPages: true,
+    paperSize: 'A4',
+    repeatHeaders: true,
+    landscape: true,
+    title: 'Atlas users'
+  };
+  excelOption: any = {
+    fileName: 'Atlas-user-grid.xlsx',
+    title: 'Atlas users'
+  };
   selectableSettings: any = {
     enabled: true,
     mode: 'single',
