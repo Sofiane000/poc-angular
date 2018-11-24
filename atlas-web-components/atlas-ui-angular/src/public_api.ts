@@ -25,9 +25,17 @@ export * from './lib/layout/atlas-page-layout/atlas-page-header/atlas-page-heade
 export * from './lib/layout/atlas-page-layout/atlas-page-header/components/atlas-page-header.component';
 export * from './lib/layout/atlas-page-layout/atlas-page-content/atlas-page-content.module';
 export * from './lib/layout/atlas-page-layout/atlas-page-content/components/atlas-page-content.component';
-export * from './lib/layout/atlas-tab-layout/atlas-tab-layout.module';
-export * from './lib/layout/atlas-tab-layout/components/atlas-tab-layout.component';
-export * from './lib/layout/atlas-dialog-layout/atlas-dialog-layout.module';
-export * from './lib/layout/atlas-dialog-layout/components/atlas-dialog-layout.component';
 export * from './lib/layout/atlas-page-layout/atlas-page-footer/atlas-page-footer.module';
 export * from './lib/layout/atlas-page-layout/atlas-page-footer/components/atlas-page-footer.component';
+
+export * from './lib/layout/atlas-tab-layout/atlas-tab-layout.module';
+export * from './lib/layout/atlas-tab-layout/components/atlas-tab-layout.component';
+
+export * from './lib/layout/atlas-dialog-layout/atlas-dialog-footer/atlas-dialog-footer.module';
+export * from './lib/layout/atlas-dialog-layout/atlas-dialog-footer/components/atlas-dialog-footer.component';
+
+export * from './lib/layout/atlas-dialog-layout/atlas-dialog-header/atlas-dialog-header.module';
+export * from './lib/layout/atlas-dialog-layout/atlas-dialog-header/components/atlas-dialog-header.component';
+
+export * from './lib/layout/atlas-dialog-layout/atlas-dialog-content/atlas-dialog-content.module';
+export * from './lib/layout/atlas-dialog-layout/atlas-dialog-content/components/atlas-dialog-content.component';

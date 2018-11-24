@@ -1,10 +1,11 @@
-import { Component, OnInit, ViewChild, ViewContainerRef, HostListener } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { IColumnSetting, AtlasDialogService } from 'atlas-ui-angular';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { PeopleService } from '../../services/people.service';
-import { UsersDialogFormComponent } from '../users-dialog/users-dialog.component';
-import { ComponentCanDeactivate } from 'src/app/modules/shared/components/component-can-deactivate';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { UsersDeleteDialogComponent } from '../users-dialog/users-delete-dialog.component';
+import { AuthenticationService } from 'src/app/modules/auth/services/authentication.service';
 const saveAction = { text: 'Save', primary: true };
 const cancelAction = { text: 'Cancel' };
 @Component({
@@ -12,8 +13,7 @@ const cancelAction = { text: 'Cancel' };
   templateUrl: './users-grid.component.html',
   styleUrls: ['./users-grid.component.css']
 })
-export class UsersGridComponent extends ComponentCanDeactivate implements OnInit {
-  isDialogClosed = true;
+export class UsersGridComponent implements OnInit {
   gridState: any = {
     skip: 0,
     take: 5,
@@ -50,9 +50,13 @@ export class UsersGridComponent extends ComponentCanDeactivate implements OnInit
   selectBy = 'cf_LoginID';
   @ViewChild('container', { read: ViewContainerRef })
   public containerRef: ViewContainerRef;
-  constructor(private userService: UserService, private peopleService: PeopleService, private atlasDialogService: AtlasDialogService,
-    private router: Router) {
-    super();
+  dialogRef: any;
+  constructor(private authService: AuthenticationService,
+    private userService: UserService,
+    private peopleService: PeopleService,
+    private atlasDialogService: AtlasDialogService,
+    private router: Router, private dialog: MatDialog,
+    private route: ActivatedRoute) {
     this.peopleServiceChild = peopleService;
     this.userServiceChild = userService;
   }
@@ -123,54 +127,65 @@ export class UsersGridComponent extends ComponentCanDeactivate implements OnInit
     // this.router.navigate(['/grid/details']);
   }
   showEditDialog(dataItem) {
-    this.isDialogClosed = false;
     const isNew = dataItem ? false : true;
-    const dialogRef = this.atlasDialogService.open({
-      appendTo: this.containerRef,
-      title: !dataItem ? 'Add new user' : 'Edit user',
-      content: UsersDialogFormComponent,
-      actions: [
-        cancelAction,
-        saveAction
-      ],
-      width: 450,
-      height: 450
-    });
-    const editForm = dialogRef.content.instance;
-    editForm.isNew = isNew;
-    editForm.model = isNew ? {} : dataItem;
-    dialogRef.result.subscribe((dialogResult: any) => {
-      if (dialogResult.text && dialogResult.text.toLowerCase() === 'save') {
-        this.selectedKeys = [];
-      }
-      this.isDialogClosed = true;
-    });
+    this.userService.selectedUser = dataItem;
+    this.authService.isRefreshed = true;
+    this.router.navigate(['administration/users/action/' + (isNew ? 'add' : 'edit')]);
+    // const dialogRef = this.atlasDialogService.open({
+    //   appendTo: this.containerRef,
+    //   title: !dataItem ? 'Add new user' : 'Edit user',
+    //   content: UsersDialogFormComponent,
+    //   actions: [
+    //     cancelAction,
+    //     saveAction
+    //   ],
+    //   width: 450,
+    //   height: 450
+    // });
+    // const editForm = dialogRef.content.instance;
+    // editForm.isNew = isNew;
+    // editForm.model = isNew ? {} : dataItem;
+    // dialogRef.beforeClose().subscribe(reponse => {
+    //   this.router.navigate([{ outlets: { modal: null } }], { relativeTo: this.route });
+    // });
+    // dialogRef.afterClosed().subscribe((dialogResult: any) => {
+    //   this.selectedKeys = [];
+    //   this.isDialogClosed = true;
+
+    // });
   }
   removeHandler(dataItem) {
-    this.isDialogClosed = false;
-    const dialog = this.atlasDialogService.open({
-      appendTo: this.containerRef,
-      title: 'Please confirm',
-      content: 'Are you sure?',
-      actions: [
-        { text: 'No' },
-        { text: 'Yes', primary: true }
-      ],
-      width: 450,
-      height: 200,
-      minWidth: 250
-    });
+    // const dialog = this.atlasDialogService.open({
+    //   appendTo: this.containerRef,
+    //   title: 'Please confirm',
+    //   content: 'Are you sure?',
+    //   actions: [
+    //     { text: 'No' },
+    //     { text: 'Yes', primary: true }
+    //   ],
+    //   width: 450,
+    //   height: 200,
+    //   minWidth: 250
+    // });
 
-    dialog.result.subscribe((result: any) => {
-      if (result.text && result.text.toLowerCase() === 'yes') {
+    // dialog.result.subscribe((result: any) => {
+    //   if (result.text && result.text.toLowerCase() === 'yes') {
+    //     // delete row
+    //   } else {
+    //     this.selectedKeys = [];
+    //   }
+    // });
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.width = '500px';
+    dialogConfig.closeOnNavigation = true;
+    const dialogRef = this.dialog.open(UsersDeleteDialogComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe((result: any) => {
+      if (result && result.toLowerCase() === 'save') {
         // delete row
-      } else {
-        this.selectedKeys = [];
       }
-      this.isDialogClosed = true;
+      this.selectedKeys = [];
+
     });
-  }
-  canDeactivate() {
-    return this.isDialogClosed;
   }
 }

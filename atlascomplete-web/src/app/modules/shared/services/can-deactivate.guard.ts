@@ -14,7 +14,12 @@ export class CanDeactivateGuard implements CanDeactivate<ComponentCanDeactivate>
             const currentUrlTree = this.route.createUrlTree([], currentRoute);
             const currentUrl = currentUrlTree.toString();
             this.location.go(currentUrl);
-            return confirm('You have unsaved changes! If you leave, your changes will be lost.');
+            if (confirm('You have unsaved changes! If you leave, your changes will be lost.')) {
+                (<any>component).dialogRef.close();
+                return true;
+            } else {
+                return false;
+            }
         } else {
             return true;
         }

@@ -3,7 +3,7 @@ import { AtlasGridService } from 'atlas-ui-angular';
 
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { DataAccessFactory, DataAccessService } from "atlas-web-services";
+import { DataAccessFactory, DataAccessService } from 'atlas-web-services';
 
 @Injectable()
 export class UserService extends AtlasGridService {

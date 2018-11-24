@@ -5,6 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable()
 export class AuthenticationService {
     isAuthorized: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+    isRefreshed: boolean;
     constructor(private router: Router) { }
 
     login() {
