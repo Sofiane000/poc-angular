@@ -5,7 +5,7 @@ import { UserService } from '../../../users/services/user.service';
 @Component({
   selector: 'app-button-example',
   templateUrl: './button-example.component.html',
-  styleUrls: ['./button-example.component.css'],
+  styleUrls: ['./button-example.component.scss'],
   providers: [UserService]
 })
 export class ButtonExampleComponent implements OnInit {

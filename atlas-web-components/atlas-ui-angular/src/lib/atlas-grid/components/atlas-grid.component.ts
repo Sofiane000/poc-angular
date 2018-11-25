@@ -4,14 +4,13 @@ import { State, process, GroupDescriptor } from '@progress/kendo-data-query';
 import { DataStateChangeEvent, GridDataResult } from '@progress/kendo-angular-grid';
 import { AtlasGridService } from '../services/atlas-grid.service';
 import { Subscription } from 'rxjs';
-import { DialogService, DialogRef, DialogCloseResult } from '@progress/kendo-angular-dialog';
 import { AtlasDialogService } from '../../atlas-dialog/services/atlas-dialog.service';
 import { ExcelExportData } from '@progress/kendo-angular-excel-export';
 
 @Component({
   selector: 'atlas-grid',
   templateUrl: './atlas-grid.component.html',
-  styleUrls: ['./atlas-grid.component.css'],
+  styleUrls: ['./atlas-grid.component.scss'],
   providers: [AtlasDialogService]
 })
 export class AtlasGridComponent implements OnInit, OnDestroy {

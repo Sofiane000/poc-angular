@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "theme.scss";
 
 html,
 body {
@@ -38,4 +39,8 @@ body {
   position: absolute;
   left: 12px;
   top: 15px;
+}
+
+.button-header a.active {
+  background-color: #07a3b1;
 }

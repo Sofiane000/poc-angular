@@ -11,7 +11,7 @@ const cancelAction = { text: 'Cancel' };
 @Component({
   selector: 'app-users-grid',
   templateUrl: './users-grid.component.html',
-  styleUrls: ['./users-grid.component.css']
+  styleUrls: ['./users-grid.component.scss']
 })
 export class UsersGridComponent implements OnInit {
   gridState: any = {

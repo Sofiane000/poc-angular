@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'atlas-header',
     templateUrl: './atlas-header.component.html',
-    styleUrls: ['./atlas-header.component.css']
+    styleUrls: ['./atlas-header.component.scss']
 })
 export class AtlasHeaderComponent {
     selectedTitle: string;

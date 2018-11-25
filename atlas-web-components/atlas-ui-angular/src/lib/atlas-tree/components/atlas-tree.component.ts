@@ -6,7 +6,7 @@ import { TreeViewComponent, ItemLookup } from '@progress/kendo-angular-treeview'
 @Component({
     selector: 'atlas-tree',
     templateUrl: './atlas-tree.component.html',
-    styleUrls: ['./atlas-tree.component.css'],
+    styleUrls: ['./atlas-tree.component.scss'],
 })
 export class AtlasTreeComponent implements OnInit {
     expandedKeys: any[] = ['0'];

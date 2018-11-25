@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'atlas-button',
   templateUrl: './atlas-button.component.html',
-  styleUrls: ['./atlas-button.component.css']
+  styleUrls: ['./atlas-button.component.scss']
 })
 export class AtlasButtonComponent implements OnInit {
   @Input() text = 'Button';

@@ -1,10 +1,9 @@
-
 import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 @Component({
     selector: 'atlas-sidebar',
     templateUrl: './atlas-sidebar.component.html',
-    styleUrls: ['./atlas-sidebar.component.css'],
+    styleUrls: ['./atlas-sidebar.component.scss'],
     animations: [
         // Each unique animation requires its own trigger. The first argument of the trigger function is the name
         trigger('rotatedState', [
@@ -14,7 +13,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
                 'transform-origin': 'left top',
                 'position': 'absolute',
                 top: '0',
-                left: '82%',
+                left: '87%',
                 'white-space': 'nowrap',
                 width: '630px'
             }))

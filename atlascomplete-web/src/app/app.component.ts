@@ -10,7 +10,7 @@ import { MenuService } from './menu.service';
 @Component({
   selector: 'app-atlas',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
   isMiniMode: boolean;

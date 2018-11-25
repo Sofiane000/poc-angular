@@ -1,4 +1,4 @@
 <mat-dialog-actions>
-  <button class="mat-raised-button" (click)="onClose('close')">Cancel</button>
-  <button class="mat-raised-button" (click)="onClose('save')" [disabled]="isSaveDisabled">Save</button>
+  <button kendoButton title="Cancel" [icon]="'undo'" (click)="onClose('close')" [primary]="true">Cancel</button>
+  <button kendoButton title="Save" [icon]="'save'" [disabled]="isSaveDisabled" (click)="onClose('save')" [primary]="true">Save</button>
 </mat-dialog-actions>

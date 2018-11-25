@@ -5,7 +5,7 @@ import { PeopleService } from '../../services/people.service';
 @Component({
   selector: 'app-users-detail-properties',
   templateUrl: './users-detail-properties.component.html',
-  styleUrls: ['./users-detail-properties.component.css']
+  styleUrls: ['./users-detail-properties.component.scss']
 })
 export class UsersDetailPropertiesComponent implements OnInit {
   userDetail: any;

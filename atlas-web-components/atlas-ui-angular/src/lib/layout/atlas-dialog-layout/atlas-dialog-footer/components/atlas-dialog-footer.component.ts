@@ -2,7 +2,7 @@ import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 @Component({
     selector: 'atlas-dialog-footer',
     templateUrl: './atlas-dialog-footer.component.html',
-    styleUrls: ['./atlas-dialog-footer.component.css']
+    styleUrls: ['./atlas-dialog-footer.component.scss']
 })
 export class AtlasDialogFooterComponent {
     @Input() isSaveDisabled: any;

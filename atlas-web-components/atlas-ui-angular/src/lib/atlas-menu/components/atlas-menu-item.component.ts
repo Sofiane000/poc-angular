@@ -6,7 +6,7 @@ import { IMenuItem } from '../models/menu-item';
 @Component({
     selector: 'atlas-menu-item',
     templateUrl: './atlas-menu-item.component.html',
-    styleUrls: ['./atlas-menu-item.component.css'],
+    styleUrls: ['./atlas-menu-item.component.scss'],
     animations: [
         trigger('indicatorRotate', [
             state('collapsed', style({ transform: 'rotate(0deg)' })),

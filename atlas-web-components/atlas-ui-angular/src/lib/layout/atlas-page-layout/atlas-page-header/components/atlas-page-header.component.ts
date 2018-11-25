@@ -3,7 +3,7 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
 @Component({
     selector: 'atlas-page-header',
     templateUrl: './atlas-page-header.component.html',
-    styleUrls: ['./atlas-page-header.component.css']
+    styleUrls: ['./atlas-page-header.component.scss']
 })
 export class AtlasPageHeaderComponent {
     @Input()

@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { AtlasDialogService, AtlasTreeComponent } from 'atlas-ui-angular';
-import { TREE_DATA } from '../../models/tree-data';
 import { TenantsDialogFormComponent } from '../tenants-dialog/tenants-dialog.component';
 import { TenantsService } from '../../services/tenants.service';
 const saveAction = { text: 'Save', primary: true };
@@ -8,7 +7,7 @@ const cancelAction = { text: 'Cancel' };
 @Component({
   selector: 'app-tenants-tree',
   templateUrl: './tenants-tree.component.html',
-  styleUrls: ['./tenants-tree.component.css']
+  styleUrls: ['./tenants-tree.component.scss']
 })
 export class TenantsTreeComponent implements OnInit {
   treeData: any[] = [];

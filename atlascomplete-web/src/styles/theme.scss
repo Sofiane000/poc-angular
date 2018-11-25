@@ -1,0 +1,38 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+$atlas-app-primary: mat-palette($mat-cyan, 800);
+$atlas-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$atlas-app-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$atlas-app-theme: mat-light-theme($atlas-app-primary, $atlas-app-accent, $atlas-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($atlas-app-theme);
+@import "variables.scss";
+@import "~@progress/kendo-theme-material/scss/grid";
+@import "~@progress/kendo-theme-material/scss/button";
+@import "~@progress/kendo-theme-material/scss/dialog";
+@import "~@progress/kendo-theme-material/scss/treeview";
+@import "~@progress/kendo-theme-material/scss/menu";
+@import "~@progress/kendo-theme-material/scss/ripple";
+@import "~@progress/kendo-theme-material/scss/input";
+
+
+// Kendo Buttons
+.k-primary{
+    height: 32px;
+    min-width: 64px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font: "Museo"  300  14px #FFFFFF !important;
+}
+
+.k-button{
+    margin: 10px;
+}

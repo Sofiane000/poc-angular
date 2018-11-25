@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 @Component({
     selector: 'atlas-page-footer',
     templateUrl: './atlas-page-footer.component.html',
-    styleUrls: ['./atlas-page-footer.component.css']
+    styleUrls: ['./atlas-page-footer.component.scss']
 })
 export class AtlasPageFooterComponent {
     @Input() canSave = false;

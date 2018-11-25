@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'atlas-tab-layout',
     templateUrl: './atlas-tab-layout.component.html',
-    styleUrls: ['./atlas-tab-layout.component.css']
+    styleUrls: ['./atlas-tab-layout.component.scss']
 })
 export class AtlasTabLayoutComponent implements OnInit {
     @Input() navLinks: INavLink[];

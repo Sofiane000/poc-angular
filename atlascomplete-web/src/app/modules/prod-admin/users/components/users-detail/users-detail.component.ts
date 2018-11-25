@@ -6,7 +6,7 @@ import { INavLink } from 'atlas-ui-angular/lib/layout/atlas-tab-layout/models/na
 @Component({
   selector: 'app-users-detail',
   templateUrl: './users-detail.component.html',
-  styleUrls: ['users-detail.component.css']
+  styleUrls: ['users-detail.component.scss']
 })
 export class UsersDetailComponent implements OnInit {
   userDetail: any;
