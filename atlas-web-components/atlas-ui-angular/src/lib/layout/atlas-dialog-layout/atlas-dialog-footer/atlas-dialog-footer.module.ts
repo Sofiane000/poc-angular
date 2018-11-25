@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatDialogModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { MatDialogModule, MatButtonModule } from '@angular/material';
 import { AtlasDialogFooterComponent } from './components/atlas-dialog-footer.component';
+import { ButtonModule } from '@progress/kendo-angular-buttons';
 
 @NgModule({
     declarations: [
@@ -9,8 +10,8 @@ import { AtlasDialogFooterComponent } from './components/atlas-dialog-footer.com
     ],
     imports: [
         CommonModule,
+        ButtonModule,
         MatDialogModule,
-        MatIconModule,
         MatButtonModule
     ],
     exports: [

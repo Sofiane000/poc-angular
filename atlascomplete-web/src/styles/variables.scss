@@ -1,2 +1,13 @@
-$primary: #1F93A1;
+@import '~@angular/material/theming';
+
+$atlas-app-primary: mat-palette($mat-cyan, 800);
+$atlas-app-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$atlas-app-warn: mat-palette($mat-red);
+
+$primary: mat-color($atlas-app-primary);
 $primary-contrast:#ffffff;
+$atlas-header-bg-color:white;
+$atlas-icon:darkcyan;
+$atlas-icon-active:#e1e4e4;

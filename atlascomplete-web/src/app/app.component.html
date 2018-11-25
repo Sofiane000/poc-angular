@@ -1,8 +1,9 @@
 <!-- Header -->
-<atlas-header #header *ngIf="isAuthorized" (toggleMenu)="toggleMenu()" (toggleSideBar)="toggleSidebar()" [isSideBarOpened]="isSideBarOpened" (setHeaderTitle)="setHeaderTitle()"></atlas-header>
+<atlas-header #header *ngIf="isAuthorized" (toggleMenu)="toggleMenu()" (toggleSideBar)="toggleSidebar()"
+  [isSideBarOpened]="isSideBarOpened" (setHeaderTitle)="setHeaderTitle()"></atlas-header>
 <mat-sidenav-container class="sidenav-container" autosize>
   <mat-sidenav *ngIf="isAuthorized" #menu class="sidenav" fixedInViewport="true" [attr.role]="(isHandset | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+    [mode]="(isHandset | async) ? 'over' : 'side'">
     <!-- Menu -->
     <atlas-menu [menuItems]="menuItems"></atlas-menu>
   </mat-sidenav>
@@ -10,8 +11,9 @@
     <!-- Main content -->
     <atlas-content></atlas-content>
   </mat-sidenav-content>
-  <mat-sidenav *ngIf="isAuthorized" #sidebar class="sidenav right-sidebar" [class.sideBarMini]="isMiniMode" [(opened)]="isSideBarOpened"
-    mode="side" position="end">
+  <mat-sidenav *ngIf="isAuthorized" [mode]="(isHandset | async) ? 'over' : 'side'" [attr.role]="(isHandset | async) ? 'dialog' : 'navigation'"
+    #sidebar class="sidenav right-sidebar" [class.sideBarMini]="isMiniMode" [(opened)]="isSideBarOpened" mode="side"
+    position="end">
     <!-- Side bar with different routes -->
     <atlas-sidebar #atlasSidebar (toggleSideBar)="toggleSidebar()" [headerName]="sideBarTitle" (toggleMiniMode)="isMiniMode=!isMiniMode"></atlas-sidebar>
   </mat-sidenav>

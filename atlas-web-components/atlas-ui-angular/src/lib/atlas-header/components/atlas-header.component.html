@@ -1,40 +1,55 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="atlas-header">
   <mat-toolbar-row>
     <div class="atlas-toolbar">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="toggleNav()">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        <mat-icon fontSet="fontawesome" fontIcon="fa-bars" aria-label="Side nav toggle icon"></mat-icon>
       </button>
       <a aria-label="Atlas" title="Atlas" mat-button routerlink="/" tabindex="0" aria-disabled="false"><span class="mat-button-wrapper"><img
-            alt="Atlas" class="atlas-logo" src="../../../favicon.ico"><span>Atlas</span></span>
+            alt="Atlas" class="atlas-logo" src="../../../assets/images/MHP.png"></span>
       </a>
+      <button type="button" aria-label="Action" mat-icon-button>
+        <mat-icon fontSet="fontawesome" fontIcon="fa-undo"></mat-icon>
+      </button>
       <span class="menu-spacer"></span>
       <div class="button-header">
-        <a [class.active]="selectedOption ==='tasks'" (click)="onClickRoutes('Tasks')"
-          mat-icon-button title="Tasks">
-          <mat-icon aria-label="Tasks">archive</mat-icon>
-        </a>
-        <a [class.active]="selectedOption ==='document'"
-          mat-icon-button title="Document Viewer" (click)="onClickRoutes('Document')">
-          <mat-icon aria-label="Document Viewer">folder</mat-icon>
-        </a>
-        <a mat-icon-button title="Notifications" routerLinkActive="active">
-          <mat-icon aria-label="Notifications">notifications</mat-icon>
-        </a>
-        <a mat-icon-button title="User Details" [matMenuTriggerFor]="menu">
-          <mat-icon aria-label="User Details">person</mat-icon>
-        </a>
+        <div class="button-group-1">
+          <a [class.active]="selectedOption ==='tasks'" (click)="onClickRoutes('Tasks')" mat-icon-button title="Tasks">
+            <mat-icon aria-label="Tasks" fontSet="fontawesome" fontIcon="fa-inbox"></mat-icon>
+          </a>
+          <a [class.active]="selectedOption ==='document'" mat-icon-button title="Document Viewer" (click)="onClickRoutes('Document')">
+            <mat-icon aria-label="Document Viewer" fontSet="fontawesome" fontIcon="fa-file-o"></mat-icon>
+          </a>
+          <a mat-icon-button title="Notifications" routerLinkActive="active">
+            <mat-icon aria-label="Notifications" fontSet="fontawesome" fontIcon="fa-envelope"></mat-icon>
+          </a>
+          <a mat-icon-button title="Database" [disabled]=true>
+            <mat-icon aria-label="Database" fontSet="fontawesome" fontIcon="fa-database"></mat-icon>
+          </a>
+          <a mat-icon-button title="User Settings" [matMenuTriggerFor]="menu">
+            <mat-icon aria-label="User Settings" fontSet="fontawesome" fontIcon="fa-user-circle"></mat-icon>
+          </a>
+        </div>
+        <div class="button-group-2">
+          <a mat-icon-button title="Help">
+            <mat-icon aria-label="Help" fontSet="fontawesome" fontIcon="fa-question-circle"></mat-icon>
+          </a>
+          <a mat-icon-button title="Copy Rights">
+            <mat-icon aria-label="Copy Rights" fontSet="fontawesome" fontIcon="fa-copyright"></mat-icon>
+          </a>
+        </div>
+
         <mat-menu #menu="matMenu" [overlapTrigger]="false">
           <button mat-menu-item>
-            <mat-icon>home</mat-icon>
-            <span>Home</span>
+            <mat-icon fontSet="fontawesome" fontIcon="fa-id-card"></mat-icon>
+            <span>General Settings</span>
           </button>
           <button mat-menu-item>
-            <mat-icon>people_outline</mat-icon>
-            <span>Connecting</span>
+            <mat-icon fontSet="fontawesome" fontIcon="fa-shield"></mat-icon>
+            <span>Security Settings</span>
           </button>
           <button mat-menu-item>
-            <mat-icon>exit_to_app</mat-icon>
-            <span>Logout</span>
+            <mat-icon fontSet="fontawesome" fontIcon="fa-sign-out"></mat-icon>
+            <span>Log Out</span>
           </button>
         </mat-menu>
       </div>
