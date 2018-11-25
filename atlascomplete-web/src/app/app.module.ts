@@ -12,6 +12,7 @@ import { SharedModule } from './modules/shared/shared.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { DataAccessFactory } from 'atlas-web-services';
 import { environment } from '../environments/environment';
+import { MatIconRegistry } from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent
@@ -35,7 +36,8 @@ import { environment } from '../environments/environment';
 })
 export class AppModule {
   // initialize data-access base URL
-  constructor(private dataAccessFactory: DataAccessFactory) {
+  constructor(private dataAccessFactory: DataAccessFactory, matIconRegistry: MatIconRegistry) {
+    matIconRegistry.registerFontClassAlias('fontawesome', 'fa');
     this.dataAccessFactory.baseUrl = environment.baseUrl;
   }
 }

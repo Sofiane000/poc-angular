@@ -8,11 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-     "packagr": "ng-packagr -p ./projects/atlas-web-services/ng-package.json",
+    "packagr": "ng-packagr -p ./projects/atlas-web-services/ng-package.json",
     "build_lib": "rimraf -rf dist && ng build atlas-web-services",
-
     "npm_pack": "cd dist/atlas-web-services && npm pack",
-
     "package": "npm run build_lib && npm run npm_pack"
   },
   "private": true,
