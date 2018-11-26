@@ -62,12 +62,13 @@ body {
   background-color: $atlas-header-bg-color;
 }
 
-.button-group-1 {
+.fa {
   color: $atlas-icon;
+  font-size: 16px;
 }
 
-.button-group-2,
-.fa-bars,
+.button-group-2>a>.mat-button-wrapper>.fa,
+.button-group-2>a>.mat-button-wrapper>.fa,.fa-bars,
 .fa-undo {
   color: saddlebrown;
 }

@@ -19,7 +19,8 @@ $atlas-app-theme: mat-light-theme($atlas-app-primary, $atlas-app-accent, $atlas-
 @import "~@progress/kendo-theme-material/scss/grid";
 @import "~@progress/kendo-theme-material/scss/button";
 @import "~@progress/kendo-theme-material/scss/dialog";
+@import "~@progress/kendo-theme-material/scss/toolbar";
+@import "~@progress/kendo-theme-material/scss/dropdownlist";
 @import "~@progress/kendo-theme-material/scss/treeview";
-@import "~@progress/kendo-theme-material/scss/menu";
 @import "~@progress/kendo-theme-material/scss/ripple";
 @import "~@progress/kendo-theme-material/scss/input";

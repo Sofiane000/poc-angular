@@ -43,16 +43,16 @@ export class AtlasMenuItemComponent implements OnInit {
         let iconName = '';
         switch (type) {
             case 'Administration':
-                iconName = 'k-icon k-i-globe-outline';
+                iconName = 'fa-globe';
                 break;
             case 'Finance Services':
-                iconName = 'k-icon k-i-dollar k-i-currency';
+                iconName = 'fa-money';
                 break;
             case 'Members':
-                iconName = 'k-icon k-i-user';
+                iconName = 'fa-user';
                 break;
             default:
-                iconName = 'k-icon k-i-file-txt k-i-txt';
+                iconName = 'fa-file';
         }
         return iconName;
     }

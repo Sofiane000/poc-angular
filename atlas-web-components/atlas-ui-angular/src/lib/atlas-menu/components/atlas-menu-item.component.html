@@ -5,7 +5,7 @@
       expand_more
     </mat-icon>
   </span>
-  <span class="routeIcon" [ngClass]="getIconClass(item.MenuName)"></span>
+  <span><mat-icon class="routeIcon" fontSet="fontawesome" [fontIcon]="getIconClass(item.MenuName)"></mat-icon></span>
   {{item.MenuName}}
 </a>
 <div *ngIf="expanded">
