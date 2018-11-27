@@ -1,9 +1,9 @@
 <!-- Header -->
 <atlas-header #header *ngIf="isAuthorized" (toggleMenu)="toggleMenu()" (toggleSideBar)="toggleSidebar()"
-  [isSideBarOpened]="isSideBarOpened" (setHeaderTitle)="setHeaderTitle()"></atlas-header>
+  [isSideBarOpened]="isSideBarOpened" (setHeaderTitle)="setHeaderTitle()" (logout)="logoutHandler()"></atlas-header>
 <mat-sidenav-container class="sidenav-container" autosize>
   <mat-sidenav *ngIf="isAuthorized" #menu class="sidenav" fixedInViewport="true" [attr.role]="(isHandset | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset | async) ? 'over' : 'side'">
+    [mode]="(isHandset | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
     <!-- Menu -->
     <atlas-menu [menuItems]="menuItems"></atlas-menu>
   </mat-sidenav>

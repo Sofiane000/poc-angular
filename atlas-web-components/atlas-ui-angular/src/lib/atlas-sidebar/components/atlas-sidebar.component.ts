@@ -40,9 +40,9 @@ export class AtlasSideBarComponent {
     }
     getIconClass() {
         if (this.headerName === 'Tasks') {
-            return 'archive';
+            return 'fa-inbox';
         } else {
-            return 'folder';
+            return 'fa-files-o';
         }
     }
 }

@@ -1,4 +1,3 @@
-
 import { Component, Output, EventEmitter, HostBinding, Input } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
@@ -13,7 +12,7 @@ export class AtlasHeaderComponent {
     @Output() toggleMenu: EventEmitter<any> = new EventEmitter<any>();
     @Output() toggleSideBar: EventEmitter<any> = new EventEmitter<any>();
     @Output() setHeaderTitle: EventEmitter<any> = new EventEmitter<any>();
-
+    @Output() logout: EventEmitter<any> = new EventEmitter<any>();
     @HostBinding('class.mat-elevation-z6') someField = true;
     constructor(private router: Router) {
 
@@ -36,5 +35,8 @@ export class AtlasHeaderComponent {
             this.selectedOption = option.toLowerCase();
             this.router.navigate([{ outlets: { sidebar: option.toLowerCase() } }]);
         }
+    }
+    onLogout() {
+        this.logout.emit();
     }
 }

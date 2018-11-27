@@ -71,5 +71,10 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.isAuthorizedSubscription.unsubscribe();
   }
-
+  logoutHandler() {
+    this.authenticationService.isAuthorized.next(false);
+    this.addClass = false;
+    sessionStorage.clear();
+    this.router.navigate(['login']);
+  }
 }

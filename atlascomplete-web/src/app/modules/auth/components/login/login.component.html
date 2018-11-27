@@ -1,55 +1,45 @@
-<mat-grid-list cols="3">
-  <mat-grid-tile></mat-grid-tile>
+<mat-card class="login-box">
+  <mat-toolbar class="login-header" color="primary">
+    <span>
+      LOGIN
+    </span>
+  </mat-toolbar>
+  <img src="../../../../../assets/images/MHP.png" class="card-img-top" />
 
-  <!-- Writing markup for login starts -->
-  <mat-grid-tile class='login-element'>
-    <div class="login-container">
-
-      <!-- Template Header starts -->
-      <div class="login-box-header" style="text-align: center">
-        <h2>Atlas</h2>
-      </div>
-      <!-- Template Header ends -->
-
-      <!-- Template Body starts -->
-      <div class="login-box-body" style="width: 420px">
-
-        <!-- Markup for getting Username starts -->
-        <mat-grid-list cols="10" rowHeight="75px">
-          <mat-grid-tile [rowspan]="1" class="login-icon">
-            <mat-icon>lock</mat-icon>
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="8">
-            <mat-form-field class="login-input">
-              <input matInput placeholder="Username" [(ngModel)]="username" type="username" name="username" required>
-            </mat-form-field>
-          </mat-grid-tile>
-        </mat-grid-list>
-        <!-- Markup for getting Username ends -->
-
-        <!-- Markup for getting Password starts -->
-        <mat-grid-list cols="10" rowHeight="100px">
-          <mat-grid-tile [rowspan]="1" class="login-icon">
-            <mat-icon>remove_red_eye</mat-icon>
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="8">
-            <mat-form-field class="login-input">
-              <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
-            </mat-form-field>
-          </mat-grid-tile>
-        </mat-grid-list>
-        <!-- Markup for getting Password ends -->
-
-        <button mat-raised-button class="login-button" (click)="login()">
-          <mat-icon>input</mat-icon> Login
-        </button>
-
-      </div>
-      <!-- Template Body ends -->
-
+  <mat-card-content>
+    <div class="body-container">
+      <mat-form-field class="login-input">
+        <input matInput placeholder="Username" [(ngModel)]="username" type="username" name="username" required>
+      </mat-form-field>
+      <mat-form-field class="login-input">
+        <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
+      </mat-form-field>
     </div>
-  </mat-grid-tile>
-  <!-- Writing markup for login ends -->
-  <mat-grid-tile></mat-grid-tile>
+    <mat-card-footer>
+      <button mat-raised-button color="primary" class="login-button" (click)="login()">
+        LOGIN
+      </button>
+      <a aria-label="Forgot Password" class="forgot-link" title="Forgot Password" mat-button routerlink="/" tabindex="0"
+        aria-disabled="false">
+        Forgot Password?
+      </a>
+      <a aria-label="Need Help" class="need-help-link" title="Need Help" mat-button routerlink="/" tabindex="0"
+        aria-disabled="false">
+        Need Help?<mat-icon fontSet="fontawesome" fontIcon="fa-info-circle"></mat-icon>
+      </a>
+    </mat-card-footer>
 
-</mat-grid-list>
+  </mat-card-content>
+</mat-card>
+<footer class="login-footer">
+  <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+          <a rel="nofollow">Terms Of Use</a> |
+          <a rel="nofollow">Privacy Policy</a> |
+          <a rel="nofollow">Fraud, Waste & Abuse</a>
+        </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+      <p class="h6">Copyright 2018 - Comprehensive Healthcare Management, Inc.</p>
+    </div>
+  </div>
+</footer>
