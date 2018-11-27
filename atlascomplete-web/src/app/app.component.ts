@@ -63,7 +63,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.sidebar.toggle();
   }
   setHeaderTitle() {
-    this.sideBarTitle = this.header.selectedTitle;
+    this.sideBarTitle = this.header.selectedTitle === 'Document' ? 'Document Viewer' : this.header.selectedTitle;
   }
   toggleMenu() {
     this.menu.toggle();

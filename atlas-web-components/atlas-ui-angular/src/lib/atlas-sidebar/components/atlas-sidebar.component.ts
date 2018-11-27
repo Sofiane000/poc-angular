@@ -17,6 +17,20 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
                 'white-space': 'nowrap',
                 width: '630px'
             }))
+        ]),
+        trigger('iconRotate', [
+            state('default', style({ transform: 'rotate(0deg)', })),
+            state('rotated', style({
+                transform: 'rotate(-90deg)',
+            }))
+        ]),
+        trigger('arrowRotate', [
+            state('default', style({
+                transform: 'rotate(0deg)'
+            })),
+            state('rotated', style({
+                transform: 'rotate(90deg)',
+            }))
         ])
     ]
 })
