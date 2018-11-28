@@ -26,14 +26,18 @@ export class TenantsTreeComponent implements OnInit {
     { text: 'Add Child', icon: 'plus' }
   ];
   treeItems: any[] = [];
-  constructor(private dialogService: AtlasDialogService, private tenantService: TenantsService) { }
+  constructor(private dialogService: AtlasDialogService, private tenantService: TenantsService) {
+  }
 
 
   ngOnInit(): void {
-    this.treeData = this.tenantService.getTenants();
+    this.tenantService.getTenants().subscribe(treeData => {
+      this.treeData = treeData;
+    });
+
   }
   refresh() {
-    this.treeView.data = this.tenantService.getTenants();
+    //this.tenantService.getTenants().subscribe(this.treeView.data => this.treeView.data = treeView.data);
   }
   editHandler(event) {
     this.showAddEditDialog(this.treeView.contextItem);

@@ -1,4 +1,4 @@
-export const TREE_DATA = [
+[
   {
     "TenantTaxnmySK": 6,
     "ParentTenantTaxnmySK": null,
