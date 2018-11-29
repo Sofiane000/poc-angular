@@ -7,7 +7,7 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
 })
 export class AtlasPageHeaderComponent {
     @Input()
-    backGroundColor = 'grey';
+    backGroundColor = '#1F93A1';
     @Input()
     fontSize = 'x-large';
     @Input()
@@ -15,7 +15,7 @@ export class AtlasPageHeaderComponent {
     @Input()
     title = 'Page Header';
     @Input()
-    color = 'Black';
+    color = 'white';
     @Input()
     showBackBtn = false;
     @Output()

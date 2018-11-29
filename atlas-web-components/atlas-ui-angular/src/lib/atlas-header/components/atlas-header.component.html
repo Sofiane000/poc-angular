@@ -23,7 +23,7 @@
             <mat-icon aria-label="Notifications" fontSet="fontawesome" fontIcon="fa-envelope"></mat-icon>
           </a>
           <a mat-icon-button title="Database" [disabled]=true>
-            <mat-icon aria-label="Database" fontSet="fontawesome" fontIcon="fa-database"></mat-icon>
+            <mat-icon aria-label="Database" [class.disable]="true" fontSet="fontawesome" fontIcon="fa-database"></mat-icon>
           </a>
           <a mat-icon-button title="User Settings" [matMenuTriggerFor]="menu">
             <mat-icon aria-label="User Settings" fontSet="fontawesome" fontIcon="fa-user-circle"></mat-icon>

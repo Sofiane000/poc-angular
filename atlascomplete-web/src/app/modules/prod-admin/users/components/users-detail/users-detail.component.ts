@@ -32,6 +32,10 @@ export class UsersDetailComponent implements OnInit {
       }
     ];
     // this.userDetail = Object.assign({}, this.userService.selectedUser);
+    this.route.params.subscribe(params => {
+      const loginSk = +params['id'];
+      this.userService.getUserById(loginSk).subscribe(userDetail => this.userDetail = userDetail);
+    });
   }
   goBackHandler(event) {
     this.router.navigate(['/administration/users']);

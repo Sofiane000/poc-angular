@@ -1,4 +1,4 @@
-<atlas-page-header [showBackBtn]="true" [title]="'User Details Page'" [backGroundColor]="'white'" textAlign="center"  [color]="'black'" (goBack)="goBackHandler($event)">
+<atlas-page-header [showBackBtn]="true" [title]="'User Administration'+' | ' + userDetail?.FirstName +' '+ userDetail?.LastName" (goBack)="goBackHandler($event)">
 </atlas-page-header>
 <atlas-tab-layout [navLinks]="navLinks">
 

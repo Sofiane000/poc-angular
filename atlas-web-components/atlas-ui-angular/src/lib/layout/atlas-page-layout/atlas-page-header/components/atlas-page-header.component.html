@@ -1,4 +1,13 @@
-<header [style.backgroundColor]="backGroundColor" [style.textAlign]="textAlign" [style.fontSize]="fontSize"
-  [style.color]="color">
-  <button *ngIf="showBackBtn" class="back-btn" kendoButton [iconClass]="'k-icon k-i-arrow-left'" (click)="onGoBack($event)" title="Go Back"></button>{{title}}
-</header>
+<div class="row">
+  <div class="col-md-12 no-padding">
+    <header [style.backgroundColor]="backGroundColor" [style.textAlign]="textAlign" [style.fontSize]="fontSize"
+      [style.color]="color">
+      {{title}}
+    </header>
+  </div>
+  <div class="col-md-12 no-padding go-back-div" *ngIf="showBackBtn">
+    <button class="back-btn" title="Go Back" mat-icon-button (click)="onGoBack($event)">
+      <mat-icon aria-label="Go Back button" fontSet="fontawesome" fontIcon="fa-chevron-circle-left"></mat-icon>Back
+    </button>
+  </div>
+</div>

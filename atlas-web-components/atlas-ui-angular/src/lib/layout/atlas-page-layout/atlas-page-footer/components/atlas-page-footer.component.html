@@ -3,13 +3,13 @@
 </footer>
 <div class="row" *ngIf="showNavigation">
   <div class="col-xs-12 col-sm-12 col-lg-12">
-    <button class="previous-btn" kendoButton [iconClass]="'k-icon k-i-arrow-chevron-left'" [primary]="true">Previous</button>
-    <button class="next-btn" kendoButton [iconClass]="'k-icon k-i-arrow-chevron-right'" [primary]="true">Next</button>
+    <button class="previous-btn" kendoButton [primary]="true">Previous</button>
+    <button class="next-btn" kendoButton [primary]="true">Next</button>
   </div>
 </div>
 <div class="row save-cancel" *ngIf="canSave">
   <div class="col-xs-12 col-sm-12 col-lg-12">
-    <button kendoButton [icon]="'save'" [primary]="true">Save</button>
-    <button kendoButton [icon]="'undo'" [primary]="true">Cancel</button>
+    <button kendoButton [primary]="true">Save</button>
+    <button kendoButton [primary]="true">Cancel</button>
   </div>
 </div>
