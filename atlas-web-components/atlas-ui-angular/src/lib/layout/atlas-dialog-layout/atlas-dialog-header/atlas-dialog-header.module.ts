@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatDialogModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { MatDialogModule, MatIconModule, MatButtonModule, MatToolbarModule } from '@angular/material';
 import { AtlasDialogHeaderComponent } from './components/atlas-dialog-header.component';
 
 @NgModule({
@@ -11,7 +11,8 @@ import { AtlasDialogHeaderComponent } from './components/atlas-dialog-header.com
         CommonModule,
         MatDialogModule,
         MatIconModule,
-        MatButtonModule
+        MatButtonModule,
+        MatToolbarModule
     ],
     exports: [
         AtlasDialogHeaderComponent,

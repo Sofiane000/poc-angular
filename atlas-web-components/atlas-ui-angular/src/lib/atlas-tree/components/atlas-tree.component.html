@@ -1,23 +1,33 @@
-<div class="k-header k-grid-toolbar" *ngIf="showToolbar">
-  <button kendoButton [icon]="'add'" (click)="addClicked($event)" *ngIf="isEditable"></button>
-  <button kendoButton [icon]="'edit'" [disabled]="!contextItem" (click)="editClicked()" *ngIf="isEditable"></button>
-  <button kendoButton [icon]="'close'" [disabled]="!contextItem" (click)="removeClicked()" *ngIf="isEditable"></button>
-  <div class="refresh-wrapper" *ngIf="showRefresh">
-    <button kendoButton [icon]="'refresh'" (click)="refreshClicked()"></button>
-  </div>
-  <div class="k-textbox search-wrapper" *ngIf="isFilterable">
-    <span class='k-icon k-i-search'></span>
-    <input id="searchinput" type="search" [(ngModel)]="filterValue" (keyup)="onFilterSubmit()" />
-    <span *ngIf="filterValue?.length > 0" id="searchclear" class="k-icon k-i-close" (click)="onSearchClose()"></span>
+<div class=row>
+  <div class="col-xs-12 col-md-12 no-padding">
+    <div class="k-header k-grid-toolbar tree-toolbar mat-elevation-z6" *ngIf="showToolbar">
+      <button title="Add" mat-icon-button (click)="addClicked($event)" *ngIf="isEditable">
+        <mat-icon aria-label="Add" fontSet="fontawesome" fontIcon="fa-plus"></mat-icon>
+      </button>
+      <button title="Edit" mat-icon-button [disabled]="!contextItem" (click)="editClicked()" *ngIf="isEditable">
+        <mat-icon aria-label="Edit" [class.disable]="!contextItem" fontSet="fontawesome" fontIcon="fa-pencil"></mat-icon>
+      </button>
+      <button title="Delete" mat-icon-button [disabled]="!contextItem" (click)="removeClicked()" *ngIf="isEditable">
+        <mat-icon aria-label="Delete" [class.disable]="!contextItem" fontSet="fontawesome" fontIcon="fa-trash"></mat-icon>
+      </button>
+      <button title="Refresh" mat-icon-button (click)="refreshClicked()" class="refresh-btn" *ngIf="showRefresh">
+        <mat-icon aria-label="Refresh" fontSet="fontawesome" fontIcon="fa-refresh"></mat-icon>
+      </button>
+      <div class="k-textbox search-wrapper" *ngIf="isFilterable">
+        <span class='fa fa-search'></span>
+        <input id="searchinput" type="search" [(ngModel)]="filterValue" (keyup)="onFilterSubmit()" />
+        <span *ngIf="filterValue?.length > 0" id="searchclear" class="fa fa-times" (click)="onSearchClose()"></span>
+      </div>
+    </div>
+    <kendo-treeview [nodes]="partialData" [textField]="textFields" kendoTreeViewExpandable="isTreeViewExpandable"
+      kendoTreeViewHierarchyBinding="isTreeViewHierarchyBinding" (nodeClick)="onNodeClick($event)" [childrenField]="children"
+      [hasChildren]="hasChildren" [(expandedKeys)]="expandedKeys">
+      <ng-template kendoTreeViewNodeTemplate let-dataItem>
+        <span [ngClass]="iconClass(dataItem)"></span>
+        {{dataItem[textFields]}}
+      </ng-template>
+    </kendo-treeview>
+    <kendo-contextmenu #treemenu [items]="menuItems" (select)="onAddSelect($event)">
+    </kendo-contextmenu>
   </div>
 </div>
-<kendo-treeview [nodes]="partialData" [textField]="textFields" kendoTreeViewExpandable="isTreeViewExpandable"
-  kendoTreeViewHierarchyBinding="isTreeViewHierarchyBinding" (nodeClick)="onNodeClick($event)" [childrenField]="children"
-  [hasChildren]="hasChildren" [(expandedKeys)]="expandedKeys">
-  <ng-template kendoTreeViewNodeTemplate let-dataItem>
-    <span [ngClass]="iconClass(dataItem)"></span>
-    {{dataItem[textFields]}}
-  </ng-template>
-</kendo-treeview>
-<kendo-contextmenu #treemenu [items]="menuItems" (select)="onAddSelect($event)">
-</kendo-contextmenu>

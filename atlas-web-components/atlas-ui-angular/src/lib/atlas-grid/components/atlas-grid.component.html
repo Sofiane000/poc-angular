@@ -17,7 +17,7 @@
           <button title="Delete" mat-icon-button [disabled]="selectedKeys.length == 0" (click)="removeDataItem()">
             <mat-icon aria-label="Delete" [class.disable]="selectedKeys.length == 0" fontSet="fontawesome" fontIcon="fa-trash"></mat-icon>
           </button>
-          <button title="Refresh" mat-icon-button (click)="refreshGrid()">
+          <button title="Refresh" mat-icon-button (click)="refreshGrid()" class="refresh-btn">
             <mat-icon aria-label="Refresh" fontSet="fontawesome" fontIcon="fa-refresh"></mat-icon>
           </button>
           <button title="Onboarding" mat-button [disabled]="selectedKeys.length == 0">
@@ -39,7 +39,9 @@
       </kendo-grid-column>
       <kendo-grid-command-column title="Details" width="40" *ngIf="isEditable">
         <ng-template kendoGridCellTemplate let-dataItem="dataItem">
-          <button kendoGridEditCommand [iconClass]="'k-icon k-i-arrow-right'" [title]="baseUrl + '/'+ dataItem[routeParamProperty]+routeUrl"></button>
+          <button kendoGridEditCommand [title]="baseUrl + '/'+ dataItem[routeParamProperty]+routeUrl" mat-icon-button>
+            <mat-icon aria-label="Details" fontSet="fontawesome" fontIcon="fa-arrow-circle-right"></mat-icon>
+          </button>
         </ng-template>
       </kendo-grid-command-column>
       <kendo-grid-pdf [fileName]="pdfOption?.fileName" [allPages]="pdfOption?.allPages" [paperSize]="pdfOption?.paperSize"

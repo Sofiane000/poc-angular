@@ -3,44 +3,27 @@
 </atlas-dialog-header>
 <atlas-dialog-content>
   <form novalidate [formGroup]="editForm">
-    <div class="form-group" *ngIf="!isNew">
-      <label for="UserMstrSK" class="control-label">ID</label>
-      <input type="text" class="k-textbox" formControlName="UserMstrSK" />
-    </div>
-    <div class="form-group">
-      <label for="PhNbr" class="control-label">Employee Number</label>
-      <input type="text" class="k-textbox" formControlName="PhNbr" />
-    </div>
-    <div class="form-group">
-      <label for="cf_LoginID" class="control-label">Username</label>
-      <input type="text" class="k-textbox" formControlName="cf_LoginID" />
-    </div>
-
-    <div class="form-group">
-      <label for="FirstName" class="control-label">First Name</label>
-      <input type="text" class="k-textbox" formControlName="FirstName" />
-      <div class="k-tooltip k-tooltip-validation" [hidden]="editForm.controls.FirstName.valid || editForm.controls.FirstName.pristine">
-        First name is required.
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="MiddleName" class="control-label">Middle Name</label>
-      <input type="text" class="k-textbox" formControlName="MiddleName" />
-    </div>
-    <div class="form-group">
-      <label for="LastName" class="control-label">Last Name</label>
-      <input type="text" class="k-textbox" formControlName="LastName" />
-      <div class="k-tooltip k-tooltip-validation" [hidden]="editForm.controls.LastName.valid || editForm.controls.LastName.pristine">
-        Last name is required.
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="EmailAddr" class="control-label">Email</label>
-      <input type="text" class="k-textbox" formControlName="EmailAddr" />
-      <div class="k-tooltip k-tooltip-validation" [hidden]="editForm.controls.EmailAddr.valid || editForm.controls.EmailAddr.pristine">
-        Email ID is required.
-      </div>
-    </div>
+    <mat-form-field class="dialog-input" *ngIf="!isNew">
+      <input matInput placeholder="Id" formControlName="UserMstrSK" name="id">
+    </mat-form-field>
+    <mat-form-field class="dialog-input">
+      <input matInput placeholder="Employee Number" formControlName="PhNbr" name="PhNbr" required>
+    </mat-form-field>
+    <mat-form-field class="dialog-input">
+      <input matInput placeholder="Username" formControlName="cf_LoginID" name="Username" required>
+    </mat-form-field>
+    <mat-form-field class="dialog-input">
+      <input matInput placeholder="FirstName" formControlName="FirstName" name="FirstName" required>
+    </mat-form-field>
+    <mat-form-field class="dialog-input">
+      <input matInput placeholder="MiddleName" formControlName="MiddleName" name="MiddleName">
+    </mat-form-field>
+    <mat-form-field class="dialog-input">
+      <input matInput placeholder="LastName" formControlName="LastName" name="LastName">
+    </mat-form-field>
+    <mat-form-field class="dialog-input">
+      <input matInput placeholder="Email" formControlName="EmailAddr" name="Email" required>
+    </mat-form-field>
   </form>
 </atlas-dialog-content>
 <atlas-dialog-footer [isSaveDisabled]="isNew ? editForm.invalid : ((!editForm.valid) || (!editForm.dirty))" (close)="closeHandler($event)">

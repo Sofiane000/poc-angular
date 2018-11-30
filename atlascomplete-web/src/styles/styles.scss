@@ -52,20 +52,27 @@ body {
 
 .button-group-2>a>.mat-button-wrapper>.fa,
 .button-group-2>a>.mat-button-wrapper>.fa,
-.mat-button-wrapper>.fa-bars,
-.mat-button-wrapper>.fa-undo {
+.mat-button-wrapper>.fa.fa-bars,
+.mat-button-wrapper>.fa.fa-undo {
   color: saddlebrown;
 }
 
-mat-icon:not(.disable) {
+.fa:not(.disable) {
   color: $atlas-icon;
   font-size: 16px;
 }
 
-
+.sidebar-row .fa.fa-inbox {
+  color: white;
+  font-size: x-large;
+}
 
 .no-padding {
   padding: 0px;
+}
+
+.refresh-btm {
+  float: right;
 }
 
 .k-grid-toolbar {
@@ -125,6 +132,29 @@ mat-icon:not(.disable) {
   height: 5px !important;
 }
 
+.mat-tab-nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $atlas-tabs-bg-color;
+}
+
+.mat-dialog-content {
+  margin: 0px;
+}
+
 .custom-dialog-container .mat-dialog-container {
   padding: 0px;
+}
+
+.mat-dialog-content {
+  margin: 0px !important;
+}
+
+.atlas-dialog-header {
+  background-color: #1F93A1;
+  color: white;
+  min-height: 48px !important;
+  height: 48px;
 }

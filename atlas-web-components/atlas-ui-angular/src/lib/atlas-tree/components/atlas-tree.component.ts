@@ -98,12 +98,12 @@ export class AtlasTreeComponent implements OnInit {
     }
     iconClass(dataItem): any {
         return {
-            'k-i-aggregate-fields': dataItem['TenantTaxnmyType'] === 'Tenant' ? true : false,
-            'k-i-folder': dataItem['TenantTaxnmyType'] === 'Acct' ? true : false,
-            'k-i-file': dataItem['TenantTaxnmyType'] === 'Grp' ? true : false,
-            'k-i-file-txt': dataItem['TenantTaxnmyType'] === 'PopGrp' ? true : false,
-            'k-i-globe-outline': dataItem['TenantTaxnmyType'] === 'Global' ? true : false,
-            'k-icon': true
+            'fa-database': dataItem['TenantTaxnmyType'] === 'Tenant' ? true : false,
+            'fa-folder': dataItem['TenantTaxnmyType'] === 'Acct' ? true : false,
+            'fa-file': dataItem['TenantTaxnmyType'] === 'Grp' ? true : false,
+            'fa-file-text ': dataItem['TenantTaxnmyType'] === 'PopGrp' ? true : false,
+            'fa-globe': dataItem['TenantTaxnmyType'] === 'Global' ? true : false,
+            'fa': true
         };
     }
     private contains(textFields: string, term: string): boolean {

@@ -1,11 +1,13 @@
-<div class="row">
-  <div class="col-md-12">
-    <button class="btn-dialog-close" mat-button (click)="onClose('close')" tabIndex="-1">
+<mat-toolbar class="atlas-dialog-header">
+  <mat-toolbar-row>
+    <h2 mat-dialog-title>{{title}}</h2>
+    <button class="btn-dialog-close" mat-button (click)="onClose('close')" tabIndex="-1" *ngIf="showCloseBtn">
       <mat-icon>clear</mat-icon>
     </button>
-    <h2 mat-dialog-title>{{title}}</h2>
-  </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="row no-margin">
   <div class="col-md-12" *ngIf="isDirty">
-      **Form has changes
+    **Form has changes
   </div>
 </div>

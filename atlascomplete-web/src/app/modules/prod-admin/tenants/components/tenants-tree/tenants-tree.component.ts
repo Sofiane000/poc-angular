@@ -21,10 +21,6 @@ export class TenantsTreeComponent implements OnInit {
   isFilterable: boolean;
   isEditable: boolean;
   children = 'children';
-  contextMenuItems: any[] = [
-    { text: 'Add Sibling', icon: 'plus' },
-    { text: 'Add Child', icon: 'plus' }
-  ];
   treeItems: any[] = [];
   constructor(private dialogService: AtlasDialogService, private tenantService: TenantsService) {
   }

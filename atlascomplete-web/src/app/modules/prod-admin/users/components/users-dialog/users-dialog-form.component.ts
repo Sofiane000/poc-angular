@@ -4,8 +4,8 @@ import { MatDialogRef } from '@angular/material';
 @Component({
     selector: 'app-users-dialog-form',
     templateUrl: './users-dialog-form.component.html',
-    styles: [
-        'input[type=text] { width: 100%; }'
+    styleUrls: [
+        './users-dialog-form.component.scss'
     ]
 })
 export class UsersDialogFormComponent {

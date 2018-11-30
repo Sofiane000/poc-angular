@@ -178,7 +178,9 @@ export class UsersGridComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.width = '500px';
+    dialogConfig.height = '137px';
     dialogConfig.closeOnNavigation = true;
+    dialogConfig.panelClass = 'custom-dialog-container';
     const dialogRef = this.dialog.open(UsersDeleteDialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe((result: any) => {
       if (result && result.toLowerCase() === 'save') {

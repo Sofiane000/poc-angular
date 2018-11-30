@@ -7,14 +7,25 @@
   float: right;
 }
 
+.tree-toolbar {
+  padding-left: 10px;
+  padding-top: 4px;
+  height: 48px;
+}
 
 .k-button-icontext .k-icon {
   margin: 0px !important;
 }
+
+.refresh-btn {
+  float: right;
+}
+
 #searchinput {
   width: 200px;
   padding-left: 20px;
 }
+
 #searchclear {
   position: absolute;
   right: 5px;

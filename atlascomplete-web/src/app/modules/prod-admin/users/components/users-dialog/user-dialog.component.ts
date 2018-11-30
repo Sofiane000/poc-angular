@@ -13,8 +13,11 @@ export class UsersDialogComponent extends ComponentCanDeactivate {
     dialogRef: any;
     dialogConfig: MatDialogConfig = {
         disableClose: true,
-        width: '500px',
-        closeOnNavigation: false
+        width: '800px',
+        maxWidth: '850px',
+        height: '500px',
+        closeOnNavigation: false,
+        panelClass: 'custom-dialog-container'
     };
     constructor(private userService: UserService, private dialog: MatDialog,
         private router: Router) {
@@ -23,6 +26,9 @@ export class UsersDialogComponent extends ComponentCanDeactivate {
     }
     openDialog() {
         const isNew = this.userService.selectedUser ? false : true;
+        if (!isNew) {
+            this.dialogConfig.height = '569px';
+        }
         this.dialogRef = this.dialog.open(UsersDialogFormComponent, this.dialogConfig);
         if (!isNew) {
             this.dialogRef.componentInstance.model = this.userService.selectedUser;

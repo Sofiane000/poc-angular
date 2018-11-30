@@ -1,4 +1,4 @@
-<atlas-page-header title="User Administration" fontSize="x-large" [backGroundColor]="'#1F93A1'" textAlign="left" [color]="'white'">
+<atlas-page-header title="User Administration" fontSize="x-large" textAlign="left">
 </atlas-page-header>
 <atlas-page-content>
   <atlas-grid
@@ -17,7 +17,7 @@
   [excelOption]="excelOption"
   showExcelExport="true"
   showPdfExport="true"
-  height="500"
+  height="530"
   routeParamProperty = "LoginSK"
   routeUrl="/tenants"
   (add)="addHandler($event)"
