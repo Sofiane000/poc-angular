@@ -3,36 +3,29 @@ import { AtlasGridService } from 'atlas-ui-angular';
 
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import {HttpClient} from "@angular/common/http";
-
- export class AtlasResponse {
-  status: boolean;
-  data: any;
-  messages: Array<any>;
-  metadata: Array<any>;
-}
-
+import { DataAccessService, DataAccessFactory } from 'atlas-web-services';
 
 @Injectable()
 export class TenantsService extends AtlasGridService {
-    
-    constructor(private http: HttpClient) {
-      super();
-    }
+  dataAccess: DataAccessService;
 
-    query(state: any): void {
-        this.fetch(state).subscribe(x => super.next(x));
-    }
+  constructor(dataAccessFactory: DataAccessFactory) {
+    super();
+    this.dataAccess = dataAccessFactory.getService('idm.tenants');
+  }
 
-    fetch(state: any): Observable<any> {
-      this.isLoading = true;
-      return this.getTenants().pipe(tap(() => this.isLoading = false));
-    }
+  query(state: any): void {
+    this.fetch(state).subscribe(x => super.next(x));
+  }
 
-    getTenants() {
-      return this.http.get<AtlasResponse>('/api/idm/tenants').pipe(map((response) => {
-        return response.data;
-      }));
-    }
+  fetch(state: any): Observable<any> {
+    this.isLoading = true;
+    return this.getTenants().pipe(tap(() => this.isLoading = false));
+  }
 
+  getTenants() {
+    return this.dataAccess.get().pipe(map((response) => {
+      return response.data;
+    }));
+  }
 }

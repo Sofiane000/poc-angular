@@ -104,7 +104,7 @@ export class UsersGridComponent implements OnInit {
       {
         field: 'UserActvtnInd',
         title: 'Active',
-        width: 60,
+        width: 40,
         showTemplate: true,
         isFilterable: true,
         type: 'boolean'

@@ -3,36 +3,36 @@ import { AtlasGridService } from 'atlas-ui-angular';
 
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import {DataAccessFactory, DataAccessService} from "atlas-web-services";
+import { DataAccessFactory, DataAccessService } from 'atlas-web-services';
 
 @Injectable()
 export class PeopleService extends AtlasGridService {
-    selectedUser: any;
-    dataAccess: DataAccessService;
+  selectedUser: any;
+  dataAccess: DataAccessService;
 
-    constructor(dataAccessFactory: DataAccessFactory) {
-      super();
-      this.dataAccess = dataAccessFactory.getService('idm.users');
-    }
+  constructor(dataAccessFactory: DataAccessFactory) {
+    super();
+    this.dataAccess = dataAccessFactory.getService('idm.users');
+  }
 
-    query(state: any): void {
-        this.fetch(state).subscribe(x => super.next(x));
-    }
+  query(state: any): void {
+    this.fetch(state).subscribe(x => super.next(x));
+  }
 
-    fetch(state: any): Observable<any> {
-      this.isLoading = true;
-      return this.getUsers().pipe(tap(() => this.isLoading = false));
-    }
+  fetch(state: any): Observable<any> {
+    this.isLoading = true;
+    return this.getUsers().pipe(tap(() => this.isLoading = false));
+  }
 
-    getUsers() {
-      return this.dataAccess.get().pipe(map((response) => {
-        return response.data;
-      }));
-    }
+  getUsers() {
+    return this.dataAccess.get().pipe(map((response) => {
+      return response.data;
+    }));
+  }
 
-    getUserById(loginSk: Number) {
-      return this.dataAccess.get(`${loginSk}`).pipe(map((response) => {
-        return response.data;
-      }));
-    }
+  getUserById(loginSk: Number) {
+    return this.dataAccess.get(`${loginSk}`).pipe(map((response) => {
+      return response.data;
+    }));
+  }
 }

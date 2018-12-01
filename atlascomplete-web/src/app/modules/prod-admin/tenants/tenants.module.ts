@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TenantsTreeComponent } from './components/tenants-tree/tenants-tree.component';
 import { TenantsDialogFormComponent } from './components/tenants-dialog/tenants-dialog.component';
 import { TenantsService } from './services/tenants.service';
+import { DataAccessFactory } from 'atlas-web-services';
 
 @NgModule({
   declarations: [
@@ -28,4 +29,9 @@ import { TenantsService } from './services/tenants.service';
     TenantsService
   ]
 })
-export class TenantsModule { }
+export class TenantsModule {
+  constructor(private dataAccessFactory: DataAccessFactory) {
+    // initialise applicable services for data-access
+    this.dataAccessFactory.createService('idm.tenants').module('idm').url('tenants');
+  }
+}

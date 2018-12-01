@@ -9,8 +9,7 @@ import { MatCardModule } from '@angular/material';
     ],
     imports: [
         CommonModule,
-        RouterModule,
-        MatCardModule
+        RouterModule
     ],
     exports: [
         RouterModule,

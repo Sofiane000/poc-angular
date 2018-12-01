@@ -3,10 +3,10 @@ $fa-font-path: "node_modules/font-awesome/fonts";
 @import '~font-awesome/scss/font-awesome.scss';
 @include mat-core();
 $atlas-app-primary: mat-palette($mat-cyan, 800);
-$atlas-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$atlas-app-accent: mat-palette($mat-grey, 900);
 
 // The warn palette is optional (defaults to red).
-$atlas-app-warn:    mat-palette($mat-red);
+$atlas-app-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $atlas-app-theme: mat-light-theme($atlas-app-primary, $atlas-app-accent, $atlas-app-warn);
@@ -29,4 +29,3 @@ $atlas-app-theme: mat-light-theme($atlas-app-primary, $atlas-app-accent, $atlas-
 @import "~@progress/kendo-theme-material/scss/ripple";
 @import "~@progress/kendo-theme-material/scss/popup";
 @import "~@progress/kendo-theme-material/scss/styling";
-

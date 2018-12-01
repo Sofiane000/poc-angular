@@ -1,5 +1,6 @@
 .k-grid-pdf,
-.k-grid-excel,.refresh-btn{
+.k-grid-excel,
+.refresh-btn {
   float: right;
 }
 
@@ -7,4 +8,8 @@
   padding-left: 10px;
   padding-top: 2px;
   height: 100%;
+}
+
+.checkbox-margin {
+  margin: 0px 13px;
 }

@@ -33,8 +33,11 @@ export class AppComponent implements OnInit, OnDestroy {
     private authenticationService: AuthenticationService, private menuService: MenuService) {
     router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        if (event.url.search('sidebar')) {
-          // this.isSideBarOpened = true;
+        if (event.url.search('sidebar') !== -1) {
+          this.isSideBarOpened = true;
+          const currentRoute = event.url.split(':')[1].slice(0, event.url.split(':')[1].length - 1);
+          this.atlasSidebar.headerName = currentRoute === 'document' ? 'Document Viewer' : 'Tasks';
+          this.header.selectedOption = currentRoute;
         }
       }
     });
