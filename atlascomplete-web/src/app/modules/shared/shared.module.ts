@@ -5,7 +5,7 @@ import {
   MatSidenavModule, MatIconModule, MatListModule,
   MatCardModule, MatMenuModule, MatTabsModule,
   MatFormFieldModule, MatProgressSpinnerModule,
-  MatInputModule, MatGridListModule, MatSnackBarModule
+  MatInputModule, MatGridListModule, MatSnackBarModule, MatDatepickerModule, MatNativeDateModule
 } from '@angular/material';
 import { CanDeactivateGuard } from './services/can-deactivate.guard';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
@@ -26,7 +26,9 @@ import { ModuleWithProviders } from '@angular/compiler/src/core';
     MatProgressSpinnerModule,
     MatInputModule,
     MatGridListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     MatToolbarModule,
@@ -41,8 +43,9 @@ import { ModuleWithProviders } from '@angular/compiler/src/core';
     MatProgressSpinnerModule,
     MatInputModule,
     MatGridListModule,
-    MatSnackBarModule
-
+    MatSnackBarModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class SharedModule {
