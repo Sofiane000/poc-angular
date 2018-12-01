@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import {ComponentSecurityDirective} from './component-security/component.security.directive';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ComponentSecurityDirective
+  ],
   imports: [
     HttpClientModule
   ],
-  exports: []
+  exports: [
+    ComponentSecurityDirective
+  ]
 })
 export class AtlasWebServicesModule { }

@@ -134,7 +134,7 @@
       "root": "projects/atlas-web-services",
       "sourceRoot": "projects/atlas-web-services/src",
       "projectType": "library",
-      "prefix": "lib",
+      "prefix": "atlas",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
