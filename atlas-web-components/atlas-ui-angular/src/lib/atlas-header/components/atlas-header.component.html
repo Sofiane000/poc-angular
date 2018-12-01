@@ -13,7 +13,8 @@
       <span class="menu-spacer"></span>
       <div class="button-header">
         <div class="button-group-1">
-          <a [class.active]="selectedOption ==='tasks'" (click)="onClickRoutes('Tasks')" mat-icon-button title="Tasks">
+          <a [class.active]="selectedOption ==='tasks/mytasks' || selectedOption ==='tasks/workqueue'" (click)="onClickRoutes('Tasks/mytasks')"
+            mat-icon-button title="Tasks">
             <mat-icon aria-label="Tasks" fontSet="fontawesome" fontIcon="fa-inbox"></mat-icon>
           </a>
           <a [class.active]="selectedOption ==='document'" mat-icon-button title="Document Viewer" (click)="onClickRoutes('Document')">

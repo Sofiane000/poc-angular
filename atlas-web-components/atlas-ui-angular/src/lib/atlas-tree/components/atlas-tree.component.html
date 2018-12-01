@@ -23,7 +23,7 @@
       kendoTreeViewHierarchyBinding="isTreeViewHierarchyBinding" (nodeClick)="onNodeClick($event)" [childrenField]="children"
       [hasChildren]="hasChildren" [(expandedKeys)]="expandedKeys">
       <ng-template kendoTreeViewNodeTemplate let-dataItem>
-        <span [ngClass]="iconClass(dataItem)"></span>
+        <span class="tree-icon" [ngClass]="iconClass(dataItem)"></span>
         {{dataItem[textFields]}}
       </ng-template>
     </kendo-treeview>

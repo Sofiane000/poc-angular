@@ -14,14 +14,14 @@ export class AtlasHeaderComponent {
     @Output() setHeaderTitle: EventEmitter<any> = new EventEmitter<any>();
     @Output() logout: EventEmitter<any> = new EventEmitter<any>();
     @HostBinding('class.mat-elevation-z6') someField = true;
-    constructor(private router: Router) {
+    constructor(public router: Router) {
 
     }
     toggleNav() {
         this.toggleMenu.emit();
     }
     onClickRoutes(option: string) {
-        this.selectedTitle = option;
+        this.selectedTitle = option === 'Tasks/mytasks' ? 'Tasks' : option;
         this.setHeaderTitle.emit();
         if (!this.isSideBarOpened) {
             this.toggleSideBar.emit();
