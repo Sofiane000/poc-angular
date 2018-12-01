@@ -20,7 +20,6 @@ import { SharedModule } from '../../shared/shared.module';
 import { DataAccessFactory } from 'atlas-web-services';
 import { UsersDeleteDialogComponent } from './components/users-dialog/users-delete-dialog.component';
 import { UsersDialogComponent } from './components/users-dialog/user-dialog.component';
-import { UsersGuardService } from './services/users.guard';
 @NgModule({
   declarations: [UsersDetailComponent, UsersDialogFormComponent, UsersGridComponent,
     UsersDetailTenantsComponent, UsersDetailPropertiesComponent,
@@ -44,8 +43,7 @@ import { UsersGuardService } from './services/users.guard';
   ],
   providers: [
     UserService,
-    PeopleService,
-    UsersGuardService
+    PeopleService
   ]
 })
 export class UsersModule {

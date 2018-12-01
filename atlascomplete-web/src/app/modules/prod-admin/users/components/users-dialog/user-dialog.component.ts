@@ -1,15 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { UsersDialogFormComponent } from './users-dialog-form.component';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ComponentCanDeactivate } from 'src/app/modules/shared/components/component-can-deactivate';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-users-dialog',
     template: ''
 })
-export class UsersDialogComponent extends ComponentCanDeactivate {
+export class UsersDialogComponent extends ComponentCanDeactivate implements OnDestroy {
+    routeSubscription: Subscription;
+    selectedUser: any;
     dialogRef: any;
     dialogConfig: MatDialogConfig = {
         disableClose: true,
@@ -20,18 +23,29 @@ export class UsersDialogComponent extends ComponentCanDeactivate {
         panelClass: 'custom-dialog-container'
     };
     constructor(private userService: UserService, private dialog: MatDialog,
-        private router: Router) {
+        private router: Router,
+        private route: ActivatedRoute) {
         super();
-        this.openDialog();
+        this.routeSubscription = this.route.params.subscribe(params => {
+            const loginSk = +params['id'];
+            if (loginSk) {
+                this.userService.getUserById(loginSk).subscribe(userDetail => {
+                    this.selectedUser = userDetail;
+                    this.openDialog();
+                });
+            } else {
+                this.openDialog();
+            }
+        });
     }
     openDialog() {
-        const isNew = this.userService.selectedUser ? false : true;
+        const isNew = this.selectedUser ? false : true;
         if (!isNew) {
             this.dialogConfig.height = '569px';
         }
         this.dialogRef = this.dialog.open(UsersDialogFormComponent, this.dialogConfig);
         if (!isNew) {
-            this.dialogRef.componentInstance.model = this.userService.selectedUser;
+            this.dialogRef.componentInstance.model = this.selectedUser;
         }
         this.dialogRef.componentInstance.isNew = isNew;
         this.dialogRef.afterClosed().subscribe(result => {
@@ -51,6 +65,11 @@ export class UsersDialogComponent extends ComponentCanDeactivate {
             }
         } else {
             return true;
+        }
+    }
+    ngOnDestroy() {
+        if (this.routeSubscription) {
+            this.routeSubscription.unsubscribe();
         }
     }
 }

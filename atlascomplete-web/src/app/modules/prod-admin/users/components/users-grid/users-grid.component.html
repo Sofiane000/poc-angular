@@ -1,33 +1,13 @@
 <atlas-page-header title="User Administration" fontSize="x-large" textAlign="left">
 </atlas-page-header>
 <atlas-page-content>
-  <atlas-grid
-  [isFilterable]="'menu'"
-  [state]="gridState" 
-  [columns]="columnsData"
-  [gridService]="peopleServiceChild"
-  [isSortable]="sortable"
-  [isPageable]="true" 
-  [selectable]="selectableSettings"
-  [showSelectAll]="false"
-  [isEditable]="true"
-  [selectedKeys]="selectedKeys"
-  [isGroupable]="true"
-  [pdfOption]="pdfOption"
-  [excelOption]="excelOption"
-  showExcelExport="true"
-  showPdfExport="true"
-  height="530"
-  routeParamProperty = "LoginSK"
-  routeUrl="/tenants"
-  (add)="addHandler($event)"
-  (edit)="editHandler($event)"
-  (viewDetail)="viewHandler($event)" 
-  (remove)="removeHandler($event)"
-></atlas-grid>
+  <atlas-grid [isFilterable]="'menu'" [state]="gridState" [columns]="columnsData" [gridService]="peopleServiceChild"
+    [isSortable]="sortable" [isPageable]="true" [selectable]="selectableSettings" [showSelectAll]="false" [isEditable]="true"
+    [selectedKeys]="selectedKeys" [isGroupable]="true" [pdfOption]="pdfOption" [excelOption]="excelOption"
+    showExcelExport="true" showPdfExport="true" height="530" routeParamProperty="LoginSK" routeUrl="/tenants" (add)="addHandler($event)"
+    (edit)="editHandler($event)" (viewDetail)="viewHandler($event)" (remove)="removeHandler($event)"></atlas-grid>
 </atlas-page-content>
 
 <atlas-page-footer [canSave]="true" [showNumRecords]="true"></atlas-page-footer>
 <br />
-<ng-container #container></ng-container>
 <router-outlet></router-outlet>

@@ -6,6 +6,10 @@ router.get('/', (req, res) => {
   mockLib.serveMock(res, 'idm/tenants/list.of.tenants.json');
 });
 
+router.get('/:tenantTaxnmySK', (req, res) => {
+  mockLib.serveTenantById(res, 'idm/tenants/list.of.tenants.json', req.params.tenantTaxnmySK);
+});
+
 router.put('/', (req, res) => {
   mockLib.serveMirror(req, res);
 });

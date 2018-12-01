@@ -6,8 +6,6 @@ import { PeopleService } from '../../services/people.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { UsersDeleteDialogComponent } from '../users-dialog/users-delete-dialog.component';
 import { AuthenticationService } from 'src/app/modules/auth/services/authentication.service';
-const saveAction = { text: 'Save', primary: true };
-const cancelAction = { text: 'Cancel' };
 @Component({
   selector: 'app-users-grid',
   templateUrl: './users-grid.component.html',
@@ -130,51 +128,9 @@ export class UsersGridComponent implements OnInit {
     const isNew = dataItem ? false : true;
     this.userService.selectedUser = dataItem;
     this.authService.isRefreshed = true;
-    this.router.navigate(['administration/users/action/' + (isNew ? 'add' : 'edit')]);
-    // const dialogRef = this.atlasDialogService.open({
-    //   appendTo: this.containerRef,
-    //   title: !dataItem ? 'Add new user' : 'Edit user',
-    //   content: UsersDialogFormComponent,
-    //   actions: [
-    //     cancelAction,
-    //     saveAction
-    //   ],
-    //   width: 450,
-    //   height: 450
-    // });
-    // const editForm = dialogRef.content.instance;
-    // editForm.isNew = isNew;
-    // editForm.model = isNew ? {} : dataItem;
-    // dialogRef.beforeClose().subscribe(reponse => {
-    //   this.router.navigate([{ outlets: { modal: null } }], { relativeTo: this.route });
-    // });
-    // dialogRef.afterClosed().subscribe((dialogResult: any) => {
-    //   this.selectedKeys = [];
-    //   this.isDialogClosed = true;
-
-    // });
+    this.router.navigate(['administration/users/action/' + (isNew ? 'add' : 'edit/' + dataItem.LoginSK)]);
   }
   removeHandler(dataItem) {
-    // const dialog = this.atlasDialogService.open({
-    //   appendTo: this.containerRef,
-    //   title: 'Please confirm',
-    //   content: 'Are you sure?',
-    //   actions: [
-    //     { text: 'No' },
-    //     { text: 'Yes', primary: true }
-    //   ],
-    //   width: 450,
-    //   height: 200,
-    //   minWidth: 250
-    // });
-
-    // dialog.result.subscribe((result: any) => {
-    //   if (result.text && result.text.toLowerCase() === 'yes') {
-    //     // delete row
-    //   } else {
-    //     this.selectedKeys = [];
-    //   }
-    // });
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.width = '500px';

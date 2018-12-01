@@ -14,7 +14,14 @@ class MockLib {
       error => this.serveFailed(res, error)
     );
   }
-
+  serveTenantById(res, pathToMock, idValue) {
+    this.loadMock(pathToMock).then(
+      data => {
+        this.serveSuccess(res, this.searchTree(data[0], idValue))
+      },
+      error => this.serveFailed(res, error)
+    );
+  }
   serveMockById(res, pathToMock, idField, idValue) {
     this.loadMock(pathToMock).then(data => {
         this.serveSuccess(res, _.find(data, (entry) => {
@@ -29,6 +36,20 @@ class MockLib {
     this.serveMockData(res, 200, data, [], void 0);
   }
 
+  searchTree(element, id) {
+
+    if (element.TenantTaxnmySK == id) {
+      return element;
+    } else if (element.children != null) {
+      var i;
+      var result = null;
+      for (i = 0; result == null && i < element.children.length; i++) {
+        result = this.searchTree(element.children[i], id);
+      }
+      return result;
+    }
+    return null;
+  }
   serveFailed(res, error) {
     this.serveMockData(res, 500, void 0, [{
       code: '100100',

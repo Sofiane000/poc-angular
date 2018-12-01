@@ -1,9 +1,9 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { AtlasDialogService, AtlasTreeComponent } from 'atlas-ui-angular';
-import { TenantsDialogFormComponent } from '../tenants-dialog/tenants-dialog.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AtlasTreeComponent } from 'atlas-ui-angular';
 import { TenantsService } from '../../services/tenants.service';
-const saveAction = { text: 'Save', primary: true };
-const cancelAction = { text: 'Cancel' };
+import { Router } from '@angular/router';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { TenantsDeleteDialogComponent } from '../tenants-delete-dialog/tenants-delete-dialog.component';
 @Component({
   selector: 'app-tenants-tree',
   templateUrl: './tenants-tree.component.html',
@@ -16,13 +16,17 @@ export class TenantsTreeComponent implements OnInit {
     { text: 'Add Child', icon: 'plus' }
   ];
   @ViewChild(AtlasTreeComponent) treeView: AtlasTreeComponent;
-  @ViewChild('dialogContainer', { read: ViewContainerRef })
-  public containerRef: ViewContainerRef;
   isFilterable: boolean;
   isEditable: boolean;
   children = 'children';
   treeItems: any[] = [];
-  constructor(private dialogService: AtlasDialogService, private tenantService: TenantsService) {
+  isSibling: boolean;
+  constructor(private dialogService: MatDialog,
+    private tenantService: TenantsService,
+    private router: Router) {
+    this.tenantService.getSaveSubject().subscribe(response => {
+      this.saveTenantFromDialog(response.isAdd, response.data);
+    });
   }
 
 
@@ -33,54 +37,24 @@ export class TenantsTreeComponent implements OnInit {
 
   }
   refresh() {
-    //this.tenantService.getTenants().subscribe(this.treeView.data => this.treeView.data = treeView.data);
+    this.tenantService.getTenants().subscribe(treeData => this.treeView.data = treeData);
   }
   editHandler(event) {
     this.showAddEditDialog(this.treeView.contextItem);
   }
-  showAddEditDialog(dataItem: any, isSibling?: boolean) {
+  showAddEditDialog(dataItem: any) {
     const isNew = dataItem ? false : true;
-    const dialogRef = this.dialogService.open({
-      appendTo: this.containerRef,
-      title: !dataItem ? 'Add Tenant' : 'Edit Tenant',
-      content: TenantsDialogFormComponent,
-      actions: [
-        cancelAction,
-        saveAction
-      ],
-      width: 450,
-      height: 450
-    });
-    const editForm = dialogRef.content.instance;
-    editForm.model = isNew ? {} : dataItem;
-    dialogRef.result.subscribe((dialogResult: any) => {
-      if (dialogResult.text && dialogResult.text.toLowerCase() === 'save') {
-        const item = editForm.editForm.value;
-        if (isNew) {
-          if (isSibling) {
-            this.addItem(this.treeView.contextItem, this.treeView.data, item);
-          } else {
-            if (this.treeView.contextItem) {
-              this.treeView.contextItem.children = this.treeView.contextItem.children || [];
-              const child = Object.assign({}, item);
-              this.treeView.contextItem.children.push(child);
-              this.treeView.contextItem = null;
-            }
-          }
-        } else {
-          Object.assign(this.treeView.contextItem, item);
-          this.treeView.contextItem = null;
-        }
-      }
-    });
+    this.router.navigate(['administration/tenants/action/' + (isNew ? 'add' : 'edit/' + dataItem.TenantTaxnmySK)]);
   }
   addHandler(event) {
     if (event.text === 'Add Sibling') {
       if (this.treeView.contextItem) {
-        this.showAddEditDialog(null, true);
+        this.isSibling = true;
+        this.showAddEditDialog(null);
       }
     } else {
-      this.showAddEditDialog(null, false);
+      this.isSibling = false;
+      this.showAddEditDialog(null);
     }
   }
   removeItem(dataItem: any, items: any[]): void {
@@ -108,24 +82,35 @@ export class TenantsTreeComponent implements OnInit {
     }
   }
   showRemoveDialog() {
-    const dialog = this.dialogService.open({
-      appendTo: this.containerRef,
-      title: 'Please confirm',
-      content: 'Are you sure?',
-      actions: [
-        { text: 'No' },
-        { text: 'Yes', primary: true }
-      ],
-      width: 450,
-      height: 200,
-      minWidth: 250
-    });
-
-    dialog.result.subscribe((result: any) => {
-      if (result.text && result.text.toLowerCase() === 'yes') {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.width = '500px';
+    dialogConfig.height = '137px';
+    dialogConfig.closeOnNavigation = true;
+    dialogConfig.panelClass = 'custom-dialog-container';
+    const dialogRef = this.dialogService.open(TenantsDeleteDialogComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe((result: any) => {
+      if (result && result.toLowerCase() === 'save') {
         this.removeItem(this.treeView.contextItem, this.treeView.data);
         this.treeView.contextItem = null;
       }
     });
+  }
+  saveTenantFromDialog(isAdd, dataItem) {
+    if (isAdd) {
+      if (this.isSibling) {
+        this.addItem(this.treeView.contextItem, this.treeView.data, dataItem);
+      } else {
+        if (this.treeView.contextItem) {
+          this.treeView.contextItem.children = this.treeView.contextItem.children || [];
+          const child = Object.assign({}, dataItem);
+          this.treeView.contextItem.children.push(child);
+          this.treeView.contextItem = null;
+        }
+      }
+    } else {
+      Object.assign(this.treeView.contextItem, dataItem);
+      this.treeView.contextItem = null;
+    }
   }
 }

@@ -7,13 +7,12 @@ import { UsersDetailRolesComponent } from './components/users-detail-roles/users
 import { UsersDetailPropertiesComponent } from './components/users-detail-properties/users-detail-properties.component';
 import { CanDeactivateGuard } from '../../shared/services/can-deactivate.guard';
 import { UsersDialogComponent } from './components/users-dialog/user-dialog.component';
-import { UsersGuardService } from './services/users.guard';
 
 const appRoutes: Routes = [
   {
     path: '', component: UsersGridComponent, children: [
-      { path: 'action/add', component: UsersDialogComponent, canActivate: [UsersGuardService], canDeactivate: [CanDeactivateGuard] },
-      { path: 'action/edit', component: UsersDialogComponent, canActivate: [UsersGuardService], canDeactivate: [CanDeactivateGuard] }
+      { path: 'action/add', component: UsersDialogComponent, canDeactivate: [CanDeactivateGuard] },
+      { path: 'action/edit/:id', component: UsersDialogComponent, canDeactivate: [CanDeactivateGuard] }
     ]
   },
   {
