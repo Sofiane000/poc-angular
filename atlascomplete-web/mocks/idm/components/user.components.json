@@ -1,0 +1,26 @@
+[
+  {
+    "CmpntSK": 247,
+    "FuncPermisnSK": 217,
+    "JobFuncSK": 34,
+    "PermisnCreate": false,
+    "PermisnDel": false,
+    "PermisnExec": false,
+    "PermisnMask": false,
+    "PermisnModify": false,
+    "PermisnRead": false,
+    "cf_CmpntID": "sample-button"
+  },
+  {
+    "CmpntSK": 241,
+    "FuncPermisnSK": 211,
+    "JobFuncSK": 34,
+    "PermisnCreate": false,
+    "PermisnDel": false,
+    "PermisnExec": true,
+    "PermisnMask": false,
+    "PermisnModify": false,
+    "PermisnRead": true,
+    "cf_CmpntID": "print-button"
+  }
+]
