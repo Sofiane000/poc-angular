@@ -6,6 +6,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { AuthenticationService } from './modules/auth/services/authentication.service';
 import { IMenuItem, AtlasSideBarComponent, AtlasHeaderComponent } from 'atlas-ui-angular';
 import { MenuService } from './menu.service';
+import { AppSession } from 'atlas-web-services';
 
 @Component({
   selector: 'app-atlas',
@@ -15,7 +16,7 @@ import { MenuService } from './menu.service';
 export class AppComponent implements OnInit, OnDestroy {
   isMiniMode: boolean;
   isSideBarOpened: boolean;
-  isAuthorized: boolean;
+  isAuthorized: Boolean;
   isAuthorizedSubscription: Subscription;
   sideBarTitle: string;
   menuItems: IMenuItem[];
@@ -30,7 +31,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   @HostBinding('class.isAuthorized') addClass = false;
   constructor(private breakpointObserver: BreakpointObserver, private router: Router,
-    private authenticationService: AuthenticationService, private menuService: MenuService) {
+    private authenticationService: AppSession, private menuService: MenuService) {
     router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         if (event.url.search('sidebar') !== -1) {

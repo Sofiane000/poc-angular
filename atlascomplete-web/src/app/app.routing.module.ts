@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './modules/auth/components/home/home.component';
-import { AuthGuardService } from './modules/auth/services/auth-guard.service';
 import { LoginComponent } from './modules/auth/components/login/login.component';
-import { LoginGuardService } from './modules/auth/services/login-guard.service';
+import { AuthGuardService, LoginGuardService } from 'atlas-web-services';
 
 const appRoutes: Routes = [
   {

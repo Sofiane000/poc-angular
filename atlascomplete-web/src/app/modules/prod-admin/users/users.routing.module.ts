@@ -5,8 +5,8 @@ import { UsersDetailComponent } from './components/users-detail/users-detail.com
 import { UsersDetailTenantsComponent } from './components/users-detail-tenants/users-detail-tenants.component';
 import { UsersDetailRolesComponent } from './components/users-detail-roles/users-detail-roles.component';
 import { UsersDetailPropertiesComponent } from './components/users-detail-properties/users-detail-properties.component';
-import { CanDeactivateGuard } from '../../shared/services/can-deactivate.guard';
 import { UsersDialogComponent } from './components/users-dialog/user-dialog.component';
+import { CanDeactivateGuard } from 'atlas-web-services';
 
 const appRoutes: Routes = [
   {

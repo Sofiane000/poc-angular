@@ -2,9 +2,9 @@ import { Component, OnDestroy } from '@angular/core';
 import { TenantsDialogFormComponent } from '../tenants-dialog-form/tenants-dialog-form.component';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ComponentCanDeactivate } from 'src/app/modules/shared/components/component-can-deactivate';
 import { TenantsService } from '../../services/tenants.service';
 import { Subscription } from 'rxjs';
+import { ComponentCanDeactivate } from 'atlas-web-services';
 
 @Component({
     selector: 'app-tenants-dialog',
@@ -17,7 +17,7 @@ export class TenantsDialogComponent extends ComponentCanDeactivate implements On
     dialogConfig: MatDialogConfig = {
         disableClose: true,
         width: '450px',
-        height: '385px',
+        height: '400px',
         closeOnNavigation: false,
         panelClass: 'custom-dialog-container'
     };
@@ -43,7 +43,7 @@ export class TenantsDialogComponent extends ComponentCanDeactivate implements On
     openDialog() {
         const isNew = this.selectedTenant ? false : true;
         if (!isNew) {
-            this.dialogConfig.height = '385px';
+            this.dialogConfig.height = '400px';
         }
         this.dialogRef = this.dialog.open(TenantsDialogFormComponent, this.dialogConfig);
         if (!isNew) {
