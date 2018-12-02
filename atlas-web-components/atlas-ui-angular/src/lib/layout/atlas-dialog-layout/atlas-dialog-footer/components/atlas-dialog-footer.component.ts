@@ -6,6 +6,7 @@ import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class AtlasDialogFooterComponent {
     @Input() isSaveDisabled: any;
+    @Input() showYesNo: boolean;
     @Output() close = new EventEmitter<any>();
     constructor() {
     }
