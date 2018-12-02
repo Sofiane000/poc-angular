@@ -1,14 +1,17 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Injector } from '@angular/core';
 import { Router } from '@angular/router';
 import { ComponentSecurityService, DataAccessFactory, DataAccessService, AppSession } from 'atlas-web-services';
 
 @Injectable()
 export class AuthenticationService {
-
     userCompDA: DataAccessService;
+    get router() {
+        return this.injector.get(Router);
+    }
 
-    constructor(private router: Router, dataAccessFactory: DataAccessFactory, private compSecSvc: ComponentSecurityService,
+    constructor(private injector: Injector, dataAccessFactory: DataAccessFactory, private compSecSvc: ComponentSecurityService,
         private sessionService: AppSession) {
+        dataAccessFactory.createService('idm.user.components').module('idm').url('user/components');
         this.userCompDA = dataAccessFactory.getService('idm.user.components');
     }
 
@@ -28,5 +31,11 @@ export class AuthenticationService {
         sessionStorage.clear();
         this.router.navigate(['login']);
     }
-
+    checkSession() {
+        if (this.sessionService.isAuthenticated()) {
+            this.userCompDA.get().subscribe((userComponents) => {
+                this.compSecSvc.loadSecurityMap(userComponents.data);
+            });
+        }
+    }
 }

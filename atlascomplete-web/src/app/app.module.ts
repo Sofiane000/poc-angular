@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER, Injector } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
@@ -13,6 +13,10 @@ import { AuthModule } from './modules/auth/auth.module';
 import { DataAccessFactory } from 'atlas-web-services';
 import { environment } from '../environments/environment';
 import { MatIconRegistry } from '@angular/material';
+import { AuthenticationService } from './modules/auth/services/authentication.service';
+export function init_app(appLoadService: AuthenticationService): Function {
+  return () => appLoadService.checkSession();
+}
 @NgModule({
   declarations: [
     AppComponent
@@ -31,12 +35,18 @@ import { MatIconRegistry } from '@angular/material';
     AtlasHeaderModule,
     AtlasMenuModule
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '' }],
+  providers: [{ provide: APP_BASE_HREF, useValue: '' },
+  {
+    provide: APP_INITIALIZER,
+    useFactory: init_app,
+    deps: [AuthenticationService], multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
   // initialize data-access base URL
-  constructor(private dataAccessFactory: DataAccessFactory, matIconRegistry: MatIconRegistry) {
+  constructor(private dataAccessFactory: DataAccessFactory,
+    matIconRegistry: MatIconRegistry) {
     matIconRegistry.registerFontClassAlias('fontawesome', 'fa');
     this.dataAccessFactory.baseUrl = environment.baseUrl;
   }
