@@ -1,5 +1,5 @@
-import {Directive, ElementRef, Input, OnChanges, OnDestroy, SimpleChanges} from '@angular/core';
-import {ComponentSecurity, ComponentSecurityService} from './component.security.service';
+import { Directive, ElementRef, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import { ComponentSecurity, ComponentSecurityService } from './component.security.service';
 
 @Directive({
   selector: '[atlasSecurity]'
@@ -9,7 +9,7 @@ export class ComponentSecurityDirective implements OnChanges, OnDestroy {
   @Input() private atlasSecurity: string;
   private secChgSub;
 
-  constructor(private readonly securityService: ComponentSecurityService, private element: ElementRef ) {
+  constructor(private readonly securityService: ComponentSecurityService, private element: ElementRef) {
     this.secChgSub = securityService.securityChanged.subscribe(() => {
       this.enforceSecurity();
     });

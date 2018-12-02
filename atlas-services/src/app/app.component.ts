@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {ComponentSecurityService} from '../../projects/atlas-web-services/src/lib/security/component.security.service';
+import { Component, OnInit } from '@angular/core';
+import { ComponentSecurityService } from 'atlas-web-services/public_api';
 
 @Component({
   selector: 'app-root',
