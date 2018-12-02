@@ -127,7 +127,6 @@ export class UsersGridComponent implements OnInit {
   showEditDialog(dataItem) {
     const isNew = dataItem ? false : true;
     this.userService.selectedUser = dataItem;
-    this.authService.isRefreshed = true;
     this.router.navigate(['administration/users/action/' + (isNew ? 'add' : 'edit/' + dataItem.LoginSK)]);
   }
   removeHandler(dataItem) {

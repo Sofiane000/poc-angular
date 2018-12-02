@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from './authentication.service';
-@Injectable()
+import { AppSession } from '../session/session.service';
+@Injectable({
+    providedIn: 'root',
+})
 export class LoginGuardService {
 
-    constructor(private authentication: AuthenticationService, private router: Router) { }
+    constructor(private session: AppSession, private router: Router) { }
 
     canActivate(): boolean | Promise<boolean> {
 
-        const isAuthenticated = this.authentication.isAuthenticated();
+        const isAuthenticated = this.session.isAuthenticated();
         if (!isAuthenticated) {
             return true;
         } else {
