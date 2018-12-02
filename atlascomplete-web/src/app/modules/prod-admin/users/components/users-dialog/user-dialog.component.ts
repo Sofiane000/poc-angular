@@ -3,8 +3,8 @@ import { UserService } from '../../services/user.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { UsersDialogFormComponent } from './users-dialog-form.component';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ComponentCanDeactivate } from 'src/app/modules/shared/components/component-can-deactivate';
 import { Subscription } from 'rxjs';
+import { ComponentCanDeactivate } from 'atlas-web-services';
 
 @Component({
     selector: 'app-users-dialog',

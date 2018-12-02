@@ -7,7 +7,6 @@ import {
   MatFormFieldModule, MatProgressSpinnerModule,
   MatInputModule, MatGridListModule, MatSnackBarModule, MatDatepickerModule, MatNativeDateModule
 } from '@angular/material';
-import { CanDeactivateGuard } from './services/can-deactivate.guard';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 
 @NgModule({
@@ -51,10 +50,7 @@ import { ModuleWithProviders } from '@angular/compiler/src/core';
 export class SharedModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: SharedModule,
-      providers: [
-        CanDeactivateGuard
-      ]
+      ngModule: SharedModule
     };
   }
 }
