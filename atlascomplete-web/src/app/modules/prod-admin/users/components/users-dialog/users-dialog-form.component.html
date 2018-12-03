@@ -1,29 +1,15 @@
-<atlas-dialog-header [title]="isNew ? 'Add':'Edit'" [isDirty]="editForm.dirty" (close)="closeHandler($event)">
+<atlas-dialog-header [title]="isNew ? 'Add User':'Edit User'" [isDirty]="editForm.dirty" (close)="closeHandler($event)">
 
 </atlas-dialog-header>
 <atlas-dialog-content>
   <form novalidate [formGroup]="editForm">
-    <mat-form-field class="dialog-input" *ngIf="!isNew">
-      <input matInput placeholder="Id" formControlName="UserMstrSK" name="id">
-    </mat-form-field>
-    <mat-form-field class="dialog-input">
-      <input matInput placeholder="Employee Number" formControlName="PhNbr" name="PhNbr" required>
-    </mat-form-field>
-    <mat-form-field class="dialog-input">
-      <input matInput placeholder="Username" formControlName="cf_LoginID" name="Username" required>
-    </mat-form-field>
-    <mat-form-field class="dialog-input">
-      <input matInput placeholder="FirstName" formControlName="FirstName" name="FirstName" required>
-    </mat-form-field>
-    <mat-form-field class="dialog-input">
-      <input matInput placeholder="MiddleName" formControlName="MiddleName" name="MiddleName">
-    </mat-form-field>
-    <mat-form-field class="dialog-input">
-      <input matInput placeholder="LastName" formControlName="LastName" name="LastName">
-    </mat-form-field>
-    <mat-form-field class="dialog-input">
-      <input matInput placeholder="Email" formControlName="EmailAddr" name="Email" required>
-    </mat-form-field>
+    <atlas-input label="Id" formControlName="UserMstrSK" required width="100%" *ngIf="!isNew"></atlas-input>
+    <atlas-input label="Employee Number" formControlName="PhNbr" required width="100%"></atlas-input>
+    <atlas-input label="Username" formControlName="cf_LoginID" required width="100%"></atlas-input>
+    <atlas-input label="First Name" formControlName="FirstName" required width="100%"></atlas-input>
+    <atlas-input label="Email" formControlName="EmailAddr" width="100%" required></atlas-input>
+    <atlas-input label="Middle Name" formControlName="MiddleName" width="100%"></atlas-input>
+    <atlas-input label="Last Name" formControlName="LastName" width="100%"></atlas-input>
   </form>
 </atlas-dialog-content>
 <atlas-dialog-footer [isSaveDisabled]="isNew ? editForm.invalid : ((!editForm.valid) || (!editForm.dirty))" (close)="closeHandler($event)">
