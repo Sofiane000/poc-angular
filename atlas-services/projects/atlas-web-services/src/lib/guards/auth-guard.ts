@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppSession } from '../../public_api';
+import { AppSession } from '../../lib/session/session.service';
 @Injectable({
     providedIn: 'root'
 })
