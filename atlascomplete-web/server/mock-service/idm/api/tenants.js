@@ -3,11 +3,11 @@ const router = express.Router();
 const mockLib = require('../../lib');
 
 router.get('/', (req, res) => {
-  mockLib.serveMock(res, 'idm/tenants/list.of.tenants.json');
+  mockLib.serveMockAsTree(req, res, 'idm/tenants/list.of.tenants.json', 'TenantTaxnmySK', 'ParentTenantTaxnmySK');
 });
 
 router.get('/:tenantTaxnmySK', (req, res) => {
-  mockLib.serveTenantById(res, 'idm/tenants/list.of.tenants.json', req.params.tenantTaxnmySK);
+  mockLib.serveMockById(req, res, 'idm/tenants/list.of.tenants.json', 'TenantTaxnmySK', req.params.tenantTaxnmySK);
 });
 
 router.put('/', (req, res) => {
@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-  mockLib.serveMock(res, 'idm/tenants/list.of.tenants.json');
+  mockLib.serveMock(req, res, 'idm/tenants/list.of.tenants.json');
 });
 
 module.exports = router;
