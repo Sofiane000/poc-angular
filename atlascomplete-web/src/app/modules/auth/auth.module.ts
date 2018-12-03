@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { DataAccessFactory } from 'atlas-web-services';
+import { AtlasInputModule } from 'atlas-ui-angular';
 
 @NgModule({
     declarations: [
@@ -15,7 +16,8 @@ import { DataAccessFactory } from 'atlas-web-services';
     imports: [
         CommonModule,
         SharedModule,
-        FormsModule
+        FormsModule,
+        AtlasInputModule
     ],
     providers: [
         AuthenticationService

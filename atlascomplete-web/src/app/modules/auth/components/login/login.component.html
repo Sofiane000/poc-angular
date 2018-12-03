@@ -8,12 +8,12 @@
 
   <mat-card-content>
     <div class="body-container">
-      <mat-form-field class="login-input">
-        <input matInput placeholder="Username" [(ngModel)]="username" type="username" name="username" required>
-      </mat-form-field>
-      <mat-form-field class="login-input">
-        <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
-      </mat-form-field>
+      <div class="login-input">
+        <atlas-input label="Username" [(ngModel)]="username" width="100%" required></atlas-input>
+      </div>
+      <div class="login-input">
+        <atlas-input label="Password" [(ngModel)]="password" width="100%" type="password" required></atlas-input>
+      </div>
     </div>
     <mat-card-footer>
       <button mat-raised-button color="primary" class="login-button" (click)="login()">
@@ -33,11 +33,11 @@
 </mat-card>
 <footer class="login-footer">
   <div class="row no-margin">
-      <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-          <a rel="nofollow">Terms Of Use</a> |
-          <a rel="nofollow">Privacy Policy</a> |
-          <a rel="nofollow">Fraud, Waste & Abuse</a>
-        </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+      <a rel="nofollow">Terms Of Use</a> |
+      <a rel="nofollow">Privacy Policy</a> |
+      <a rel="nofollow">Fraud, Waste & Abuse</a>
+    </div>
     <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
       <p class="h6">Copyright 2018 - Comprehensive Healthcare Management, Inc.</p>
     </div>

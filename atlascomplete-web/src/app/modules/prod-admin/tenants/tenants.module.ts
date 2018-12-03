@@ -4,7 +4,9 @@ import { TenantsRoutingModule } from './tenants.routing.module';
 import {
   AtlasTreeModule,
   AtlasDialogModule, AtlasPageHeaderModule,
-  AtlasPageContentModule, AtlasPageFooterModule, AtlasDialogHeaderModule, AtlasDialogFooterModule, AtlasDialogContentModule
+  AtlasPageContentModule, AtlasPageFooterModule,
+  AtlasDialogHeaderModule, AtlasDialogFooterModule,
+  AtlasDialogContentModule, AtlasInputModule
 } from 'atlas-ui-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TenantsTreeComponent } from './components/tenants-tree/tenants-tree.component';
@@ -27,6 +29,7 @@ import { SharedModule } from '../../shared/shared.module';
     CommonModule,
     FormsModule,
     TenantsRoutingModule,
+    AtlasInputModule,
     AtlasTreeModule,
     ReactiveFormsModule,
     AtlasDialogModule.forRoot(),

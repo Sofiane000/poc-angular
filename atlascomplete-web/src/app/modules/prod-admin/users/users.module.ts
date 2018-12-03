@@ -4,7 +4,8 @@ import { UsersRoutingModule } from './users.routing.module';
 import {
   AtlasGridModule, AtlasDialogModule, AtlasPageHeaderModule,
   AtlasPageContentModule, AtlasTabLayoutModule,
-  AtlasDialogHeaderModule, AtlasDialogFooterModule, AtlasDialogContentModule, AtlasPageFooterModule
+  AtlasDialogHeaderModule, AtlasDialogFooterModule, AtlasDialogContentModule,
+   AtlasPageFooterModule, AtlasInputModule
 } from 'atlas-ui-angular';
 import { UserService } from './services/user.service';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -39,7 +40,8 @@ import { UsersDialogComponent } from './components/users-dialog/user-dialog.comp
     AtlasDialogFooterModule,
     AtlasDialogContentModule,
     MatTabsModule,
-    AtlasDialogModule.forRoot()
+    AtlasDialogModule.forRoot(),
+    AtlasInputModule
   ],
   providers: [
     UserService,
