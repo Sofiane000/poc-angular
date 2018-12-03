@@ -27,15 +27,18 @@ export class AuthenticationService {
 
     logout() {
         this.sessionService.clear();
-        this.sessionService.isLoggedIn = false;
-        sessionStorage.clear();
         this.router.navigate(['login']);
     }
-    checkSession() {
-        if (this.sessionService.isAuthenticated()) {
-            this.userCompDA.get().subscribe((userComponents) => {
-                this.compSecSvc.loadSecurityMap(userComponents.data);
-            });
-        }
+    checkSession(): Promise<any> {
+        return new Promise((resolve, request) => {
+            if (this.sessionService.isAuthenticated()) {
+                this.userCompDA.get().subscribe(userComponents => {
+                    this.compSecSvc.loadSecurityMap(userComponents.data);
+                    resolve(true);
+                });
+            } else {
+                resolve(true);
+            }
+        });
     }
 }

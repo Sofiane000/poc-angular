@@ -1,6 +1,8 @@
 /*
  * Public API Surface of atlas-ui
  */
+export * from './lib/atlas-input/atlas-input.module';
+export * from './lib/atlas-input/components/atlas-input.component';
 export * from './lib/atlas-grid/services/atlas-grid.service';
 export * from './lib/atlas-button/atlas-button.module';
 export * from './lib/atlas-grid/atlas-grid.module';
