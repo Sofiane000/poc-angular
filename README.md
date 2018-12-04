@@ -40,6 +40,8 @@ In host application run npm login and enter credentials and then npm publish.
 
 ## Configuration for VS code
 
+Install [Fira Code](https://github.com/tonsky/FiraCode)
+
 ```json
 {
     "workbench.iconTheme": "material-icon-theme",
