@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { DocumentViewerComponent } from './components/doc-viewer.component';
 
 const appRoutes: Routes = [
-    { path: '', component: DocumentViewerComponent }
+    { path: '', component: DocumentViewerComponent },
+    { path: ':documentId', component: DocumentViewerComponent },
 ];
 
 @NgModule({
     imports: [RouterModule.forChild(appRoutes)],
-    exports: [RouterModule]
+    exports: [RouterModule],
 })
-export class DocViewerRoutingModule { }
+export class DocViewerRoutingModule {}
