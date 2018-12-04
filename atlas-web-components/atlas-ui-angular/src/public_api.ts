@@ -15,6 +15,8 @@ export * from './lib/atlas-dialog/atlas-dialog.module';
 export * from './lib/atlas-tree/components/atlas-tree.component';
 export * from './lib/atlas-content/atlas-content.module';
 export * from './lib/atlas-content/components/atlas-content.component';
+export * from './lib/atlas-doc-viewer/atlas-doc-viewer.module';
+export * from './lib/atlas-doc-viewer/components/atlas-doc-viewer.component';
 export * from './lib/atlas-sidebar/atlas-sidebar.module';
 export * from './lib/atlas-sidebar/components/atlas-sidebar.component';
 export * from './lib/atlas-header/atlas-header.module';

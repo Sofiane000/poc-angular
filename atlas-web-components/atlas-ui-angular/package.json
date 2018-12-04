@@ -25,7 +25,8 @@
     "@progress/kendo-angular-excel-export": "^2.2.0",
     "@progress/kendo-angular-dateinputs": "^3.5.1",
     "@progress/kendo-angular-popup": "^2.5.0",
-    "@progress/kendo-angular-dialog": "^3.8.0"
+    "@progress/kendo-angular-dialog": "^3.8.0",
+    "ng2-pdf-viewer": "^5.2.3"
   },
   "whitelistedNonPeerDependencies": [
     "tslib",
@@ -42,7 +43,8 @@
     "@progress/kendo-angular-excel-export",
     "@progress/kendo-angular-dateinputs",
     "@progress/kendo-angular-popup",
-    "@progress/kendo-angular-dialog"
+    "@progress/kendo-angular-dialog",
+    "ng2-pdf-viewer"
   ],
   "dest": "../dist/atlas-ui-angular",
   "lib": {

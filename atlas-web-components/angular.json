@@ -1,52 +1,50 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
-  "projects": {
-    "atlas-ui-angular": {
-      "root": "atlas-ui-angular",
-      "sourceRoot": "atlas-ui-angular/src",
-      "projectType": "library",
-      "prefix": "lib",
-      "schematics": {
-        "@schematics/angular:component": {
-          "styleext": "scss"
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "projects": {
+        "atlas-ui-angular": {
+            "root": "atlas-ui-angular",
+            "sourceRoot": "atlas-ui-angular/src",
+            "projectType": "library",
+            "prefix": "lib",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "styleext": "scss"
+                }
+            },
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "atlas-ui-angular/tsconfig.lib.json",
+                        "project": "atlas-ui-angular/package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "atlas-ui-angular/src/test.ts",
+                        "tsConfig": "atlas-ui-angular/tsconfig.spec.json",
+                        "karmaConfig": "atlas-ui-angular/karma.conf.js",
+                        "styles": [
+                            {
+                                "input": "node_modules/@progress/kendo-theme-material/dist/all.css"
+                            }
+                        ]
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "atlas-ui-angular/tsconfig.lib.json",
+                            "atlas-ui-angular/tsconfig.spec.json"
+                        ],
+                        "exclude": ["**/node_modules/**"]
+                    }
+                }
+            }
         }
-      },
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "atlas-ui-angular/tsconfig.lib.json",
-            "project": "atlas-ui-angular/package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "atlas-ui-angular/src/test.ts",
-            "tsConfig": "atlas-ui-angular/tsconfig.spec.json",
-            "karmaConfig": "atlas-ui-angular/karma.conf.js",
-            "styles": [
-              {
-                "input": "node_modules/@progress/kendo-theme-material/dist/all.css"
-              }
-            ]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "atlas-ui-angular/tsconfig.lib.json",
-              "atlas-ui-angular/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    }
-  },
-  "defaultProject": "atlas-ui-angular"
+    },
+    "defaultProject": "atlas-ui-angular"
 }
