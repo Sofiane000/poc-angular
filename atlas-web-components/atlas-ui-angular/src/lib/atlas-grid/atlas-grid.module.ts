@@ -6,6 +6,7 @@ import { ButtonModule } from '@progress/kendo-angular-buttons';
 import { DialogModule } from '@progress/kendo-angular-dialog';
 import { MatButtonModule, MatIconModule, MatCheckboxModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { AtlasToolbarModule } from '../atlas-toolbar/atlas-toolbar.module';
 
 @NgModule({
   declarations: [AtlasGridComponent],
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     ExcelModule,
     MatButtonModule,
     MatIconModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    AtlasToolbarModule
   ],
   exports: [
     AtlasGridComponent,

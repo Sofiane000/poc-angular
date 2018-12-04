@@ -76,6 +76,11 @@ body {
   float: right;
 }
 
+.k-grid {
+  border-color: transparent;
+  margin-top: 12px;
+}
+
 .k-grid-toolbar {
   background-color: $atlas-header-bg-color;
   padding: 0px;
@@ -84,7 +89,6 @@ body {
 
 .k-grouping-header {
   padding: 0px;
-  margin-top: 12px;
 }
 
 .k-grid-draggable-header.k-group-indicator {

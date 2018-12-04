@@ -1,7 +1,7 @@
-import { Component, OnInit, Input, OnDestroy, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, EventEmitter, Output, ViewChild } from '@angular/core';
 import { IColumnSetting } from '../models/grid-column-setting';
 import { State, process, GroupDescriptor } from '@progress/kendo-data-query';
-import { DataStateChangeEvent, GridDataResult } from '@progress/kendo-angular-grid';
+import { DataStateChangeEvent, GridDataResult, GridComponent } from '@progress/kendo-angular-grid';
 import { AtlasGridService } from '../services/atlas-grid.service';
 import { Subscription } from 'rxjs';
 import { AtlasDialogService } from '../../atlas-dialog/services/atlas-dialog.service';
@@ -47,7 +47,10 @@ export class AtlasGridComponent implements OnInit, OnDestroy {
   @Output() edit: EventEmitter<any> = new EventEmitter<any>();
   @Output() remove: EventEmitter<any> = new EventEmitter<any>();
   @Output() viewDetail: EventEmitter<any> = new EventEmitter<any>();
+  @Output() selectionChange: EventEmitter<any> = new EventEmitter<any>();
 
+  @ViewChild(GridComponent)
+  public grid: GridComponent;
   private gridServiceSubscription: Subscription;
   constructor(private dialogService: AtlasDialogService) {
     this.allData = this.allData.bind(this);
@@ -82,26 +85,21 @@ export class AtlasGridComponent implements OnInit, OnDestroy {
     this.gridDataResult = process(this.data, this.state);
     this.selectedKeys = [];
   }
-  removeDataItem() {
-    this.remove.emit(this.selectedKeys[0]);
-  }
   selectBy(e) {
     return e.dataItem;
   }
   onSelectionChange(e) {
     this.selectedRowIndex = e.selectedRows.length ? e.index : undefined;
-  }
-  onAdd(event) {
-    this.add.emit({});
+    this.selectionChange.emit({});
   }
   onViewDetail({ dataItem }) {
     this.viewDetail.emit({ dataItem });
   }
-  onRemove({ dataItem }) {
-    this.remove.emit({ dataItem });
+  exportAsPdf() {
+    this.grid.saveAsPDF();
   }
-  editSelectedRow() {
-    this.edit.emit(this.selectedKeys[0]);
+  exportAsExcel() {
+    this.grid.saveAsExcel();
   }
   ngOnDestroy() {
     this.gridServiceSubscription.unsubscribe();

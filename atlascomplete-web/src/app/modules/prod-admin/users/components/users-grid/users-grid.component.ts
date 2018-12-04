@@ -1,17 +1,68 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { IColumnSetting, AtlasDialogService } from 'atlas-ui-angular';
+import { IColumnSetting, AtlasDialogService, AtlasToolbarButton, ButtonAction, AtlasGridComponent } from 'atlas-ui-angular';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PeopleService } from '../../services/people.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { UsersDeleteDialogComponent } from '../users-dialog/users-delete-dialog.component';
 import { AuthenticationService } from 'src/app/modules/auth/services/authentication.service';
+import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
 @Component({
   selector: 'app-users-grid',
   templateUrl: './users-grid.component.html',
-  styleUrls: ['./users-grid.component.scss']
+  styleUrls: ['./users-grid.component.scss'],
+  providers: [DocumentViewerService]
 })
 export class UsersGridComponent implements OnInit {
+  buttons: AtlasToolbarButton[] = [
+    {
+      title: 'Add',
+      action: ButtonAction.Add,
+      icon: 'fa-plus',
+    },
+    {
+      title: 'Edit',
+      action: ButtonAction.Edit,
+      icon: 'fa-pencil',
+      isDisabled: true
+    },
+    {
+      title: 'Remove',
+      action: ButtonAction.Remove,
+      icon: 'fa-trash',
+      isDisabled: true
+    },
+    {
+      title: 'Refresh',
+      action: ButtonAction.Refresh,
+      icon: 'fa-refresh',
+      class: 'refresh-btn'
+    },
+    {
+      title: 'Onboarding',
+      isTextButton: true,
+      text: 'SEND ONBOARDING EMAIL',
+      isDisabled: true
+    },
+    {
+      title: 'Print Invoice',
+      action: ButtonAction.PrintInvoice,
+      icon: 'fa-print',
+      class: 'grid-pdf'
+    },
+    {
+      title: 'Export As Pdf',
+      action: ButtonAction.ExportAsPdf,
+      icon: 'fa-file-pdf-o',
+      class: 'grid-pdf'
+    },
+    {
+      title: 'Export As Excel',
+      action: ButtonAction.ExportAsExcel,
+      icon: 'fa-file-excel-o',
+      class: 'grid-excel'
+    },
+  ];
   gridState: any = {
     skip: 0,
     take: 5,
@@ -48,13 +99,15 @@ export class UsersGridComponent implements OnInit {
   selectBy = 'cf_LoginID';
   @ViewChild('container', { read: ViewContainerRef })
   public containerRef: ViewContainerRef;
-  dialogRef: any;
+  @ViewChild(AtlasGridComponent)
+  public atlasGrid: AtlasGridComponent;
   constructor(private authService: AuthenticationService,
     private userService: UserService,
     private peopleService: PeopleService,
     private atlasDialogService: AtlasDialogService,
     private router: Router, private dialog: MatDialog,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private docViewer: DocumentViewerService) {
     this.peopleServiceChild = peopleService;
     this.userServiceChild = userService;
   }
@@ -111,25 +164,17 @@ export class UsersGridComponent implements OnInit {
     ];
   }
 
-  addHandler(event) {
-    this.showEditDialog(null);
-  }
-
-  editHandler(dataItem) {
-    this.showEditDialog(dataItem);
-  }
-
   viewHandler({ dataItem }) {
     this.userService.selectedUser = dataItem;
     this.router.navigate(['/administration/users/' + dataItem.LoginSK + '/tenants']);
     // this.router.navigate(['/grid/details']);
   }
-  showEditDialog(dataItem) {
+  showAddEditDialog(dataItem) {
     const isNew = dataItem ? false : true;
     this.userService.selectedUser = dataItem;
     this.router.navigate(['administration/users/action/' + (isNew ? 'add' : 'edit/' + dataItem.LoginSK)]);
   }
-  removeHandler(dataItem) {
+  removeHandler(dataItem?: any) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.width = '500px';
@@ -142,7 +187,49 @@ export class UsersGridComponent implements OnInit {
         // delete row
       }
       this.selectedKeys = [];
+      this.onSelectionChange();
 
     });
+  }
+  actionHandler(eventResponse: any) {
+    switch (eventResponse.action) {
+      case ButtonAction.Add:
+        this.showAddEditDialog(null);
+        break;
+      case ButtonAction.Edit:
+        this.showAddEditDialog(this.atlasGrid.selectedKeys[0]);
+        break;
+      case ButtonAction.Remove:
+        this.removeHandler(this.atlasGrid.selectedKeys[0]);
+        break;
+      case ButtonAction.Refresh:
+        this.atlasGrid.refreshGrid();
+        break;
+      case ButtonAction.ExportAsExcel:
+        this.atlasGrid.exportAsExcel();
+        break;
+      case ButtonAction.ExportAsPdf:
+        this.atlasGrid.exportAsPdf();
+        break;
+      case ButtonAction.PrintInvoice:
+        this.docViewer.showDocument('sample.pdf');
+        break;
+    }
+  }
+  onSelectionChange() {
+    setTimeout(() => {
+
+      if (this.atlasGrid.selectedKeys.length <= 0) {
+        this.buttons[1].isDisabled = true;
+        this.buttons[2].isDisabled = true;
+        this.buttons[4].isDisabled = true;
+
+      } else {
+        this.buttons[1].isDisabled = false;
+        this.buttons[2].isDisabled = false;
+        this.buttons[4].isDisabled = false;
+      }
+    }, 100);
+
   }
 }

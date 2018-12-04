@@ -1,6 +1,10 @@
 /*
  * Public API Surface of atlas-ui
  */
+export * from './lib/atlas-toolbar/atlas-toolbar.module';
+export * from './lib/atlas-toolbar/components/atlas-toolbar.component';
+export * from './lib/atlas-toolbar/models/atlas-toolbar-button';
+export * from './lib/atlas-toolbar/models/button-action';
 export * from './lib/atlas-input/atlas-input.module';
 export * from './lib/atlas-input/components/atlas-input.component';
 export * from './lib/atlas-grid/services/atlas-grid.service';

@@ -5,7 +5,7 @@ import {
   AtlasGridModule, AtlasDialogModule, AtlasPageHeaderModule,
   AtlasPageContentModule, AtlasTabLayoutModule,
   AtlasDialogHeaderModule, AtlasDialogFooterModule, AtlasDialogContentModule,
-   AtlasPageFooterModule, AtlasInputModule
+   AtlasPageFooterModule, AtlasInputModule, AtlasToolbarModule
 } from 'atlas-ui-angular';
 import { UserService } from './services/user.service';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -41,7 +41,8 @@ import { UsersDialogComponent } from './components/users-dialog/user-dialog.comp
     AtlasDialogContentModule,
     MatTabsModule,
     AtlasDialogModule.forRoot(),
-    AtlasInputModule
+    AtlasInputModule,
+    AtlasToolbarModule
   ],
   providers: [
     UserService,

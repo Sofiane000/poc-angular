@@ -6,7 +6,7 @@ import {
   AtlasDialogModule, AtlasPageHeaderModule,
   AtlasPageContentModule, AtlasPageFooterModule,
   AtlasDialogHeaderModule, AtlasDialogFooterModule,
-  AtlasDialogContentModule, AtlasInputModule
+  AtlasDialogContentModule, AtlasInputModule, AtlasToolbarModule
 } from 'atlas-ui-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TenantsTreeComponent } from './components/tenants-tree/tenants-tree.component';
@@ -39,6 +39,7 @@ import { SharedModule } from '../../shared/shared.module';
     AtlasDialogHeaderModule,
     AtlasDialogFooterModule,
     AtlasDialogContentModule,
+    AtlasToolbarModule,
     SharedModule.forRoot()
   ],
   providers: [

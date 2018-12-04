@@ -6,6 +6,7 @@ import { ButtonModule } from '@progress/kendo-angular-buttons';
 import { FormsModule } from '@angular/forms';
 import { AtlasTreeComponent } from './components/atlas-tree.component';
 import { MatIconModule, MatButtonModule } from '@angular/material';
+import { AtlasToolbarModule } from '../atlas-toolbar/atlas-toolbar.module';
 @NgModule({
   declarations: [
     AtlasTreeComponent
@@ -18,7 +19,8 @@ import { MatIconModule, MatButtonModule } from '@angular/material';
     ContextMenuModule,
     ButtonModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    AtlasToolbarModule
   ],
   exports: [
     AtlasTreeComponent
