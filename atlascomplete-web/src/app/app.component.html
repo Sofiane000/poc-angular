@@ -1,5 +1,5 @@
 <!-- Header -->
-<atlas-header #header *ngIf="isAuthorized" (toggleMenu)="toggleMenu()" (toggleSideBar)="toggleSidebar()"
+<atlas-header #header *ngIf="isAuthorized" (toggleMenu)="toggleMenu()" (headerBtnClicked)="headerBtnHandler($event)" (toggleSideBar)="toggleSidebar()"
   [isSideBarOpened]="isSideBarOpened" (setHeaderTitle)="setHeaderTitle()" (logout)="logoutHandler()"></atlas-header>
 <mat-sidenav-container class="sidenav-container" autosize>
   <mat-sidenav *ngIf="isAuthorized" #menu class="sidenav" fixedInViewport="true" [attr.role]="(isHandset | async) ? 'dialog' : 'navigation'"

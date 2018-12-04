@@ -37,8 +37,8 @@ export class AppComponent implements OnInit, OnDestroy {
         if (event.url.search('sidebar') !== -1) {
           this.isSideBarOpened = true;
           const currentRoute = event.url.split(':')[1].slice(0, event.url.split(':')[1].length - 1);
-          this.atlasSidebar.headerName = currentRoute === 'document' ? 'Document Viewer' : 'Tasks';
-          this.header.selectedOption = currentRoute;
+          this.atlasSidebar.headerName = currentRoute.search('document') !== -1 ? 'Document Viewer' : 'Tasks';
+          this.header.selectedOption = this.atlasSidebar.headerName === 'Tasks' ? 'Tasks' : 'Document';
         }
       }
     });
@@ -66,8 +66,8 @@ export class AppComponent implements OnInit, OnDestroy {
     }
     this.sidebar.toggle();
   }
-  setHeaderTitle() {
-    this.sideBarTitle = this.header.selectedTitle === 'Document' ? 'Document Viewer' : this.header.selectedTitle;
+  setHeaderTitle(pageTitle: string) {
+    this.sideBarTitle = pageTitle === 'Tasks' ? 'Tasks' : 'Document Viewer';
   }
   toggleMenu() {
     this.menu.toggle();
@@ -80,5 +80,20 @@ export class AppComponent implements OnInit, OnDestroy {
     this.addClass = false;
     sessionStorage.clear();
     this.router.navigate(['login']);
+  }
+
+  headerBtnHandler(option) {
+    this.setHeaderTitle(option);
+    if (!this.isSideBarOpened) {
+      this.toggleSidebar();
+    }
+    if (this.header.selectedOption === option) {
+      this.header.selectedOption = '';
+      this.toggleSidebar();
+      this.router.navigate([{ outlets: { sidebar: null } }]);
+    } else {
+      this.header.selectedOption = option;
+      this.router.navigate([{ outlets: { sidebar: option === 'Tasks' ? 'tasks/mytasks' : 'document/sample.pdf' } }]);
+    }
   }
 }

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class DocumentViewerService {
-    constructor(private router: Router) {}
+    constructor(private router: Router) { }
 
     /**
      * Use this method to show documents
@@ -12,7 +12,7 @@ export class DocumentViewerService {
         this.router.navigate([
             {
                 outlets: {
-                    sidebar: ['document', { documentId: documentId }],
+                    sidebar: 'document/' + documentId
                 },
             },
         ]);

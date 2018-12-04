@@ -26,11 +26,8 @@
             <div class="button-header">
                 <div class="button-group-1">
                     <a
-                        [class.active]="
-                            selectedOption === 'tasks/mytasks' ||
-                            selectedOption === 'tasks/workqueue'
-                        "
-                        (click)="onClickRoutes('Tasks/mytasks')"
+                        [class.active]="selectedOption === 'Tasks'"
+                        (click)="onClickRoutes('Tasks')"
                         mat-icon-button
                         title="Tasks"
                     >
@@ -41,10 +38,10 @@
                         ></mat-icon>
                     </a>
                     <a
-                        [class.active]="selectedOption === 'document'"
+                        [class.active]="selectedOption === 'Document'"
                         mat-icon-button
                         title="Document Viewer"
-                        (click)="onClickRoutes('Document/sample.pdf')"
+                        (click)="onClickRoutes('Document')"
                     >
                         <mat-icon
                             aria-label="Document Viewer"

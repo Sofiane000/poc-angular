@@ -33,6 +33,10 @@ const appRoutes: Routes = [
     path: 'document',
     loadChildren: './modules/doc-viewer/doc-viewer.module#DocViewerModule', outlet: 'sidebar', canActivate: [AuthGuardService]
   },
+  {
+    path: 'document/:documentId',
+    loadChildren: './modules/doc-viewer/doc-viewer.module#DocViewerModule', outlet: 'sidebar', canActivate: [AuthGuardService]
+  },
 ];
 
 @NgModule({
