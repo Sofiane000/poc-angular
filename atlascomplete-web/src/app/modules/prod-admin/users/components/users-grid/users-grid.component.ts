@@ -65,11 +65,7 @@ export class UsersGridComponent implements OnInit {
   ];
   gridState: any = {
     skip: 0,
-    take: 5,
-    filter: {
-      logic: 'and',
-      filters: [{ field: 'FirstName', operator: 'contains', value: '' }]
-    }
+    take: 5
   };
   pdfOption: any = {
     fileName: 'Atlas-user-grid.pdf',
@@ -203,6 +199,9 @@ export class UsersGridComponent implements OnInit {
         this.removeHandler(this.atlasGrid.selectedKeys[0]);
         break;
       case ButtonAction.Refresh:
+        this.atlasGrid.state.filter = null;
+        this.atlasGrid.state.sort = [];
+        this.atlasGrid.state.group = [];
         this.atlasGrid.refreshGrid();
         break;
       case ButtonAction.ExportAsExcel:
