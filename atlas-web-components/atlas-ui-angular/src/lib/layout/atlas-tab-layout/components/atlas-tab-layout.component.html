@@ -6,4 +6,6 @@
     </a>
   </nav>
 </div>
-<router-outlet></router-outlet>
+<div [@routerTransition]="o.isActivated ? o.activatedRoute : ''">
+  <router-outlet #o="outlet"></router-outlet>
+</div>
