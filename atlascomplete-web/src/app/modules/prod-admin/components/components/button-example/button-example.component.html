@@ -4,18 +4,16 @@
         <div class="col-md-12">
             <atlas-button
                 iconValue="plus"
-                text="Button"
                 (blur)="onBlurFocus('Blur event')"
                 (focus)="onBlurFocus('Focus Event')"
                 [look]="'bare'"
                 primary="true"
-            ></atlas-button>
-            <atlas-button
-                iconValue="minus"
-                text="Remove events"
-                (click)="onRemoveClick()"
-                [look]="'bare'"
-            ></atlas-button>
+            >
+                Button
+            </atlas-button>
+            <atlas-button iconValue="minus" (click)="onRemoveClick()" [look]="'bare'">
+                Remove events
+            </atlas-button>
             <div class="example-config">
                 <h5>Events Log</h5>
                 <ul class="event-log">
@@ -47,43 +45,46 @@
         <div>
             <atlas-button
                 [iconClass]="'k-icon k-i-edit k-i-pencil'"
-                [text]="!isEditable ? 'Enable Editing' : 'Disable Editing'"
                 (click)="isEditable = !isEditable"
                 [look]="isEditable ? 'outline' : ''"
                 buttonColor="grey"
-            ></atlas-button>
+            >
+                {{ !isEditable ? 'Enable Editing' : 'Disable Editing' }}
+            </atlas-button>
             <atlas-button
                 [iconClass]="!isPageable ? 'k-icon k-i-delicious' : ''"
-                [text]="!isPageable ? 'Enable Paging' : 'Disable Paging'"
                 (click)="isPageable = !isPageable"
-            ></atlas-button>
+            >
+                {{ !isPageable ? 'Enable Paging' : 'Disable Paging' }}
+            </atlas-button>
             <atlas-button
                 [iconClass]="'k-icon k-i-sort-asc'"
-                [text]="!isSortable ? 'Enable Sorting' : 'Disable Sorting'"
                 (click)="isSortable = !isSortable"
                 [look]="'flat'"
                 [primary]="!isSortable ? false : true"
-            ></atlas-button>
+            >
+                {{ !isSortable ? 'Enable Sorting' : 'Disable Sorting' }}
+            </atlas-button>
             <atlas-button
                 [iconClass]="
                     !colorChange
                         ? 'k-icon k-i-checkbox k-i-shape-rect'
                         : 'k-icon k-i-checkbox-checked'
                 "
-                text="Toggle Header Color"
                 (click)="changeHeaderColor(colorChange ? false : true)"
                 [primary]="colorChange ? true : false"
-            ></atlas-button>
+            >
+                Toggle Header Color
+            </atlas-button>
             <atlas-button
                 [iconClass]="'k-icon k-i-select-box'"
-                [text]="!selectableSettings.enabled ? 'Enable Selection' : 'Disable Selection'"
                 (click)="selectableSettings.enabled = !selectableSettings.enabled"
-            ></atlas-button>
-            <atlas-button
-                [iconClass]="'k-icon k-i-filter'"
-                [text]="!isFilterable ? 'Enable filter' : 'Disable filter'"
-                (click)="isFilterable = !isFilterable"
-            ></atlas-button>
+            >
+                {{ !selectableSettings.enabled ? 'Enable Selection' : 'Disable Selection' }}
+            </atlas-button>
+            <atlas-button [iconClass]="'k-icon k-i-filter'" (click)="isFilterable = !isFilterable">
+                {{ !isFilterable ? 'Enable filter' : 'Disable filter' }}
+            </atlas-button>
             <br />
             <atlas-grid
                 [isFilterable]="isFilterable"
