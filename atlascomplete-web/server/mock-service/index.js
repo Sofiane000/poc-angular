@@ -8,6 +8,10 @@ module.exports = (app) => {
 
   // serve IDM APIs
   app.use('/api/idm', require('./idm'));
+  // serve BPM APIs
+  app.use('/api/bpm', require('./bpm'));
+  // serve DMS APIs
+  app.use('/api/dms', require('./dms'));
 
   /**
    * Common error handling
