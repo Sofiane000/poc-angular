@@ -6,7 +6,7 @@
       <atlas-toolbar [buttons]="buttons" [parent]="'grid'" (action)="actionHandler($event)">
       </atlas-toolbar>
       <atlas-grid [isFilterable]="'menu'" [state]="gridState" [columns]="columnsData" [gridService]="peopleServiceChild"
-        [isSortable]="sortable" [isPageable]="true" [selectable]="selectableSettings" [showSelectAll]="false"
+        [isSortable]="sortable" [isPageable]="false" [selectable]="selectableSettings" [showSelectAll]="false"
         [isEditable]="true" [selectedKeys]="selectedKeys" [isGroupable]="true" [pdfOption]="pdfOption" [excelOption]="excelOption"
         showExcelExport="true" showPdfExport="true" height="530" routeParamProperty="LoginSK" routeUrl="/tenants"
         (viewDetail)="viewHandler($event)" (selectionChange)="onSelectionChange()"></atlas-grid>

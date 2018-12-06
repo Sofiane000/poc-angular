@@ -19,25 +19,21 @@ export class PeopleService extends AtlasGridService {
         this.fetch(state).subscribe((x) => super.next(x));
     }
 
-    fetch(state: any): Observable<any> {
-        this.isLoading = true;
-        return this.getUsers().pipe(tap(() => (this.isLoading = false)));
-    }
+  fetch(state: any): Observable<any> {
+    this.isLoading = true;
+    return this.getUsers(state).pipe(tap(() => this.isLoading = false));
+  }
 
-    getUsers() {
-        return this.dataAccess.get('', { pageSize: 2, restartRowId: '1' }).pipe(
-            map((response) => {
-                // restart row is in response.restartRowId
-                return response.body.data;
-            })
-        );
-    }
+  getUsers(state) {
+    return this.dataAccess.get('', { pageSize: state.pageSize, restartRowId: this.rowId ? this.rowId : '' }).pipe(map((response) => {
+      this.rowId = response.restartRowId;
+      return response.body.data;
+    }));
+  }
 
-    getUserById(loginSk: Number) {
-        return this.dataAccess.get(`${loginSk}`).pipe(
-            map((response) => {
-                return response.body.data;
-            })
-        );
-    }
+  getUserById(loginSk: Number) {
+    return this.dataAccess.get(`${loginSk}`).pipe(map((response) => {
+      return response.body.data;
+    }));
+  }
 }

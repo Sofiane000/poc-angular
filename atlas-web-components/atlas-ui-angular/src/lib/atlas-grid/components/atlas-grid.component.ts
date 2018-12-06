@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, EventEmitter, Output, ViewChild, AfterViewInit } from '@angular/core';
 import { IColumnSetting } from '../models/grid-column-setting';
 import { State, process, GroupDescriptor } from '@progress/kendo-data-query';
 import { DataStateChangeEvent, GridDataResult, GridComponent } from '@progress/kendo-angular-grid';
@@ -13,7 +13,7 @@ import { ExcelExportData } from '@progress/kendo-angular-excel-export';
   styleUrls: ['./atlas-grid.component.scss'],
   providers: [AtlasDialogService]
 })
-export class AtlasGridComponent implements OnInit, OnDestroy {
+export class AtlasGridComponent implements OnInit, OnDestroy, AfterViewInit {
   data: any[];
   showAddModel: boolean;
   selectedRowIndex: number;
@@ -60,16 +60,35 @@ export class AtlasGridComponent implements OnInit, OnDestroy {
     this.gridService.query(this.state);
     this.gridServiceSubscription = this.gridService.subscribe(response => {
       if (response) {
-        this.data = response;
+        if (!this.data) {
+          this.data = [];
+        }
+        this.data.push(...response);
         this.gridDataResult = process(this.data, this.state);
       }
     });
 
   }
-
+  ngAfterViewInit() {     // attaches scroll event
+    const scrolldiv = document.getElementsByClassName('k-grid-content')[0];
+    if (scrolldiv) {
+      scrolldiv.addEventListener('scroll', this.loadMoreData.bind(this));
+    }
+  }
+  loadMoreData(event) {      // adds more data and passed grid data.
+    const scrollAdjustment = 10;
+    if (event.target.scrollTop !== 0 &&
+      event.target.clientHeight + event.target.scrollTop +
+      scrollAdjustment >= event.target.scrollHeight) {
+      if (this.gridService.rowId) {
+        this.gridService.query(this.state);
+      }
+    }
+  }
   dataStateChange(event: DataStateChangeEvent) {
     this.state = event;
-    this.gridService.query(event);
+    // this.gridService.query(event);
+    this.gridDataResult = process(this.data, this.state);
   }
   allData(): ExcelExportData {
     const result: ExcelExportData = {
@@ -81,7 +100,7 @@ export class AtlasGridComponent implements OnInit, OnDestroy {
 
   refreshGrid() {
     this.state.skip = 0;
-    this.gridService.query(this.state);
+    // this.gridService.query({});
     this.gridDataResult = process(this.data, this.state);
     this.selectedKeys = [];
   }

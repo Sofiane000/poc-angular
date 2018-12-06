@@ -41,13 +41,13 @@ export class DataAccessService {
 
     get(extraUrl?: String, svcParms?: AtlasRequestParams): Observable<AtlasResponse> {
         let url = this.serviceConfig.fullUrl;
-        const headers = new HttpHeaders();
+        let headers = new HttpHeaders();
         if (svcParms) {
             if (svcParms.pageSize > 0) {
-                headers.append('pageSize', svcParms.pageSize + '');
+                headers = headers.append('pageSize', svcParms.pageSize + '');
             }
             if (svcParms.restartRowId) {
-                headers.append('restartRowId', svcParms.restartRowId);
+                headers = headers.append('restartRowId', svcParms.restartRowId);
             }
         }
         if (extraUrl) {

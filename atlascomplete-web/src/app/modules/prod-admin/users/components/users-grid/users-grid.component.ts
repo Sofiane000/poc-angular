@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef, OnDestroy } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { IColumnSetting, AtlasDialogService, AtlasToolbarButton, ButtonAction, AtlasGridComponent } from 'atlas-ui-angular';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -13,7 +13,8 @@ import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-v
   styleUrls: ['./users-grid.component.scss'],
   providers: [DocumentViewerService]
 })
-export class UsersGridComponent implements OnInit {
+export class UsersGridComponent implements OnInit, OnDestroy {
+
   buttons: AtlasToolbarButton[] = [
     {
       title: 'Add',
@@ -64,8 +65,7 @@ export class UsersGridComponent implements OnInit {
     },
   ];
   gridState: any = {
-    skip: 0,
-    take: 5
+    pageSize: 10
   };
   pdfOption: any = {
     fileName: 'Atlas-user-grid.pdf',
@@ -230,5 +230,8 @@ export class UsersGridComponent implements OnInit {
       }
     }, 100);
 
+  }
+  ngOnDestroy(): void {
+    this.peopleService.rowId = '';
   }
 }

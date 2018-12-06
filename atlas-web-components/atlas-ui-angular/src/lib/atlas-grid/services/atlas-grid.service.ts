@@ -1,10 +1,10 @@
-import { BehaviorSubject, Observable } from 'rxjs';
-import { GridDataResult } from '@progress/kendo-angular-grid';
+import { Observable, Subject } from 'rxjs';
 
-export abstract class AtlasGridService extends BehaviorSubject<any> {
+export abstract class AtlasGridService extends Subject<any> {
     public isLoading: boolean;
+    public rowId: any;
     constructor() {
-        super(null);
+        super();
     }
     abstract fetch(state: any): Observable<any>;
     abstract query(state: any): void;
