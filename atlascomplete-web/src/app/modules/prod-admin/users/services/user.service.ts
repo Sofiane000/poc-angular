@@ -26,13 +26,13 @@ export class UserService extends AtlasGridService {
 
   getUsers() {
     return this.dataAccess.get().pipe(map((response) => {
-      return response.data;
+      return response.body.data;
     }));
   }
 
   getUserById(loginSk: Number) {
     return this.dataAccess.get(`${loginSk}`).pipe(map((response) => {
-      return response.data;
+      return response.body.data;
     }));
   }
 }

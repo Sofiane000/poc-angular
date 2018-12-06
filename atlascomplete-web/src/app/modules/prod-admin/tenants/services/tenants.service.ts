@@ -25,12 +25,12 @@ export class TenantsService extends AtlasGridService {
 
   getTenants() {
     return this.dataAccess.get().pipe(map((response) => {
-      return response.data;
+      return response.body.data;
     }));
   }
   getTenantById(tenantTaxnmySK: number) {
     return this.dataAccess.get(`${tenantTaxnmySK}`).pipe(map((response) => {
-      return response.data;
+      return response.body.data;
     }));
   }
 
