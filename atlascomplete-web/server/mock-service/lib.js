@@ -7,8 +7,8 @@ class MockLib {
         let rawMockData = await this.__loadMock(
             path.resolve(__dirname, './../../mocks/' + pathToMock)
         );
-        const pageSize = req.get('pageSize');
-        const restartRowId = req.get('restartRowId');
+        const pageSize = +req.get('pageSize');
+        const restartRowId = +req.get('restartRowId');
         const headers = {};
         let mockData;
         if (filterCb) {
