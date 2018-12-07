@@ -6,6 +6,8 @@ import { SharedModule } from '../shared/shared.module';
 import { AtlasTabLayoutModule } from 'atlas-ui-angular';
 import { MyTasksComponent } from './components/my-tasks/my-tasks.component';
 import { WorkQueueComponent } from './components/work-queue/work-queue.component';
+import { DataAccessFactory } from 'atlas-web-services';
+import { MyTasksService } from './services/my-tasks.service';
 
 @NgModule({
     declarations: [TasksComponent, MyTasksComponent, WorkQueueComponent],
@@ -16,6 +18,12 @@ import { WorkQueueComponent } from './components/work-queue/work-queue.component
         AtlasTabLayoutModule
     ],
     providers: [
+        MyTasksService
     ]
 })
-export class TasksModule { }
+export class TasksModule {
+    constructor(private dataAccessFactory: DataAccessFactory) {
+        // initialise applicable services for data-access
+        this.dataAccessFactory.createService('bpm.workitems').module('bpm').url('workitems');
+    }
+}

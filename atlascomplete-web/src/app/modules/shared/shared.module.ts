@@ -5,7 +5,7 @@ import {
   MatSidenavModule, MatIconModule, MatListModule,
   MatCardModule, MatMenuModule, MatTabsModule,
   MatFormFieldModule, MatProgressSpinnerModule,
-  MatInputModule, MatGridListModule, MatSnackBarModule, MatDatepickerModule, MatNativeDateModule
+  MatInputModule, MatGridListModule, MatSnackBarModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule
 } from '@angular/material';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 
@@ -27,7 +27,8 @@ import { ModuleWithProviders } from '@angular/compiler/src/core';
     MatGridListModule,
     MatSnackBarModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSelectModule
   ],
   exports: [
     MatToolbarModule,
@@ -44,7 +45,8 @@ import { ModuleWithProviders } from '@angular/compiler/src/core';
     MatGridListModule,
     MatSnackBarModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSelectModule
   ]
 })
 export class SharedModule {
