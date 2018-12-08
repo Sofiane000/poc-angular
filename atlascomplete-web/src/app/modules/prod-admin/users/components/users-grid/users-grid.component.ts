@@ -121,24 +121,28 @@ export class UsersGridComponent implements OnInit, OnDestroy {
                 title: 'Username',
                 width: 60,
                 isFilterable: true,
+                media: '(min-width: 500px)',
             },
             {
                 field: 'cf_UserType',
                 title: 'UserType',
                 width: 60,
                 isFilterable: true,
+                media: '(min-width: 768px)',
             },
             {
                 field: 'cf_TenantTaxnmyName',
                 title: 'Tenants',
                 width: 60,
                 isFilterable: true,
+                media: '(min-width: 768px)',
             },
             {
                 field: 'UserStatTypeCode',
                 title: 'Status',
                 width: 60,
                 isFilterable: true,
+                media: '(min-width: 500px)',
             },
             {
                 field: 'UserActvtnInd',
@@ -147,6 +151,7 @@ export class UsersGridComponent implements OnInit, OnDestroy {
                 showTemplate: true,
                 isFilterable: true,
                 type: 'boolean',
+                media: '(min-width: 768px)',
             },
         ];
     }

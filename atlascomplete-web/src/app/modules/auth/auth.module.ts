@@ -9,23 +9,16 @@ import { DataAccessFactory } from 'atlas-web-services';
 import { AtlasInputModule } from 'atlas-ui-angular';
 
 @NgModule({
-    declarations: [
-        LoginComponent,
-        HomeComponent
-    ],
-    imports: [
-        CommonModule,
-        SharedModule,
-        FormsModule,
-        AtlasInputModule
-    ],
-    providers: [
-        AuthenticationService
-    ]
+    declarations: [LoginComponent, HomeComponent],
+    imports: [CommonModule, SharedModule, FormsModule, AtlasInputModule],
+    providers: [AuthenticationService],
 })
 export class AuthModule {
-  constructor(private dataAccessFactory: DataAccessFactory) {
-    // initialise applicable services for data-access
-    this.dataAccessFactory.createService('idm.user.components').module('idm').url('user/components');
-  }
+    constructor(private dataAccessFactory: DataAccessFactory) {
+        // initialise applicable services for data-access
+        this.dataAccessFactory
+            .createService('idm.user.components')
+            .module('idm')
+            .url('user/components');
+    }
 }
