@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, ViewContainerRef, OnDestroy } from '@angu
 import { UserService } from '../../services/user.service';
 import {
     IColumnSetting,
-    AtlasDialogService,
     AtlasToolbarButton,
     ButtonAction,
     AtlasGridComponent,
@@ -11,8 +10,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { PeopleService } from '../../services/people.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { UsersDeleteDialogComponent } from '../users-dialog/users-delete-dialog.component';
-import { AuthenticationService } from 'src/app/modules/auth/services/authentication.service';
 import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
+import { ScreenService, DeviceType } from 'atlas-web-services';
 
 @Component({
     selector: 'app-users-grid',
@@ -71,6 +70,7 @@ export class UsersGridComponent implements OnInit, OnDestroy {
         allowUnsort: true,
         mode: 'multiple',
     };
+    devTypeSub: any;
     columnsData: IColumnSetting[];
     peopleServiceChild: PeopleService;
     userServiceChild: UserService;
@@ -82,17 +82,20 @@ export class UsersGridComponent implements OnInit, OnDestroy {
     public atlasGrid: AtlasGridComponent;
 
     constructor(
-        private authService: AuthenticationService,
         private userService: UserService,
         private peopleService: PeopleService,
-        private atlasDialogService: AtlasDialogService,
         private router: Router,
         private dialog: MatDialog,
-        private route: ActivatedRoute,
-        private docViewer: DocumentViewerService
+        private docViewer: DocumentViewerService,
+        private screenService: ScreenService
     ) {
         this.peopleServiceChild = peopleService;
         this.userServiceChild = userService;
+        this.devTypeSub = this.screenService.onDeviceTypeChange.subscribe(
+            (deviceType: DeviceType) => {
+                console.log(deviceType);
+            }
+        );
     }
 
     ngOnInit() {
@@ -220,5 +223,6 @@ export class UsersGridComponent implements OnInit, OnDestroy {
 
     ngOnDestroy(): void {
         this.peopleService.rowId = '';
+        this.devTypeSub.unsubscribe();
     }
 }

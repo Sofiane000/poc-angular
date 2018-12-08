@@ -3,6 +3,7 @@
  */
 
 export * from './lib/data-access/dataaccess.service';
+export * from './lib/screen/screen.service';
 export * from './lib/session/session.service';
 export * from './lib/guards/component-candeactivate';
 export * from './lib/guards/can-deactivate.guard';
