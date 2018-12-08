@@ -1,13 +1,17 @@
 <div class="tab-container">
-  <div class="row">
-    <nav mat-tab-nav-bar>
-      <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.link" routerLinkActive #rla="routerLinkActive"
-        [active]="rla.isActive">
-        {{link.label}}
-      </a>
-    </nav>
-  </div>
+    <div class="row">
+        <nav mat-tab-nav-bar>
+            <a
+                mat-tab-link
+                *ngFor="let link of navLinks"
+                [routerLink]="link.link"
+                routerLinkActive
+                #rla="routerLinkActive"
+                [active]="rla.isActive"
+            >
+                {{ link.label }}
+            </a>
+        </nav>
+    </div>
 </div>
-<div [@routerTransition]="o.isActivated ? o.activatedRoute : ''">
-  <router-outlet #o="outlet"></router-outlet>
-</div>
+<div><router-outlet></router-outlet></div>
