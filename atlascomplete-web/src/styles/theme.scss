@@ -20,12 +20,6 @@ $fa-font-path: 'node_modules/font-awesome/fonts';
     font-weight: 500;
 }
 
-@font-face {
-    font-family: Museo;
-    src: url(/assets/fonts/MuseoSans_700.otf) format('opentype');
-    font-weight: 700;
-}
-
 $custom-typography: mat-typography-config(
     $font-family: 'Museo',
 );

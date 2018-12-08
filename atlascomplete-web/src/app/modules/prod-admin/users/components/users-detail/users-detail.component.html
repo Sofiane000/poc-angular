@@ -1,7 +1,8 @@
-<atlas-page-header [showBackBtn]="true" [title]="'User Administration'+' | ' + userDetail?.FirstName +' '+ userDetail?.LastName" (goBack)="goBackHandler($event)">
-</atlas-page-header>
-<atlas-tab-layout [navLinks]="navLinks">
-
-</atlas-tab-layout>
-<atlas-page-footer [showNavigation]="false">
-</atlas-page-footer>
+<atlas-page-header
+    [showBackBtn]="true"
+    fontSize="large"
+    [title]="'User Administration' + ' | ' + userDetail?.FirstName + ' ' + userDetail?.LastName"
+    (goBack)="goBackHandler($event)"
+></atlas-page-header>
+<atlas-tab-layout [navLinks]="navLinks"></atlas-tab-layout>
+<atlas-page-footer [showNavigation]="false"></atlas-page-footer>

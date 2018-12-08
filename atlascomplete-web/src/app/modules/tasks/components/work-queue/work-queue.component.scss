@@ -1,9 +1,10 @@
 .card-title {
     font-size: 16px;
+    font-weight: 300;
 }
 
 .label-title {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 12px;
 }
 
@@ -37,6 +38,7 @@
 
 .sort-by {
     font-size: 12px;
+    font-weight: 300;
 }
 
 .row2 {
@@ -60,9 +62,11 @@
     text-align: center;
     font-weight: 600 !important;
 }
+
 .tool-header {
     width: 100%;
 }
+
 .right-icons {
     float: right;
     margin-top: 9px;
