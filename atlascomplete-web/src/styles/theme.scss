@@ -1,7 +1,36 @@
 @import '~@angular/material/theming';
-$fa-font-path: "node_modules/font-awesome/fonts";
+$fa-font-path: 'node_modules/font-awesome/fonts';
 @import '~font-awesome/scss/font-awesome.scss';
-@include mat-core();
+
+@font-face {
+    font-family: Museo;
+    src: url(/assets/fonts/MuseoSans_100.otf) format('opentype');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: Museo;
+    src: url(/assets/fonts/MuseoSans_300.otf) format('opentype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Museo;
+    src: url(/assets/fonts/MuseoSans_500.otf) format('opentype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Museo;
+    src: url(/assets/fonts/MuseoSans_700.otf) format('opentype');
+    font-weight: 700;
+}
+
+$custom-typography: mat-typography-config(
+    $font-family: 'Museo',
+);
+
+@include mat-core($custom-typography);
 $atlas-app-primary: mat-palette($mat-cyan, 800);
 $atlas-app-accent: mat-palette($mat-grey, 900);
 
@@ -15,17 +44,17 @@ $atlas-app-theme: mat-light-theme($atlas-app-primary, $atlas-app-accent, $atlas-
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($atlas-app-theme);
-@import "variables.scss";
-@import "~@progress/kendo-theme-material/scss/grid";
-@import "~@progress/kendo-theme-material/scss/button";
-@import "~@progress/kendo-theme-material/scss/dialog";
-@import "~@progress/kendo-theme-material/scss/toolbar";
-@import "~@progress/kendo-theme-material/scss/dropdownlist";
-@import "~@progress/kendo-theme-material/scss/treeview";
-@import "~@progress/kendo-theme-material/scss/ripple";
-@import "~@progress/kendo-theme-material/scss/input";
-@import "~@progress/kendo-theme-material/scss/dataviz";
-@import "~@progress/kendo-theme-material/scss/menu";
-@import "~@progress/kendo-theme-material/scss/ripple";
-@import "~@progress/kendo-theme-material/scss/popup";
-@import "~@progress/kendo-theme-material/scss/styling";
+@import 'variables.scss';
+@import '~@progress/kendo-theme-material/scss/grid';
+@import '~@progress/kendo-theme-material/scss/button';
+@import '~@progress/kendo-theme-material/scss/dialog';
+@import '~@progress/kendo-theme-material/scss/toolbar';
+@import '~@progress/kendo-theme-material/scss/dropdownlist';
+@import '~@progress/kendo-theme-material/scss/treeview';
+@import '~@progress/kendo-theme-material/scss/ripple';
+@import '~@progress/kendo-theme-material/scss/input';
+@import '~@progress/kendo-theme-material/scss/dataviz';
+@import '~@progress/kendo-theme-material/scss/menu';
+@import '~@progress/kendo-theme-material/scss/ripple';
+@import '~@progress/kendo-theme-material/scss/popup';
+@import '~@progress/kendo-theme-material/scss/styling';
