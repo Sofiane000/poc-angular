@@ -54,6 +54,7 @@ export class AtlasGridComponent implements OnInit, OnDestroy, AfterViewInit, Mul
     @Input() isLoading: boolean;
     @Input() gridService: AtlasGridService;
     @Input() selectable: Selectable;
+    @Input() rowHeight: any;
     @Input() showSelectAll: boolean;
     @Input() editDataItem: any;
     @Input() selectedKeys: any[];

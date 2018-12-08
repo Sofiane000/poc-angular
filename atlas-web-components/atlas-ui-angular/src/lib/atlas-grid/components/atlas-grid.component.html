@@ -18,6 +18,7 @@
     (selectionChange)="onSelectionChange($event)"
     [groupable]="isGroupable"
     [group]="state?.group"
+    [rowHeight]="rowHeight"
 >
     <kendo-grid-checkbox-column
         *ngIf="selectable?.enabled"

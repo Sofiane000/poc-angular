@@ -1,10 +1,20 @@
-<kendo-treeview [nodes]="partialData" [textField]="textFields" kendoTreeViewExpandable="isTreeViewExpandable"
-  kendoTreeViewHierarchyBinding="isTreeViewHierarchyBinding" (nodeClick)="onNodeClick($event)" [childrenField]="children"
-  [hasChildren]="hasChildren" [(expandedKeys)]="expandedKeys">
-  <ng-template kendoTreeViewNodeTemplate let-dataItem>
-    <span class="tree-icon" [ngClass]="iconClass(dataItem)"></span>
-    {{dataItem[textFields]}}
-  </ng-template>
+<kendo-treeview
+    [nodes]="partialData"
+    [textField]="textFields"
+    kendoTreeViewExpandable="isTreeViewExpandable"
+    kendoTreeViewHierarchyBinding="isTreeViewHierarchyBinding"
+    (nodeClick)="onNodeClick($event)"
+    [childrenField]="children"
+    [hasChildren]="hasChildren"
+    [(expandedKeys)]="expandedKeys"
+    (selectionChange)="handleSelection($event)"
+    [selectBy]="selectBy"
+    [(selectedKeys)]="selectedKeys"
+    [kendoTreeViewSelectable]="selectable"
+>
+    <ng-template kendoTreeViewNodeTemplate let-dataItem>
+        <span class="tree-icon" [ngClass]="iconClass(dataItem)"></span>
+        {{ dataItem[textFields] }}
+    </ng-template>
 </kendo-treeview>
-<kendo-contextmenu #treemenu [items]="menuItems" (select)="onAddSelect($event)">
-</kendo-contextmenu>
+<kendo-contextmenu #treemenu [items]="menuItems" (select)="onAddSelect($event)"></kendo-contextmenu>

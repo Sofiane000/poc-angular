@@ -56,13 +56,15 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
             return; // no parent
         }
         this.useButtons = [...this.actionButtons, ...this.buttons];
-        this.subscription = this.parent.selectionChange.subscribe(
-            (selection: MultiRowSelection) => {
-                this.onSelectionChanged(
-                    selection.selectedRows && selection.selectedRows.length > 0
-                );
-            }
-        );
+        if (this.parent.selectionChange) {
+            this.subscription = this.parent.selectionChange.subscribe(
+                (selection: MultiRowSelection) => {
+                    this.onSelectionChanged(
+                        selection.selectedRows && selection.selectedRows.length > 0
+                    );
+                }
+            );
+        }
     }
 
     onSelectionChanged(hasRowsSelected: boolean) {
