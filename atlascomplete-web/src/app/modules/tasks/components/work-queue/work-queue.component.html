@@ -1,3 +1,73 @@
-<p>
-  work-queue works!
-</p>
+<mat-toolbar class="toolbar mat-elevation-z6">
+    <mat-toolbar-row>
+        <div class="tool-header">
+            <span class="sort-by">Sort By</span>
+            <mat-form-field width="60">
+                <mat-select [(value)]="selectedStatus">
+                    <mat-option *ngFor="let status of statusValues" [value]="status">
+                        {{ status }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button type="button" aria-label="Filter" mat-icon-button>
+                <mat-icon fontSet="fontawesome" [fontIcon]="'fa-sort-alpha-asc'"></mat-icon>
+            </button>
+            <div class="right-icons">
+                <button class="right-icons" type="button" aria-label="Refresh" mat-icon-button>
+                    <mat-icon fontSet="fontawesome" [fontIcon]="'fa-refresh'"></mat-icon>
+                </button>
+                <button class="right-icons" type="button" aria-label="Filter" mat-icon-button>
+                    <mat-icon fontSet="fontawesome" [fontIcon]="'fa-filter'"></mat-icon>
+                </button>
+            </div>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="header-tasks mat-elevation-z4"><p>Tasks</p></div>
+<ng-template ngFor let-workitem [ngForOf]="workItems">
+    <mat-card>
+        <span class="card-title">{{ workitem.taskTitle }}</span>
+
+        <div class="row row1">
+            <div class="col-md-6">
+                <span class="label-title">Workflow: {{ workitem.processName }}</span>
+            </div>
+            <div class="col-md-6">
+                <span class="label-title">Priority: {{ workitem.priority }}</span>
+            </div>
+        </div>
+        <div class="row row2">
+            <div class="col-md-6">
+                <span class="label-title">Workflow ID: {{ workitem.taskId }}</span>
+            </div>
+            <div class="col-md-6">
+                <span class="label-title">
+                    Staus: {{ workitem.taskStatus === 'I_ASSIGNED' ? 'assigned' : 'available' }}
+                </span>
+            </div>
+        </div>
+        <div class="row row3">
+            <div class="col-md-6">
+                <span class="label-title">
+                    <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                    Created: {{ workitem.timeStarted | date: 'M/d/yy, h:mm a' }}
+                </span>
+            </div>
+            <div class="col-md-6">
+                <span class="label-title">
+                    <i class="fa fa-calendar-minus-o" aria-hidden="true"></i>
+                    Due: {{ workitem.dueDate | date: 'M/d/yy, h:mm a' }}
+                </span>
+            </div>
+        </div>
+
+        <div class="row row4">
+            <div class="col-md-6">
+                <span class="label-title">
+                    <i class="fa fa-hourglass-end " aria-hidden="true"></i>
+                    Time Remaining: {{ workitem.dueDate | date: 'M/d/yy, h:mm a' }}
+                </span>
+            </div>
+        </div>
+    </mat-card>
+</ng-template>

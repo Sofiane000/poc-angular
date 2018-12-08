@@ -7,9 +7,11 @@ export class MyTasksService {
     constructor(dataAccessFactory: DataAccessFactory) {
         this.dataAccess = dataAccessFactory.getService('bpm.workitems');
     }
-    getWorkItems() {
-        return this.dataAccess.get().pipe(map((response) => {
-            return response.body.data;
-        }));
+    getWorkItems(type: string) {
+        return this.dataAccess.get(`${type}`).pipe(
+            map((response) => {
+                return response.body.data;
+            })
+        );
     }
 }
