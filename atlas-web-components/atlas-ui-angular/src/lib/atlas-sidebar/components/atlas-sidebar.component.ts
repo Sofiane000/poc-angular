@@ -7,32 +7,43 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     animations: [
         // Each unique animation requires its own trigger. The first argument of the trigger function is the name
         trigger('rotatedState', [
-            state('default', style({ width: 'auto' })),
-            state('rotated', style({
-                transform: 'rotate(90deg)',
-                'transform-origin': 'left top',
-                'position': 'absolute',
-                top: '0',
-                left: '87%',
-                'white-space': 'nowrap',
-                width: '630px'
-            }))
+            state(
+                'rotated',
+                style({
+                    transform: 'rotate(90deg)',
+                    'transform-origin': 'left top',
+                    position: 'absolute',
+                    top: '0',
+                    left: '87%',
+                    'white-space': 'nowrap',
+                    width: '630px',
+                })
+            ),
         ]),
         trigger('iconRotate', [
-            state('default', style({ transform: 'rotate(0deg)', })),
-            state('rotated', style({
-                transform: 'rotate(-90deg)',
-            }))
+            state('default', style({ transform: 'rotate(0deg)' })),
+            state(
+                'rotated',
+                style({
+                    transform: 'rotate(-90deg)',
+                })
+            ),
         ]),
         trigger('arrowRotate', [
-            state('default', style({
-                transform: 'rotate(0deg)'
-            })),
-            state('rotated', style({
-                transform: 'rotate(90deg)',
-            }))
-        ])
-    ]
+            state(
+                'default',
+                style({
+                    transform: 'rotate(0deg)',
+                })
+            ),
+            state(
+                'rotated',
+                style({
+                    transform: 'rotate(90deg)',
+                })
+            ),
+        ]),
+    ],
 })
 export class AtlasSideBarComponent {
     state = 'default';
@@ -45,7 +56,7 @@ export class AtlasSideBarComponent {
         this.toggleSideBar.emit();
     }
     rotate() {
-        this.state = (this.state === 'default' ? 'rotated' : 'default');
+        this.state = this.state === 'default' ? 'rotated' : 'default';
         if (this.state === 'default') {
             this.toggleMiniMode.emit(false);
         } else {

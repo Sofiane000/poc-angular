@@ -11,6 +11,7 @@
 ></atlas-header>
 <mat-sidenav-container class="sidenav-container" autosize>
     <mat-sidenav
+        disableClose
         *ngIf="isAuthorized"
         #menu
         class="sidenav"
@@ -27,6 +28,7 @@
         <atlas-content></atlas-content>
     </mat-sidenav-content>
     <mat-sidenav
+        disableClose
         *ngIf="isAuthorized"
         [mode]="(isHandset | async) || (isTablet | async) ? 'over' : 'side'"
         [attr.role]="(isHandset | async) || (isTablet | async) ? 'dialog' : 'navigation'"
