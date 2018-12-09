@@ -40,3 +40,82 @@ a {
 .button-group-2 {
   float: right;
 }
+
+.small-header {
+  white-space: inherit;
+  text-align: center;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+  .mat-toolbar-row,
+  .mat-toolbar-single-row,
+  .mat-toolbar-multiple-rows {
+    height: 151px;
+    min-height: auto;
+    white-space: inherit;
+  }
+
+  .undo-btn {
+    float: right;
+  }
+
+  .toggle-btn {
+    float: left;
+  }
+
+  .atlas-toolbar {
+    text-align: center;
+  }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 375px) {
+
+  .mat-toolbar-row,
+  .mat-toolbar-single-row,
+  .mat-toolbar-multiple-rows {
+    height: 190px;
+    min-height: auto;
+    white-space: inherit;
+  }
+
+  .undo-btn {
+    float: right;
+  }
+
+  .toggle-btn {
+    float: left;
+  }
+
+  .atlas-toolbar {
+    text-align: center;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 480px) {
+
+  .mat-toolbar-row,
+  .mat-toolbar-single-row,
+  .mat-toolbar-multiple-rows {
+    height: 151px;
+    min-height: auto;
+    white-space: inherit;
+  }
+
+  .undo-btn {
+    float: right;
+  }
+
+  .toggle-btn {
+    float: left;
+  }
+
+  .atlas-toolbar {
+    text-align: center;
+  }
+}

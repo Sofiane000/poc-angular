@@ -33,7 +33,8 @@ body {
     opacity: 0.87;
 }
 
-.button-header a.active {
+.button-header a.active,
+.small-header a.active {
     background-color: $atlas-icon-active;
 }
 
@@ -207,4 +208,26 @@ mat-list-item-content {
     color: white;
     min-height: 48px !important;
     height: 48px;
+}
+
+@media only screen and (min-width: 375px) and (max-width: 812px) and (-webkit-device-pixel-ratio: 3) {
+    .atlas-header.mat-toolbar-row,
+    .atlas-header.mat-toolbar-single-row,
+    .atlas-header.mat-toolbar-multiple-rows {
+        height: 190px !important;
+        min-height: auto !important;
+        white-space: inherit !important;
+    }
+
+    .undo-btn {
+        float: right;
+    }
+
+    .toggle-btn {
+        float: left;
+    }
+
+    .atlas-toolbar {
+        text-align: center;
+    }
 }
