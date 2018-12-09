@@ -85,8 +85,21 @@ export class AtlasTreeComponent implements OnInit, MultiRowComponent {
     iconClass(dataItem): any {
         return {
             'fa-database': dataItem['TenantTaxnmyType'] === 'Tenant' ? true : false,
-            'fa-folder': dataItem['TenantTaxnmyType'] === 'Acct' ? true : false,
-            'fa-file': dataItem['TenantTaxnmyType'] === 'Grp' ? true : false,
+            // tslint:disable-next-line:max-line-length
+            'fa-folder':
+                dataItem['TenantTaxnmyType'] === 'Acct' ||
+                dataItem['MenuName'] === 'Administration' ||
+                dataItem['MenuName'] === 'Finance Services'
+                    ? true
+                    : false,
+            // tslint:disable-next-line:max-line-length
+            'fa-file':
+                dataItem['TenantTaxnmyType'] === 'Grp' ||
+                (dataItem['MenuName'] !== '' &&
+                    dataItem['MenuName'] !== 'Administration' &&
+                    dataItem['MenuName'] !== 'Finance Services')
+                    ? true
+                    : false,
             'fa-file-text ': dataItem['TenantTaxnmyType'] === 'PopGrp' ? true : false,
             'fa-globe': dataItem['TenantTaxnmyType'] === 'Global' ? true : false,
             fa: true,
