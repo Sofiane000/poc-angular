@@ -2,13 +2,20 @@
 <atlas-page-content>
     <div class="row dms-grid">
         <div class="col-md-12 no-padding">
+            <atlas-toolbar
+                [buttons]="buttons"
+                [parent]="atlasGrid"
+                [showAddEditButtons]="false"
+                (action)="actionHandler($event)"
+            ></atlas-toolbar>
             <atlas-grid
                 [isFilterable]="'menu'"
                 [state]="gridState"
                 [columns]="columnsData"
-                [gridService]="peopleServiceChild"
+                [gridService]="dmsServiceChild"
                 [isSortable]="sortable"
                 [isPageable]="false"
+                [isEditable]="true"
                 [selectable]="selectableSettings"
                 [showSelectAll]="false"
                 [isEditable]="false"

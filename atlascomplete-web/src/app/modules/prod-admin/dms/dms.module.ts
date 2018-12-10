@@ -21,8 +21,17 @@ import { DmsGridComponent } from './components/dms-grid/dms-grid.component';
 import { DmsDetailComponent } from './components/dms-detail/dms-detail.component';
 import { SharedModule } from '../../shared/shared.module';
 import { DataAccessFactory } from 'atlas-web-services';
+import { DmsStorageComponent } from './components/dms-storage/dms-storage.component';
+import { DmsPermissionsComponent } from './components/dms-permissions/dms-permissions.component';
+import { DmsSchemaComponent } from './components/dms-schema/dms-schema.component';
 @NgModule({
-    declarations: [DmsDetailComponent, DmsGridComponent],
+    declarations: [
+        DmsDetailComponent,
+        DmsGridComponent,
+        DmsStorageComponent,
+        DmsPermissionsComponent,
+        DmsSchemaComponent,
+    ],
 
     imports: [
         CommonModule,
@@ -49,8 +58,8 @@ export class DmsModule {
     constructor(private dataAccessFactory: DataAccessFactory) {
         // initialise applicable services for data-access
         this.dataAccessFactory
-            .createService('dms.dms')
+            .createService('dms.categories')
             .module('dms')
-            .url('dms');
+            .url('categories');
     }
 }

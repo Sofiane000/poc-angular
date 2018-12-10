@@ -12,7 +12,7 @@ export class DmsService extends AtlasGridService {
 
     constructor(dataAccessFactory: DataAccessFactory) {
         super();
-        this.dataAccess = dataAccessFactory.getService('dms.dms');
+        this.dataAccess = dataAccessFactory.getService('dms.categories');
     }
 
     query(state: any): void {

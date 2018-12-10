@@ -6,6 +6,7 @@ import {
     AtlasToolbarButton,
     ButtonAction,
     AtlasGridComponent,
+    AtlasToolbarComponent,
 } from 'atlas-ui-angular';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
@@ -19,6 +20,12 @@ import { ScreenService, DeviceType } from 'atlas-web-services';
 })
 export class DmsGridComponent implements OnInit, OnDestroy {
     buttons: AtlasToolbarButton[] = [
+        {
+            title: 'Refresh',
+            action: ButtonAction.Refresh,
+            icon: 'fa-refresh',
+            class: 'refresh-btn',
+        },
         {
             title: 'Export As Pdf',
             action: ButtonAction.ExportAsPdf,
@@ -48,7 +55,7 @@ export class DmsGridComponent implements OnInit, OnDestroy {
         title: 'Atlas dms',
     };
     selectableSettings: any = {
-        enabled: true,
+        enabled: false,
         mode: 'single',
         checkboxOnly: true,
     };
@@ -65,6 +72,8 @@ export class DmsGridComponent implements OnInit, OnDestroy {
     public containerRef: ViewContainerRef;
     @ViewChild(AtlasGridComponent)
     public atlasGrid: AtlasGridComponent;
+    @ViewChild(AtlasToolbarComponent)
+    public atlasToolbar: AtlasToolbarComponent;
 
     constructor(
         private dmsService: DmsService,
@@ -73,7 +82,6 @@ export class DmsGridComponent implements OnInit, OnDestroy {
         private docViewer: DocumentViewerService,
         private screenService: ScreenService
     ) {
-        this.dmsServiceChild = dmsService;
         this.dmsServiceChild = dmsService;
         this.devTypeSub = this.screenService.onDeviceTypeChange.subscribe(
             (deviceType: DeviceType) => {
@@ -89,17 +97,16 @@ export class DmsGridComponent implements OnInit, OnDestroy {
     initialization() {
         this.columnsData = this.columnsData = [
             {
-                field: '"DocCatgTypeCode"',
-                title: 'Category',
-                width: 60,
-                isFilterable: true,
+                field: 'DocCatgTypeCode',
+                title: 'Document Category',
+                width: 250,
             },
         ];
     }
 
     viewHandler({ dataItem }) {
         this.dmsService.selectedDms = dataItem;
-        this.router.navigate(['/administration/dms/' + dataItem.DocCatgSK + '/tenants']);
+        this.router.navigate(['/administration/dms/' + dataItem.DocCatgSK + '/schema']);
         // this.router.navigate(['/grid/details']);
     }
 

@@ -20,18 +20,18 @@ export class DmsDetailComponent implements OnInit {
     ngOnInit() {
         this.navLinks = [
             {
-                label: 'Tenants',
-                link: 'tenants',
+                label: 'SCHEMA AND TEMPLATE',
+                link: 'schema',
                 index: 0,
             },
             {
-                label: 'Roles',
-                link: 'roles',
+                label: 'STORAGE TIERS',
+                link: 'storage',
                 index: 1,
             },
             {
-                label: 'Properties',
-                link: 'properties',
+                label: 'PERMISSIONS',
+                link: 'permissions',
                 index: 2,
             },
         ];

@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { DmsGridComponent } from './components/dms-grid/dms-grid.component';
 import { DmsDetailComponent } from './components/dms-detail/dms-detail.component';
 import { CanDeactivateGuard } from 'atlas-web-services';
+import { DmsStorageComponent } from './components/dms-storage/dms-storage.component';
+import { DmsPermissionsComponent } from './components/dms-permissions/dms-permissions.component';
+import { DmsSchemaComponent } from './components/dms-schema/dms-schema.component';
 
 const appRoutes: Routes = [
     {
@@ -13,7 +16,11 @@ const appRoutes: Routes = [
     {
         path: ':id',
         component: DmsDetailComponent,
-        children: [],
+        children: [
+            { path: 'schema', component: DmsSchemaComponent },
+            { path: 'storage', component: DmsStorageComponent },
+            { path: 'permissions', component: DmsPermissionsComponent },
+        ],
     },
 ];
 
