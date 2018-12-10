@@ -41,7 +41,7 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
             class: 'refresh-btn',
         },
     ];
-
+    @Input() showAddEditButtons = true;
     @Input() buttons: Array<AtlasToolbarButton>;
     @Input() parent: MultiRowComponent;
     @Input() canSearch: boolean;
@@ -55,7 +55,11 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
         if (!this.parent) {
             return; // no parent
         }
-        this.useButtons = [...this.actionButtons, ...this.buttons];
+        if (this.showAddEditButtons) {
+            this.useButtons = [...this.actionButtons, ...this.buttons];
+        } else {
+            this.useButtons = this.buttons.map((item) => item);
+        }
         if (this.parent.selectionChange) {
             this.subscription = this.parent.selectionChange.subscribe(
                 (selection: MultiRowSelection) => {

@@ -1,0 +1,8 @@
+<atlas-page-header
+    [showBackBtn]="true"
+    fontSize="large"
+    [title]="'DMS Configuration' + ' | ' + dmsDetail?.DocCatgTypeCode"
+    (goBack)="goBackHandler($event)"
+></atlas-page-header>
+<atlas-tab-layout [navLinks]="navLinks"></atlas-tab-layout>
+<atlas-page-footer [showNavigation]="false"></atlas-page-footer>

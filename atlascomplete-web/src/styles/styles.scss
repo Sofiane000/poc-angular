@@ -129,10 +129,12 @@ mat-label {
     opacity: 0.87 !important;
 }
 
-.k-grid tr td:first-child {
+.user-grid .k-grid tr td:first-child {
     text-align: center;
 }
-
+.dms-grid {
+    padding-left: 3px;
+}
 .k-grid-filter {
     top: 3px;
 }
@@ -233,67 +235,72 @@ mat-list-item-content {
 }
 
 .side-bar-toolbar {
-    position: fixed;
-    z-index: 2;
-    width: 404px !important;
+  position: fixed;
+  z-index: 2;
+  width: 420px !important;
 }
 
 .side-bar-body {
-    margin-top: 40px;
+  margin-top: 40px;
 }
+
+
 
 @media (min-width: 1025px) and (max-width: 1280px) {
-    .side-bar-toolbar {
-        width: 404px !important;
-    }
+
+  .side-bar-toolbar {
+    width: 404px !important;
+  }
 }
 
-/*
+/* 
   ##Device = Tablets, Ipads (portrait)
   ##Screen = B/w 768px to 1024px
 */
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    .side-bar-toolbar {
-        width: 310px !important;
-    }
+  .side-bar-toolbar {
+    width: 310px !important;
+  }
 }
 
-/*
+/* 
   ##Device = Tablets, Ipads (landscape)
   ##Screen = B/w 768px to 1024px
 */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    .side-bar-toolbar {
-        width: 310px !important;
-    }
+  .side-bar-toolbar {
+    width: 310px !important;
+  }
 }
 
-/*
+/* 
   ##Device = Low Resolution Tablets, Mobiles (Landscape)
   ##Screen = B/w 481px to 767px
 */
 
 @media (min-width: 481px) and (max-width: 767px) {
-    .side-bar-toolbar {
-        width: 310px !important;
-    }
+  .side-bar-toolbar {
+    width: 310px !important;
+  }
 }
 
-/*
+/* 
   ##Device = Most of the Smartphones Mobiles (Portrait)
   ##Screen = B/w 320px to 479px
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
-    .side-bar-toolbar {
-        width: 310px !important;
-    }
+  .side-bar-toolbar {
+    width: 310px !important;
+  }
 }
 
-@media only screen and (min-width: 375px) and (max-width: 812px) and (-webkit-device-pixel-ratio: 3) {
-    .side-bar-toolbar {
-        width: 310px !important;
-    }
+
+
+@media only screen and (min-width : 375px) and (max-width : 812px) and (-webkit-device-pixel-ratio : 3) {
+  .side-bar-toolbar {
+    width: 310px !important;
+  }
 }

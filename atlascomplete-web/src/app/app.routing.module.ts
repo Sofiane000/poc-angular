@@ -27,6 +27,11 @@ const appRoutes: Routes = [
         canActivate: [AuthGuardService],
     },
     {
+        path: 'administration/dms',
+        loadChildren: './modules/prod-admin/dms/dms.module#DmsModule',
+        canActivate: [AuthGuardService],
+    },
+    {
         path: 'administration/tenants',
         loadChildren: './modules/prod-admin/tenants/tenants.module#TenantsModule',
         canActivate: [AuthGuardService],

@@ -115,7 +115,7 @@ export class MenuService {
                         ParentMenuSK: 3,
                         MenuName: 'DMS Configuration',
                         MenuType: 'LeftNav',
-                        MenuURI: '',
+                        MenuURI: 'administration/dms',
                         MenuSortOrder: 0,
                         CreatedBy: 'bstark',
                         CreatedTs: '2018-05-01T11:07:41.368-04:00',
