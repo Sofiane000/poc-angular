@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ViewContainerRef, OnDestroy } from '@angular/core';
 import { DmsService } from '../../services/dms.service';
-import { MatDialog, MatDialogConfig } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import {
     IColumnSetting,
     AtlasToolbarButton,
@@ -8,9 +8,8 @@ import {
     AtlasGridComponent,
     AtlasToolbarComponent,
 } from 'atlas-ui-angular';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
-import { ScreenService, DeviceType } from 'atlas-web-services';
 
 @Component({
     selector: 'app-dms-grid',
@@ -63,7 +62,6 @@ export class DmsGridComponent implements OnInit, OnDestroy {
         allowUnsort: true,
         mode: 'multiple',
     };
-    devTypeSub: any;
     columnsData: IColumnSetting[];
     dmsServiceChild: DmsService;
     selectedKeys: any[] = [];
@@ -79,15 +77,9 @@ export class DmsGridComponent implements OnInit, OnDestroy {
         private dmsService: DmsService,
         private router: Router,
         private dialog: MatDialog,
-        private docViewer: DocumentViewerService,
-        private screenService: ScreenService
+        private docViewer: DocumentViewerService
     ) {
         this.dmsServiceChild = dmsService;
-        this.devTypeSub = this.screenService.onDeviceTypeChange.subscribe(
-            (deviceType: DeviceType) => {
-                console.log(deviceType);
-            }
-        );
     }
 
     ngOnInit() {
@@ -144,6 +136,5 @@ export class DmsGridComponent implements OnInit, OnDestroy {
 
     ngOnDestroy(): void {
         this.dmsService.rowId = '';
-        this.devTypeSub.unsubscribe();
     }
 }

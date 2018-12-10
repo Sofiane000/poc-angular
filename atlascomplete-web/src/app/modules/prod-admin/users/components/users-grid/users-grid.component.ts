@@ -6,12 +6,11 @@ import {
     ButtonAction,
     AtlasGridComponent,
 } from 'atlas-ui-angular';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { PeopleService } from '../../services/people.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { UsersDeleteDialogComponent } from '../users-dialog/users-delete-dialog.component';
 import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
-import { ScreenService, DeviceType } from 'atlas-web-services';
 
 @Component({
     selector: 'app-users-grid',
@@ -70,7 +69,6 @@ export class UsersGridComponent implements OnInit, OnDestroy {
         allowUnsort: true,
         mode: 'multiple',
     };
-    devTypeSub: any;
     columnsData: IColumnSetting[];
     peopleServiceChild: PeopleService;
     userServiceChild: UserService;
@@ -86,16 +84,10 @@ export class UsersGridComponent implements OnInit, OnDestroy {
         private peopleService: PeopleService,
         private router: Router,
         private dialog: MatDialog,
-        private docViewer: DocumentViewerService,
-        private screenService: ScreenService
+        private docViewer: DocumentViewerService
     ) {
         this.peopleServiceChild = peopleService;
         this.userServiceChild = userService;
-        this.devTypeSub = this.screenService.onDeviceTypeChange.subscribe(
-            (deviceType: DeviceType) => {
-                console.log(deviceType);
-            }
-        );
     }
 
     ngOnInit() {
@@ -228,6 +220,5 @@ export class UsersGridComponent implements OnInit, OnDestroy {
 
     ngOnDestroy(): void {
         this.peopleService.rowId = '';
-        this.devTypeSub.unsubscribe();
     }
 }

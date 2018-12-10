@@ -3,7 +3,6 @@ import { Observable, Subscription } from 'rxjs';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
 import { Router, NavigationEnd } from '@angular/router';
-import { AuthenticationService } from './modules/auth/services/authentication.service';
 import { IMenuItem, AtlasSideBarComponent, AtlasHeaderComponent } from 'atlas-ui-angular';
 import { MenuService } from './menu.service';
 import { AppSession } from 'atlas-web-services';
@@ -20,9 +19,11 @@ export class AppComponent implements OnInit, OnDestroy {
     isAuthorizedSubscription: Subscription;
     sideBarTitle: string;
     menuItems: IMenuItem[];
+    IsCurHandset = false;
     isHandset: Observable<boolean> = this.breakpointObserver
         .observe(Breakpoints.Handset)
         .pipe(map((result) => result.matches));
+    IsCurTablet = false;
     isTablet: Observable<boolean> = this.breakpointObserver
         .observe(Breakpoints.Tablet)
         .pipe(map((result) => result.matches));
@@ -64,7 +65,20 @@ export class AppComponent implements OnInit, OnDestroy {
         if (this.isAuthorized) {
             this.addClass = true;
         }
+        this.isHandset.subscribe((curValIsHandset) => {
+            this.IsCurHandset = curValIsHandset;
+        });
+        this.isTablet.subscribe((curValIsTablet) => {
+            this.IsCurTablet = curValIsTablet;
+        });
     }
+
+    handleMenuItemSelection() {
+        if (this.IsCurTablet || this.IsCurHandset) {
+            this.toggleMenu();
+        }
+    }
+
     ngOnInit(): void {
         this.menuItems = this.menuService.getMenuItems();
     }

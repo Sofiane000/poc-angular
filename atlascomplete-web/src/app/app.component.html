@@ -21,7 +21,10 @@
         [opened]="!(isHandset | async) && !(isTablet | async)"
     >
         <!-- Menu -->
-        <atlas-menu [menuItems]="menuItems"></atlas-menu>
+        <atlas-menu
+            [menuItems]="menuItems"
+            (menuItemSelected)="handleMenuItemSelection()"
+        ></atlas-menu>
     </mat-sidenav>
     <mat-sidenav-content>
         <!-- Main content -->
