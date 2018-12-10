@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "test-headless": "ng test --watch=true --browsers=ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "packagr": "ng-packagr -p ./projects/atlas-web-services/ng-package.json",
