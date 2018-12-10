@@ -1,0 +1,33 @@
+<atlas-page-header title="DMS Configuration" fontSize="large" textAlign="left"></atlas-page-header>
+<atlas-page-content>
+    <div class="row dms-grid">
+        <div class="col-md-12 no-padding">
+            <atlas-grid
+                [isFilterable]="'menu'"
+                [state]="gridState"
+                [columns]="columnsData"
+                [gridService]="peopleServiceChild"
+                [isSortable]="sortable"
+                [isPageable]="false"
+                [selectable]="selectableSettings"
+                [showSelectAll]="false"
+                [isEditable]="false"
+                [selectedKeys]="selectedKeys"
+                [isGroupable]="true"
+                [pdfOption]="pdfOption"
+                [excelOption]="excelOption"
+                showExcelExport="true"
+                showPdfExport="true"
+                height="530"
+                routeParamProperty="DocCatgSK"
+                routeUrl="/tenants"
+                (viewDetail)="viewHandler($event)"
+                (selectionChange)="onSelectionChange()"
+            ></atlas-grid>
+        </div>
+    </div>
+</atlas-page-content>
+
+<atlas-page-footer [canSave]="true" [showNumRecords]="true"></atlas-page-footer>
+<br />
+<router-outlet></router-outlet>
