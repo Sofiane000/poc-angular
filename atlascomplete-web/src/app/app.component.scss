@@ -110,7 +110,7 @@ mat-card {
     }
 }
 
-@media (min-width: 320px) and (max-width: 375px) and (-webkit-device-pixel-ratio: 3) {
+@media only screen and (min-width: 375px) and (max-width: 812px) and (-webkit-device-pixel-ratio: 3) {
     :host(.isAuthorized) {
         top: 191px;
     }
