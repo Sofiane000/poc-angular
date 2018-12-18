@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { APP_BASE_HREF } from '@angular/common';
-import { AtlasContentModule, AtlasSideBarModule, AtlasHeaderModule, AtlasMenuModule } from 'atlas-ui-angular';
+import { AtlasContentModule, AtlasSideBarModule, AtlasHeaderModule, AtlasMenuModule } from 'atlas-web-components';
 import { AppRoutingModule } from './app.routing.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { AuthModule } from './modules/auth/auth.module';

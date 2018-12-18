@@ -3,7 +3,7 @@ import { Observable, Subscription } from 'rxjs';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
 import { Router, NavigationEnd } from '@angular/router';
-import { IMenuItem, AtlasSideBarComponent, AtlasHeaderComponent } from 'atlas-ui-angular';
+import { IMenuItem, AtlasSideBarComponent, AtlasHeaderComponent } from 'atlas-web-components';
 import { MenuService } from './menu.service';
 import { AppSession } from 'atlas-web-services';
 

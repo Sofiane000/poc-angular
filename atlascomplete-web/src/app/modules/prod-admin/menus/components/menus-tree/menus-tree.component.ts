@@ -4,7 +4,7 @@ import {
     AtlasToolbarButton,
     ButtonAction,
     AtlasToolbarComponent,
-} from 'atlas-ui-angular';
+} from 'atlas-web-components';
 import { MenusService } from '../../services/menus.service';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material';

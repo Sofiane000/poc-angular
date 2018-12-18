@@ -1,0 +1,4 @@
+<mat-dialog-actions>
+  <button kendoButton [title]="showYesNo?'No':'Cancel'" (click)="onClose('close')" [primary]="true" [look]="'bare'">{{showYesNo?'No':'Cancel'}}</button>
+  <button kendoButton [title]="showYesNo?'Yes':'Save'" [disabled]="isSaveDisabled" (click)="onClose('save')" [primary]="true">{{showYesNo?'Yes':'Save'}}</button>
+</mat-dialog-actions>

@@ -8,10 +8,8 @@ export class MyTasksService {
         this.dataAccess = dataAccessFactory.getService('bpm.workitems');
     }
     getWorkItems(type: string) {
-        return this.dataAccess.get(`${type}`).pipe(
-            map((response) => {
-                return response.body.data;
-            })
-        );
+        return this.dataAccess.get(`${type}`).pipe(map((response) => {
+            return response.body.data;
+        }));
     }
 }

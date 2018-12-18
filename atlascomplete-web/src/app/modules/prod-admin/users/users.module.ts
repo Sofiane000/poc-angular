@@ -6,7 +6,7 @@ import {
   AtlasPageContentModule, AtlasTabLayoutModule,
   AtlasDialogHeaderModule, AtlasDialogFooterModule, AtlasDialogContentModule,
    AtlasPageFooterModule, AtlasInputModule, AtlasToolbarModule
-} from 'atlas-ui-angular';
+} from 'atlas-web-components';
 import { UserService } from './services/user.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material';

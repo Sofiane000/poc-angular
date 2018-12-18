@@ -1,0 +1,27 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/atlas-web-components",
+  "lib": {
+    "entryFile": "src/public_api.ts"
+  },
+  
+  "whitelistedNonPeerDependencies": [
+    "@progress/kendo-theme-default",
+    "@progress/kendo-theme-material",
+    "@progress/kendo-angular-buttons",
+    "@progress/kendo-angular-grid",
+    "@progress/kendo-angular-l10n",
+    "@progress/kendo-angular-menu",
+    "@progress/kendo-angular-treeview",
+    "@progress/kendo-angular-dropdowns",
+    "@progress/kendo-angular-inputs",
+    "@progress/kendo-angular-intl",
+    "@progress/kendo-data-query",
+    "@progress/kendo-drawing",
+    "@progress/kendo-angular-excel-export",
+    "@progress/kendo-angular-dateinputs",
+    "@progress/kendo-angular-popup",
+    "@progress/kendo-angular-dialog",
+    "ng2-pdf-viewer"
+  ]
+}

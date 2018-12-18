@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DmsService } from '../../services/dms.service';
-import { INavLink } from 'atlas-ui-angular/lib/layout/atlas-tab-layout/models/nav-link';
+import { INavLink } from 'atlas-web-components/lib/layout/atlas-tab-layout/models/nav-link';
 
 @Component({
     selector: 'app-dms-detail',

@@ -5,7 +5,7 @@ import {
     AtlasToolbarButton,
     ButtonAction,
     AtlasGridComponent,
-} from 'atlas-ui-angular';
+} from 'atlas-web-components';
 import { Router } from '@angular/router';
 import { PeopleService } from '../../services/people.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';

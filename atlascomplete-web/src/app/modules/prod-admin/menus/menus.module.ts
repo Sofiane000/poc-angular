@@ -12,7 +12,7 @@ import {
     AtlasDialogContentModule,
     AtlasInputModule,
     AtlasToolbarModule,
-} from 'atlas-ui-angular';
+} from 'atlas-web-components';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenusTreeComponent } from './components/menus-tree/menus-tree.component';
 import { MenusDialogComponent } from './components/menus-dialog/menus-dialog.component';

@@ -7,7 +7,7 @@ import {
     ButtonAction,
     AtlasGridComponent,
     AtlasToolbarComponent,
-} from 'atlas-ui-angular';
+} from 'atlas-web-components';
 import { Router } from '@angular/router';
 import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
 

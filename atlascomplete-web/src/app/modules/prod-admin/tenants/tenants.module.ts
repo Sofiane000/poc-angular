@@ -7,7 +7,7 @@ import {
   AtlasPageContentModule, AtlasPageFooterModule,
   AtlasDialogHeaderModule, AtlasDialogFooterModule,
   AtlasDialogContentModule, AtlasInputModule, AtlasToolbarModule
-} from 'atlas-ui-angular';
+} from 'atlas-web-components';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TenantsTreeComponent } from './components/tenants-tree/tenants-tree.component';
 import { TenantsDialogComponent } from './components/tenants-dialog/tenants-dialog.component';

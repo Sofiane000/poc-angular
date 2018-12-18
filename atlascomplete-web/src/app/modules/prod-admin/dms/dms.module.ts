@@ -13,7 +13,7 @@ import {
     AtlasPageFooterModule,
     AtlasInputModule,
     AtlasToolbarModule,
-} from 'atlas-ui-angular';
+} from 'atlas-web-components';
 import { DmsService } from './services/dms.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material';
@@ -25,13 +25,10 @@ import { DmsStorageComponent } from './components/dms-storage/dms-storage.compon
 import { DmsPermissionsComponent } from './components/dms-permissions/dms-permissions.component';
 import { DmsSchemaComponent } from './components/dms-schema/dms-schema.component';
 @NgModule({
-    declarations: [
-        DmsDetailComponent,
-        DmsGridComponent,
+    declarations: [DmsDetailComponent, DmsGridComponent,
         DmsStorageComponent,
         DmsPermissionsComponent,
-        DmsSchemaComponent,
-    ],
+        DmsSchemaComponent],
 
     imports: [
         CommonModule,

@@ -1,0 +1,42 @@
+<div class="k-header k-grid-toolbar mat-elevation-z6">
+    <ng-template ngFor let-button [ngForOf]="useButtons">
+        <button
+            *ngIf="!button.isTextButton"
+            [title]="button.title"
+            mat-icon-button
+            [disabled]="button.isDisabled"
+            (click)="onBtnClick($event, button.action)"
+            [ngClass]="button.class"
+        >
+            <mat-icon
+                aria-label="button.title"
+                [class.disable]="button.isDisabled"
+                fontSet="fontawesome"
+                [fontIcon]="button.icon"
+            ></mat-icon>
+        </button>
+        <button
+            *ngIf="button.isTextButton"
+            [title]="button.title"
+            mat-button
+            [disabled]="button.isDisabled"
+        >
+            {{ button.text }}
+        </button>
+    </ng-template>
+    <div class="k-textbox search-wrapper" *ngIf="canSearch">
+        <span class="fa fa-search"></span>
+        <input
+            id="searchinput"
+            type="search"
+            [(ngModel)]="filterValue"
+            (keyup)="onBtnClick($event, 6)"
+        />
+        <span
+            *ngIf="filterValue?.length > 0"
+            id="searchclear"
+            class="fa fa-times"
+            (click)="filterValue = ''; onBtnClick($event, 7)"
+        ></span>
+    </div>
+</div>

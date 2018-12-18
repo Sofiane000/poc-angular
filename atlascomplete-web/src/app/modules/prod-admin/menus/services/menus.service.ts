@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AtlasGridService } from 'atlas-ui-angular';
+import { AtlasGridService } from 'atlas-web-components';
 
 import { Observable, Subject } from 'rxjs';
 import { map, tap } from 'rxjs/operators';

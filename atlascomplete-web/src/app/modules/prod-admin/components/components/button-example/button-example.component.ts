@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IColumnSetting } from 'atlas-ui-angular';
+import { IColumnSetting } from 'atlas-web-components';
 import { UserService } from '../../../users/services/user.service';
 import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
 
