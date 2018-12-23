@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
+    selector: 'atlas-button',
     templateUrl: './atlas-button.component.html',
     styleUrls: ['./atlas-button.component.scss'],
 })

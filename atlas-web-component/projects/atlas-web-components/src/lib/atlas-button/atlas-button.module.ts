@@ -10,11 +10,4 @@ import { createCustomElement } from '@angular/elements';
     imports: [CommonModule, ButtonModule],
     exports: [AtlasButtonComponent],
 })
-export class AtlasButtonModule {
-    constructor(private injector: Injector) {
-        const atlasButton = createCustomElement(AtlasButtonComponent, { injector });
-        customElements.define('atlas-button', atlasButton);
-    }
-    ngDoBootstrap() {
-    }
-}
+export class AtlasButtonModule {}

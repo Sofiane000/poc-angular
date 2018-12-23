@@ -13,22 +13,22 @@ import { State, process, GroupDescriptor } from '@progress/kendo-data-query';
 import { DataStateChangeEvent, GridDataResult, GridComponent } from '@progress/kendo-angular-grid';
 import { AtlasGridService } from '../services/atlas-grid.service';
 import { Subscription } from 'rxjs';
-import { AtlasDialogService } from '../../atlas-dialog/services/atlas-dialog.service';
 import {
     MultiRowComponent,
     MultiRowSelection,
     Selectable,
 } from '../../shared/multi-row-component/multi-row-component.service';
 import { ExcelExportData } from '@progress/kendo-angular-excel-export';
+import { TestService } from '../services/test-grid.service';
 
 @Component({
     selector: 'atlas-grid',
     templateUrl: './atlas-grid.component.html',
     styleUrls: ['./atlas-grid.component.scss'],
-    providers: [AtlasDialogService],
 })
 export class AtlasGridComponent implements OnInit, OnDestroy, AfterViewInit, MultiRowComponent {
-    data: any[];
+    // sofiane to review it later on when we have implemented service in js.
+    @Input() data: any[];
     showAddModel: boolean;
     selectedRowIndex: number;
     baseUrl = window.location.href;
@@ -72,21 +72,26 @@ export class AtlasGridComponent implements OnInit, OnDestroy, AfterViewInit, Mul
 
     private gridServiceSubscription: Subscription;
 
-    constructor(private dialogService: AtlasDialogService) {
+    constructor() {
         this.allData = this.allData.bind(this);
     }
 
     ngOnInit() {
-        this.gridService.query(this.state);
-        this.gridServiceSubscription = this.gridService.subscribe((response) => {
-            if (response) {
-                if (!this.data) {
-                    this.data = [];
+        if (this.gridService) {
+            this.gridService.query(this.state);
+            this.gridServiceSubscription = this.gridService.subscribe((response) => {
+                if (response) {
+                    if (!this.data) {
+                        this.data = [];
+                    }
+                    this.data.push(...response);
+                    this.gridDataResult = process(this.data, this.state);
                 }
-                this.data.push(...response);
-                this.gridDataResult = process(this.data, this.state);
-            }
-        });
+            });
+        } else {
+            // sofiane to review temporary till we will find some solution to handle this class in javascript.
+            this.gridService = new TestService();
+        }
     }
     ngAfterViewInit() {
         // attaches scroll event

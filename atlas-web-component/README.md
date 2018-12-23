@@ -1,27 +1,22 @@
-# AtlasWebComponent
+# Atlas web components build with Angular Elements
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
+This project consists of wrappers of kendo ui as elements.
 
-## Development server
+## Project Structure
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The project is a standard Angular 7 project with a few additions:
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+src/app/element.module.ts   Module which will import all the atlas modules
+src/main.element.ts         bootstrap the Element Module
+src/polyfills.element.ts    polyfills for the Element Module
+build-elements.js           script to generate the exported file and demo project
+```
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+There is a separate build configuration for elements.
+Run `npm run build:elements` to build the angular elements. This creates a build in `dist/elements-build` that only contains `ElementModule`.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+After this build the `./build-elements.js` script creates the final js file and
+demo project in `dist/elements`.

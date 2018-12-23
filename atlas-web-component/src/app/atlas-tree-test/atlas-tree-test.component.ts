@@ -8,10 +8,8 @@ import { TreeTestService } from 'projects/atlas-web-components/src/lib/atlas-tre
 })
 export class AtlasTreeTestComponent implements OnInit {
     treeTestServiceChild: TreeTestService;
-    menuItems: any[] = [
-      { text: 'Add Sibling', icon: 'plus' },
-      { text: 'Add Child', icon: 'plus' }
-    ];
+    menuItems: any[] = [{ text: 'Add Sibling', icon: 'plus' }, { text: 'Add Child', icon: 'plus' }];
+    isExpanded = true;
     constructor(private treeService: TreeTestService) {
         this.treeTestServiceChild = treeService;
     }

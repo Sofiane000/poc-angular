@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TestService } from 'projects/atlas-web-components/src/lib/atlas-grid/services/test-grid.service';
-import { IColumnSetting } from 'atlas-web-components/lib/atlas-grid/models/grid-column-setting';
+import { IColumnSetting } from 'projects/atlas-web-components/src/lib/atlas-grid/models/grid-column-setting';
 import { AtlasGridComponent } from 'projects/atlas-web-components/src/lib/atlas-grid/components/atlas-grid.component';
 
 @Component({
@@ -98,6 +98,5 @@ export class AtlasGridTestComponent implements OnInit {
             },
         ];
     }
-    onSelectionChange() {
-    }
+    onSelectionChange() {}
 }

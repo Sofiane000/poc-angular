@@ -9,23 +9,21 @@ import { FormsModule } from '@angular/forms';
 import { AtlasToolbarModule } from '../atlas-toolbar/atlas-toolbar.module';
 
 @NgModule({
-  declarations: [AtlasGridComponent],
-  imports: [
-    CommonModule,
-    ButtonModule,
-    GridModule,
-    DialogModule,
-    FormsModule,
-    PDFModule,
-    ExcelModule,
-    MatButtonModule,
-    MatIconModule,
-    MatCheckboxModule,
-    AtlasToolbarModule
-  ],
-  exports: [
-    AtlasGridComponent,
-    DialogModule
-  ]
+    declarations: [AtlasGridComponent],
+    entryComponents: [AtlasGridComponent],
+    imports: [
+        CommonModule,
+        ButtonModule,
+        GridModule,
+        DialogModule,
+        FormsModule,
+        PDFModule,
+        ExcelModule,
+        MatButtonModule,
+        MatIconModule,
+        MatCheckboxModule,
+        AtlasToolbarModule,
+    ],
+    exports: [AtlasGridComponent, DialogModule],
 })
-export class AtlasGridModule { }
+export class AtlasGridModule {}

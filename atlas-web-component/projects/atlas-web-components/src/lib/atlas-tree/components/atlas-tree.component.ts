@@ -1,4 +1,11 @@
-import { Component, ViewChild, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import {
+    Component,
+    ViewChild,
+    Input,
+    Output,
+    EventEmitter,
+    OnInit,
+} from '@angular/core';
 import { ContextMenuComponent } from '@progress/kendo-angular-menu';
 import { TreeViewComponent, ItemLookup } from '@progress/kendo-angular-treeview';
 import { AtlasToolbarComponent } from '../../atlas-toolbar/components/atlas-toolbar.component';
@@ -53,12 +60,12 @@ export class AtlasTreeComponent implements OnInit, MultiRowComponent {
 
     constructor() {}
     ngOnInit(): void {
-        this.treeViewService.query({});
-        this.treeServiceSubscription = this.treeViewService.subscribe((data) => {
-            if (data) {
-                this.partialData = data.map((item) => item);
-            }
-        });
+            this.treeViewService.query({});
+            this.treeServiceSubscription = this.treeViewService.subscribe((data) => {
+                if (data) {
+                    this.partialData = data.map((item) => item);
+                }
+            });
     }
 
     onNodeClick(event: any): void {

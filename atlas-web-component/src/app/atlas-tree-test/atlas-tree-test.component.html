@@ -1,12 +1,13 @@
-<atlas-tree [isTreeViewExpandable]="true"
-        [isTreeViewHierarchyBinding]="true"
-        textFields="TenantTaxnmyName"
-        [children]="'children'"
-        showToolbar="true"
-        isEditable="true"
-        isFilterable="true"
-        showRefresh="true"
-        [menuItems]="menuItems"
-        (selectionChange)="onSelectionChange()"
-        [treeViewService]="treeTestServiceChild">
-</atlas-tree>
+<atlas-tree
+    [isTreeViewExpandable]="true"
+    [isTreeViewHierarchyBinding]="true"
+    textFields="TenantTaxnmyName"
+    children="children"
+    showToolbar="true"
+    isEditable="true"
+    isFilterable="true"
+    showRefresh="true"
+    [menuItems]="menuItems"
+    (selectionChange)="onSelectionChange()"
+    [treeViewService]="treeTestServiceChild"
+></atlas-tree>
