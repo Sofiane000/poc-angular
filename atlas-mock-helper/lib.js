@@ -3,9 +3,9 @@ const path = require('path');
 const _ = require('lodash');
 
 class MockLib {
-    async loadMock(pathToMock, req, filterCb) {
+    async loadMock(pathToMock, req, filterCb, jsonPath) {
         let rawMockData = await this.__loadMock(
-            path.resolve(__dirname, './../../mocks/' + pathToMock)
+            path.resolve(__dirname, jsonPath + pathToMock)
         );
         const pageSize = +req.get('pageSize');
         const restartRowId = +req.get('restartRowId');
@@ -33,8 +33,8 @@ class MockLib {
         };
     }
 
-    serveMockAsTree(req, res, pathToMock, keyField, parentKeyField) {
-        this.loadMock(pathToMock, req).then(
+    serveMockAsTree(req, res, pathToMock, keyField, parentKeyField, jsonPath) {
+        this.loadMock(pathToMock, req, null, jsonPath).then(
             (data) => {
                 data.$payload = this.convertToTree(data.$payload, keyField, parentKeyField);
                 this.serveSuccess(req, res, data);
@@ -43,15 +43,15 @@ class MockLib {
         );
     }
 
-    serveMock(req, res, pathToMock, filterCb) {
-        this.loadMock(pathToMock, req, filterCb).then(
+    serveMock(req, res, pathToMock, filterCb, jsonPath) {
+        this.loadMock(pathToMock, req, filterCb, jsonPath).then(
             (data) => this.serveSuccess(req, res, data),
             (error) => this.serveFailed(req, res, error)
         );
     }
 
-    serveMockById(req, res, pathToMock, idField, idValue) {
-        this.loadMock(pathToMock, req).then(
+    serveMockById(req, res, pathToMock, idField, idValue, jsonPath) {
+        this.loadMock(pathToMock, req, null, jsonPath).then(
             (data) => {
                 data.$payload = _.find(data.$payload, (entry) => {
                     return entry[idField] == idValue;
@@ -72,14 +72,12 @@ class MockLib {
             res,
             500,
             void 0,
-            [
-                {
-                    code: '100100',
-                    type: 'ERROR',
-                    message: error.message,
-                    dataIndex: '',
-                },
-            ],
+            [{
+                code: '100100',
+                type: 'ERROR',
+                message: error.message,
+                dataIndex: '',
+            }, ],
             void 0
         );
     }

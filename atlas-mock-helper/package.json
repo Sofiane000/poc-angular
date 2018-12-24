@@ -1,0 +1,15 @@
+{
+    "name": "atlas-mock-serve",
+    "version": "1.0.0",
+    "description": "Mocked API",
+    "scripts": {
+        "start": "nodemon server/webserver.js --watch server"
+    },
+    "author": "Sofiane",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "express": "^4.16.4",
+        "lodash": "^4.17.11",
+        "nodemon": "^1.18.6"
+    }
+}
