@@ -5,9 +5,7 @@ const mockConfig = require('./config');
 
 class MockLib {
     async loadMock(pathToMock, req, filterCb) {
-        let rawMockData = await this.__loadMock(
-            path.resolve(__dirname, mockConfig.baseFolder + pathToMock)
-        );
+        let rawMockData = await this.__loadMock(mockConfig.baseFolder + pathToMock);
         const pageSize = +req.get('pageSize');
         const restartRowId = +req.get('restartRowId');
         const headers = {};
