@@ -13,6 +13,8 @@ const concat = require('concat');
     await concat(files, './dist/elements/atlas-elements.js');
 
     await fs.copy('./demo.html', './dist/elements/index.html');
+    await fs.copy('./demo.css', './dist/elements/demo.css');
+    await fs.copy('./demo.js', './dist/elements/demo.js');
 
     console.info('Elements created successfully!');
 })();
