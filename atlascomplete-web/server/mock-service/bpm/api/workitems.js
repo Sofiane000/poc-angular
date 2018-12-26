@@ -16,22 +16,15 @@ router.get(['/', '/:type'], (req, res) => {
             });
         }
     }
-    mockLib.serveMock(
-        req,
-        res,
-        'bpm/workitems/list.of.workitems.json',
-        null,
-        '../atlascomplete-web/mocks/',
-        (payload) => {
-            if (filterBy) {
-                return _.filter(payload, (row) => {
-                    return row.taskStatus === filterBy;
-                });
-            } else {
-                return payload;
-            }
+    mockLib.serveMock(req, res, 'bpm/workitems/list.of.workitems.json', (payload) => {
+        if (filterBy) {
+            return _.filter(payload, (row) => {
+                return row.taskStatus === filterBy;
+            });
+        } else {
+            return payload;
         }
-    );
+    });
 });
 
 module.exports = router;

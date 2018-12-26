@@ -1,6 +1,11 @@
 /*
  * Public API Surface of atlas-ui
  */
+export * from './lib/atlas-card/atlas-card.module';
+export * from './lib/atlas-card/components/atlas-card/atlas-card.component';
+export * from './lib/atlas-card/components/atlas-card-field/atlas-card-field.component';
+export * from './lib/atlas-card/components/atlas-card-item/atlas-card-item.component';
+export * from './lib/atlas-card/models/card-field';
 export * from './lib/atlas-toolbar/atlas-toolbar.module';
 export * from './lib/atlas-toolbar/components/atlas-toolbar.component';
 export * from './lib/atlas-toolbar/models/atlas-toolbar-button';

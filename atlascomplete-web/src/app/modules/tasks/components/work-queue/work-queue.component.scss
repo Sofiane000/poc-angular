@@ -1,90 +1,55 @@
-.card-title {
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.label-title {
-  font-weight: 400;
-  font-size: 12px;
-}
-
 .header-tasks {
-  height: 42px;
-  background-color: #e6e7e8;
-  margin: 1px;
-}
-
-.mat-card {
-  margin: 1px;
-  border-radius: unset;
+    height: 42px;
+    background-color: #e6e7e8;
+    margin: 1px;
 }
 
 .toolbar {
-  margin-bottom: 2px;
-  background-color: white;
-  height: 48px;
-  min-height: 48px;
+    margin-bottom: 2px;
+    background-color: white;
+    height: 48px;
+    min-height: 48px;
 }
 
 .header-tasks p {
-  padding: 10px 12px;
-  font-weight: 700;
-  font-size: 12px;
-}
-
-.row1 {
-  margin-top: 15px;
+    padding: 10px 12px;
+    font-weight: 700;
+    font-size: 12px;
 }
 
 .sort-by {
-  font-size: 12px;
-  font-weight: 300;
-}
-
-.row2 {
-  margin-top: 5px;
+    font-size: 12px;
+    font-weight: 300;
 }
 
 ::ng-deep .mat-select-panel {
-  width: 138px;
-  font-size: 10px !important;
-  min-width: calc(66% + 32px) !important;
-  font-weight: 600 !important;
-
+    width: 138px;
+    font-size: 10px !important;
+    min-width: calc(66% + 32px) !important;
+    font-weight: 600 !important;
 }
 
 ::ng-deep .cdk-overlay-pane {
-  width: 138px;
-  min-width: 138px !important;
+    width: 138px;
+    min-width: 138px !important;
 }
 
 .mat-select {
-  font-size: 12px;
-  text-align: center;
-  font-weight: 600 !important;
-
+    font-size: 12px;
+    text-align: center;
+    font-weight: 600 !important;
 }
 
 .tool-header {
-  width: 100%;
+    width: 100%;
 }
 
 .right-icons {
-  float: right;
-  margin-top: 9px;
+    float: right;
+    margin-top: 9px;
 }
 
 .mat-form-field {
-  width: 30%;
-  margin-left: 5px;
-}
-
-.row3,
-.row4 {
-  margin-top: 10px;
-
-}
-
-.fa:not(.fa-filter):not(.fa-sort-alpha-asc):not(.fa-refresh) {
-  color: black;
+    width: 30%;
+    margin-left: 5px;
 }

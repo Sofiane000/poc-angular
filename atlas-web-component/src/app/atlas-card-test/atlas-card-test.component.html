@@ -1,0 +1,13 @@
+<atlas-card [cardItems]="cardItems">
+    <ng-template #cardTemplate let-item>
+        <atlas-card-item
+            [title]="item.taskTitle"
+            [primaryFields]="primary"
+            [secondaryFields]="secondary"
+        >
+            <ng-template #fieldTemplate let-field>
+                <atlas-card-field [field]="field"></atlas-card-field>
+            </ng-template>
+        </atlas-card-item>
+    </ng-template>
+</atlas-card>

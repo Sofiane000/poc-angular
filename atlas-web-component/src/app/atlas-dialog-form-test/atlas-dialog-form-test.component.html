@@ -1,10 +1,10 @@
-<atlas-dialog-header [title]="'Add Person'">
-</atlas-dialog-header>
+<atlas-dialog-header [title]="'Add Person'"></atlas-dialog-header>
 <atlas-dialog-content>
-  <form novalidate [formGroup]="form">
-    <atlas-input label="Name" formControlName="Name" width="100%"></atlas-input>
-  </form>
+    <form novalidate [formGroup]="form">
+        <atlas-input label="Name" formControlName="Name" width="100%"></atlas-input>
+    </form>
 </atlas-dialog-content>
-<atlas-dialog-footer [isSaveDisabled]="form.invalid" (close)="closeHandler($event)">
-
-</atlas-dialog-footer>
+<atlas-dialog-footer
+    [isSaveDisabled]="form.invalid"
+    (close)="closeHandler($event)"
+></atlas-dialog-footer>

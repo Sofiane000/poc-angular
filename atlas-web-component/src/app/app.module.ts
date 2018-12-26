@@ -33,6 +33,8 @@ import { AtlasButtonTestComponent } from './atlas-button-test/atlas-button-test.
 import { AtlasToolbarTestComponent } from './atlas-toolbar-test/atlas-toolbar-test.component';
 import { AtlasDialogFormTestComponent } from './atlas-dialog-form-test/atlas-dialog-form-test.component';
 import { ElementModule } from './element.module';
+import { AtlasCardModule } from 'projects/atlas-web-components/src/lib/atlas-card/atlas-card.module';
+import { AtlasCardTestComponent } from './atlas-card-test/atlas-card-test.component';
 
 @NgModule({
     declarations: [
@@ -44,6 +46,7 @@ import { ElementModule } from './element.module';
         AtlasButtonTestComponent,
         AtlasToolbarTestComponent,
         AtlasDialogFormTestComponent,
+        AtlasCardTestComponent,
     ],
     entryComponents: [AtlasDialogFormTestComponent],
     imports: [
@@ -60,6 +63,7 @@ import { ElementModule } from './element.module';
         AtlasDialogFooterModule,
         MatButtonModule,
         AtlasMenuModule,
+        AtlasCardModule,
         MatSidenavModule,
         AtlasSideBarModule,
         AtlasDocViewerModule,

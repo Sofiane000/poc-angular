@@ -1,3 +1,5 @@
+import { ICardField } from 'atlas-web-components';
+
 export interface IWorkItem {
     dueDate: string;
     performer: string;
@@ -9,4 +11,6 @@ export interface IWorkItem {
     taskStatus: string;
     taskTitle: string;
     timeStarted: string;
+    primary: ICardField[];
+    secondary: ICardField[];
 }

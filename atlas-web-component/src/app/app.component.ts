@@ -37,6 +37,10 @@ export class AppComponent implements OnInit {
                 MenuName: 'Atlas Toolbar',
                 MenuURI: 'atlastoolbar',
             },
+            {
+                MenuName: 'Atlas Card',
+                MenuURI: 'atlascard',
+            },
         ];
     }
     toggleMenu() {

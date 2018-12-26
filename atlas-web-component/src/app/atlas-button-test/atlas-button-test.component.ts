@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
     selector: 'atlas-button-test',
     templateUrl: './atlas-button-test.component.html',

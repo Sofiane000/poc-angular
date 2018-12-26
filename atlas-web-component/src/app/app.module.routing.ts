@@ -6,6 +6,7 @@ import { AtlasDocViewerTestComponent } from './atlas-doc-viewer-test/atlas-doc-v
 import { AtlasInputTestComponent } from './atlas-input-test/atlas-input-test.component';
 import { AtlasButtonTestComponent } from './atlas-button-test/atlas-button-test.component';
 import { AtlasToolbarTestComponent } from './atlas-toolbar-test/atlas-toolbar-test.component';
+import { AtlasCardTestComponent } from './atlas-card-test/atlas-card-test.component';
 
 const appRoutes: Routes = [
     {
@@ -23,15 +24,19 @@ const appRoutes: Routes = [
     },
     {
         path: 'atlasinput',
-        component: AtlasInputTestComponent
+        component: AtlasInputTestComponent,
     },
     {
         path: 'atlasbutton',
-        component: AtlasButtonTestComponent
+        component: AtlasButtonTestComponent,
     },
     {
         path: 'atlastoolbar',
-        component: AtlasToolbarTestComponent
+        component: AtlasToolbarTestComponent,
+    },
+    {
+        path: 'atlascard',
+        component: AtlasCardTestComponent,
     },
 ];
 
