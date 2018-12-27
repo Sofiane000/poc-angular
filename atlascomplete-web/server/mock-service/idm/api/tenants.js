@@ -8,8 +8,7 @@ router.get('/', (req, res) => {
         res,
         'idm/tenants/list.of.tenants.json',
         'TenantTaxnmySK',
-        'ParentTenantTaxnmySK',
-        '../atlascomplete-web/mocks/'
+        'ParentTenantTaxnmySK'
     );
 });
 
@@ -19,8 +18,7 @@ router.get('/:tenantTaxnmySK', (req, res) => {
         res,
         'idm/tenants/list.of.tenants.json',
         'TenantTaxnmySK',
-        req.params.tenantTaxnmySK,
-        '../atlascomplete-web/mocks/'
+        req.params.tenantTaxnmySK
     );
 });
 
@@ -33,13 +31,7 @@ router.post('/', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    mockLib.serveMock(
-        req,
-        res,
-        'idm/tenants/list.of.tenants.json',
-        null,
-        '../atlascomplete-web/mocks/'
-    );
+    mockLib.serveMock(req, res, 'idm/tenants/list.of.tenants.json');
 });
 
 module.exports = router;

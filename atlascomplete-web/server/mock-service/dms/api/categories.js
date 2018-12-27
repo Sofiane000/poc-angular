@@ -3,13 +3,7 @@ const router = express.Router();
 const mockLib = require('../../../../../atlas-service-tools').mock.service;
 
 router.get('/', (req, res) => {
-    mockLib.serveMock(
-        req,
-        res,
-        'dms/categories/list.of.categories.json',
-        null,
-        '../atlascomplete-web/mocks/'
-    );
+    mockLib.serveMock(req, res, 'dms/categories/list.of.categories.json');
 });
 
 router.get('/:docCatgSK', (req, res) => {
@@ -18,8 +12,7 @@ router.get('/:docCatgSK', (req, res) => {
         res,
         'dms/categories/list.of.categories.json',
         'DocCatgSK',
-        req.params.docCatgSK,
-        '../atlascomplete-web/mocks/'
+        req.params.docCatgSK
     );
 });
 

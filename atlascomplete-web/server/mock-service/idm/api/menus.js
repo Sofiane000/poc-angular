@@ -3,25 +3,11 @@ const router = express.Router();
 const mockLib = require('../../../../../atlas-service-tools').mock.service;
 
 router.get('/', (req, res) => {
-    mockLib.serveMockAsTree(
-        req,
-        res,
-        'idm/menus/list.of.menus.json',
-        'MenuSK',
-        'ParentMenuSK',
-        '../atlascomplete-web/mocks/'
-    );
+    mockLib.serveMockAsTree(req, res, 'idm/menus/list.of.menus.json', 'MenuSK', 'ParentMenuSK');
 });
 
 router.get('/:menuSK', (req, res) => {
-    mockLib.serveMockById(
-        req,
-        res,
-        'idm/menus/list.of.menus.json',
-        'MenuSK',
-        req.params.menuSK,
-        '../atlascomplete-web/mocks/'
-    );
+    mockLib.serveMockById(req, res, 'idm/menus/list.of.menus.json', 'MenuSK', req.params.menuSK);
 });
 
 router.put('/', (req, res) => {
@@ -33,13 +19,7 @@ router.post('/', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    mockLib.serveMock(
-        req,
-        res,
-        'idm/menus/list.of.menus.json',
-        null,
-        '../atlascomplete-web/mocks/'
-    );
+    mockLib.serveMock(req, res, 'idm/menus/list.of.menus.json');
 });
 
 module.exports = router;
