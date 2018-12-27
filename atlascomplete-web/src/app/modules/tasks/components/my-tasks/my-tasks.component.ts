@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MyTasksService } from '../../services/my-tasks.service';
 import { IWorkItem } from '../../models/work-item';
-import { ICardField } from 'atlas-web-components';
+import { ICardField, ButtonAction, AtlasToolbarButton } from 'atlas-web-components';
 
 @Component({
     selector: 'app-my-tasks',
@@ -10,20 +10,27 @@ import { ICardField } from 'atlas-web-components';
 })
 export class MyTasksComponent implements OnInit {
     workItems: IWorkItem[];
-    statusValues: string[] = [
-        'Default View',
-        'Task Title',
-        'Workflow',
-        'Due',
-        'Assigned To',
-        'Created',
-        'Time Remaining',
-        'Priority',
-    ];
-    selectedStatus = 'Default View';
     primary: ICardField[] = [];
     secondary: ICardField[] = [];
-
+    buttons: AtlasToolbarButton[] = [
+        {
+            title: 'Sort',
+            action: ButtonAction.Add,
+            icon: 'fa-sort-alpha-asc',
+        },
+        {
+            title: 'Refresh',
+            action: ButtonAction.Add,
+            icon: 'fa-refresh',
+            class: 'right-icons',
+        },
+        {
+            title: 'Filter',
+            action: ButtonAction.Add,
+            icon: 'fa-filter',
+            class: 'right-icons',
+        },
+    ];
     constructor(private myTasksService: MyTasksService) {}
 
     ngOnInit() {
@@ -33,4 +40,5 @@ export class MyTasksComponent implements OnInit {
             this.myTasksService.getFieldsForItems(this.workItems);
         });
     }
+    actionHandler(eventResponse: any) {}
 }

@@ -1,41 +1,59 @@
 .grid-pdf,
 .grid-excel,
 .refresh-btn,
-.search-wrapper {
-  float: right;
+.search-wrapper,
+.right-icons {
+    float: right;
+}
+
+.mat-form-field {
+    width: 30%;
+    margin-left: 5px;
+    height: 40px;
+}
+
+.sort-by {
+    font-size: 12px;
+    font-weight: 300;
 }
 
 .k-grid-toolbar {
-  padding-left: 10px;
-  padding-top: 4px;
-  height: 100%;
+    padding-left: 10px;
+    padding-top: 4px;
+    height: 100%;
+}
+
+.mat-select {
+    font-size: 12px;
+    text-align: center;
+    font-weight: 600 !important;
 }
 
 #searchinput {
-  width: 200px;
-  padding-left: 20px;
+    width: 200px;
+    padding-left: 20px;
 }
 
 #searchclear {
-  position: absolute;
-  right: 5px;
-  top: 0;
-  bottom: 0;
-  height: 14px;
-  margin: auto;
-  font-size: 14px;
-  cursor: pointer;
-  color: #ccc;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    bottom: 0;
+    height: 14px;
+    margin: auto;
+    font-size: 14px;
+    cursor: pointer;
+    color: #ccc;
 }
 
 @media (min-width: 320px) and (max-width: 375px) {
-  .search-wrapper {
-    width: 120px;
-  }
+    .search-wrapper {
+        width: 120px;
+    }
 }
 
 @media (min-width: 376px) and (max-width: 480px) {
-  .search-wrapper {
-    width: 150px;
-  }
+    .search-wrapper {
+        width: 150px;
+    }
 }

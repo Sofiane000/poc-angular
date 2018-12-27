@@ -1,4 +1,12 @@
 <div class="k-header k-grid-toolbar mat-elevation-z6">
+    <span class="sort-by" *ngIf="showSortBy">Sort By</span>
+    <mat-form-field width="60" *ngIf="showSortBy">
+        <mat-select [(value)]="selectedStatus">
+            <mat-option *ngFor="let status of statusValues" [value]="status">
+                {{ status }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
     <ng-template ngFor let-button [ngForOf]="useButtons">
         <button
             *ngIf="!button.isTextButton"

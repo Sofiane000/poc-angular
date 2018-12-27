@@ -1,28 +1,10 @@
-<mat-toolbar class="toolbar mat-elevation-z6">
-    <mat-toolbar-row>
-        <div class="tool-header">
-            <span class="sort-by">Sort By</span>
-            <mat-form-field width="60">
-                <mat-select [(value)]="selectedStatus">
-                    <mat-option *ngFor="let status of statusValues" [value]="status">
-                        {{ status }}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-            <button type="button" aria-label="Filter" mat-icon-button>
-                <mat-icon fontSet="fontawesome" [fontIcon]="'fa-sort-alpha-asc'"></mat-icon>
-            </button>
-            <div class="right-icons">
-                <button class="right-icons" type="button" aria-label="Refresh" mat-icon-button>
-                    <mat-icon fontSet="fontawesome" [fontIcon]="'fa-refresh'"></mat-icon>
-                </button>
-                <button class="right-icons" type="button" aria-label="Filter" mat-icon-button>
-                    <mat-icon fontSet="fontawesome" [fontIcon]="'fa-filter'"></mat-icon>
-                </button>
-            </div>
-        </div>
-    </mat-toolbar-row>
-</mat-toolbar>
+<atlas-toolbar
+    [showSortBy]="true"
+    [showAddEditButtons]="false"
+    [buttons]="buttons"
+    [parent]="'tasks'"
+    (action)="actionHandler($event)"
+></atlas-toolbar>
 <div class="header-tasks mat-elevation-z4"><p>Work Queue</p></div>
 <atlas-card [cardItems]="workItems">
     <ng-template #cardTemplate let-item>

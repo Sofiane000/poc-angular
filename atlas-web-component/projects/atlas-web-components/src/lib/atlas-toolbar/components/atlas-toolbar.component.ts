@@ -45,6 +45,18 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
     @Input() buttons: Array<AtlasToolbarButton>;
     @Input() parent: MultiRowComponent;
     @Input() canSearch: boolean;
+    @Input() showSortBy: boolean;
+    @Input() selectedStatus = 'Default View';
+    @Input() statusValues: string[] = [
+        'Default View',
+        'Task Title',
+        'Workflow',
+        'Due',
+        'Assigned To',
+        'Created',
+        'Time Remaining',
+        'Priority',
+    ];
     @Output() action: EventEmitter<any> = new EventEmitter();
 
     onBtnClick(event: any, buttonAction: ButtonAction) {

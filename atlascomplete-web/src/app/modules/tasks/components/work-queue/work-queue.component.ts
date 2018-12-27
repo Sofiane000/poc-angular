@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MyTasksService } from '../../services/my-tasks.service';
 import { IWorkItem } from '../../models/work-item';
+import { AtlasToolbarButton, ButtonAction } from 'atlas-web-components';
 
 @Component({
     selector: 'app-work-queue',
@@ -9,17 +10,25 @@ import { IWorkItem } from '../../models/work-item';
 })
 export class WorkQueueComponent implements OnInit {
     workItems: IWorkItem[];
-    statusValues: string[] = [
-        'Default View',
-        'Task Title',
-        'Workflow',
-        'Due',
-        'Assigned To',
-        'Created',
-        'Time Remaining',
-        'Priority',
+    buttons: AtlasToolbarButton[] = [
+        {
+            title: 'Sort',
+            action: ButtonAction.Sort,
+            icon: 'fa-sort-alpha-asc',
+        },
+        {
+            title: 'Refresh',
+            action: ButtonAction.Refresh,
+            icon: 'fa-refresh',
+            class: 'right-icons',
+        },
+        {
+            title: 'Filter',
+            action: ButtonAction.Filter,
+            icon: 'fa-filter',
+            class: 'right-icons',
+        },
     ];
-    selectedStatus = 'Default View';
     constructor(private workQueueService: MyTasksService) {}
 
     ngOnInit() {
@@ -28,4 +37,6 @@ export class WorkQueueComponent implements OnInit {
             this.workQueueService.getFieldsForItems(this.workItems);
         });
     }
+
+    actionHandler(eventResponse: any) {}
 }

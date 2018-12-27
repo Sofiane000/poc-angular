@@ -7,5 +7,7 @@ export enum ButtonAction {
     ExportAsExcel,
     Search,
     SearchClear,
-    PrintInvoice
+    PrintInvoice,
+    Sort,
+    Filter,
 }

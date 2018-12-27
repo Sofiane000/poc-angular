@@ -17,11 +17,6 @@
     font-size: 12px;
 }
 
-.sort-by {
-    font-size: 12px;
-    font-weight: 300;
-}
-
 ::ng-deep .mat-select-panel {
     width: 138px;
     font-size: 10px !important;
@@ -32,24 +27,4 @@
 ::ng-deep .cdk-overlay-pane {
     width: 138px;
     min-width: 138px !important;
-}
-
-.mat-select {
-    font-size: 12px;
-    text-align: center;
-    font-weight: 600 !important;
-}
-
-.tool-header {
-    width: 100%;
-}
-
-.right-icons {
-    float: right;
-    margin-top: 9px;
-}
-
-.mat-form-field {
-    width: 30%;
-    margin-left: 5px;
 }
