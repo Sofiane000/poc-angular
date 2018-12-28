@@ -12,5 +12,5 @@ export interface IMenuItem {
     RecStat: string;
     cf_CmpntSK: number;
     daTableRowId: string;
-    ttMenu?: IMenuItem[];
+    children?: IMenuItem[];
 }

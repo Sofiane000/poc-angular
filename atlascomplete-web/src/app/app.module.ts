@@ -47,5 +47,9 @@ export class AppModule {
     constructor(private dataAccessFactory: DataAccessFactory, matIconRegistry: MatIconRegistry) {
         matIconRegistry.registerFontClassAlias('fontawesome', 'fa');
         this.dataAccessFactory.baseUrl = environment.baseUrl;
+        this.dataAccessFactory
+            .createService('idm.menus')
+            .module('idm')
+            .url('menus');
     }
 }

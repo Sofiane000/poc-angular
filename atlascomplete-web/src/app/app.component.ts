@@ -57,7 +57,9 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        this.menuItems = this.menuService.getMenuItems();
+        this.menuService.getMenuItems().subscribe((result) => {
+            this.menuItems = result;
+        });
     }
     toggleSidebar() {
         if (this.isMiniMode) {
