@@ -35,6 +35,7 @@ import { AtlasDialogFormTestComponent } from './atlas-dialog-form-test/atlas-dia
 import { ElementModule } from './element.module';
 import { AtlasCardModule } from 'projects/atlas-web-components/src/lib/atlas-card/atlas-card.module';
 import { AtlasCardTestComponent } from './atlas-card-test/atlas-card-test.component';
+import { AtlasSideNavContainerModule } from 'projects/atlas-web-components/src/lib/atlas-sidenav-container/atlas-sidenav-container.module';
 
 @NgModule({
     declarations: [
@@ -56,6 +57,7 @@ import { AtlasCardTestComponent } from './atlas-card-test/atlas-card-test.compon
         AppRoutingModule,
         FormsModule,
         ElementModule,
+        AtlasSideNavContainerModule,
         AtlasHeaderModule,
         AtlasContentModule,
         AtlasDialogHeaderModule,

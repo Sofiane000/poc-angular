@@ -36,7 +36,6 @@ export class MyTasksComponent implements OnInit {
     ngOnInit() {
         this.myTasksService.getWorkItems('assigned').subscribe((response) => {
             this.workItems = response;
-            console.log(this.workItems);
             this.myTasksService.getFieldsForItems(this.workItems);
         });
     }

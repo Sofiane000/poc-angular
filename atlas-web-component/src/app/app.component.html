@@ -1,44 +1,13 @@
 <atlas-header
     #header
+    *ngIf="isAuthorized"
     (toggleMenu)="toggleMenu()"
     (headerBtnClicked)="headerBtnHandler($event)"
     [showButtons]="false"
     [showSidebarToggle]="true"
 ></atlas-header>
-<mat-sidenav-container class="sidenav-container" autosize>
-  <mat-sidenav
-      disableClose
-      #menu
-      class="sidenav"
-      fixedInViewport="true"
-      [attr.role]="'navigation'"
-      [mode]="'side'"
-      [opened]="true"
-  >
-      <!-- Menu -->
-      <atlas-menu
-          [menuItems]="menuItems"
-      ></atlas-menu>
-  </mat-sidenav>
-  <mat-sidenav-content>
-      <!-- Main content -->
-      <atlas-content></atlas-content>
-  </mat-sidenav-content>
-  <mat-sidenav
-        disableClose
-        [mode]="'side'"
-        [attr.role]="'navigation'"
-        #sidebar
-        class="sidenav right-sidebar"
-        [class.sideBarMini]="isMiniMode"
-        [(opened)]="isSideBarOpened"
-        position="end"
-    >
-        <!-- Side bar with different routes -->
-        <atlas-sidebar
-            #atlasSidebar
-            (toggleSideBar)="toggleSidebar()"
-            (toggleMiniMode)="isMiniMode = !isMiniMode"
-        ></atlas-sidebar>
-    </mat-sidenav>
-</mat-sidenav-container>
+<atlas-sidenav-container
+    #container
+    [isAuthorized]="isAuthorized"
+    [menuItems]="menuItems"
+></atlas-sidenav-container>

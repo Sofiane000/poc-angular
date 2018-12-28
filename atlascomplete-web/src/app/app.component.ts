@@ -1,9 +1,7 @@
 import { Component, HostBinding, ViewChild, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { map } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 import { Router, NavigationEnd } from '@angular/router';
-import { IMenuItem, AtlasSideBarComponent, AtlasHeaderComponent } from 'atlas-web-components';
+import { IMenuItem, AtlasHeaderComponent } from 'atlas-web-components';
 import { MenuService } from './menu.service';
 import { AppSession } from 'atlas-web-services';
 
@@ -19,22 +17,11 @@ export class AppComponent implements OnInit, OnDestroy {
     isAuthorizedSubscription: Subscription;
     sideBarTitle: string;
     menuItems: IMenuItem[];
-    IsCurHandset = false;
-    isHandset: Observable<boolean> = this.breakpointObserver
-        .observe(Breakpoints.Handset)
-        .pipe(map((result) => result.matches));
-    IsCurTablet = false;
-    isTablet: Observable<boolean> = this.breakpointObserver
-        .observe(Breakpoints.Tablet)
-        .pipe(map((result) => result.matches));
-    @ViewChild('menu') menu: any;
-    @ViewChild('sidebar') sidebar: any;
-    @ViewChild('atlasSidebar') atlasSidebar: AtlasSideBarComponent;
+    @ViewChild('container') container: any;
     @ViewChild('header') header: AtlasHeaderComponent;
 
     @HostBinding('class.isAuthorized') addClass = false;
     constructor(
-        private breakpointObserver: BreakpointObserver,
         private router: Router,
         private authenticationService: AppSession,
         private menuService: MenuService
@@ -46,10 +33,12 @@ export class AppComponent implements OnInit, OnDestroy {
                     const currentRoute = event.url
                         .split(':')[1]
                         .slice(0, event.url.split(':')[1].length - 1);
-                    this.atlasSidebar.headerName =
+                    this.container.atlasSidebar.headerName =
                         currentRoute.search('document') !== -1 ? 'Document Viewer' : 'Tasks';
                     this.header.selectedOption =
-                        this.atlasSidebar.headerName === 'Tasks' ? 'Tasks' : 'Document';
+                        this.container.atlasSidebar.headerName === 'Tasks' ? 'Tasks' : 'Document';
+                } else {
+                    this.isSideBarOpened = false;
                 }
             }
         });
@@ -65,18 +54,6 @@ export class AppComponent implements OnInit, OnDestroy {
         if (this.isAuthorized) {
             this.addClass = true;
         }
-        this.isHandset.subscribe((curValIsHandset) => {
-            this.IsCurHandset = curValIsHandset;
-        });
-        this.isTablet.subscribe((curValIsTablet) => {
-            this.IsCurTablet = curValIsTablet;
-        });
-    }
-
-    handleMenuItemSelection() {
-        if (this.IsCurTablet || this.IsCurHandset) {
-            this.toggleMenu();
-        }
     }
 
     ngOnInit(): void {
@@ -86,16 +63,16 @@ export class AppComponent implements OnInit, OnDestroy {
         if (this.isMiniMode) {
             setTimeout(() => {
                 this.isMiniMode = false;
-                this.atlasSidebar.state = 'default';
+                this.container.atlasSidebar.state = 'default';
             }, 1000);
         }
-        this.sidebar.toggle();
+        this.container.sidebar.toggle();
     }
     setHeaderTitle(pageTitle: string) {
         this.sideBarTitle = pageTitle === 'Tasks' ? 'Tasks' : 'Document Viewer';
     }
     toggleMenu() {
-        this.menu.toggle();
+        this.container.menu.toggle();
     }
     ngOnDestroy(): void {
         this.isAuthorizedSubscription.unsubscribe();

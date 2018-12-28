@@ -1,6 +1,5 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
-import { AtlasSideBarComponent } from 'projects/atlas-web-components/src/public_api';
-
+import { Component, ViewChild, OnInit, HostBinding } from '@angular/core';
+import { AtlasSideNavContainerComponent } from 'projects/atlas-web-components/src/lib/atlas-sidenav-container/components/atlas-sidenav-container.component';
 @Component({
     selector: 'atlas-root',
     templateUrl: './app.component.html',
@@ -12,9 +11,9 @@ export class AppComponent implements OnInit {
     menuItems: any[];
     isSideBarOpened = false;
     isMiniMode: boolean;
-    @ViewChild('menu') menu: any;
-    @ViewChild('sidebar') sidebar: any;
-    @ViewChild('atlasSidebar') atlasSidebar: AtlasSideBarComponent;
+    isAuthorized = true;
+    @ViewChild('container') container: AtlasSideNavContainerComponent;
+    @HostBinding('class.isAuthorized') addClass = true;
     ngOnInit(): void {
         this.menuItems = [
             {
@@ -44,16 +43,16 @@ export class AppComponent implements OnInit {
         ];
     }
     toggleMenu() {
-        this.menu.toggle();
+        this.container.menu.toggle();
     }
     toggleSidebar() {
         if (this.isMiniMode) {
             setTimeout(() => {
                 this.isMiniMode = false;
-                this.atlasSidebar.state = 'default';
+                this.container.atlasSidebar.state = 'default';
             }, 1000);
         }
-        this.sidebar.toggle();
+        this.container.sidebar.toggle();
     }
     headerBtnHandler(option) {
         this.toggleSidebar();

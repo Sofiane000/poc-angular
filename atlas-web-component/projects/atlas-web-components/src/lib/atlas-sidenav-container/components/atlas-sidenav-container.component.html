@@ -1,0 +1,42 @@
+<mat-sidenav-container class="sidenav-container" autosize>
+    <mat-sidenav
+        disableClose
+        *ngIf="isAuthorized"
+        #menu
+        class="sidenav"
+        fixedInViewport="true"
+        [attr.role]="(isHandset | async) || (isTablet | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset | async) || (isTablet | async) ? 'over' : 'side'"
+        [opened]="!(isHandset | async) && !(isTablet | async)"
+    >
+        <!-- Menu -->
+        <atlas-menu
+            [menuItems]="menuItems"
+            (menuItemSelected)="handleMenuItemSelection()"
+        ></atlas-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <!-- Main content -->
+        <atlas-content></atlas-content>
+    </mat-sidenav-content>
+    <mat-sidenav
+        disableClose
+        *ngIf="isAuthorized"
+        [mode]="(isHandset | async) || (isTablet | async) ? 'over' : 'side'"
+        [attr.role]="(isHandset | async) || (isTablet | async) ? 'dialog' : 'navigation'"
+        #sidebar
+        class="sidenav right-sidebar"
+        [class.sideBarMini]="isMiniMode"
+        [(opened)]="isSideBarOpened"
+        mode="side"
+        position="end"
+    >
+        <!-- Side bar with different routes -->
+        <atlas-sidebar
+            #atlasSidebar
+            (toggleSideBar)="toggleSidebar()"
+            [headerName]="sideBarTitle"
+            (toggleMiniMode)="isMiniMode = !isMiniMode"
+        ></atlas-sidebar>
+    </mat-sidenav>
+</mat-sidenav-container>
