@@ -1,112 +1,123 @@
-@import "../../../../../styles/variables.scss";
+@import '../../../../../styles/variables.scss';
 
 .login-box {
-  width: 30%;
-  margin: 100px auto 0px auto;
-  padding: 0px;
+    width: 30%;
+    margin: 100px auto 0px auto;
+    padding: 0px;
 }
 
 .login-header {
-  height: 48px;
-  font-size: 18px;
+    height: 48px;
+    font-size: 18px;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 16px;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+}
+
+atlas-button {
+    text-align: center;
 }
 
 .body-container {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .login-input {
-  width: 80%;
-  margin: 5px auto;
+    width: 80%;
+    margin: 5px auto;
 }
 
 img {
-  height: 50px;
-  display: block;
-  margin: 50px auto 35px auto;
+    height: 50px;
+    display: block;
+    margin: 50px auto 35px auto;
 }
 
 .login-button {
-  margin: 34px auto 24px auto;
-  display: block;
-  min-width: 64px;
-  height: 32px;
+    margin: 34px auto 24px auto;
+    display: block;
+    min-width: 64px;
+    height: 32px;
 }
 
 .login-button .mat-button-wrapper {
-  padding: 0px 16px 0 16px;
+    padding: 0px 16px 0 16px;
 }
 
 .forgot-link,
 .need-help-link {
-  margin: 0px auto;
-  display: block;
-  width: 50%;
+    margin: 0px auto;
+    display: block;
+    width: 50%;
 }
 
 .forgot-link {
-  color: $primary;
+    color: $primary;
 }
 
 .login-footer {
-  position: absolute;
-  bottom: 0px;
-  margin: 0px auto;
-  display: block;
-  width: 97%;
-}
-footer a{
-  font-size: 12px;
+    position: absolute;
+    bottom: 0px;
+    margin: 0px auto;
+    display: block;
+    width: 97%;
 }
 
-
-@media (min-width: 1025px) and (max-width: 1280px) { 
-  .login-box {
-    width: 30%;
-  }
+footer a {
+    font-size: 12px;
 }
 
-/* 
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .login-box {
+        width: 30%;
+    }
+}
+
+/*
   ##Device = Tablets, Ipads (portrait)
   ##Screen = B/w 768px to 1024px
 */
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .login-box {
-    width: 50%;
-  }
+    .login-box {
+        width: 50%;
+    }
 }
 
-/* 
+/*
   ##Device = Tablets, Ipads (landscape)
   ##Screen = B/w 768px to 1024px
 */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  .login-box {
-    width: 50%;
-  }
+    .login-box {
+        width: 50%;
+    }
 }
 
-/* 
+/*
   ##Device = Low Resolution Tablets, Mobiles (Landscape)
   ##Screen = B/w 481px to 767px
 */
 
 @media (min-width: 481px) and (max-width: 767px) {
-  .login-box {
-    width: 70%;
-  }
+    .login-box {
+        width: 70%;
+    }
 }
 
-/* 
+/*
   ##Device = Most of the Smartphones Mobiles (Portrait)
   ##Screen = B/w 320px to 479px
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
-  .login-box {
-    width: 100%;
-  }
+    .login-box {
+        width: 100%;
+    }
 }
