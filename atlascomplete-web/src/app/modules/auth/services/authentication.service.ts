@@ -1,10 +1,10 @@
 import { Injectable, Injector } from '@angular/core';
 import { Router } from '@angular/router';
 import {
+    AppSession,
     ComponentSecurityService,
     DataAccessFactory,
     DataAccessService,
-    AppSession,
 } from 'atlas-web-services';
 
 @Injectable()
@@ -41,6 +41,7 @@ export class AuthenticationService {
         this.sessionService.clear();
         this.router.navigate(['login']);
     }
+
     checkSession(): Promise<any> {
         return new Promise((resolve, request) => {
             if (this.sessionService.isAuthenticated()) {

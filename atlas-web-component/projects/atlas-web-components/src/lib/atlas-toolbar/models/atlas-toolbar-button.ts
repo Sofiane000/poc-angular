@@ -1,6 +1,6 @@
 import { ButtonAction } from './button-action';
 
-export interface AtlasToolbarButton {
+export interface IAtlasToolbarButton {
     title: string;
     action?: ButtonAction;
     isDisabled?: boolean;

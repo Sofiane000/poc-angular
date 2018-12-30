@@ -1,11 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DialogModule } from '@progress/kendo-angular-dialog';
-import { State, process, GroupDescriptor } from '@progress/kendo-data-query';
 import { DialogContainerService } from '@progress/kendo-angular-dialog/dist/es2015/dialog/dialog-container.service';
-import { AtlasGridComponent } from './atlas-grid.component';
-import { TestService, USER_DATA } from '../services/test-grid.service';
+import { GroupDescriptor, process, State } from '@progress/kendo-data-query';
 import { AtlasGridModule } from '../atlas-grid.module';
 import { AtlasGridService } from '../services/atlas-grid.service';
+import { TestService, USER_DATA } from '../services/test-grid.service';
+import { AtlasGridComponent } from './atlas-grid.component';
 describe('AtlasGridComponent', () => {
     let component: AtlasGridComponent;
     let fixture: ComponentFixture<AtlasGridComponent>;
@@ -27,7 +27,7 @@ describe('AtlasGridComponent', () => {
             take: 100,
         };
         const users = process(USER_DATA, component.state);
-        component.gridDataResult = <any>users;
+        component.gridDataResult = users as any;
 
         component.gridService = service;
         component.selectable = {

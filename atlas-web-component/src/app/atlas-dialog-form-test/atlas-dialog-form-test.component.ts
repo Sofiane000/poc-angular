@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material';
 
 @Component({
@@ -11,8 +11,10 @@ export class AtlasDialogFormTestComponent implements OnInit {
     form: FormGroup = new FormGroup({
         Name: new FormControl('', Validators.required),
     });
-    constructor(private dialogRef: MatDialogRef<AtlasDialogFormTestComponent>) {}
-    ngOnInit() {}
+    
+  constructor(private dialogRef: MatDialogRef<AtlasDialogFormTestComponent>) {}
+    
+  ngOnInit() {}
 
     closeHandler(actions) {
         this.dialogRef.close();

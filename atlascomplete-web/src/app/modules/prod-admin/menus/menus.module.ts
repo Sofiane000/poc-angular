@@ -1,26 +1,26 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenusRoutingModule } from './menus.routing.module';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
-    AtlasTreeModule,
+    AtlasDialogContentModule,
+    AtlasDialogFooterModule,
+    AtlasDialogHeaderModule,
     AtlasDialogModule,
-    AtlasPageHeaderModule,
+    AtlasInputModule,
     AtlasPageContentModule,
     AtlasPageFooterModule,
-    AtlasDialogHeaderModule,
-    AtlasDialogFooterModule,
-    AtlasDialogContentModule,
-    AtlasInputModule,
+    AtlasPageHeaderModule,
     AtlasToolbarModule,
+    AtlasTreeModule,
 } from 'atlas-web-components';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MenusTreeComponent } from './components/menus-tree/menus-tree.component';
-import { MenusDialogComponent } from './components/menus-dialog/menus-dialog.component';
-import { MenusService } from './services/menus.service';
 import { DataAccessFactory } from 'atlas-web-services';
+import { SharedModule } from '../../shared/shared.module';
 import { MenusDeleteDialogComponent } from './components/menus-delete-dialog/menus-delete-dialog.component';
 import { MenusDialogFormComponent } from './components/menus-dialog-form/menus-dialog-form.component';
-import { SharedModule } from '../../shared/shared.module';
+import { MenusDialogComponent } from './components/menus-dialog/menus-dialog.component';
+import { MenusTreeComponent } from './components/menus-tree/menus-tree.component';
+import { MenusRoutingModule } from './menus.routing.module';
+import { MenusService } from './services/menus.service';
 
 @NgModule({
     declarations: [

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MyTasksService } from '../../services/my-tasks.service';
-import { IWorkItem } from '../../models/work-item';
 import { AtlasToolbarButton, ButtonAction } from 'atlas-web-components';
+import { IWorkItem } from '../../models/work-item';
+import { MyTasksService } from '../../services/my-tasks.service';
 
 @Component({
     selector: 'app-work-queue',
@@ -29,6 +29,7 @@ export class WorkQueueComponent implements OnInit {
             class: 'right-icons',
         },
     ];
+
     constructor(private workQueueService: MyTasksService) {}
 
     ngOnInit() {

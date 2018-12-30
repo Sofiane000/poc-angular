@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DmsService } from '../../services/dms.service';
 import { INavLink } from 'atlas-web-components/lib/layout/atlas-tab-layout/models/nav-link';
+import { DmsService } from '../../services/dms.service';
 
 @Component({
     selector: 'app-dms-detail',
@@ -11,6 +11,7 @@ import { INavLink } from 'atlas-web-components/lib/layout/atlas-tab-layout/model
 export class DmsDetailComponent implements OnInit {
     dmsDetail: any;
     navLinks: INavLink[];
+
     constructor(
         private dmsService: DmsService,
         private route: ActivatedRoute,
@@ -43,6 +44,7 @@ export class DmsDetailComponent implements OnInit {
                 .subscribe((dmsDetail) => (this.dmsDetail = dmsDetail));
         });
     }
+
     goBackHandler(event) {
         this.router.navigate(['/administration/dms']);
     }

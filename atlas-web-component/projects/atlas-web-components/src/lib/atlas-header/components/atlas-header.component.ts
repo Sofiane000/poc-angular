@@ -1,8 +1,8 @@
-import { Component, Output, EventEmitter, HostBinding, Input } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 @Component({
     selector: 'atlas-header',
     templateUrl: './atlas-header.component.html',
-    styleUrls: ['./atlas-header.component.scss']
+    styleUrls: ['./atlas-header.component.scss'],
 })
 export class AtlasHeaderComponent {
     @Input() isSideBarOpened: boolean;
@@ -15,16 +15,18 @@ export class AtlasHeaderComponent {
     @Output() logout: EventEmitter<any> = new EventEmitter<any>();
     @Output() headerBtnClicked: EventEmitter<any> = new EventEmitter<any>();
     @HostBinding('class.mat-elevation-z6') someField = true;
-    constructor() {
-
-    }
-    toggleNav() {
+    
+  constructor() {}
+    
+  toggleNav() {
         this.toggleMenu.emit();
     }
-    onClickRoutes(option: string) {
+    
+  onClickRoutes(option: string) {
         this.headerBtnClicked.emit(option);
     }
-    onLogout() {
+    
+  onLogout() {
         this.logout.emit();
     }
 }

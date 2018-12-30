@@ -1,15 +1,15 @@
-import { Component, OnInit, ViewChild, ViewContainerRef, OnDestroy } from '@angular/core';
-import { DmsService } from '../../services/dms.service';
+import { Component, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import {
-    IColumnSetting,
-    AtlasToolbarButton,
-    ButtonAction,
-    AtlasGridComponent,
-    AtlasToolbarComponent,
-} from 'atlas-web-components';
 import { Router } from '@angular/router';
+import {
+    AtlasGridComponent,
+    AtlasToolbarButton,
+    AtlasToolbarComponent,
+    ButtonAction,
+    IColumnSetting,
+} from 'atlas-web-components';
 import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
+import { DmsService } from '../../services/dms.service';
 
 @Component({
     selector: 'app-dms-grid',

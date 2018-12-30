@@ -1,4 +1,4 @@
-import { Component, OnInit, ContentChild, TemplateRef, Input } from '@angular/core';
+import { Component, ContentChild, Input, OnInit, TemplateRef } from '@angular/core';
 @Component({
     selector: 'atlas-card',
     templateUrl: './atlas-card.component.html',
@@ -9,7 +9,8 @@ export class AtlasCardComponent implements OnInit {
     cardItems: any[];
     @ContentChild('cardTemplate')
     cardTemplate: TemplateRef<any>;
-    constructor() {}
+    
+  constructor() {}
 
     ngOnInit() {}
 }

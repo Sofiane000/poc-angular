@@ -1,21 +1,14 @@
-import {
-    Component,
-    ViewChild,
-    Input,
-    Output,
-    EventEmitter,
-    OnInit,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { ContextMenuComponent } from '@progress/kendo-angular-menu';
-import { TreeViewComponent, ItemLookup } from '@progress/kendo-angular-treeview';
+import { ItemLookup, TreeViewComponent } from '@progress/kendo-angular-treeview';
+import { Subscription } from 'rxjs';
+import { AtlasGridService } from '../../atlas-grid/services/atlas-grid.service';
 import { AtlasToolbarComponent } from '../../atlas-toolbar/components/atlas-toolbar.component';
 import {
-    MultiRowSelection,
     MultiRowComponent,
+    MultiRowSelection,
     Selectable,
 } from '../../shared/multi-row-component/multi-row-component.service';
-import { AtlasGridService } from '../../atlas-grid/services/atlas-grid.service';
-import { Subscription } from 'rxjs';
 @Component({
     selector: 'atlas-tree',
     templateUrl: './atlas-tree.component.html',
@@ -59,13 +52,14 @@ export class AtlasTreeComponent implements OnInit, MultiRowComponent {
     >();
 
     constructor() {}
-    ngOnInit(): void {
-            this.treeViewService.query({});
-            this.treeServiceSubscription = this.treeViewService.subscribe((data) => {
-                if (data) {
-                    this.partialData = data.map((item) => item);
-                }
-            });
+    
+  ngOnInit(): void {
+        this.treeViewService.query({});
+        this.treeServiceSubscription = this.treeViewService.subscribe((data) => {
+            if (data) {
+                this.partialData = data.map((item) => item);
+            }
+        });
     }
 
     onNodeClick(event: any): void {
@@ -73,14 +67,17 @@ export class AtlasTreeComponent implements OnInit, MultiRowComponent {
         originalEvent.preventDefault();
         this.contextItem = event.item.dataItem;
     }
-    onAddSelect({ item }): void {
+    
+  onAddSelect({ item }): void {
         this.addMenuSelect.emit(item);
     }
-    addClicked(event) {
+    
+  addClicked(event) {
         event.preventDefault();
         this.gridContextMenu.show({ left: event.pageX, top: event.pageY });
     }
-    handleSelection(event) {
+    
+  handleSelection(event) {
         setTimeout(() => {
             this.selectionChange.emit({
                 selectedRows: this.selectedKeys,
@@ -88,10 +85,12 @@ export class AtlasTreeComponent implements OnInit, MultiRowComponent {
             });
         }, 100);
     }
-    selectBy(e) {
+    
+  selectBy(e) {
         return e.dataItem;
     }
-    iconClass(dataItem): any {
+    
+  iconClass(dataItem): any {
         return {
             'fa-database': dataItem['TenantTaxnmyType'] === 'Tenant' ? true : false,
             // tslint:disable-next-line:max-line-length

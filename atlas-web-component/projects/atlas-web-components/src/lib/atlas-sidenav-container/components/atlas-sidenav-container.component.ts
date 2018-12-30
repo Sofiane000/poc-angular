@@ -1,14 +1,14 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import {
     Component,
-    Input,
     ContentChild,
-    ViewChild,
-    HostBinding,
-    Output,
     EventEmitter,
+    HostBinding,
+    Input,
+    Output,
+    ViewChild,
 } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
 import { AtlasSideBarComponent } from '../../atlas-sidebar/components/atlas-sidebar.component';
 
@@ -56,8 +56,10 @@ export class AtlasSideNavContainerComponent {
             this.toggleMenu();
         }
     }
-    toggleMenu() {
+    
+  toggleMenu() {
         this.menu.toggle();
     }
-    toggleSidebar() {}
+    
+  toggleSidebar() {}
 }

@@ -1,21 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AtlasPageHeaderComponent } from './components/atlas-page-header.component';
-import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { NgModule } from '@angular/core';
 import { MatButtonModule, MatIconModule } from '@angular/material';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { AtlasPageHeaderComponent } from './components/atlas-page-header.component';
 @NgModule({
-    declarations: [
-        AtlasPageHeaderComponent
-    ],
-    imports: [
-        CommonModule,
-        ButtonsModule,
-        MatButtonModule,
-        MatIconModule
-    ],
-    exports: [
-        AtlasPageHeaderComponent
-    ],
+    declarations: [AtlasPageHeaderComponent],
+    imports: [CommonModule, ButtonsModule, MatButtonModule, MatIconModule],
+    exports: [AtlasPageHeaderComponent],
 })
-export class AtlasPageHeaderModule {
-}
+export class AtlasPageHeaderModule {}

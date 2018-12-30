@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TreeTestService, TREE_DATA } from './tree-test.service';
 import { DialogContainerService } from '@progress/kendo-angular-dialog/dist/es2015/dialog/dialog-container.service';
-import { AtlasTreeComponent } from './atlas-tree.component';
-import { AtlasTreeModule } from '../atlas-tree.module';
 import { AtlasGridService } from '../../atlas-grid/services/atlas-grid.service';
+import { AtlasTreeModule } from '../atlas-tree.module';
+import { AtlasTreeComponent } from './atlas-tree.component';
+import { TREE_DATA, TreeTestService } from './tree-test.service';
 describe('AtlasTreeComponent', () => {
     let component: AtlasTreeComponent;
     let fixture: ComponentFixture<AtlasTreeComponent>;

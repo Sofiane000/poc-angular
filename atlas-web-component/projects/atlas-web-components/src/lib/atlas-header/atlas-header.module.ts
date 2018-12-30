@@ -1,24 +1,18 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
 import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule } from '@angular/material';
+import { RouterModule } from '@angular/router';
 import { AtlasHeaderComponent } from './components/atlas-header.component';
 @NgModule({
-    declarations: [
-        AtlasHeaderComponent
-    ],
+    declarations: [AtlasHeaderComponent],
     imports: [
         CommonModule,
         RouterModule,
         MatIconModule,
         MatButtonModule,
         MatMenuModule,
-        MatToolbarModule
+        MatToolbarModule,
     ],
-    exports: [
-        RouterModule,
-        AtlasHeaderComponent
-    ],
+    exports: [RouterModule, AtlasHeaderComponent],
 })
-export class AtlasHeaderModule {
-}
+export class AtlasHeaderModule {}

@@ -1,13 +1,13 @@
-import { Component, OnInit, ViewChild, ChangeDetectorRef, AfterViewChecked } from '@angular/core';
+import { AfterViewChecked, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { Router } from '@angular/router';
 import {
-    AtlasTreeComponent,
     AtlasToolbarButton,
-    ButtonAction,
     AtlasToolbarComponent,
+    AtlasTreeComponent,
+    ButtonAction,
 } from 'atlas-web-components';
 import { MenusService } from '../../services/menus.service';
-import { Router } from '@angular/router';
-import { MatDialog, MatDialogConfig } from '@angular/material';
 import { MenusDeleteDialogComponent } from '../menus-delete-dialog/menus-delete-dialog.component';
 @Component({
     selector: 'app-menus-tree',
@@ -40,25 +40,30 @@ export class MenusTreeComponent implements OnInit, AfterViewChecked {
     ngAfterViewChecked() {
         this.cdRef.detectChanges();
     }
+
     ngOnInit(): void {
         this.menuService.subscribe((treeData) => {
             this.treeData = treeData;
         });
     }
+
     refresh() {
         this.menuService.getMenus().subscribe((treeData) => {
             this.treeView.partialData = treeData.map((item) => item);
         });
     }
+
     editHandler(event) {
         this.showAddEditDialog(this.treeView.contextItem);
     }
+
     showAddEditDialog(dataItem: any) {
         const isNew = dataItem ? false : true;
         this.router.navigate([
             'administration/menus/action/' + (isNew ? 'add' : 'edit/' + dataItem.MenuSK),
         ]);
     }
+
     addHandler(event) {
         if (event.text === 'Add Sibling') {
             if (this.treeView.contextItem) {
@@ -70,6 +75,7 @@ export class MenusTreeComponent implements OnInit, AfterViewChecked {
             this.showAddEditDialog(null);
         }
     }
+
     removeItem(dataItem: any, items: any[]): void {
         const index = items.indexOf(dataItem);
         if (index >= 0) {
@@ -82,6 +88,7 @@ export class MenusTreeComponent implements OnInit, AfterViewChecked {
             });
         }
     }
+
     addItem(dataItem: any, items: any[], itemToPush) {
         const index = items.indexOf(dataItem);
         if (index >= 0) {
@@ -94,6 +101,7 @@ export class MenusTreeComponent implements OnInit, AfterViewChecked {
             });
         }
     }
+
     showRemoveDialog() {
         const dialogConfig = new MatDialogConfig();
         dialogConfig.disableClose = true;
@@ -111,6 +119,7 @@ export class MenusTreeComponent implements OnInit, AfterViewChecked {
             }
         });
     }
+
     saveTenantFromDialog(isAdd, dataItem) {
         if (isAdd) {
             if (this.isSibling) {
@@ -118,7 +127,7 @@ export class MenusTreeComponent implements OnInit, AfterViewChecked {
             } else {
                 if (this.treeView.contextItem) {
                     this.treeView.contextItem.children = this.treeView.contextItem.children || [];
-                    const child = Object.assign({}, dataItem);
+                    const child = { ...dataItem };
                     this.treeView.contextItem.children.push(child);
                     this.treeView.contextItem = null;
                 }
@@ -130,6 +139,7 @@ export class MenusTreeComponent implements OnInit, AfterViewChecked {
         this.treeView.selectedKeys = [];
         this.toolbar.onSelectionChanged(false);
     }
+
     actionHandler(eventResponse: any) {
         switch (eventResponse.action) {
             case ButtonAction.Add:
@@ -158,7 +168,7 @@ export class MenusTreeComponent implements OnInit, AfterViewChecked {
     onFilterKeyUp() {
         this.treeView.partialData = this.search(this.treeData, this.toolbar.filterValue);
         if (this.toolbar.filterValue && this.toolbar.filterValue.trim().length > 0) {
-            const lookupService = (<any>this.treeView.treeViewComponent).treeViewLookupService;
+            const lookupService = (this.treeView.treeViewComponent as any).treeViewLookupService;
             if (!lookupService || !lookupService.map) {
                 throw new Error('Could not access internal tree view lookup service.');
             }
@@ -169,6 +179,7 @@ export class MenusTreeComponent implements OnInit, AfterViewChecked {
             this.treeView.expandedKeys = ['0'];
         }
     }
+
     public search(children: any[], term: string): any[] {
         return children.reduce((acc, child) => {
             if (this.contains(child.MenuName, term)) {
@@ -176,7 +187,7 @@ export class MenusTreeComponent implements OnInit, AfterViewChecked {
             } else if (child.children && child.children.length > 0) {
                 const newChildren = this.search(child.children, term);
                 if (newChildren.length > 0) {
-                    const newObj = Object.assign({}, child);
+                    const newObj = { ...child };
                     newObj.children = [];
                     newObj.children = newChildren;
                     acc.push(newObj);
@@ -185,7 +196,9 @@ export class MenusTreeComponent implements OnInit, AfterViewChecked {
             return acc;
         }, []);
     }
+
     onSelectionChange() {}
+
     private contains(textFields: string, term: string): boolean {
         return textFields.toLowerCase().indexOf(term.toLowerCase()) >= 0;
     }

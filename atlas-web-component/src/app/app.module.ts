@@ -1,41 +1,41 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { AtlasGridTestComponent } from './atlas-grid-test/atlas-grid-test.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
-    MatRadioModule,
-    MatSidenavModule,
-    MatIconRegistry,
     MatButtonModule,
     MatDialogModule,
+    MatIconRegistry,
+    MatRadioModule,
+    MatSidenavModule,
 } from '@angular/material';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AtlasCardModule } from 'projects/atlas-web-components/src/lib/atlas-card/atlas-card.module';
 import { TestService } from 'projects/atlas-web-components/src/lib/atlas-grid/services/test-grid.service';
+import { AtlasSideNavContainerModule } from 'projects/atlas-web-components/src/lib/atlas-sidenav-container/atlas-sidenav-container.module';
+import { TreeTestService } from 'projects/atlas-web-components/src/lib/atlas-tree/components/tree-test.service';
 import {
-    AtlasDialogModule,
-    AtlasHeaderModule,
     AtlasContentModule,
+    AtlasDialogContentModule,
+    AtlasDialogFooterModule,
+    AtlasDialogHeaderModule,
+    AtlasDialogModule,
+    AtlasDocViewerModule,
+    AtlasHeaderModule,
     AtlasMenuModule,
     AtlasSideBarModule,
-    AtlasDocViewerModule,
-    AtlasDialogHeaderModule,
-    AtlasDialogFooterModule,
-    AtlasDialogContentModule,
 } from 'projects/atlas-web-components/src/public_api';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.module.routing';
-import { AtlasTreeTestComponent } from './atlas-tree-test/atlas-tree-test.component';
-import { TreeTestService } from 'projects/atlas-web-components/src/lib/atlas-tree/components/tree-test.service';
-import { AtlasDocViewerTestComponent } from './atlas-doc-viewer-test/atlas-doc-viewer-test.component';
-import { AtlasInputTestComponent } from './atlas-input-test/atlas-input-test.component';
 import { AtlasButtonTestComponent } from './atlas-button-test/atlas-button-test.component';
-import { AtlasToolbarTestComponent } from './atlas-toolbar-test/atlas-toolbar-test.component';
-import { AtlasDialogFormTestComponent } from './atlas-dialog-form-test/atlas-dialog-form-test.component';
-import { ElementModule } from './element.module';
-import { AtlasCardModule } from 'projects/atlas-web-components/src/lib/atlas-card/atlas-card.module';
 import { AtlasCardTestComponent } from './atlas-card-test/atlas-card-test.component';
-import { AtlasSideNavContainerModule } from 'projects/atlas-web-components/src/lib/atlas-sidenav-container/atlas-sidenav-container.module';
+import { AtlasDialogFormTestComponent } from './atlas-dialog-form-test/atlas-dialog-form-test.component';
+import { AtlasDocViewerTestComponent } from './atlas-doc-viewer-test/atlas-doc-viewer-test.component';
+import { AtlasGridTestComponent } from './atlas-grid-test/atlas-grid-test.component';
+import { AtlasInputTestComponent } from './atlas-input-test/atlas-input-test.component';
+import { AtlasToolbarTestComponent } from './atlas-toolbar-test/atlas-toolbar-test.component';
+import { AtlasTreeTestComponent } from './atlas-tree-test/atlas-tree-test.component';
+import { ElementModule } from './element.module';
 
 @NgModule({
     declarations: [

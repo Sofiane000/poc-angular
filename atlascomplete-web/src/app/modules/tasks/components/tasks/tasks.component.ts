@@ -7,18 +7,19 @@ import { INavLink } from 'atlas-web-components/lib/layout/atlas-tab-layout/model
 })
 export class TasksComponent implements OnInit {
     navLinks: INavLink[];
+
     ngOnInit() {
         this.navLinks = [
             {
                 label: 'My Tasks',
                 link: 'mytasks',
-                index: 0
+                index: 0,
             },
             {
                 label: 'Work Queue',
                 link: 'workqueue',
-                index: 1
-            }
+                index: 1,
+            },
         ];
     }
 }

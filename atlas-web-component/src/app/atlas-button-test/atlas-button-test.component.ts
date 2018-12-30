@@ -8,7 +8,8 @@ export class AtlasButtonTestComponent implements OnInit {
     constructor() {}
 
     ngOnInit() {}
-    onClickHandler() {
+    
+  onClickHandler() {
         alert('Button clicked');
     }
 }
