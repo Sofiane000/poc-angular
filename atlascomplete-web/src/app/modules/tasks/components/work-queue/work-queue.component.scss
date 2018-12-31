@@ -1,14 +1,9 @@
-.header-tasks {
-    height: 42px;
-    background-color: #e6e7e8;
-    margin: 1px;
-}
+@import '../../../../../styles/variables.scss';
 
-.toolbar {
-    margin-bottom: 2px;
-    background-color: white;
-    height: 48px;
-    min-height: 48px;
+.header-tasks {
+    height: $atlas-header-task-height;
+    background-color: $atlas-grid-header;
+    margin: 1px;
 }
 
 .header-tasks p {

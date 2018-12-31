@@ -3,13 +3,13 @@
 
 html,
 body {
-    height: auto;
+    height: $atlas-body-height;
     width: auto;
 }
 
 body {
     margin: 0;
-    font-family: Museo !important;
+    font-family: $font-family !important;
     font-weight: 400;
 }
 
@@ -27,9 +27,9 @@ body {
 
 .mat-list-item-content {
     padding: 0 8px !important;
-    font-size: 14px !important;
-    font-family: Museo;
-    font-weight: 400;
+    font-size: $atlas-menu-item-font-size !important;
+    font-family: $font-family;
+    font-weight: $atlas-menu-item-font-weight;
     opacity: 0.87;
 }
 
@@ -41,11 +41,14 @@ body {
 // Kendo Buttons
 
 .k-primary {
-    height: 32px;
+    height: $atlas-button-height;
     min-width: 64px;
     padding-left: 16px;
     padding-right: 16px;
-    font: 'Museo' 300 14px #fff !important;
+    font-family: $font-family;
+    font-weight: $atlas-button-font-weight;
+    font-size: $atlas-button-font-size;
+    color: $color-white;
 }
 
 .k-button {
@@ -56,31 +59,34 @@ body {
     background-color: $atlas-header-bg-color;
 }
 
-.button-group-2 > a > .mat-button-wrapper > .fa,
-.button-group-2 > a > .mat-button-wrapper > .fa,
-.mat-button-wrapper > .fa.fa-bars,
-.mat-button-wrapper > .fa.fa-undo {
-    color: saddlebrown;
-}
-
-mat-label {
-    font-size: 12px;
-    font-weight: 300;
+.atlas-header.mat-toolbar-row,
+.atlas-header.mat-toolbar-single-row,
+.atlas-header.mat-toolbar-multiple-rows {
+    height: $atlas-header-desktop-height;
+    min-height: $atlas-header-desktop-height;
+    width: 100%;
 }
 
 .fa:not(.disable) {
     color: $atlas-icon;
-    font-size: 16px;
+    font-size: $atlas-icons-font-size;
+}
+
+.button-group-2 > a > .mat-button-wrapper > .fa,
+.mat-button-wrapper > .fa.fa-bars,
+.mat-button-wrapper > .fa.fa-undo {
+    color: $color-saddle-brown;
+}
+
+mat-label {
+    font-size: $atlas-input-font-size;
+    font-weight: $atlas-input-font-weight;
 }
 
 .sidebar-row .fa.fa-inbox,
 .sidebar-row .fa.fa-files-o {
-    color: white;
+    color: $color-white;
     font-size: x-large;
-}
-
-.no-padding {
-    padding: 0;
 }
 
 .refresh-btm {
@@ -95,9 +101,10 @@ mat-label {
 .k-grid-toolbar {
     background-color: $atlas-header-bg-color;
     padding: 0;
-    height: 48px;
+    height: $atlas-toolbar-height;
     opacity: 0.87;
-    font-size: 14px;
+    padding-left: 10px;
+    padding-top: 4px;
 }
 
 .k-grouping-header {
@@ -111,22 +118,22 @@ mat-label {
 .k-grid-header {
     background-color: $atlas-grid-header;
     border-color: $atlas-grid-header-border;
-    font-size: 12px !important;
-    font-weight: 500 !important;
+    font-size: $atlas-grid-header-font-size !important;
+    font-weight: $atlas-grid-header-font-weight !important;
 }
 
 .tasks-header {
-    font-size: 18px;
+    font-size: $atlas-tasks-header-font-size;
 }
 
 .k-grid-header .k-header {
-    height: 40px;
+    height: $atlas-grid-header-height;
     padding: 6px 0;
 }
 
 .k-grid tbody td {
     padding: 6px 0;
-    font-size: 12px !important;
+    font-size: $atlas-grid-body-font-size !important;
     opacity: 0.87 !important;
 }
 
@@ -145,8 +152,8 @@ mat-label {
 .mat-tab-links,
 .mat-tab-link,
 .mat-tab-header {
-    background-color: #505050;
-    color: #e9e1d7;
+    background-color: $atlas-tabs-bg-color;
+    color: $atlas-tabs-color;
 }
 
 .mat-tab-link:hover,
@@ -154,11 +161,11 @@ mat-label {
 .mat-tab-link:active,
 .mat-tab-label,
 .mat-tab-label-active {
-    color: #fff !important;
+    color: $color-white !important;
 }
 
 .mat-ink-bar {
-    background-color: white !important;
+    background-color: $color-white !important;
     height: 5px !important;
 }
 
@@ -168,51 +175,73 @@ mat-label {
     align-items: center;
     justify-content: space-around;
     background-color: $atlas-tabs-bg-color;
-    font-weight: 500;
-    font-size: 14px;
-}
-
-.mat-dialog-content {
-    margin: 0;
-}
-
-.mat-toolbar h2 {
-    font-weight: 400;
-    font-size: 18px;
-}
-
-.k-treeview {
-    font-size: 12px;
-    opacity: 0.87;
-    background-color: white;
-    margin-top: 12px;
-}
-
-mat-menu-item {
-    font-weight: 300;
-}
-
-mat-list-item-content {
-    font-size: 14px;
-}
-
-.user-grid {
-    background-color: white;
-}
-
-.custom-dialog-container .mat-dialog-container {
-    padding: 0;
+    font-weight: $atlas-tab-font-weight;
+    font-size: $atlas-tab-font-size;
 }
 
 .mat-dialog-content {
     margin: 0 !important;
 }
 
+.mat-toolbar h2 {
+    font-weight: $atlas-dialog-header-font-weight;
+    font-size: $atlas-dialog-header-font-size;
+}
+
+.k-treeview {
+    font-size: $atlas-tree-font-size;
+    opacity: 0.87;
+    background-color: $color-white;
+    margin-top: 12px;
+}
+
+.mat-menu-item {
+    font-weight: $atlas-menu-item-font-weight;
+}
+
+.user-grid {
+    background-color: $color-white;
+}
+
+.custom-dialog-container .mat-dialog-container {
+    padding: 0;
+}
+
 .atlas-dialog-header {
-    background-color: #1f93a1;
-    color: white;
-    min-height: 48px !important;
-    height: 48px;
+    background-color: $primary;
+    color: $color-white;
+    min-height: $atlas-dialog-header-height !important;
+    height: $atlas-dialog-header-height;
+}
+
+.atlas-logo {
+    height: $atlas-logo-height;
+    margin: 0 4px 3px 0;
+}
+// sidebar
+
+.side-bar-toolbar {
+    position: fixed;
+    z-index: 2;
+    width: 420px !important;
+    min-height: $atlas-sidebar-toolbar-height !important;
+    height: $atlas-sidebar-toolbar-height !important;
+}
+
+.side-bar-body {
+    margin-top: 40px;
+}
+
+// container
+
+.right-sidebar.sideBarMini {
+    width: 50px !important;
+    background-color: $primary;
+}
+
+.atlas-page-header {
+    height: $atlas-page-header-height;
+    padding: 12px 0 0 16px;
 }
 
 @media only screen and (min-width: 375px) and (max-width: 812px) and (-webkit-device-pixel-ratio: 3) {
@@ -220,7 +249,7 @@ mat-list-item-content {
     .atlas-header.mat-toolbar-row,
     .atlas-header.mat-toolbar-single-row,
     .atlas-header.mat-toolbar-multiple-rows {
-        height: 190px !important;
+        height: $atlas-header-mobile-height !important;
         min-height: auto !important;
         white-space: inherit !important;
     }
@@ -236,16 +265,6 @@ mat-list-item-content {
     .atlas-toolbar {
         text-align: center;
     }
-}
-
-.side-bar-toolbar {
-    position: fixed;
-    z-index: 2;
-    width: 420px !important;
-}
-
-.side-bar-body {
-    margin-top: 40px;
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
@@ -289,6 +308,14 @@ mat-list-item-content {
     .side-bar-toolbar {
         width: 310px !important;
     }
+
+    .atlas-header.mat-toolbar-row,
+    .atlas-header.mat-toolbar-single-row,
+    .atlas-header.mat-toolbar-multiple-rows {
+        height: $atlas-header-mobile-xl-height;
+        min-height: auto;
+        white-space: inherit;
+    }
 }
 
 /*
@@ -307,5 +334,27 @@ mat-list-item-content {
 
     .side-bar-toolbar {
         width: 310px !important;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+
+    .atlas-header.mat-toolbar-row,
+    .atlas-header.mat-toolbar-single-row,
+    .atlas-header.mat-toolbar-multiple-rows {
+        height: $atlas-header-mobile-height;
+        min-height: auto;
+        white-space: inherit;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 480px) {
+
+    .atlas-header.mat-toolbar-row,
+    .atlas-header.mat-toolbar-single-row,
+    .atlas-header.mat-toolbar-multiple-rows {
+        height: $atlas-header-mobile-xl-height;
+        min-height: auto;
+        white-space: inherit;
     }
 }

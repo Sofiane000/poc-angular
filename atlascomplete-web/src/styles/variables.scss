@@ -9,8 +9,56 @@ $atlas-app-warn: mat-palette($mat-red);
 $primary: mat-color($atlas-app-primary);
 $primary-contrast: #fff;
 $atlas-tabs-bg-color: #505050;
+$atlas-tabs-color: #e9e1d7;
+$font-family: 'Museo';
 $atlas-header-bg-color: white;
-$atlas-icon: #1f93a1;
+$atlas-icon: $primary;
 $atlas-icon-active: #e1e4e4;
 $atlas-grid-header: #e6e7e8;
 $atlas-grid-header-border: #d1d3d4;
+// Colors
+
+$color-red: #f00;
+$color-green: #0f0;
+$color-blue: #00f;
+$color-white: white;
+$color-saddle-brown: #8b4513;
+
+// Heights
+
+$atlas-body-height: auto;
+$atlas-button-height: 32px;
+$atlas-toolbar-height: 100%;
+$atlas-grid-header-height: 40px;
+$atlas-dialog-header-height: 48px;
+$atlas-header-desktop-height: 45px;
+$atlas-header-mobile-height: 200px;
+$atlas-header-mobile-xl-height: 151px;
+$atlas-header-task-height: 42px;
+$atlas-login-header-height: 48px;
+$atlas-login-image-height: 50px;
+$atlas-sidebar-toolbar-height: 40px;
+$atlas-logo-height: 26px;
+$atlas-page-header-height: 48px;
+
+// fonts
+$atlas-menu-item-font-size: 14px;
+$atlas-menu-item-font-weight: 400;
+$atlas-button-font-weight: 300;
+$atlas-button-font-size: 14px;
+$atlas-icons-font-size: 16px;
+$atlas-input-font-size: 12px;
+$atlas-input-font-weight: 300;
+$atlas-grid-font-size: 16px;
+$atlas-grid-header-font-size: 12px;
+$atlas-grid-header-font-weight: 500;
+$atlas-tasks-header-font-size: 18px;
+$atlas-grid-body-font-size: 12px;
+$atlas-tab-font-weight: 500;
+$atlas-tab-font-size: 14px;
+$atlas-menu-item-font-weight: 300;
+$atlas-tree-font-size: 12px;
+$atlas-dialog-header-font-size: 18px;
+$atlas-dialog-header-font-weight: 400;
+$atlas-login-header-font-size: 18px;
+$atlas-login-footer-font-size: 12px;

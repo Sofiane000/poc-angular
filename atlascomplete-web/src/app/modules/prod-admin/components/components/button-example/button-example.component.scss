@@ -1,3 +1,5 @@
+@import '../../../../../../styles/variables.scss';
+
 .example-config {
     margin: 0 0 20px;
     padding: 20px;
@@ -12,7 +14,7 @@
     overflow-y: auto;
     list-style-type: none;
     border: 1px solid rgba(0, 0, 0, 0.08);
-    background-color: \\#fff;
+    background-color: $color-white;
 }
 
 .event-log li {

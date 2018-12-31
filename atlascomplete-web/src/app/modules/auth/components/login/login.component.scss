@@ -7,8 +7,8 @@
 }
 
 .login-header {
-    height: 48px;
-    font-size: 18px;
+    height: $atlas-login-header-height;
+    font-size: $atlas-login-header-font-size;
     display: flex;
     box-sizing: border-box;
     padding: 0 16px;
@@ -33,7 +33,7 @@ atlas-button {
 }
 
 img {
-    height: 50px;
+    height: $atlas-login-image-height;
     display: block;
     margin: 50px auto 35px auto;
 }
@@ -42,7 +42,6 @@ img {
     margin: 34px auto 24px auto;
     display: block;
     min-width: 64px;
-    height: 32px;
 }
 
 .login-button .mat-button-wrapper {
@@ -69,7 +68,7 @@ img {
 }
 
 footer a {
-    font-size: 12px;
+    font-size: $atlas-login-footer-font-size;
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {

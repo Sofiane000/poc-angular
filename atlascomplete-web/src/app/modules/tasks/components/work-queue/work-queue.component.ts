@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AtlasToolbarButton, ButtonAction } from 'atlas-web-components';
+import { IAtlasToolbarButton, ButtonAction } from 'atlas-web-components';
 import { IWorkItem } from '../../models/work-item';
 import { MyTasksService } from '../../services/my-tasks.service';
 
@@ -10,7 +10,7 @@ import { MyTasksService } from '../../services/my-tasks.service';
 })
 export class WorkQueueComponent implements OnInit {
     workItems: IWorkItem[];
-    buttons: AtlasToolbarButton[] = [
+    buttons: IAtlasToolbarButton[] = [
         {
             title: 'Sort',
             action: ButtonAction.Sort,

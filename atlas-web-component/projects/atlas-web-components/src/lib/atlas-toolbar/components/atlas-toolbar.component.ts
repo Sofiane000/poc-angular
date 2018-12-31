@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import {
-    MultiRowComponent,
+    IMultiRowComponent,
     MultiRowSelection,
 } from '../../shared/multi-row-component/multi-row-component.service';
-import { AtlasToolbarButton } from '../models/atlas-toolbar-button';
+import { IAtlasToolbarButton } from '../models/atlas-toolbar-button';
 import { ButtonAction } from '../models/button-action';
 
 @Component({
@@ -15,8 +15,8 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
     filterValue: string;
     subscription: any;
 
-    useButtons: AtlasToolbarButton[];
-    private actionButtons: AtlasToolbarButton[] = [
+    useButtons: IAtlasToolbarButton[];
+    private actionButtons: IAtlasToolbarButton[] = [
         {
             title: 'Add',
             action: ButtonAction.Add,
@@ -42,8 +42,8 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
         },
     ];
     @Input() showAddEditButtons = true;
-    @Input() buttons: AtlasToolbarButton[];
-    @Input() parent: MultiRowComponent;
+    @Input() buttons: IAtlasToolbarButton[];
+    @Input() parent: IMultiRowComponent;
     @Input() canSearch: boolean;
     @Input() showSortBy: boolean;
     @Input() selectedStatus = 'Default View';
@@ -67,11 +67,11 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
         if (!this.parent) {
             return; // no parent
         }
-        if (this.showAddEditButtons) {
-            this.useButtons = [...this.actionButtons, ...this.buttons];
-        } else {
-            this.useButtons = this.buttons.map((item) => item);
-        }
+
+        this.useButtons = this.showAddEditButtons
+            ? [...this.actionButtons, ...this.buttons]
+            : this.buttons.map((item) => item);
+
         if (this.parent.selectionChange) {
             this.subscription = this.parent.selectionChange.subscribe(
                 (selection: MultiRowSelection) => {

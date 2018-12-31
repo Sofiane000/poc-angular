@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AtlasToolbarButton, ButtonAction, ICardField } from 'atlas-web-components';
+import { IAtlasToolbarButton, ButtonAction, ICardField } from 'atlas-web-components';
 import { IWorkItem } from '../../models/work-item';
 import { MyTasksService } from '../../services/my-tasks.service';
 
@@ -12,7 +12,7 @@ export class MyTasksComponent implements OnInit {
     workItems: IWorkItem[];
     primary: ICardField[] = [];
     secondary: ICardField[] = [];
-    buttons: AtlasToolbarButton[] = [
+    buttons: IAtlasToolbarButton[] = [
         {
             title: 'Sort',
             action: ButtonAction.Add,

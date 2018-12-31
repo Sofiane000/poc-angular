@@ -3,8 +3,8 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 import { Router } from '@angular/router';
 import {
     AtlasGridComponent,
-    AtlasToolbarButton,
     ButtonAction,
+    IAtlasToolbarButton,
     IColumnSetting,
 } from 'atlas-web-components';
 import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
@@ -19,7 +19,7 @@ import { UsersDeleteDialogComponent } from '../users-dialog/users-delete-dialog.
     providers: [DocumentViewerService],
 })
 export class UsersGridComponent implements OnInit, OnDestroy {
-    buttons: AtlasToolbarButton[] = [
+    buttons: IAtlasToolbarButton[] = [
         {
             title: 'Onboarding',
             isTextButton: true,
@@ -210,11 +210,7 @@ export class UsersGridComponent implements OnInit, OnDestroy {
 
     onSelectionChange() {
         setTimeout(() => {
-            if (this.atlasGrid.selectedKeys.length <= 0) {
-                this.buttons[0].isDisabled = true;
-            } else {
-                this.buttons[0].isDisabled = false;
-            }
+            this.buttons[0].isDisabled = this.atlasGrid.selectedKeys.length <= 0 ? true : false;
         }, 100);
     }
 

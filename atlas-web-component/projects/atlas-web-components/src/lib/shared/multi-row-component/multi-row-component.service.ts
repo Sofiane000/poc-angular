@@ -9,7 +9,7 @@ export class MultiRowSelection {
 // tslint:disable-next-line
 export interface Selectable extends SelectableSettings {}
 
-export interface MultiRowComponent {
+export interface IMultiRowComponent {
     // flag indicates whethe multi-select is supported
     selectable: Selectable;
 

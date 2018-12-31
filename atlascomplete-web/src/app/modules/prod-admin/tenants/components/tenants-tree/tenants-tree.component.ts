@@ -2,17 +2,16 @@ import { AfterViewChecked, ChangeDetectorRef, Component, OnInit, ViewChild } fro
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { Router } from '@angular/router';
 import {
-    AtlasToolbarButton,
     AtlasToolbarComponent,
     AtlasTreeComponent,
     ButtonAction,
+    IAtlasToolbarButton,
 } from 'atlas-web-components';
 import { TenantsService } from '../../services/tenants.service';
 import { TenantsDeleteDialogComponent } from '../tenants-delete-dialog/tenants-delete-dialog.component';
 @Component({
     selector: 'app-tenants-tree',
     templateUrl: './tenants-tree.component.html',
-    styleUrls: ['./tenants-tree.component.scss'],
 })
 export class TenantsTreeComponent implements OnInit, AfterViewChecked {
     treeData: any[] = [];
@@ -24,7 +23,7 @@ export class TenantsTreeComponent implements OnInit, AfterViewChecked {
     children = 'children';
     treeItems: any[] = [];
     isSibling: boolean;
-    buttons: AtlasToolbarButton[] = [];
+    buttons: IAtlasToolbarButton[] = [];
 
     constructor(
         private dialogService: MatDialog,

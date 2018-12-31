@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 import {
     AtlasGridComponent,
-    AtlasToolbarButton,
+    IAtlasToolbarButton,
     AtlasToolbarComponent,
     ButtonAction,
     IColumnSetting,
@@ -18,7 +18,7 @@ import { DmsService } from '../../services/dms.service';
     providers: [DocumentViewerService],
 })
 export class DmsGridComponent implements OnInit, OnDestroy {
-    buttons: AtlasToolbarButton[] = [
+    buttons: IAtlasToolbarButton[] = [
         {
             title: 'Refresh',
             action: ButtonAction.Refresh,
@@ -126,11 +126,7 @@ export class DmsGridComponent implements OnInit, OnDestroy {
 
     onSelectionChange() {
         setTimeout(() => {
-            if (this.atlasGrid.selectedKeys.length <= 0) {
-                this.buttons[0].isDisabled = true;
-            } else {
-                this.buttons[0].isDisabled = false;
-            }
+            this.buttons[0].isDisabled = this.atlasGrid.selectedKeys.length <= 0 ? true : false;
         }, 100);
     }
 
