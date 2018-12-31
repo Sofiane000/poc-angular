@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IColumnSetting } from 'atlas-web-components';
-import { UserService } from '../../../users/services/user.service';
 import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
+import { UserService } from '../../../users/services/user.service';
 
 @Component({
     selector: 'app-button-example',
@@ -26,10 +26,7 @@ export class ButtonExampleComponent implements OnInit {
     selectedKeys: any[] = [];
     selectBy = 'cf_LoginID';
 
-    constructor(
-        public service: UserService,
-        private docViewer: DocumentViewerService
-    ) {}
+    constructor(public service: UserService, private docViewer: DocumentViewerService) {}
 
     ngOnInit() {
         this.gridState = {
@@ -37,9 +34,7 @@ export class ButtonExampleComponent implements OnInit {
             take: 5,
             filter: {
                 logic: 'and',
-                filters: [
-                    { field: 'firstName', operator: 'contains', value: '' },
-                ],
+                filters: [{ field: 'firstName', operator: 'contains', value: '' }],
             },
         };
         this.columnsData = this.columnsData = [

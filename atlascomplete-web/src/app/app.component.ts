@@ -1,9 +1,9 @@
-import { Component, HostBinding, ViewChild, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Router, NavigationEnd } from '@angular/router';
-import { IMenuItem, AtlasHeaderComponent } from 'atlas-web-components';
-import { MenuService } from './menu.service';
+import { Component, HostBinding, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { AtlasHeaderComponent, IMenuItem } from 'atlas-web-components';
 import { AppSession } from 'atlas-web-services';
+import { Subscription } from 'rxjs';
+import { MenuService } from './menu.service';
 
 @Component({
     selector: 'app-atlas',
@@ -21,6 +21,7 @@ export class AppComponent implements OnInit, OnDestroy {
     @ViewChild('header') header: AtlasHeaderComponent;
 
     @HostBinding('class.isAuthorized') addClass = false;
+
     constructor(
         private router: Router,
         private authenticationService: AppSession,
@@ -61,6 +62,7 @@ export class AppComponent implements OnInit, OnDestroy {
             this.menuItems = result;
         });
     }
+
     toggleSidebar() {
         if (this.isMiniMode) {
             setTimeout(() => {
@@ -70,15 +72,19 @@ export class AppComponent implements OnInit, OnDestroy {
         }
         this.container.sidebar.toggle();
     }
+
     setHeaderTitle(pageTitle: string) {
         this.sideBarTitle = pageTitle === 'Tasks' ? 'Tasks' : 'Document Viewer';
     }
+
     toggleMenu() {
         this.container.menu.toggle();
     }
+
     ngOnDestroy(): void {
         this.isAuthorizedSubscription.unsubscribe();
     }
+
     logoutHandler() {
         this.authenticationService.isAuthorized.next(false);
         this.addClass = false;

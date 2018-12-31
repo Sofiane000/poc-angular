@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AtlasToolbarButton, ButtonAction } from 'projects/atlas-web-components/src/public_api';
 import { MatDialog, MatDialogConfig } from '@angular/material';
+import { AtlasToolbarButton, ButtonAction } from 'projects/atlas-web-components/src/public_api';
 import { AtlasDialogFormTestComponent } from '../atlas-dialog-form-test/atlas-dialog-form-test.component';
 
 @Component({
@@ -18,14 +18,14 @@ export class AtlasToolbarTestComponent implements OnInit {
         },
     ];
 
-    constructor(
-        private dialog: MatDialog) {}
+    constructor(private dialog: MatDialog) {}
 
     ngOnInit() {}
-    actionHandler(eventResponse) {
+    
+  actionHandler(eventResponse) {
         switch (eventResponse.action) {
             case ButtonAction.Add:
-            this.showAddDialog();
+                this.showAddDialog();
                 break;
         }
     }

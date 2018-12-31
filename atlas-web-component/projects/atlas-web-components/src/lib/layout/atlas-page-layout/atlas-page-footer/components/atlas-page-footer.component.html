@@ -1,15 +1,13 @@
-<footer *ngIf="showNumRecords">
-  Number of Records: {{totalRecords}}
-</footer>
+<footer *ngIf="showNumRecords">Number of Records: {{ totalRecords }}</footer>
 <div class="row" *ngIf="showNavigation">
-  <div class="col-xs-12 col-sm-12 col-lg-12">
-    <button class="previous-btn" kendoButton [primary]="true">Previous</button>
-    <button class="next-btn" kendoButton [primary]="true">Next</button>
-  </div>
+    <div class="col-xs-12 col-sm-12 col-lg-12">
+        <button class="previous-btn" kendoButton [primary]="true">Previous</button>
+        <button class="next-btn" kendoButton [primary]="true">Next</button>
+    </div>
 </div>
 <div class="row save-cancel" *ngIf="canSave">
-  <div class="col-xs-12 col-sm-12 col-lg-12">
-    <button kendoButton [primary]="true">Save</button>
-    <button kendoButton [primary]="true">Cancel</button>
-  </div>
+    <div class="col-xs-12 col-sm-12 col-lg-12">
+        <button kendoButton [primary]="true">Save</button>
+        <button kendoButton [primary]="true">Cancel</button>
+    </div>
 </div>

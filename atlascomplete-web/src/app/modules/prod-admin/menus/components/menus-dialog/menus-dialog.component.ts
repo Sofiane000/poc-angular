@@ -1,10 +1,10 @@
 import { Component, OnDestroy } from '@angular/core';
-import { MenusDialogFormComponent } from '../menus-dialog-form/menus-dialog-form.component';
 import { MatDialog, MatDialogConfig } from '@angular/material';
-import { Router, ActivatedRoute } from '@angular/router';
-import { MenusService } from '../../services/menus.service';
-import { Subscription } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ComponentCanDeactivate } from 'atlas-web-services';
+import { Subscription } from 'rxjs';
+import { MenusService } from '../../services/menus.service';
+import { MenusDialogFormComponent } from '../menus-dialog-form/menus-dialog-form.component';
 
 @Component({
     selector: 'app-menus-dialog',
@@ -21,6 +21,7 @@ export class MenusDialogComponent extends ComponentCanDeactivate implements OnDe
         panelClass: 'custom-dialog-container',
     };
     routeSubscription: Subscription;
+
     constructor(
         private dialog: MatDialog,
         private menuService: MenusService,
@@ -61,6 +62,7 @@ export class MenusDialogComponent extends ComponentCanDeactivate implements OnDe
             this.router.navigate(['administration/menus']);
         });
     }
+
     canDeactivate(): boolean {
         if (this.dialogRef) {
             if (this.dialogRef.componentInstance && !this.dialogRef.componentInstance.form.dirty) {
@@ -78,6 +80,7 @@ export class MenusDialogComponent extends ComponentCanDeactivate implements OnDe
             return true;
         }
     }
+
     ngOnDestroy(): void {
         if (this.routeSubscription) {
             this.routeSubscription.unsubscribe();

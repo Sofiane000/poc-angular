@@ -14,7 +14,7 @@
 
 .right-sidebar {
     width: 422px;
-    box-shadow: -3px 0px 6px rgba(0, 0, 0, 0.24);
+    box-shadow: -3px 0 6px rgba(0, 0, 0, 0.24);
 }
 
 .right-sidebar.sideBarMini {
@@ -25,6 +25,7 @@
 // media queries
 
 @media (min-width: 1025px) and (max-width: 1280px) {
+
     .right-sidebar {
         width: 422px;
     }
@@ -36,6 +37,7 @@
 */
 
 @media (min-width: 768px) and (max-width: 1024px) {
+
     .right-sidebar {
         width: 310px;
     }
@@ -47,6 +49,7 @@
 */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
     .right-sidebar {
         width: 310px;
     }
@@ -58,6 +61,7 @@
 */
 
 @media (min-width: 481px) and (max-width: 767px) {
+
     .right-sidebar {
         width: 310px;
     }
@@ -69,6 +73,7 @@
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
+
     .right-sidebar {
         width: 310px;
     }

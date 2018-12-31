@@ -1,4 +1,3 @@
 <ng-template ngFor let-item [ngForOf]="cardItems">
-  <ng-container *ngTemplateOutlet="cardTemplate,
-                   context: { $implicit: item }"></ng-container>
+    <ng-container *ngTemplateOutlet="cardTemplate; context: { $implicit: item }"></ng-container>
 </ng-template>

@@ -5,14 +5,9 @@ import { AppComponent } from './app.component';
 import { AtlasWebServicesModule } from '../../projects/atlas-web-services/src/lib/atlas-web-services.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AtlasWebServicesModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [BrowserModule, AtlasWebServicesModule],
+    providers: [],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

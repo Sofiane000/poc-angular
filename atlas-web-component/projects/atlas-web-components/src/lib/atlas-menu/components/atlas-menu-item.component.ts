@@ -1,5 +1,5 @@
-import { Component, Output, OnInit, EventEmitter, HostBinding, Input } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { IMenuItem } from '../models/menu-item';
 @Component({
@@ -26,8 +26,10 @@ export class AtlasMenuItemComponent implements OnInit {
             this.depth = 0;
         }
     }
-    ngOnInit(): void {}
-    onItemSelected(item: IMenuItem) {
+    
+  ngOnInit(): void {}
+    
+  onItemSelected(item: IMenuItem) {
         if ((!item.children || !item.children.length) && item.MenuURI) {
             this.router.navigate([item.MenuURI]);
         }

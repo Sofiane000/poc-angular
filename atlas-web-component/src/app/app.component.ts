@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, HostBinding } from '@angular/core';
+import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
 import { AtlasSideNavContainerComponent } from 'projects/atlas-web-components/src/lib/atlas-sidenav-container/components/atlas-sidenav-container.component';
 @Component({
     selector: 'atlas-root',
@@ -14,7 +14,8 @@ export class AppComponent implements OnInit {
     isAuthorized = true;
     @ViewChild('container') container: AtlasSideNavContainerComponent;
     @HostBinding('class.isAuthorized') addClass = true;
-    ngOnInit(): void {
+    
+  ngOnInit(): void {
         this.menuItems = [
             {
                 MenuName: 'Atlas Grid',
@@ -42,10 +43,12 @@ export class AppComponent implements OnInit {
             },
         ];
     }
-    toggleMenu() {
+    
+  toggleMenu() {
         this.container.menu.toggle();
     }
-    toggleSidebar() {
+    
+  toggleSidebar() {
         if (this.isMiniMode) {
             setTimeout(() => {
                 this.isMiniMode = false;
@@ -54,7 +57,8 @@ export class AppComponent implements OnInit {
         }
         this.container.sidebar.toggle();
     }
-    headerBtnHandler(option) {
+    
+  headerBtnHandler(option) {
         this.toggleSidebar();
     }
 }

@@ -1,9 +1,8 @@
-
-import { Component, Input, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
     selector: 'atlas-page-header',
     templateUrl: './atlas-page-header.component.html',
-    styleUrls: ['./atlas-page-header.component.scss']
+    styleUrls: ['./atlas-page-header.component.scss'],
 })
 export class AtlasPageHeaderComponent {
     @Input()
@@ -20,7 +19,8 @@ export class AtlasPageHeaderComponent {
     showBackBtn = false;
     @Output()
     goBack: EventEmitter<any> = new EventEmitter<any>();
-    onGoBack(event) {
+    
+  onGoBack(event) {
         this.goBack.emit(event);
     }
 }
