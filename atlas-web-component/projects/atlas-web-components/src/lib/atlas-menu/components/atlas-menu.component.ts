@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { IMenuItem } from '../models/menu-item';
 @Component({
     selector: 'atlas-menu',

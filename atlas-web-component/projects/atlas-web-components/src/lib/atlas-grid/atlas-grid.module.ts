@@ -1,12 +1,12 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatButtonModule, MatCheckboxModule, MatIconModule } from '@angular/material';
+import { CommonModule } from '@angular/common';
+import { AtlasGridComponent } from './components/atlas-grid.component';
+import { GridModule, PDFModule, ExcelModule } from '@progress/kendo-angular-grid';
 import { ButtonModule } from '@progress/kendo-angular-buttons';
 import { DialogModule } from '@progress/kendo-angular-dialog';
-import { ExcelModule, GridModule, PDFModule } from '@progress/kendo-angular-grid';
+import { MatButtonModule, MatIconModule, MatCheckboxModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 import { AtlasToolbarModule } from '../atlas-toolbar/atlas-toolbar.module';
-import { AtlasGridComponent } from './components/atlas-grid.component';
 
 @NgModule({
     declarations: [AtlasGridComponent],

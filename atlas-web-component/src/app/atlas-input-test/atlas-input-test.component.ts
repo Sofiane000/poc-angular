@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
     selector: 'atlas-input-test',
@@ -8,10 +8,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AtlasInputTestComponent implements OnInit {
     editForm: FormGroup = new FormGroup({
-        CustomBtn: new FormControl('', Validators.required),
+      CustomBtn: new FormControl('', Validators.required),
     });
-    
-  constructor() {}
+    constructor() {}
 
     ngOnInit() {}
 }

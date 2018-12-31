@@ -1,13 +1,13 @@
+import { NgModule, Injector } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Injector, NgModule } from '@angular/core';
-import { createCustomElement } from '@angular/elements';
-import { FormsModule } from '@angular/forms';
-import { MatButtonModule, MatIconModule } from '@angular/material';
-import { ButtonModule } from '@progress/kendo-angular-buttons';
-import { ContextMenuModule, MenuModule } from '@progress/kendo-angular-menu';
 import { TreeViewModule } from '@progress/kendo-angular-treeview';
-import { AtlasToolbarModule } from '../atlas-toolbar/atlas-toolbar.module';
+import { MenuModule, ContextMenuModule } from '@progress/kendo-angular-menu';
+import { ButtonModule } from '@progress/kendo-angular-buttons';
+import { FormsModule } from '@angular/forms';
 import { AtlasTreeComponent } from './components/atlas-tree.component';
+import { MatIconModule, MatButtonModule } from '@angular/material';
+import { AtlasToolbarModule } from '../atlas-toolbar/atlas-toolbar.module';
+import { createCustomElement } from '@angular/elements';
 @NgModule({
     declarations: [AtlasTreeComponent],
     entryComponents: [AtlasTreeComponent],

@@ -5,7 +5,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    top: 0;
+    top: 0px;
 }
 
 :host(.isAuthorized) {
@@ -13,28 +13,24 @@
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
-
     :host(.isAuthorized) {
         top: 151px;
     }
 }
 
 @media (min-width: 320px) and (max-width: 375px) {
-
     :host(.isAuthorized) {
         top: 191px;
     }
 }
 
 @media only screen and (min-width: 375px) and (max-width: 812px) and (-webkit-device-pixel-ratio: 3) {
-
     :host(.isAuthorized) {
         top: 191px;
     }
 }
 
 @media (min-width: 376px) and (max-width: 480px) {
-
     :host(.isAuthorized) {
         top: 151px;
     }

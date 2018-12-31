@@ -1,13 +1,13 @@
+import { NgModule, Injector } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Injector, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { AtlasToolbarComponent } from './components/atlas-toolbar.component';
 import {
+    MatIconModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatIconModule,
     MatSelectModule,
 } from '@angular/material';
-import { AtlasToolbarComponent } from './components/atlas-toolbar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [AtlasToolbarComponent],

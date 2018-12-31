@@ -1,14 +1,14 @@
 import { Component, OnDestroy } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ComponentCanDeactivate } from 'atlas-web-services';
-import { Subscription } from 'rxjs';
 import { UserService } from '../../services/user.service';
+import { MatDialog, MatDialogConfig } from '@angular/material';
 import { UsersDialogFormComponent } from './users-dialog-form.component';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { ComponentCanDeactivate } from 'atlas-web-services';
 
 @Component({
     selector: 'app-users-dialog',
-    template: '',
+    template: ''
 })
 export class UsersDialogComponent extends ComponentCanDeactivate implements OnDestroy {
     routeSubscription: Subscription;
@@ -20,20 +20,16 @@ export class UsersDialogComponent extends ComponentCanDeactivate implements OnDe
         maxWidth: '850px',
         height: '500px',
         closeOnNavigation: false,
-        panelClass: 'custom-dialog-container',
+        panelClass: 'custom-dialog-container'
     };
-
-    constructor(
-        private userService: UserService,
-        private dialog: MatDialog,
+    constructor(private userService: UserService, private dialog: MatDialog,
         private router: Router,
-        private route: ActivatedRoute
-    ) {
+        private route: ActivatedRoute) {
         super();
-        this.routeSubscription = this.route.params.subscribe((params) => {
+        this.routeSubscription = this.route.params.subscribe(params => {
             const loginSk = +params['id'];
             if (loginSk) {
-                this.userService.getUserById(loginSk).subscribe((userDetail) => {
+                this.userService.getUserById(loginSk).subscribe(userDetail => {
                     this.selectedUser = userDetail;
                     this.openDialog();
                 });
@@ -42,7 +38,6 @@ export class UsersDialogComponent extends ComponentCanDeactivate implements OnDe
             }
         });
     }
-
     openDialog() {
         const isNew = this.selectedUser ? false : true;
         if (!isNew) {
@@ -53,24 +48,17 @@ export class UsersDialogComponent extends ComponentCanDeactivate implements OnDe
             this.dialogRef.componentInstance.model = this.selectedUser;
         }
         this.dialogRef.componentInstance.isNew = isNew;
-        this.dialogRef.afterClosed().subscribe((result) => {
+        this.dialogRef.afterClosed().subscribe(result => {
             this.userService.selectedUser = null;
             this.router.navigate(['administration/users']);
         });
     }
-
     canDeactivate(): boolean {
         if (this.dialogRef) {
-            if (
-                this.dialogRef.componentInstance &&
-                !this.dialogRef.componentInstance.editForm.dirty
-            ) {
+            if (this.dialogRef.componentInstance && !this.dialogRef.componentInstance.editForm.dirty) {
                 this.dialogRef.close();
                 return true;
-            } else if (
-                this.dialogRef.componentInstance &&
-                this.dialogRef.componentInstance.editForm.dirty
-            ) {
+            } else if (this.dialogRef.componentInstance && this.dialogRef.componentInstance.editForm.dirty) {
                 return false;
             } else {
                 return true;
@@ -79,7 +67,6 @@ export class UsersDialogComponent extends ComponentCanDeactivate implements OnDe
             return true;
         }
     }
-
     ngOnDestroy() {
         if (this.routeSubscription) {
             this.routeSubscription.unsubscribe();

@@ -14,15 +14,15 @@ body {
 }
 
 .no-margin {
-    margin: 0 !important;
+    margin: 0px !important;
 }
 
 .k-popup {
-    padding: 0;
+    padding: 0px;
 }
 
 .no-padding {
-    padding: 0 !important;
+    padding: 0px !important;
 }
 
 .mat-list-item-content {
@@ -39,13 +39,12 @@ body {
 }
 
 // Kendo Buttons
-
 .k-primary {
     height: 32px;
     min-width: 64px;
     padding-left: 16px;
     padding-right: 16px;
-    font: 'Museo' 300 14px #fff !important;
+    font: 'Museo' 300 14px #ffffff !important;
 }
 
 .k-button {
@@ -80,7 +79,7 @@ mat-label {
 }
 
 .no-padding {
-    padding: 0;
+    padding: 0px;
 }
 
 .refresh-btm {
@@ -94,18 +93,18 @@ mat-label {
 
 .k-grid-toolbar {
     background-color: $atlas-header-bg-color;
-    padding: 0;
+    padding: 0px;
     height: 48px;
     opacity: 0.87;
     font-size: 14px;
 }
 
 .k-grouping-header {
-    padding: 0;
+    padding: 0px;
 }
 
 .k-grid-draggable-header.k-group-indicator {
-    padding: 0;
+    padding: 0px;
 }
 
 .k-grid-header {
@@ -121,11 +120,11 @@ mat-label {
 
 .k-grid-header .k-header {
     height: 40px;
-    padding: 6px 0;
+    padding: 6px 0px;
 }
 
 .k-grid tbody td {
-    padding: 6px 0;
+    padding: 6px 0px;
     font-size: 12px !important;
     opacity: 0.87 !important;
 }
@@ -133,11 +132,9 @@ mat-label {
 .user-grid .k-grid tr td:first-child {
     text-align: center;
 }
-
 .dms-grid {
     padding-left: 3px;
 }
-
 .k-grid-filter {
     top: 3px;
 }
@@ -173,7 +170,7 @@ mat-label {
 }
 
 .mat-dialog-content {
-    margin: 0;
+    margin: 0px;
 }
 
 .mat-toolbar h2 {
@@ -201,11 +198,11 @@ mat-list-item-content {
 }
 
 .custom-dialog-container .mat-dialog-container {
-    padding: 0;
+    padding: 0px;
 }
 
 .mat-dialog-content {
-    margin: 0 !important;
+    margin: 0px !important;
 }
 
 .atlas-dialog-header {
@@ -216,7 +213,6 @@ mat-list-item-content {
 }
 
 @media only screen and (min-width: 375px) and (max-width: 812px) and (-webkit-device-pixel-ratio: 3) {
-
     .atlas-header.mat-toolbar-row,
     .atlas-header.mat-toolbar-single-row,
     .atlas-header.mat-toolbar-multiple-rows {
@@ -239,73 +235,72 @@ mat-list-item-content {
 }
 
 .side-bar-toolbar {
-    position: fixed;
-    z-index: 2;
-    width: 420px !important;
+  position: fixed;
+  z-index: 2;
+  width: 420px !important;
 }
 
 .side-bar-body {
-    margin-top: 40px;
+  margin-top: 40px;
 }
+
+
 
 @media (min-width: 1025px) and (max-width: 1280px) {
 
-    .side-bar-toolbar {
-        width: 404px !important;
-    }
+  .side-bar-toolbar {
+    width: 404px !important;
+  }
 }
 
-/*
+/* 
   ##Device = Tablets, Ipads (portrait)
   ##Screen = B/w 768px to 1024px
 */
 
 @media (min-width: 768px) and (max-width: 1024px) {
-
-    .side-bar-toolbar {
-        width: 310px !important;
-    }
+  .side-bar-toolbar {
+    width: 310px !important;
+  }
 }
 
-/*
+/* 
   ##Device = Tablets, Ipads (landscape)
   ##Screen = B/w 768px to 1024px
 */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-    .side-bar-toolbar {
-        width: 310px !important;
-    }
+  .side-bar-toolbar {
+    width: 310px !important;
+  }
 }
 
-/*
+/* 
   ##Device = Low Resolution Tablets, Mobiles (Landscape)
   ##Screen = B/w 481px to 767px
 */
 
 @media (min-width: 481px) and (max-width: 767px) {
-
-    .side-bar-toolbar {
-        width: 310px !important;
-    }
+  .side-bar-toolbar {
+    width: 310px !important;
+  }
 }
 
-/*
+/* 
   ##Device = Most of the Smartphones Mobiles (Portrait)
   ##Screen = B/w 320px to 479px
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
-
-    .side-bar-toolbar {
-        width: 310px !important;
-    }
+  .side-bar-toolbar {
+    width: 310px !important;
+  }
 }
 
-@media only screen and (min-width: 375px) and (max-width: 812px) and (-webkit-device-pixel-ratio: 3) {
 
-    .side-bar-toolbar {
-        width: 310px !important;
-    }
+
+@media only screen and (min-width : 375px) and (max-width : 812px) and (-webkit-device-pixel-ratio : 3) {
+  .side-bar-toolbar {
+    width: 310px !important;
+  }
 }

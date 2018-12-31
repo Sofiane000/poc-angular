@@ -1,5 +1,5 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 @Component({
     selector: 'atlas-sidebar',
     templateUrl: './atlas-sidebar.component.html',
@@ -52,12 +52,10 @@ export class AtlasSideBarComponent {
     @Output() toggleMiniMode: EventEmitter<any> = new EventEmitter<any>();
 
     isOpened: boolean;
-    
-  toggle() {
+    toggle() {
         this.toggleSideBar.emit();
     }
-    
-  rotate() {
+    rotate() {
         this.state = this.state === 'default' ? 'rotated' : 'default';
         if (this.state === 'default') {
             this.toggleMiniMode.emit(false);
@@ -65,8 +63,7 @@ export class AtlasSideBarComponent {
             this.toggleMiniMode.emit(true);
         }
     }
-    
-  getIconClass() {
+    getIconClass() {
         if (this.headerName === 'Tasks') {
             return 'fa-inbox';
         } else {

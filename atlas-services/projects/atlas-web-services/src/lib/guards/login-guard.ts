@@ -5,9 +5,11 @@ import { AppSession } from '../session/session.service';
     providedIn: 'root',
 })
 export class LoginGuardService {
-    constructor(private session: AppSession, private router: Router) {}
+
+    constructor(private session: AppSession, private router: Router) { }
 
     canActivate(): boolean | Promise<boolean> {
+
         const isAuthenticated = this.session.isAuthenticated();
         if (!isAuthenticated) {
             return true;

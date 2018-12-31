@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, Output, EventEmitter, Input, OnInit, OnDestroy } from '@angular/core';
+import { AtlasToolbarButton } from '../models/atlas-toolbar-button';
+import { ButtonAction } from '../models/button-action';
 import {
     MultiRowComponent,
     MultiRowSelection,
 } from '../../shared/multi-row-component/multi-row-component.service';
-import { AtlasToolbarButton } from '../models/atlas-toolbar-button';
-import { ButtonAction } from '../models/button-action';
 
 @Component({
     selector: 'atlas-toolbar',
@@ -42,7 +42,7 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
         },
     ];
     @Input() showAddEditButtons = true;
-    @Input() buttons: AtlasToolbarButton[];
+    @Input() buttons: Array<AtlasToolbarButton>;
     @Input() parent: MultiRowComponent;
     @Input() canSearch: boolean;
     @Input() showSortBy: boolean;
@@ -60,7 +60,7 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
     @Output() action: EventEmitter<any> = new EventEmitter();
 
     onBtnClick(event: any, buttonAction: ButtonAction) {
-        this.action.emit({ event, action: buttonAction });
+        this.action.emit({ event: event, action: buttonAction });
     }
 
     ngOnInit(): void {

@@ -1,20 +1,18 @@
 <mat-card>
-    <span class="card-title">{{ title }}</span>
-    <div class="row row1">
-        <div class="col-md-6">
-            <ng-template ngFor let-field [ngForOf]="primaryFields">
-                <!-- <atlas-card-field [field]="field"></atlas-card-field> -->
-                <ng-container
-                    *ngTemplateOutlet="fieldTemplate; context: { $implicit: field }"
-                ></ng-container>
-            </ng-template>
-        </div>
-        <div class="col-md-6">
-            <ng-template ngFor let-field [ngForOf]="secondaryFields">
-                <ng-container
-                    *ngTemplateOutlet="fieldTemplate; context: { $implicit: field }"
-                ></ng-container>
-            </ng-template>
-        </div>
+  <span class="card-title">{{title}}</span>
+  <div class="row row1">
+    <div class="col-md-6">
+      <ng-template ngFor let-field [ngForOf]="primaryFields">
+        <!-- <atlas-card-field [field]="field"></atlas-card-field> -->
+        <ng-container *ngTemplateOutlet="fieldTemplate,
+        context: { $implicit: field }"></ng-container>
+      </ng-template>
     </div>
+    <div class="col-md-6">
+      <ng-template ngFor let-field [ngForOf]="secondaryFields">
+        <ng-container *ngTemplateOutlet="fieldTemplate,
+          context: { $implicit: field }"></ng-container>
+      </ng-template>
+    </div>
+  </div>
 </mat-card>

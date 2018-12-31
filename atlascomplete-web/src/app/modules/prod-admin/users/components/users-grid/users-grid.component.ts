@@ -1,16 +1,16 @@
-import { Component, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material';
-import { Router } from '@angular/router';
+import { Component, OnInit, ViewChild, ViewContainerRef, OnDestroy } from '@angular/core';
+import { UserService } from '../../services/user.service';
 import {
-    AtlasGridComponent,
+    IColumnSetting,
     AtlasToolbarButton,
     ButtonAction,
-    IColumnSetting,
+    AtlasGridComponent,
 } from 'atlas-web-components';
-import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
+import { Router } from '@angular/router';
 import { PeopleService } from '../../services/people.service';
-import { UserService } from '../../services/user.service';
+import { MatDialog, MatDialogConfig } from '@angular/material';
 import { UsersDeleteDialogComponent } from '../users-dialog/users-delete-dialog.component';
+import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
 
 @Component({
     selector: 'app-users-grid',

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ICardField } from '../../models/card-field';
 
 @Component({
@@ -9,8 +9,7 @@ import { ICardField } from '../../models/card-field';
 export class AtlasCardFieldComponent implements OnInit {
     @Input()
     field: ICardField;
-    
-  constructor() {}
+    constructor() {}
 
     ngOnInit() {}
 }

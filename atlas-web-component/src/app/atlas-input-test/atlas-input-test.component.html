@@ -1,17 +1,5 @@
-<p>
-    <span class="boldspan">Form data:</span>
-    {{ editForm.value | json }}
-</p>
-<p>
-    <span class="boldspan">Model data:</span>
-    {{ button.value }}
-</p>
+<p><span class="boldspan">Form data:</span>{{editForm.value | json}}</p>
+<p><span class="boldspan">Model data:</span> {{button.value}}</p>
 <form novalidate [formGroup]="editForm">
-    <atlas-input
-        #button
-        label="Type here"
-        formControlName="CustomBtn"
-        width="100%"
-        required
-    ></atlas-input>
+  <atlas-input #button label="Type here" formControlName="CustomBtn" width="100%" required></atlas-input>
 </form>

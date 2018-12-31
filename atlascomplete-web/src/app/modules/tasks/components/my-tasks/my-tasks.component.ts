@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AtlasToolbarButton, ButtonAction, ICardField } from 'atlas-web-components';
-import { IWorkItem } from '../../models/work-item';
 import { MyTasksService } from '../../services/my-tasks.service';
+import { IWorkItem } from '../../models/work-item';
+import { ICardField, ButtonAction, AtlasToolbarButton } from 'atlas-web-components';
 
 @Component({
     selector: 'app-my-tasks',
@@ -31,7 +31,6 @@ export class MyTasksComponent implements OnInit {
             class: 'right-icons',
         },
     ];
-
     constructor(private myTasksService: MyTasksService) {}
 
     ngOnInit() {
@@ -40,6 +39,5 @@ export class MyTasksComponent implements OnInit {
             this.myTasksService.getFieldsForItems(this.workItems);
         });
     }
-
     actionHandler(eventResponse: any) {}
 }

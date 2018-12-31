@@ -1,13 +1,13 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { AtlasCardModule, AtlasTabLayoutModule, AtlasToolbarModule } from 'atlas-web-components';
-import { DataAccessFactory } from 'atlas-web-services';
-import { SharedModule } from '../shared/shared.module';
-import { MyTasksComponent } from './components/my-tasks/my-tasks.component';
 import { TasksComponent } from './components/tasks/tasks.component';
-import { WorkQueueComponent } from './components/work-queue/work-queue.component';
-import { MyTasksService } from './services/my-tasks.service';
+import { CommonModule } from '@angular/common';
 import { TasksRoutingModule } from './tasks.routing.module';
+import { SharedModule } from '../shared/shared.module';
+import { AtlasTabLayoutModule, AtlasCardModule, AtlasToolbarModule } from 'atlas-web-components';
+import { MyTasksComponent } from './components/my-tasks/my-tasks.component';
+import { WorkQueueComponent } from './components/work-queue/work-queue.component';
+import { DataAccessFactory } from 'atlas-web-services';
+import { MyTasksService } from './services/my-tasks.service';
 
 @NgModule({
     declarations: [TasksComponent, MyTasksComponent, WorkQueueComponent],

@@ -1,24 +1,24 @@
 import {
-    AfterViewInit,
     Component,
-    EventEmitter,
+    OnInit,
     Input,
     OnDestroy,
-    OnInit,
+    EventEmitter,
     Output,
     ViewChild,
+    AfterViewInit,
 } from '@angular/core';
-import { ExcelExportData } from '@progress/kendo-angular-excel-export';
-import { DataStateChangeEvent, GridComponent, GridDataResult } from '@progress/kendo-angular-grid';
-import { GroupDescriptor, process, State } from '@progress/kendo-data-query';
+import { IColumnSetting } from '../models/grid-column-setting';
+import { State, process, GroupDescriptor } from '@progress/kendo-data-query';
+import { DataStateChangeEvent, GridDataResult, GridComponent } from '@progress/kendo-angular-grid';
+import { AtlasGridService } from '../services/atlas-grid.service';
 import { Subscription } from 'rxjs';
 import {
     MultiRowComponent,
     MultiRowSelection,
     Selectable,
 } from '../../shared/multi-row-component/multi-row-component.service';
-import { IColumnSetting } from '../models/grid-column-setting';
-import { AtlasGridService } from '../services/atlas-grid.service';
+import { ExcelExportData } from '@progress/kendo-angular-excel-export';
 import { TestService } from '../services/test-grid.service';
 
 @Component({
@@ -93,16 +93,14 @@ export class AtlasGridComponent implements OnInit, OnDestroy, AfterViewInit, Mul
             this.gridService = new TestService();
         }
     }
-    
-  ngAfterViewInit() {
+    ngAfterViewInit() {
         // attaches scroll event
         const scrolldiv = document.getElementsByClassName('k-grid-content')[0];
         if (scrolldiv) {
             scrolldiv.addEventListener('scroll', this.loadMoreData.bind(this));
         }
     }
-    
-  loadMoreData(event) {
+    loadMoreData(event) {
         // adds more data and passed grid data.
         const scrollAdjustment = 10;
         if (
@@ -115,14 +113,12 @@ export class AtlasGridComponent implements OnInit, OnDestroy, AfterViewInit, Mul
             }
         }
     }
-    
-  dataStateChange(event: DataStateChangeEvent) {
+    dataStateChange(event: DataStateChangeEvent) {
         this.state = event;
         // this.gridService.query(event);
         this.gridDataResult = process(this.data, this.state);
     }
-    
-  allData(): ExcelExportData {
+    allData(): ExcelExportData {
         const result: ExcelExportData = {
             data: this.data,
             group: this.state.group,
@@ -136,29 +132,23 @@ export class AtlasGridComponent implements OnInit, OnDestroy, AfterViewInit, Mul
         this.gridDataResult = process(this.data, this.state);
         this.selectedKeys = [];
     }
-    
-  selectBy(e) {
+    selectBy(e) {
         return e.dataItem;
     }
-    
-  onSelectionChange(e) {
+    onSelectionChange(e) {
         this.selectedRowIndex = e.selectedRows.length ? e.index : undefined;
         this.selectionChange.emit({ selectedRows: e.selectedRows, selectedRowIdx: e.index });
     }
-    
-  onViewDetail({ dataItem }) {
+    onViewDetail({ dataItem }) {
         this.viewDetail.emit({ dataItem });
     }
-    
-  exportAsPdf() {
+    exportAsPdf() {
         this.grid.saveAsPDF();
     }
-    
-  exportAsExcel() {
+    exportAsExcel() {
         this.grid.saveAsExcel();
     }
-    
-  ngOnDestroy() {
+    ngOnDestroy() {
         this.gridServiceSubscription.unsubscribe();
     }
 }

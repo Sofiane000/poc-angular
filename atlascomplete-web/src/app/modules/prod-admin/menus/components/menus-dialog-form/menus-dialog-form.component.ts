@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material';
 
 @Component({
@@ -25,7 +25,6 @@ export class MenusDialogFormComponent {
     @Input() isNew;
 
     constructor(private dialogRef: MatDialogRef<MenusDialogFormComponent>) {}
-
     closeHandler(event) {
         this.dialogRef.close(event);
     }

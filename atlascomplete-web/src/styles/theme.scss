@@ -1,6 +1,5 @@
 @import '~@angular/material/theming';
 $fa-font-path: 'node_modules/font-awesome/fonts';
-
 @import '~font-awesome/scss/font-awesome.scss';
 
 @font-face {
@@ -39,7 +38,6 @@ $atlas-app-theme: mat-light-theme($atlas-app-primary, $atlas-app-accent, $atlas-
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($atlas-app-theme);
-
 @import 'variables.scss';
 @import '~@progress/kendo-theme-material/scss/grid';
 @import '~@progress/kendo-theme-material/scss/button';

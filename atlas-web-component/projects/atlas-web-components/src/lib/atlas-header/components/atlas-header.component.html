@@ -1,19 +1,14 @@
 <mat-toolbar class="atlas-header">
     <mat-toolbar-row>
-        <button
-            class="toggle-btn"
-            type="button"
-            aria-label="Toggle sidenav"
-            mat-icon-button
-            (click)="toggleNav()"
-        >
-            <mat-icon
-                fontSet="fontawesome"
-                fontIcon="fa-bars"
-                aria-label="Side nav toggle icon"
-            ></mat-icon>
+        <button class="toggle-btn" type="button" aria-label="Toggle sidenav" mat-icon-button (click)="toggleNav()">
+                <mat-icon
+                        fontSet="fontawesome"
+                        fontIcon="fa-bars"
+                        aria-label="Side nav toggle icon"
+                ></mat-icon>
         </button>
         <div class="atlas-toolbar">
+
             <a
                 aria-label="Atlas"
                 title="Atlas"
@@ -22,18 +17,11 @@
                 tabindex="0"
                 aria-disabled="false"
                 *ngIf="showButtons"
-            >
-                <span class="mat-button-wrapper">
-                    <img alt="Atlas" class="atlas-logo" src="../../../assets/images/MHP.png" />
-                </span>
+                ><span class="mat-button-wrapper"
+                    ><img alt="Atlas" class="atlas-logo" src="../../../assets/images/MHP.png"
+                /></span>
             </a>
-            <button
-                *ngIf="showButtons"
-                class="undo-btn"
-                type="button"
-                aria-label="Action"
-                mat-icon-button
-            >
+            <button *ngIf="showButtons" class="undo-btn" type="button" aria-label="Action" mat-icon-button>
                 <mat-icon fontSet="fontawesome" fontIcon="fa-undo"></mat-icon>
             </button>
             <span class="menu-spacer"></span>
@@ -104,99 +92,90 @@
                 </div>
             </div>
             <mat-menu #menu="matMenu" [overlapTrigger]="false">
-                <button mat-menu-item>
-                    <mat-icon fontSet="fontawesome" fontIcon="fa-id-card"></mat-icon>
-                    <span>General Settings</span>
+                    <button mat-menu-item>
+                        <mat-icon fontSet="fontawesome" fontIcon="fa-id-card"></mat-icon>
+                        <span>General Settings</span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon fontSet="fontawesome" fontIcon="fa-shield"></mat-icon>
+                        <span>Security Settings</span>
+                    </button>
+                    <button mat-menu-item (click)="onLogout()">
+                        <mat-icon fontSet="fontawesome" fontIcon="fa-sign-out"></mat-icon>
+                        <span>Log Out</span>
+                    </button>
+                </mat-menu>
+                <button *ngIf="showSidebarToggle" class="toggle-sidebar" type="button" aria-label="Toggle sidebar" mat-icon-button (click)="onClickRoutes('')">
+                        <mat-icon
+                                fontSet="fontawesome"
+                                fontIcon="fa-ellipsis-v "
+                                aria-label="Side bar toggle icon"
+                        ></mat-icon>
                 </button>
-                <button mat-menu-item>
-                    <mat-icon fontSet="fontawesome" fontIcon="fa-shield"></mat-icon>
-                    <span>Security Settings</span>
-                </button>
-                <button mat-menu-item (click)="onLogout()">
-                    <mat-icon fontSet="fontawesome" fontIcon="fa-sign-out"></mat-icon>
-                    <span>Log Out</span>
-                </button>
-            </mat-menu>
-            <button
-                *ngIf="showSidebarToggle"
-                class="toggle-sidebar"
-                type="button"
-                aria-label="Toggle sidebar"
-                mat-icon-button
-                (click)="onClickRoutes('')"
-            >
-                <mat-icon
-                    fontSet="fontawesome"
-                    fontIcon="fa-ellipsis-v "
-                    aria-label="Side bar toggle icon"
-                ></mat-icon>
-            </button>
         </div>
+
     </mat-toolbar-row>
     <mat-toolbar-row class="small-header visible-xs">
-        <a
-            [class.active]="selectedOption === 'Tasks'"
-            (click)="onClickRoutes('Tasks')"
-            mat-button
-            title="Tasks"
-        >
-            <mat-icon aria-label="Tasks" fontSet="fontawesome" fontIcon="fa-inbox"></mat-icon>
-            Tasks
-        </a>
-        <a
-            [class.active]="selectedOption === 'Document'"
-            mat-button
-            title="Document Viewer"
-            (click)="onClickRoutes('Document')"
-        >
-            <mat-icon
-                aria-label="Document Viewer"
-                fontSet="fontawesome"
-                fontIcon="fa-file-o"
-            ></mat-icon>
-            Document Viewer
-        </a>
-        <a mat-button title="Notifications" routerLinkActive="active">
-            <mat-icon
-                aria-label="Notifications"
-                fontSet="fontawesome"
-                fontIcon="fa-envelope"
-            ></mat-icon>
-            Notifications
-        </a>
-        <a mat-button title="Database" [disabled]="true">
-            <mat-icon
-                aria-label="Database"
-                [class.disable]="true"
-                fontSet="fontawesome"
-                fontIcon="fa-database"
-            ></mat-icon>
-            Database
-        </a>
-        <a mat-button title="User Settings" [matMenuTriggerFor]="mobileMenu">
-            <mat-icon
-                aria-label="User Settings"
-                fontSet="fontawesome"
-                fontIcon="fa-user-circle"
-            ></mat-icon>
-            User Settings
-        </a>
-        <a mat-button title="Help">
-            <mat-icon
-                aria-label="Help"
-                fontSet="fontawesome"
-                fontIcon="fa-question-circle"
-            ></mat-icon>
-            Help
-        </a>
-        <a mat-button title="Copy Rights">
-            <mat-icon
-                aria-label="Copy Rights"
-                fontSet="fontawesome"
-                fontIcon="fa-copyright"
-            ></mat-icon>
-            Copy Rights
-        </a>
+                    <a
+                        [class.active]="selectedOption === 'Tasks'"
+                        (click)="onClickRoutes('Tasks')"
+                        mat-button
+                        title="Tasks"
+                    >
+                        <mat-icon
+                            aria-label="Tasks"
+                            fontSet="fontawesome"
+                            fontIcon="fa-inbox"
+                        ></mat-icon>Tasks
+                    </a>
+                    <a
+                        [class.active]="selectedOption === 'Document'"
+                        mat-button
+                        title="Document Viewer"
+                        (click)="onClickRoutes('Document')"
+                    >
+                        <mat-icon
+                            aria-label="Document Viewer"
+                            fontSet="fontawesome"
+                            fontIcon="fa-file-o"
+                        ></mat-icon>Document Viewer
+                    </a>
+                    <a mat-button title="Notifications" routerLinkActive="active">
+                        <mat-icon
+                            aria-label="Notifications"
+                            fontSet="fontawesome"
+                            fontIcon="fa-envelope"
+                        ></mat-icon>Notifications
+                    </a>
+                    <a mat-button title="Database" [disabled]="true">
+                        <mat-icon
+                            aria-label="Database"
+                            [class.disable]="true"
+                            fontSet="fontawesome"
+                            fontIcon="fa-database"
+                        ></mat-icon>Database
+                    </a>
+                    <a mat-button title="User Settings" [matMenuTriggerFor]="mobileMenu">
+                        <mat-icon
+                            aria-label="User Settings"
+                            fontSet="fontawesome"
+                            fontIcon="fa-user-circle"
+                        ></mat-icon>User Settings
+                    </a>
+                    <a mat-button title="Help">
+                        <mat-icon
+                            aria-label="Help"
+                            fontSet="fontawesome"
+                            fontIcon="fa-question-circle"
+                        ></mat-icon>Help
+                    </a>
+                    <a mat-button title="Copy Rights">
+                        <mat-icon
+                            aria-label="Copy Rights"
+                            fontSet="fontawesome"
+                            fontIcon="fa-copyright"
+                        ></mat-icon>Copy Rights
+                    </a>
     </mat-toolbar-row>
 </mat-toolbar>
 <mat-menu #mobileMenu="matMenu" [overlapTrigger]="false">

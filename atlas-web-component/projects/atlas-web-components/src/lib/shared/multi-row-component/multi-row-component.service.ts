@@ -2,7 +2,7 @@ import { EventEmitter } from '@angular/core';
 import { SelectableSettings } from '@progress/kendo-angular-grid';
 
 export class MultiRowSelection {
-    selectedRows: any[];
+    selectedRows: Array<any>;
     selectedRowIdx: number;
 }
 

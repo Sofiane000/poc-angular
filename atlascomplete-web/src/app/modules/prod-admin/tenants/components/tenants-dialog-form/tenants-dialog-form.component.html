@@ -1,39 +1,13 @@
-<atlas-dialog-header
-    [title]="isNew ? 'Add Tenant' : 'Edit Tenant'"
-    [isDirty]="form.dirty"
-    (close)="closeHandler($event)"
-></atlas-dialog-header>
+<atlas-dialog-header [title]="isNew ? 'Add Tenant':'Edit Tenant'" [isDirty]="form.dirty" (close)="closeHandler($event)">
+</atlas-dialog-header>
 <atlas-dialog-content>
-    <form novalidate [formGroup]="form">
-        <atlas-input
-            label="Tenant Name"
-            formControlName="TenantTaxnmyName"
-            width="100%"
-            required
-        ></atlas-input>
-        <atlas-input
-            [showCloseIcon]="false"
-            type="date"
-            label="Effective Start Date"
-            formControlName="EfctvStartDt"
-            width="100%"
-        ></atlas-input>
-        <atlas-input
-            [showCloseIcon]="false"
-            type="date"
-            label="Effective End Date"
-            formControlName="EfctvStartDt"
-            width="100%"
-        ></atlas-input>
-        <atlas-input
-            label="Root Domain"
-            formControlName="RootDomain"
-            required
-            width="100%"
-        ></atlas-input>
-    </form>
+  <form novalidate [formGroup]="form">
+    <atlas-input label="Tenant Name" formControlName="TenantTaxnmyName" width="100%" required></atlas-input>
+    <atlas-input [showCloseIcon]="false" type="date" label="Effective Start Date" formControlName="EfctvStartDt" width="100%"></atlas-input>
+    <atlas-input [showCloseIcon]="false" type="date" label="Effective End Date" formControlName="EfctvStartDt" width="100%"></atlas-input>
+    <atlas-input label="Root Domain" formControlName="RootDomain" required width="100%"></atlas-input>
+  </form>
 </atlas-dialog-content>
-<atlas-dialog-footer
-    [isSaveDisabled]="isNew ? form.invalid : !form.valid || !form.dirty"
-    (close)="closeHandler($event)"
-></atlas-dialog-footer>
+<atlas-dialog-footer [isSaveDisabled]="isNew ? form.invalid : ((!form.valid) || (!form.dirty))" (close)="closeHandler($event)">
+
+</atlas-dialog-footer>

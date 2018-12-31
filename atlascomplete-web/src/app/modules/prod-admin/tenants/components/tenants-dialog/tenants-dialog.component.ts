@@ -1,16 +1,17 @@
 import { Component, OnDestroy } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ComponentCanDeactivate } from 'atlas-web-services';
-import { Subscription } from 'rxjs';
-import { TenantsService } from '../../services/tenants.service';
 import { TenantsDialogFormComponent } from '../tenants-dialog-form/tenants-dialog-form.component';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { Router, ActivatedRoute } from '@angular/router';
+import { TenantsService } from '../../services/tenants.service';
+import { Subscription } from 'rxjs';
+import { ComponentCanDeactivate } from 'atlas-web-services';
 
 @Component({
     selector: 'app-tenants-dialog',
-    template: '',
+    template: ''
 })
 export class TenantsDialogComponent extends ComponentCanDeactivate implements OnDestroy {
+
     selectedTenant: any;
     dialogRef: any;
     dialogConfig: MatDialogConfig = {
@@ -18,21 +19,18 @@ export class TenantsDialogComponent extends ComponentCanDeactivate implements On
         width: '450px',
         height: '400px',
         closeOnNavigation: false,
-        panelClass: 'custom-dialog-container',
+        panelClass: 'custom-dialog-container'
     };
     routeSubscription: Subscription;
-
-    constructor(
-        private dialog: MatDialog,
+    constructor(private dialog: MatDialog,
         private tenantService: TenantsService,
         private router: Router,
-        private route: ActivatedRoute
-    ) {
+        private route: ActivatedRoute) {
         super();
-        this.routeSubscription = this.route.params.subscribe((params) => {
+        this.routeSubscription = this.route.params.subscribe(params => {
             const tenantTaxnmySK = +params['id'];
             if (tenantTaxnmySK) {
-                this.tenantService.getTenantById(tenantTaxnmySK).subscribe((userDetail) => {
+                this.tenantService.getTenantById(tenantTaxnmySK).subscribe(userDetail => {
                     this.selectedTenant = userDetail;
                     this.openDialog();
                 });
@@ -52,26 +50,22 @@ export class TenantsDialogComponent extends ComponentCanDeactivate implements On
             this.dialogRef.componentInstance.model = this.selectedTenant;
         }
         this.dialogRef.componentInstance.isNew = isNew;
-        this.dialogRef.afterClosed().subscribe((result) => {
+        this.dialogRef.afterClosed().subscribe(result => {
             if (result === 'save') {
                 this.tenantService.saveTenant({
                     isAdd: isNew,
-                    data: this.dialogRef.componentInstance.form.value,
+                    data: this.dialogRef.componentInstance.form.value
                 });
             }
             this.router.navigate(['administration/tenants']);
         });
     }
-
     canDeactivate(): boolean {
         if (this.dialogRef) {
             if (this.dialogRef.componentInstance && !this.dialogRef.componentInstance.form.dirty) {
                 this.dialogRef.close();
                 return true;
-            } else if (
-                this.dialogRef.componentInstance &&
-                this.dialogRef.componentInstance.form.dirty
-            ) {
+            } else if (this.dialogRef.componentInstance && this.dialogRef.componentInstance.form.dirty) {
                 return false;
             } else {
                 return true;
@@ -80,7 +74,6 @@ export class TenantsDialogComponent extends ComponentCanDeactivate implements On
             return true;
         }
     }
-
     ngOnDestroy(): void {
         if (this.routeSubscription) {
             this.routeSubscription.unsubscribe();

@@ -1,4 +1,4 @@
-import { Component, ContentChild, Input, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, ContentChild, TemplateRef } from '@angular/core';
 import { ICardField } from '../../models/card-field';
 
 @Component({
@@ -15,8 +15,7 @@ export class AtlasCardItemComponent implements OnInit {
     primaryFields: ICardField[];
     @Input()
     secondaryFields: ICardField[];
-    
-  constructor() {}
+    constructor() {}
 
     ngOnInit() {}
 }

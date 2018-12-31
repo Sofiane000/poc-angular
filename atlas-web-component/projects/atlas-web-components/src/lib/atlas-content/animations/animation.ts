@@ -1,12 +1,12 @@
 import {
+    trigger,
     animate,
-    animateChild,
+    style,
     group,
+    animateChild,
     query,
     stagger,
-    style,
     transition,
-    trigger,
 } from '@angular/animations';
 
 export const routerTransition = trigger('routerTransition', [

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
     selector: 'atlas-button',
@@ -30,12 +30,10 @@ export class AtlasButtonComponent implements OnInit {
     onSelectedChange(event) {
         this.selectionChange.emit(event);
     }
-    
-  onFocus(event) {
+    onFocus(event) {
         this.focus.emit(event);
     }
-    
-  onBlur(event) {
+    onBlur(event) {
         this.blur.emit(event);
     }
 }

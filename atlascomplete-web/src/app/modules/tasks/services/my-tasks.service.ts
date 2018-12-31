@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
 import { DataAccessFactory, DataAccessService } from 'atlas-web-services';
-import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { IWorkItem } from '../models/work-item';
 @Injectable()
 export class MyTasksService {
     dataAccess: DataAccessService;
-
     constructor(dataAccessFactory: DataAccessFactory) {
         this.dataAccess = dataAccessFactory.getService('bpm.workitems');
     }
-
     getWorkItems(type: string): Observable<IWorkItem[]> {
         return this.dataAccess.get(`${type}`).pipe(
             map((response) => {
@@ -18,7 +16,6 @@ export class MyTasksService {
             })
         );
     }
-
     getFieldsForItems(items: IWorkItem[]) {
         const primaryProps = ['processName', 'taskId', 'timeStarted', 'dueDate'];
         const secondaryProps = ['priority', 'taskStatus'];
@@ -48,7 +45,6 @@ export class MyTasksService {
             });
         });
     }
-
     getFieldObject(fieldName, item: IWorkItem) {
         switch (fieldName) {
             case 'processName':

@@ -2,8 +2,8 @@
 
 .login-box {
     width: 30%;
-    margin: 100px auto 0 auto;
-    padding: 0;
+    margin: 100px auto 0px auto;
+    padding: 0px;
 }
 
 .login-header {
@@ -46,12 +46,12 @@ img {
 }
 
 .login-button .mat-button-wrapper {
-    padding: 0 16px 0 16px;
+    padding: 0px 16px 0 16px;
 }
 
 .forgot-link,
 .need-help-link {
-    margin: 0 auto;
+    margin: 0px auto;
     display: block;
     width: 50%;
 }
@@ -62,8 +62,8 @@ img {
 
 .login-footer {
     position: absolute;
-    bottom: 0;
-    margin: 0 auto;
+    bottom: 0px;
+    margin: 0px auto;
     display: block;
     width: 97%;
 }
@@ -73,7 +73,6 @@ footer a {
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
-
     .login-box {
         width: 30%;
     }
@@ -85,7 +84,6 @@ footer a {
 */
 
 @media (min-width: 768px) and (max-width: 1024px) {
-
     .login-box {
         width: 50%;
     }
@@ -97,7 +95,6 @@ footer a {
 */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
     .login-box {
         width: 50%;
     }
@@ -109,7 +106,6 @@ footer a {
 */
 
 @media (min-width: 481px) and (max-width: 767px) {
-
     .login-box {
         width: 70%;
     }
@@ -121,7 +117,6 @@ footer a {
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
-
     .login-box {
         width: 100%;
     }

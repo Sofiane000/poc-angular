@@ -10,12 +10,10 @@ export class AtlasTreeTestComponent implements OnInit {
     treeTestServiceChild: TreeTestService;
     menuItems: any[] = [{ text: 'Add Sibling', icon: 'plus' }, { text: 'Add Child', icon: 'plus' }];
     isExpanded = true;
-    
-  constructor(private treeService: TreeTestService) {
+    constructor(private treeService: TreeTestService) {
         this.treeTestServiceChild = treeService;
     }
 
     ngOnInit() {}
-    
-  onSelectionChange() {}
+    onSelectionChange() {}
 }

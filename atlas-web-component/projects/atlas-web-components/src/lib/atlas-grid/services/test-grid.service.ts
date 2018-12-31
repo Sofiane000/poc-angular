@@ -1,13 +1,12 @@
-import { merge, Observable, of as observableOf } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
 import { AtlasGridService } from './atlas-grid.service';
+import { Observable, merge, of as observableOf } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 
 export class TestService extends AtlasGridService {
     query(state: any): void {
         this.fetch(state).subscribe((x) => super.next(x));
     }
-    
-  fetch(state: any): Observable<any> {
+    fetch(state: any): Observable<any> {
         this.isLoading = true;
         const dataMutations = [observableOf(USER_DATA)];
         // data has to be replaced with live data

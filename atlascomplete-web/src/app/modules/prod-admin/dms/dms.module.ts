@@ -1,37 +1,34 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatTabsModule } from '@angular/material';
+import { CommonModule } from '@angular/common';
+import { DmsRoutingModule } from './dms.routing.module';
 import {
-    AtlasDialogContentModule,
-    AtlasDialogFooterModule,
-    AtlasDialogHeaderModule,
-    AtlasDialogModule,
     AtlasGridModule,
-    AtlasInputModule,
-    AtlasPageContentModule,
-    AtlasPageFooterModule,
+    AtlasDialogModule,
     AtlasPageHeaderModule,
+    AtlasPageContentModule,
     AtlasTabLayoutModule,
+    AtlasDialogHeaderModule,
+    AtlasDialogFooterModule,
+    AtlasDialogContentModule,
+    AtlasPageFooterModule,
+    AtlasInputModule,
     AtlasToolbarModule,
 } from 'atlas-web-components';
-import { DataAccessFactory } from 'atlas-web-services';
-import { SharedModule } from '../../shared/shared.module';
-import { DmsDetailComponent } from './components/dms-detail/dms-detail.component';
+import { DmsService } from './services/dms.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatTabsModule } from '@angular/material';
 import { DmsGridComponent } from './components/dms-grid/dms-grid.component';
+import { DmsDetailComponent } from './components/dms-detail/dms-detail.component';
+import { SharedModule } from '../../shared/shared.module';
+import { DataAccessFactory } from 'atlas-web-services';
+import { DmsStorageComponent } from './components/dms-storage/dms-storage.component';
 import { DmsPermissionsComponent } from './components/dms-permissions/dms-permissions.component';
 import { DmsSchemaComponent } from './components/dms-schema/dms-schema.component';
-import { DmsStorageComponent } from './components/dms-storage/dms-storage.component';
-import { DmsRoutingModule } from './dms.routing.module';
-import { DmsService } from './services/dms.service';
 @NgModule({
-    declarations: [
-        DmsDetailComponent,
-        DmsGridComponent,
+    declarations: [DmsDetailComponent, DmsGridComponent,
         DmsStorageComponent,
         DmsPermissionsComponent,
-        DmsSchemaComponent,
-    ],
+        DmsSchemaComponent],
 
     imports: [
         CommonModule,

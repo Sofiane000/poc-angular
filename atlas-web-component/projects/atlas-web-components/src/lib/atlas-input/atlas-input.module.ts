@@ -1,13 +1,13 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AtlasInputComponent } from './components/atlas-input.component';
 import { FormsModule } from '@angular/forms';
 import {
+    MatInputModule,
+    MatIconModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
 } from '@angular/material';
-import { AtlasInputComponent } from './components/atlas-input.component';
 @NgModule({
     declarations: [AtlasInputComponent],
     entryComponents: [AtlasInputComponent],

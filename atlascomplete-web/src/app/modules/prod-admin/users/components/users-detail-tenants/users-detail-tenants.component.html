@@ -1,33 +1,28 @@
-<atlas-page-header
-    title="Tenants"
-    fontSize="x-large"
-    [backGroundColor]="'#fafafa'"
-    textAlign="center"
-    [color]="'black'"
-></atlas-page-header>
+<atlas-page-header title="Tenants" fontSize="x-large" [backGroundColor]="'#fafafa'" textAlign="center" [color]="'black'">
+</atlas-page-header>
 <atlas-page-content>
-    <div class="col-md-6 userDiv">
-        <label class="userLabel">First Name</label>
-        <span class="userSpan">{{ userDetail?.FirstName }}</span>
-    </div>
-    <div class="col-md-6 userDiv">
-        <label class="userLabel">Middle Name</label>
-        <span class="userSpan">{{ userDetail?.MidName }}</span>
-    </div>
-    <div class="col-md-6 userDiv">
-        <label class="userLabel">Last Name</label>
-        <span class="userSpan">{{ userDetail?.LastName }}</span>
-    </div>
-    <div class="col-md-6 userDiv">
-        <label class="userLabel">Email Address</label>
-        <span class="userSpan">{{ userDetail?.EmailAddr }}</span>
-    </div>
-    <div class="col-md-6 userDiv">
-        <label class="userLabel">Date of Birth</label>
-        <span class="userSpan">{{ userDetail?.DOB | date }}</span>
-    </div>
-    <div class="col-md-6 userDiv">
-        <label class="userLabel">Tenants</label>
-        <span class="userSpan">{{ userDetail?.cf_TenantTaxnmyName }}</span>
-    </div>
+  <div class="col-md-6 userDiv">
+    <label class="userLabel">First Name</label>
+    <span class="userSpan">{{userDetail?.FirstName}}</span>
+  </div>
+  <div class="col-md-6 userDiv">
+    <label class="userLabel">Middle Name</label>
+    <span class="userSpan">{{userDetail?.MidName}}</span>
+  </div>
+  <div class="col-md-6 userDiv">
+    <label class="userLabel">Last Name</label>
+    <span class="userSpan">{{userDetail?.LastName}}</span>
+  </div>
+  <div class="col-md-6 userDiv">
+    <label class="userLabel">Email Address</label>
+    <span class="userSpan">{{userDetail?.EmailAddr}}</span>
+  </div>
+  <div class="col-md-6 userDiv">
+    <label class="userLabel">Date of Birth</label>
+    <span class="userSpan">{{userDetail?.DOB | date}}</span>
+  </div>
+  <div class="col-md-6 userDiv">
+    <label class="userLabel">Tenants</label>
+    <span class="userSpan">{{userDetail?.cf_TenantTaxnmyName}}</span>
+  </div>
 </atlas-page-content>

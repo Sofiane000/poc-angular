@@ -4,14 +4,14 @@ import { ComponentCanDeactivate } from './component-candeactivate';
 import { Location } from '@angular/common';
 
 @Injectable({
-    providedIn: 'root',
+    providedIn: 'root'
 })
 export class CanDeactivateGuard implements CanDeactivate<ComponentCanDeactivate> {
-    constructor(private readonly location: Location, private readonly route: Router) {}
-    canDeactivate(
-        component: ComponentCanDeactivate,
-        currentRoute: ActivatedRouteSnapshot
-    ): boolean {
+    constructor(private readonly location: Location, private readonly route: Router) {
+
+    }
+    canDeactivate(component: ComponentCanDeactivate, currentRoute: ActivatedRouteSnapshot): boolean {
+
         if (!component.canDeactivate()) {
             const currentUrlTree = this.route.createUrlTree([], currentRoute);
             const currentUrl = currentUrlTree.toString();
