@@ -12,7 +12,8 @@
         "postbuild:elements": "node ./build-elements.js",
         "package": "ng build atlas-web-components && cd .\\dist\\atlas-web-components && npm pack",
         "e2e": "ng e2e",
-        "format": "prettier --write \"{src,projects}/**/*.{html,js,md,ts,graphql,yaml,yml,json,vue}\" && prettier-stylelint --write \"{src,projects}/**/*.{css,scss}\""
+        "format": "prettier --write \"{src,projects}/**/*.{html,js,md,ts,graphql,yaml,yml,json,vue}\" && prettier-stylelint --write \"{src,projects}/**/*.{css,scss}\"",
+        "compodoc": "compodoc -p projects/atlas-web-components/tsconfig.lib.json -s -w"
     },
     "husky": {
         "hooks": {
@@ -75,6 +76,7 @@
         "@angular/cli": "~7.1.4",
         "@angular/compiler-cli": "~7.1.4",
         "@angular/language-service": "~7.1.4",
+        "@compodoc/compodoc": "^1.1.7",
         "@types/jasmine": "~2.8.8",
         "@types/jasminewd2": "~2.0.3",
         "@types/node": "~8.9.4",

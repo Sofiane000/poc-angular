@@ -12,7 +12,8 @@
         "lint:fix": "tslint --project \".\" --fix",
         "lint:styles": "stylelint \"src/**/*.scss\"",
         "e2e": "ng e2e",
-        "format": "prettier --write \"src/**/*.{html,js,md,ts,graphql,yaml,yml,json,vue}\" && prettier-stylelint --write \"src/**/*.{css,scss}\""
+        "format": "prettier --write \"src/**/*.{html,js,md,ts,graphql,yaml,yml,json,vue}\" && prettier-stylelint --write \"src/**/*.{css,scss}\"",
+        "compodoc": "compodoc -p src/tsconfig.app.json -s -w"
     },
     "husky": {
         "hooks": {
@@ -57,11 +58,12 @@
         "zone.js": "~0.8.26"
     },
     "devDependencies": {
-        "@angular-devkit/build-angular": "~0.10.4",
+        "@angular-devkit/build-angular": "^0.11.4",
         "@angular-devkit/build-ng-packagr": "~0.10.0",
         "@angular/cli": "~7.0.4",
         "@angular/compiler-cli": "^7.0.2",
         "@angular/language-service": "^7.0.2",
+        "@compodoc/compodoc": "^1.1.7",
         "@types/jasmine": "~2.8.8",
         "@types/jasminewd2": "~2.0.3",
         "@types/node": "~10.12.2",
