@@ -1,5 +1,5 @@
 {
-    "name": "@atlas/atlas-mock-serve",
+    "name": "@atlas/mock-serve",
     "version": "1.0.0",
     "description": "Mocked API",
     "scripts": {

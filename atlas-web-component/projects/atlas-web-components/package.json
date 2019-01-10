@@ -1,5 +1,5 @@
 {
-    "name": "@atlas/atlas-web-components",
+    "name": "@atlas/web-components",
     "version": "0.0.1",
     "dependencies": {
         "@progress/kendo-theme-default": "^2.59.0",
