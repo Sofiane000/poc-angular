@@ -6,7 +6,7 @@
         "start": "ng serve",
         "build": "ng build",
         "test": "ng test",
-        "test-services": "ng test atlas-web-services --watch=true --browsers=ChromeHeadless --code-coverage",
+        "test-services": "ng test atlas-web-services --watch=false --browsers=ChromeHeadless --code-coverage",
         "show-coverage": "http-server -c-1 -o -p 9875 ./coverage",
         "lint": "tslint --project \".\"",
         "lint:fix": "tslint --project \".\" --fix",
@@ -15,8 +15,10 @@
         "build_lib": "rimraf -rf dist && ng build atlas-web-services",
         "npm_pack": "cd dist/atlas-web-services && npm pack",
         "package": "npm run build_lib && npm run npm_pack",
-        "format": "prettier --write \"{src,projects}/**/*.{html,js,md,ts,css,sass,scss,less,graphql,yaml,yml,scss,json,vue}\"",
-        "compodoc": "compodoc -p projects/atlas-web-services/tsconfig.lib.json -s -w"
+        "format": "prettier --write \"{src,projects}/**/*.{html,js,md,ts,graphql,yaml,yml,json,vue}\"",
+        "compodoc": "compodoc -p projects/atlas-web-services/tsconfig.lib.json -s -w",
+        "buildwebservices": "npm run test-services && npm run lint:fix && npm run format && npm run package",
+        "buildwebservicesMain": "npm run buildwebservices && cd dist/atlas-web-services && npm publish"
     },
     "husky": {
         "hooks": {
@@ -24,8 +26,12 @@
         }
     },
     "lint-staged": {
-        "{src,projects}/**/*.{html,js,md,ts,css,sass,scss,less,graphql,yaml,yml,scss,json,vue}": [
+        "{src,projects}/**/*.{html,js,md,ts,graphql,yaml,yml,json,vue}": [
             "prettier --write",
+            "git add"
+        ],
+        "{src,projects}/**/*.{css,scss}": [
+            "prettier-stylelint --write",
             "git add"
         ]
     },

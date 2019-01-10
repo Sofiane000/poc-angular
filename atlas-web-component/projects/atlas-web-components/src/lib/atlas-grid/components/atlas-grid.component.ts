@@ -215,7 +215,7 @@ export class AtlasGridComponent implements OnInit, OnDestroy, AfterViewInit, IMu
 
     /**
      * This method process and bind the data according to currently selected filters.
-     *  @param {DataStateChangeEvent} event selected grid state.
+     *  @param event selected grid state.
      */
     dataStateChange(event: DataStateChangeEvent) {
         this.state = event;
@@ -225,7 +225,7 @@ export class AtlasGridComponent implements OnInit, OnDestroy, AfterViewInit, IMu
 
     /**
      * This method returns all data for the excel export.
-     * @returns {ExcelExportData} Grid data.
+     * @returns Grid data.
      */
     allData(): ExcelExportData {
         const result: ExcelExportData = {
@@ -247,7 +247,7 @@ export class AtlasGridComponent implements OnInit, OnDestroy, AfterViewInit, IMu
 
     /**
      * This method current selected row data item.
-     *  @param {object} e selected data item.
+     *  @param e selected data item.
      * @returns Selected row.
      */
     selectBy(e) {
@@ -264,7 +264,7 @@ export class AtlasGridComponent implements OnInit, OnDestroy, AfterViewInit, IMu
 
     /**
      * This method emits the viewDetail event.
-     * @param {object} item selected data item.
+     * @param item selected data item.
      */
     onViewDetail(item: { dataItem }) {
         this.viewDetail.emit(item);
