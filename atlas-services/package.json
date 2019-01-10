@@ -18,7 +18,7 @@
         "format": "prettier --write \"{src,projects}/**/*.{html,js,md,ts,graphql,yaml,yml,json,vue}\"",
         "compodoc": "compodoc -p projects/atlas-web-services/tsconfig.lib.json -s -w",
         "buildwebservices": "npm run test-services && npm run lint:fix && npm run format && npm run package",
-        "buildwebservicesMain": "npm run buildwebservices && cd dist/atlas-web-services && npm publish"
+        "build-release": "npm run buildwebservices && cd dist/atlas-web-services && npm publish"
     },
     "husky": {
         "hooks": {

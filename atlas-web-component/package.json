@@ -16,7 +16,7 @@
         "format": "prettier --write \"{src,projects}/**/*.{html,js,md,ts,graphql,yaml,yml,json,vue}\" && prettier-stylelint --write \"{src,projects}/**/*.{css,scss}\"",
         "compodoc": "compodoc -p projects/atlas-web-components/tsconfig.lib.json -s -w",
         "buildwebcomponents": "npm run test-components && npm run lint:fix && npm run format && npm run package",
-        "buildwebcomponentsMain": "npm run buildwebcomponents && cd dist/atlas-web-components && npm publish"
+        "build-release": "npm run buildwebcomponents && cd dist/atlas-web-components && npm publish"
     },
     "husky": {
         "hooks": {

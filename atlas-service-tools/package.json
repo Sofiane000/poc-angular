@@ -1,11 +1,11 @@
 {
-    "name": "atlas-mock-serve",
+    "name": "@atlas/atlas-mock-serve",
     "version": "1.0.0",
     "description": "Mocked API",
     "scripts": {
         "start": "nodemon server/webserver.js --watch server",
         "format": "prettier --write \"**/*.{html,js,md,ts,css,sass,scss,less,graphql,yaml,yml,scss,json,vue}\"",
-        "buildwebservicestools": "npm run format && npm run publish"
+        "build-release": "npm run format && npm run publish"
     },
     "husky": {
         "hooks": {
