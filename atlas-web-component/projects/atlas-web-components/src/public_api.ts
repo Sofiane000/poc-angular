@@ -4,6 +4,8 @@
 export * from './lib/atlas-sidenav-container/atlas-sidenav-container.module';
 export * from './lib/atlas-sidenav-container/components/atlas-sidenav-container.component';
 
+export * from './lib/atlas-dropdown/atlas-dropdown.module';
+export * from './lib/atlas-dropdown/components/atlas-multiselect/atlas-multiselect.component';
 export * from './lib/atlas-card/atlas-card.module';
 export * from './lib/atlas-card/components/atlas-card/atlas-card.component';
 export * from './lib/atlas-card/components/atlas-card-field/atlas-card-field.component';

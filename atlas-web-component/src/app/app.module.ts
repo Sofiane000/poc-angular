@@ -11,6 +11,7 @@ import {
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AtlasCardModule } from 'projects/atlas-web-components/src/lib/atlas-card/atlas-card.module';
+import { AtlasDropdownModule } from 'projects/atlas-web-components/src/lib/atlas-dropdown/atlas-dropdown.module';
 import { TestService } from 'projects/atlas-web-components/src/lib/atlas-grid/services/test-grid.service';
 import { AtlasSideNavContainerModule } from 'projects/atlas-web-components/src/lib/atlas-sidenav-container/atlas-sidenav-container.module';
 import { TreeTestService } from 'projects/atlas-web-components/src/lib/atlas-tree/components/tree-test.service';
@@ -33,6 +34,7 @@ import { AtlasDialogFormTestComponent } from './atlas-dialog-form-test/atlas-dia
 import { AtlasDocViewerTestComponent } from './atlas-doc-viewer-test/atlas-doc-viewer-test.component';
 import { AtlasGridTestComponent } from './atlas-grid-test/atlas-grid-test.component';
 import { AtlasInputTestComponent } from './atlas-input-test/atlas-input-test.component';
+import { AtlasMultiSelectTestComponent } from './atlas-multiselect-test/atlas-multiselect-test.component';
 import { AtlasToolbarTestComponent } from './atlas-toolbar-test/atlas-toolbar-test.component';
 import { AtlasTreeTestComponent } from './atlas-tree-test/atlas-tree-test.component';
 import { ElementModule } from './element.module';
@@ -48,6 +50,7 @@ import { ElementModule } from './element.module';
         AtlasToolbarTestComponent,
         AtlasDialogFormTestComponent,
         AtlasCardTestComponent,
+        AtlasMultiSelectTestComponent,
     ],
     entryComponents: [AtlasDialogFormTestComponent],
     imports: [
@@ -72,6 +75,7 @@ import { ElementModule } from './element.module';
         MatDialogModule,
         AtlasDialogModule.forRoot(),
         MatRadioModule,
+        AtlasDropdownModule,
     ],
     providers: [TestService, TreeTestService],
     bootstrap: [AppComponent],

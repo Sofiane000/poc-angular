@@ -5,6 +5,7 @@ import { AtlasCardTestComponent } from './atlas-card-test/atlas-card-test.compon
 import { AtlasDocViewerTestComponent } from './atlas-doc-viewer-test/atlas-doc-viewer-test.component';
 import { AtlasGridTestComponent } from './atlas-grid-test/atlas-grid-test.component';
 import { AtlasInputTestComponent } from './atlas-input-test/atlas-input-test.component';
+import { AtlasMultiSelectTestComponent } from './atlas-multiselect-test/atlas-multiselect-test.component';
 import { AtlasToolbarTestComponent } from './atlas-toolbar-test/atlas-toolbar-test.component';
 import { AtlasTreeTestComponent } from './atlas-tree-test/atlas-tree-test.component';
 
@@ -37,6 +38,10 @@ const appRoutes: Routes = [
     {
         path: 'atlascard',
         component: AtlasCardTestComponent,
+    },
+    {
+        path: 'atlasmultiselect',
+        component: AtlasMultiSelectTestComponent,
     },
 ];
 
