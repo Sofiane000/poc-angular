@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ComponentCanDeactivate } from 'atlas-web-services';
+import { ComponentCanDeactivate } from '@atlas/web-services';
 import { Subscription } from 'rxjs';
 import { TenantsService } from '../../services/tenants.service';
 import { TenantsDialogFormComponent } from '../tenants-dialog-form/tenants-dialog-form.component';

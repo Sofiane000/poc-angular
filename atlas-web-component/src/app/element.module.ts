@@ -35,6 +35,7 @@ import { AtlasTreeComponent } from '../../projects/atlas-web-components/src/lib/
         {
             provide: POPUP_CONTAINER,
             useFactory: () => {
+                // tslint:disable-next-line:no-object-literal-type-assertion
                 return { nativeElement: document.body } as ElementRef;
             },
         },

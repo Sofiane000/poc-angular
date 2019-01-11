@@ -7,8 +7,9 @@ import { BehaviorSubject } from 'rxjs';
 export class AppSession {
     isAuthorized: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-    public userName: String = 'Alan Rickman';
-    public isLoggedIn: Boolean = false;
+    public userName = 'Alan Rickman';
+    public isLoggedIn = false;
+
     isAuthenticated() {
         const isAuthenticated = sessionStorage.getItem('isAuthenticated');
 
@@ -17,10 +18,12 @@ export class AppSession {
         }
         return false;
     }
+
     setDetails() {
         this.isLoggedIn = true;
         sessionStorage.setItem('isAuthenticated', 'true');
     }
+
     clear() {
         sessionStorage.clear();
         this.isLoggedIn = false;

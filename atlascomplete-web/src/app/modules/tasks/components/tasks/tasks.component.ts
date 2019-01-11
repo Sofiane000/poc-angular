@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { INavLink } from 'atlas-web-components/lib/layout/atlas-tab-layout/models/nav-link';
+import { INavLink } from '@atlas/web-components/lib/layout/atlas-tab-layout/models/nav-link';
 @Component({
     selector: 'app-tasks',
     templateUrl: 'tasks.component.html',

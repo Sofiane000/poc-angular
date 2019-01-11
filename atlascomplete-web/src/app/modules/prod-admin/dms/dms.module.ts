@@ -14,8 +14,8 @@ import {
     AtlasPageHeaderModule,
     AtlasTabLayoutModule,
     AtlasToolbarModule,
-} from 'atlas-web-components';
-import { DataAccessFactory } from 'atlas-web-services';
+} from '@atlas/web-components';
+import { DataAccessFactory } from '@atlas/web-services';
 import { SharedModule } from '../../shared/shared.module';
 import { DmsDetailComponent } from './components/dms-detail/dms-detail.component';
 import { DmsGridComponent } from './components/dms-grid/dms-grid.component';

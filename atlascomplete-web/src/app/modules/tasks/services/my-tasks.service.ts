@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DataAccessFactory, DataAccessService } from 'atlas-web-services';
+import { DataAccessFactory, DataAccessService } from '@atlas/web-services';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { IWorkItem } from '../models/work-item';
@@ -86,6 +86,7 @@ export class MyTasksService {
                     label: 'Status:',
                     value: item.taskStatus === 'I_ASSIGNED' ? 'assigned' : 'available',
                 };
+            // tslint:disable-next-line:no-duplicate-switch-case
             case 'dueDate':
                 return {
                     label: 'Due:',

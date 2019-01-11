@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CanDeactivateGuard } from 'atlas-web-services';
+import { CanDeactivateGuard } from '@atlas/web-services';
 import { TenantsDialogComponent } from './components/tenants-dialog/tenants-dialog.component';
 import { TenantsTreeComponent } from './components/tenants-tree/tenants-tree.component';
 const appRoutes: Routes = [

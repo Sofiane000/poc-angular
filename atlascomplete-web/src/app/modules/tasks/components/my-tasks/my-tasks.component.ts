@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IAtlasToolbarButton, ButtonAction, ICardField } from 'atlas-web-components';
+import { ButtonAction, IAtlasToolbarButton, ICardField } from '@atlas/web-components';
 import { IWorkItem } from '../../models/work-item';
 import { MyTasksService } from '../../services/my-tasks.service';
 

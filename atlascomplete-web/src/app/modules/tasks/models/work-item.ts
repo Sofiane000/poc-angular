@@ -1,4 +1,4 @@
-import { ICardField } from 'atlas-web-components';
+import { ICardField } from '@atlas/web-components';
 
 export interface IWorkItem {
     dueDate: string;

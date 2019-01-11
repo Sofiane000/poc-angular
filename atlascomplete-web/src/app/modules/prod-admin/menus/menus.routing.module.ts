@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CanDeactivateGuard } from 'atlas-web-services';
+import { CanDeactivateGuard } from '@atlas/web-services';
 import { MenusDialogComponent } from './components/menus-dialog/menus-dialog.component';
 import { MenusTreeComponent } from './components/menus-tree/menus-tree.component';
 const appRoutes: Routes = [

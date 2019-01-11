@@ -1,14 +1,15 @@
-import { Injectable } from '@angular/core';
-import { CanDeactivate, ActivatedRouteSnapshot, Router } from '@angular/router';
-import { ComponentCanDeactivate } from './component-candeactivate';
 import { Location } from '@angular/common';
+import { Injectable } from '@angular/core';
+import { ActivatedRouteSnapshot, CanDeactivate, Router } from '@angular/router';
+import { ComponentCanDeactivate } from './component-candeactivate';
 
 @Injectable({
     providedIn: 'root',
 })
 export class CanDeactivateGuard implements CanDeactivate<ComponentCanDeactivate> {
     constructor(private readonly location: Location, private readonly route: Router) {}
-    canDeactivate(
+    
+  canDeactivate(
         component: ComponentCanDeactivate,
         currentRoute: ActivatedRouteSnapshot
     ): boolean {
@@ -17,7 +18,7 @@ export class CanDeactivateGuard implements CanDeactivate<ComponentCanDeactivate>
             const currentUrl = currentUrlTree.toString();
             this.location.go(currentUrl);
             if (confirm('You have unsaved changes! If you leave, your changes will be lost.')) {
-                (<any>component).dialogRef.close();
+                (component as any).dialogRef.close();
                 return true;
             } else {
                 return false;

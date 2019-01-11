@@ -5,7 +5,7 @@ import {
     ComponentSecurityService,
     DataAccessFactory,
     DataAccessService,
-} from 'atlas-web-services';
+} from '@atlas/web-services';
 
 @Injectable()
 export class AuthenticationService {

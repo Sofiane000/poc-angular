@@ -5,8 +5,8 @@ import {
     AtlasDialogModule,
     AtlasDialogService,
     AtlasGridModule,
-} from 'atlas-web-components';
-import { AtlasWebServicesModule } from 'atlas-web-services';
+} from '@atlas/web-components';
+import { AtlasWebServicesModule } from '@atlas/web-services';
 import { UsersModule } from '../users/users.module';
 import { ComponentsRoutingModule } from './components.routing.module';
 import { ButtonExampleComponent } from './components/button-example/button-example.component';

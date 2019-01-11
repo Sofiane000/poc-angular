@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
 import { HttpClientModule } from '@angular/common/http';
-import { ComponentSecurityService } from './component.security.service';
 import { ComponentSecurity } from 'atlas-web-services/public_api';
+import { ComponentSecurityService } from './component.security.service';
 
 describe('DataAccessFactory', () => {
     let data;

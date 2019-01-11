@@ -1,8 +1,8 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 
-import { DataAccessFactory } from './dataaccess.service';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { DataAccessFactory } from './dataaccess.service';
 
 describe('DataAccessFactory', () => {
     let service: DataAccessFactory;
@@ -23,6 +23,7 @@ describe('DataAccessFactory', () => {
             .createService('idm.users')
             .module('idm')
             .url('users/list');
+        // tslint:disable-next-line:only-arrow-functions
         expect(function() {
             service.getService('idm.users');
         }).not.toThrow();

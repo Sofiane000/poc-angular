@@ -3,17 +3,17 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 const noop = () => {};
 
-export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => AtlasInputComponent),
-    multi: true,
-};
-
 @Component({
     selector: 'atlas-input',
     templateUrl: './atlas-input.component.html',
     styleUrls: ['./atlas-input.component.scss'],
-    providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => AtlasInputComponent),
+            multi: true,
+        },
+    ],
 })
 export class AtlasInputComponent implements OnInit, ControlValueAccessor {
     @Input() showHint: boolean;
@@ -53,8 +53,8 @@ export class AtlasInputComponent implements OnInit, ControlValueAccessor {
     onBlur() {
         this.onTouchedCallback();
     }
-    
-  // From ControlValueAccessor interface
+
+    // From ControlValueAccessor interface
     writeValue(value: any) {
         if (value !== this.innerValue) {
             this.innerValue = value;
@@ -70,6 +70,6 @@ export class AtlasInputComponent implements OnInit, ControlValueAccessor {
     registerOnTouched(fn: any) {
         this.onTouchedCallback = fn;
     }
-    
-  ngOnInit(): void {}
+
+    ngOnInit(): void {}
 }

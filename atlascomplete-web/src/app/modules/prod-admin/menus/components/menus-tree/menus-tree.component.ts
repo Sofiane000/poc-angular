@@ -6,7 +6,7 @@ import {
     AtlasTreeComponent,
     ButtonAction,
     IAtlasToolbarButton,
-} from 'atlas-web-components';
+} from '@atlas/web-components';
 import { MenusService } from '../../services/menus.service';
 import { MenusDeleteDialogComponent } from '../menus-delete-dialog/menus-delete-dialog.component';
 @Component({

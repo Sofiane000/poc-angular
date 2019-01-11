@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CanDeactivateGuard } from 'atlas-web-services';
+import { CanDeactivateGuard } from '@atlas/web-services';
 import { DmsDetailComponent } from './components/dms-detail/dms-detail.component';
 import { DmsGridComponent } from './components/dms-grid/dms-grid.component';
 import { DmsPermissionsComponent } from './components/dms-permissions/dms-permissions.component';

@@ -3,11 +3,11 @@ import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 import {
     AtlasGridComponent,
-    IAtlasToolbarButton,
     AtlasToolbarComponent,
     ButtonAction,
+    IAtlasToolbarButton,
     IColumnSetting,
-} from 'atlas-web-components';
+} from '@atlas/web-components';
 import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
 import { DmsService } from '../../services/dms.service';
 

@@ -14,8 +14,8 @@ import {
     AtlasPageHeaderModule,
     AtlasTabLayoutModule,
     AtlasToolbarModule,
-} from 'atlas-web-components';
-import { DataAccessFactory } from 'atlas-web-services';
+} from '@atlas/web-components';
+import { DataAccessFactory } from '@atlas/web-services';
 import { SharedModule } from '../../shared/shared.module';
 import { UsersDetailPropertiesComponent } from './components/users-detail-properties/users-detail-properties.component';
 import { UsersDetailRolesComponent } from './components/users-detail-roles/users-detail-roles.component';

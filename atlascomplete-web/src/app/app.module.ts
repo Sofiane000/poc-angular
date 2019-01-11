@@ -6,14 +6,15 @@ import { FormsModule } from '@angular/forms';
 import { MatIconRegistry } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AtlasHeaderModule, AtlasSideNavContainerModule } from 'atlas-web-components';
-import { DataAccessFactory } from 'atlas-web-services';
+import { AtlasHeaderModule, AtlasSideNavContainerModule } from '@atlas/web-components';
+import { DataAccessFactory } from '@atlas/web-services';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { AuthenticationService } from './modules/auth/services/authentication.service';
 import { SharedModule } from './modules/shared/shared.module';
+// tslint:disable-next-line:ban-types
 export function init_app(appLoadService: AuthenticationService): Function {
     return () => appLoadService.checkSession();
 }

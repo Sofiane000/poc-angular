@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AtlasGridService } from 'atlas-web-components';
+import { AtlasGridService } from '@atlas/web-components';
 
-import { DataAccessFactory, DataAccessService } from 'atlas-web-services';
+import { DataAccessFactory, DataAccessService } from '@atlas/web-services';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
@@ -9,6 +9,8 @@ import { map, tap } from 'rxjs/operators';
 export class DmsService extends AtlasGridService {
     selectedDms: any;
     dataAccess: DataAccessService;
+    rowId: any;
+    isLoading: boolean;
 
     constructor(dataAccessFactory: DataAccessFactory) {
         super();
@@ -35,7 +37,7 @@ export class DmsService extends AtlasGridService {
             );
     }
 
-    getDmsById(DocCatgSK: Number) {
+    getDmsById(DocCatgSK: number) {
         return this.dataAccess.get(`${DocCatgSK}`).pipe(
             map((response) => {
                 return response.body.data;

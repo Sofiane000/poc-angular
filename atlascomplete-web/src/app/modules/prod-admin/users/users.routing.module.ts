@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CanDeactivateGuard } from 'atlas-web-services';
+import { CanDeactivateGuard } from '@atlas/web-services';
 import { UsersDetailPropertiesComponent } from './components/users-detail-properties/users-detail-properties.component';
 import { UsersDetailRolesComponent } from './components/users-detail-roles/users-detail-roles.component';
 import { UsersDetailTenantsComponent } from './components/users-detail-tenants/users-detail-tenants.component';

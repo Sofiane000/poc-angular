@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { IMenuItem } from 'atlas-web-components';
-import { DataAccessFactory, DataAccessService } from 'atlas-web-services';
+import { IMenuItem } from '@atlas/web-components';
+import { DataAccessFactory, DataAccessService } from '@atlas/web-services';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 @Injectable({

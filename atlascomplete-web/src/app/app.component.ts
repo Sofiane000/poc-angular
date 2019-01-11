@@ -1,7 +1,7 @@
 import { Component, HostBinding, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { AtlasHeaderComponent, IMenuItem } from 'atlas-web-components';
-import { AppSession } from 'atlas-web-services';
+import { AtlasHeaderComponent, IMenuItem } from '@atlas/web-components';
+import { AppSession } from '@atlas/web-services';
 import { Subscription } from 'rxjs';
 import { MenuService } from './menu.service';
 
@@ -13,7 +13,7 @@ import { MenuService } from './menu.service';
 export class AppComponent implements OnInit, OnDestroy {
     isMiniMode: boolean;
     isSideBarOpened: boolean;
-    isAuthorized: Boolean;
+    isAuthorized: boolean;
     isAuthorizedSubscription: Subscription;
     sideBarTitle: string;
     menuItems: IMenuItem[];

@@ -11,6 +11,7 @@ export class ComponentSecurity {
     isMasked: boolean;
 }
 
+// tslint:disable-next-line:max-classes-per-file
 @Injectable({
     providedIn: 'root',
 })
@@ -37,7 +38,7 @@ export class ComponentSecurityService {
         return security;
     }
 
-    public loadSecurityMap(components: Array<any>): void {
+    public loadSecurityMap(components: any[]): void {
         this.securityMap.clear();
         components.forEach((component) => {
             this.securityMap.set(component.cf_CmpntID, {

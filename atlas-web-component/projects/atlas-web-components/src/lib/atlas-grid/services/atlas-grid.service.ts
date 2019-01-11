@@ -3,12 +3,12 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 export abstract class AtlasGridService extends BehaviorSubject<any> {
     public isLoading: boolean;
     public rowId: any;
-    
-  constructor() {
+
+    constructor() {
         super(null);
     }
-    
-  abstract fetch(state: any): Observable<any>;
-    
-  abstract query(state: any): void;
+
+    abstract fetch(state: any): Observable<any>;
+
+    abstract query(state: any): void;
 }

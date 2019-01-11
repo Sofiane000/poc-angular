@@ -6,7 +6,7 @@ import {
     ButtonAction,
     IAtlasToolbarButton,
     IColumnSetting,
-} from 'atlas-web-components';
+} from '@atlas/web-components';
 import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
 import { PeopleService } from '../../services/people.service';
 import { UserService } from '../../services/user.service';

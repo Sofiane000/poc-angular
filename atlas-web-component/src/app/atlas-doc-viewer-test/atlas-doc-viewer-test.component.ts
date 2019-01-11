@@ -13,11 +13,7 @@ export class AtlasDocViewerTestComponent implements OnInit {
 
     ngOnInit(): void {
         this.route.params.subscribe((params) => {
-            if (params.documentId) {
-                this.src = '/assets/' + params.documentId;
-            } else {
-                this.src = void 0;
-            }
+            this.src = params.documentId ? '/assets/' + params.documentId : void 0;
         });
     }
 }

@@ -12,8 +12,8 @@ import {
     AtlasPageHeaderModule,
     AtlasToolbarModule,
     AtlasTreeModule,
-} from 'atlas-web-components';
-import { DataAccessFactory } from 'atlas-web-services';
+} from '@atlas/web-components';
+import { DataAccessFactory } from '@atlas/web-services';
 import { SharedModule } from '../../shared/shared.module';
 import { TenantsDeleteDialogComponent } from './components/tenants-delete-dialog/tenants-delete-dialog.component';
 import { TenantsDialogFormComponent } from './components/tenants-dialog-form/tenants-dialog-form.component';

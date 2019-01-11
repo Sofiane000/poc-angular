@@ -6,7 +6,7 @@ import {
     AtlasTreeComponent,
     ButtonAction,
     IAtlasToolbarButton,
-} from 'atlas-web-components';
+} from '@atlas/web-components';
 import { TenantsService } from '../../services/tenants.service';
 import { TenantsDeleteDialogComponent } from '../tenants-delete-dialog/tenants-delete-dialog.component';
 @Component({
