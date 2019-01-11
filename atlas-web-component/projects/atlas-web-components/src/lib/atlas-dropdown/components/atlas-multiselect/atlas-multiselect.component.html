@@ -1,45 +1,59 @@
 <ng-container *ngIf="!showSummary">
-    <kendo-multiselect
-        #list
-        [data]="listItems"
-        [textField]="textField"
-        [valueField]="valueField"
-        [placeholder]="placeholder"
-        [valuePrimitive]="valuePrimitive"
-        [value]="value"
-        [autoClose]="autoClose"
-        [clearButton]="clearButton"
-        [disabled]="disabled"
-        [loading]="loading"
-        [readonly]="readonly"
-        (valueChange)="valueChangeHandler($event)"
-        [filterable]="filterable"
-        [popupSettings]="popupSettings"
-        [listHeight]="listHeight"
-    ></kendo-multiselect>
+    <div class="row">
+        <div class="col-md-2">
+            <label>{{ labelText }}</label>
+        </div>
+        <div class="col-md-10">
+            <kendo-multiselect
+                #list
+                [data]="listItems"
+                [textField]="textField"
+                [valueField]="valueField"
+                [placeholder]="placeholder"
+                [valuePrimitive]="valuePrimitive"
+                [value]="value"
+                [autoClose]="autoClose"
+                [clearButton]="clearButton"
+                [disabled]="disabled"
+                [loading]="loading"
+                [readonly]="readonly"
+                (valueChange)="valueChangeHandler($event)"
+                [filterable]="filterable"
+                [popupSettings]="popupSettings"
+                [listHeight]="listHeight"
+            ></kendo-multiselect>
+        </div>
+    </div>
 </ng-container>
 <ng-container *ngIf="showSummary">
-    <kendo-multiselect
-        #list
-        [data]="listItems"
-        [textField]="textField"
-        [valueField]="valueField"
-        [placeholder]="placeholder"
-        [valuePrimitive]="valuePrimitive"
-        [value]="value"
-        [autoClose]="autoClose"
-        [clearButton]="clearButton"
-        [disabled]="disabled"
-        [loading]="loading"
-        [readonly]="readonly"
-        (valueChange)="valueChangeHandler($event)"
-        [filterable]="filterable"
-        [kendoMultiSelectSummaryTag]="summaryValue"
-        [popupSettings]="popupSettings"
-        [listHeight]="listHeight"
-    >
-        <ng-template kendoMultiSelectGroupTagTemplate let-dataItems>
-            {{ dataItems.length }} more selected
-        </ng-template>
-    </kendo-multiselect>
+    <div class="row">
+        <div class="col-md-2">
+            <label>{{ labelText }}</label>
+        </div>
+        <div class="col-md-10">
+            <kendo-multiselect
+                #list
+                [data]="listItems"
+                [textField]="textField"
+                [valueField]="valueField"
+                [placeholder]="placeholder"
+                [valuePrimitive]="valuePrimitive"
+                [value]="value"
+                [autoClose]="autoClose"
+                [clearButton]="clearButton"
+                [disabled]="disabled"
+                [loading]="loading"
+                [readonly]="readonly"
+                (valueChange)="valueChangeHandler($event)"
+                [filterable]="filterable"
+                [kendoMultiSelectSummaryTag]="summaryValue"
+                [popupSettings]="popupSettings"
+                [listHeight]="listHeight"
+            >
+                <ng-template kendoMultiSelectGroupTagTemplate let-dataItems>
+                    {{ dataItems.length }} more selected
+                </ng-template>
+            </kendo-multiselect>
+        </div>
+    </div>
 </ng-container>

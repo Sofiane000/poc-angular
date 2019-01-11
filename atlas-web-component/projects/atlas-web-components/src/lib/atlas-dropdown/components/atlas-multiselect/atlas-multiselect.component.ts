@@ -28,6 +28,12 @@ export class AtlasMultiselectComponent implements OnInit {
     listItems: any[];
 
     /**
+     * Text for label.
+     */
+    @Input()
+    labelText: string;
+
+    /**
      * Sets the data item field that represents the item text. If the data contains only primitive values, do not define it.
      */
     @Input()
