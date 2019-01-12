@@ -22,7 +22,7 @@ npm install to install the all packages except Atlas-ui-angular
 ## How to add reference to atlas-ui-angular
 
 After npm install run the below command
-npm install ../atlas-web-components/dist/atlas-ui-angular/atlas-ui-angular-0.0.1.tgz
+npm install ../atlas-web-component/dist/atlas-web-components/atlas-web-components-0.0.1.tgz
 
 ## How to add reference to atlas-web-services
 
