@@ -14,12 +14,12 @@ export class AppComponent implements OnInit, OnDestroy {
     isMiniMode: boolean;
     isSideBarOpened: boolean;
     isAuthorized: boolean;
+
     isAuthorizedSubscription: Subscription;
     sideBarTitle: string;
     menuItems: IMenuItem[];
     @ViewChild('container') container: any;
     @ViewChild('header') header: AtlasHeaderComponent;
-
     @HostBinding('class.isAuthorized') addClass = false;
 
     constructor(
@@ -97,6 +97,7 @@ export class AppComponent implements OnInit, OnDestroy {
         if (!this.isSideBarOpened) {
             this.toggleSidebar();
         }
+
         if (this.header.selectedOption === option) {
             this.header.selectedOption = '';
             this.toggleSidebar();

@@ -86,13 +86,6 @@ export class MyTasksService {
                     label: 'Status:',
                     value: item.taskStatus === 'I_ASSIGNED' ? 'assigned' : 'available',
                 };
-            // tslint:disable-next-line:no-duplicate-switch-case
-            case 'dueDate':
-                return {
-                    label: 'Due:',
-                    value: new Date(item.dueDate).toLocaleString(),
-                    iconClass: 'fa fa-calendar-minus-o',
-                };
         }
     }
 }

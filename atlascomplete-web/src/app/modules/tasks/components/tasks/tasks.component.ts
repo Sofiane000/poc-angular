@@ -3,7 +3,6 @@ import { INavLink } from '@atlas/web-components/lib/layout/atlas-tab-layout/mode
 @Component({
     selector: 'app-tasks',
     templateUrl: 'tasks.component.html',
-    styleUrls: ['tasks.component.scss'],
 })
 export class TasksComponent implements OnInit {
     navLinks: INavLink[];

@@ -25,7 +25,7 @@ export class TenantsDialogFormComponent {
 
     constructor(private dialogRef: MatDialogRef<TenantsDialogFormComponent>) {}
 
-    closeHandler(event) {
+    closeHandler(event: any) {
         this.dialogRef.close(event);
     }
 }

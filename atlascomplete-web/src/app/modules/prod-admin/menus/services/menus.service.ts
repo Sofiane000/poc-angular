@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AtlasGridService } from '@atlas/web-components';
-
 import { DataAccessFactory, DataAccessService } from '@atlas/web-services';
 import { Observable, Subject } from 'rxjs';
 import { map, tap } from 'rxjs/operators';

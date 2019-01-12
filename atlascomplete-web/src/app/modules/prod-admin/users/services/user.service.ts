@@ -9,7 +9,6 @@ import { map, tap } from 'rxjs/operators';
 export class UserService extends AtlasGridService {
     selectedUser: any;
     dataAccess: DataAccessService;
-    isLoading: boolean;
 
     constructor(dataAccessFactory: DataAccessFactory) {
         super();
