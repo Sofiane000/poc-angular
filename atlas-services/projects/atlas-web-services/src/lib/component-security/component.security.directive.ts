@@ -32,11 +32,6 @@ export class ComponentSecurityDirective implements OnChanges, OnDestroy {
         const componentSecurity: ComponentSecurity = this.securityService.getSecurity(
             this.atlasSecurity
         );
-        // tslint:disable-next-line:prefer-conditional-expression
-        if (!componentSecurity.canRead) {
-            this.element.nativeElement.style.display = 'none';
-        } else {
-            this.element.nativeElement.style.display = void 0;
-        }
+        this.element.nativeElement.style.display = !componentSecurity.canRead ? 'none' : void 0;
     }
 }

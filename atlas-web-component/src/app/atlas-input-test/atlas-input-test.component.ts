@@ -10,8 +10,8 @@ export class AtlasInputTestComponent implements OnInit {
     editForm: FormGroup = new FormGroup({
         CustomBtn: new FormControl('', Validators.required),
     });
-    
-  constructor() {}
+
+    constructor() {}
 
     ngOnInit() {}
 }

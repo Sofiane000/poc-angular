@@ -19,8 +19,8 @@ export class AtlasPageHeaderComponent {
     showBackBtn = false;
     @Output()
     goBack: EventEmitter<any> = new EventEmitter<any>();
-    
-  onGoBack(event) {
+
+    onGoBack(event) {
         this.goBack.emit(event);
     }
 }

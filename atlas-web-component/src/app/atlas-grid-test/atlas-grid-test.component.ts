@@ -98,6 +98,6 @@ export class AtlasGridTestComponent implements OnInit {
             },
         ];
     }
-    
-  onSelectionChange() {}
+
+    onSelectionChange() {}
 }

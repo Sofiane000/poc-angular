@@ -15,8 +15,8 @@ export class AtlasCardItemComponent implements OnInit {
     primaryFields: ICardField[];
     @Input()
     secondaryFields: ICardField[];
-    
-  constructor() {}
+
+    constructor() {}
 
     ngOnInit() {}
 }

@@ -56,10 +56,10 @@ export class AtlasSideNavContainerComponent {
             this.toggleMenu();
         }
     }
-    
-  toggleMenu() {
+
+    toggleMenu() {
         this.menu.toggle();
     }
-    
-  toggleSidebar() {}
+
+    toggleSidebar() {}
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
     selector: 'atlas-dialog-header',
     templateUrl: './atlas-dialog-header.component.html',
@@ -9,8 +9,8 @@ export class AtlasDialogHeaderComponent {
     @Input() isDirty: boolean;
     @Input() showCloseBtn: boolean;
     @Output() close = new EventEmitter<any>();
-    
-  onClose(action) {
+
+    onClose(action) {
         this.close.emit(action);
     }
 }

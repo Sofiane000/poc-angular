@@ -1,11 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import {
-    DialogModule,
-    DialogService,
-    DialogSettings,
-    DialogsModule,
-} from '@progress/kendo-angular-dialog';
+import { DialogModule, DialogService } from '@progress/kendo-angular-dialog';
 import { DialogContainerService } from '@progress/kendo-angular-dialog/dist/es2015/dialog/dialog-container.service';
 import { AtlasDialogService } from './services/atlas-dialog.service';
 

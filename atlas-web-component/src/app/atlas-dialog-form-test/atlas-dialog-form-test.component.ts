@@ -11,12 +11,12 @@ export class AtlasDialogFormTestComponent implements OnInit {
     form: FormGroup = new FormGroup({
         Name: new FormControl('', Validators.required),
     });
-    
-  constructor(private dialogRef: MatDialogRef<AtlasDialogFormTestComponent>) {}
-    
-  ngOnInit() {}
 
-    closeHandler(actions) {
+    constructor(private dialogRef: MatDialogRef<AtlasDialogFormTestComponent>) {}
+
+    ngOnInit() {}
+
+    closeHandler(actions: any) {
         this.dialogRef.close();
     }
 }

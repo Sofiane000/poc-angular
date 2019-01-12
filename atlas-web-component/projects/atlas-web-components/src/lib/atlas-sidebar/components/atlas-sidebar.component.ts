@@ -52,12 +52,12 @@ export class AtlasSideBarComponent {
     @Output() toggleMiniMode: EventEmitter<any> = new EventEmitter<any>();
 
     isOpened: boolean;
-    
-  toggle() {
+
+    toggle() {
         this.toggleSideBar.emit();
     }
-    
-  rotate() {
+
+    rotate() {
         this.state = this.state === 'default' ? 'rotated' : 'default';
         if (this.state === 'default') {
             this.toggleMiniMode.emit(false);
@@ -65,8 +65,8 @@ export class AtlasSideBarComponent {
             this.toggleMiniMode.emit(true);
         }
     }
-    
-  getIconClass() {
+
+    getIconClass() {
         if (this.headerName === 'Tasks') {
             return 'fa-inbox';
         } else {

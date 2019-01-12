@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Injector, NgModule } from '@angular/core';
-import { createCustomElement } from '@angular/elements';
 import { ButtonModule } from '@progress/kendo-angular-buttons';
 import { AtlasButtonComponent } from './components/atlas-button.component';
 import { AtlasColorDirective } from './directives/atlas-color.directive';

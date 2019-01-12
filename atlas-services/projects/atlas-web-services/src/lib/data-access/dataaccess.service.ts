@@ -61,8 +61,7 @@ export class DataAccessService {
         }
         return this.http
             .get<HttpResponse<any>>(url, {
-                // tslint:disable-next-line:object-literal-shorthand
-                headers: headers,
+                headers,
                 params: svcParms ? svcParms.params : void 0,
                 observe: 'response',
             })

@@ -8,8 +8,8 @@ import { ComponentCanDeactivate } from './component-candeactivate';
 })
 export class CanDeactivateGuard implements CanDeactivate<ComponentCanDeactivate> {
     constructor(private readonly location: Location, private readonly route: Router) {}
-    
-  canDeactivate(
+
+    canDeactivate(
         component: ComponentCanDeactivate,
         currentRoute: ActivatedRouteSnapshot
     ): boolean {

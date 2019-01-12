@@ -4,8 +4,8 @@ import { DialogContainerService } from '@progress/kendo-angular-dialog/dist/es20
 @Injectable()
 export class AtlasDialogService extends DialogService {
     constructor(
-        private componentFactoryResolver: ComponentFactoryResolver,
-        private dialogContainerService: DialogContainerService
+        componentFactoryResolver: ComponentFactoryResolver,
+        dialogContainerService: DialogContainerService
     ) {
         super(componentFactoryResolver, dialogContainerService);
     }

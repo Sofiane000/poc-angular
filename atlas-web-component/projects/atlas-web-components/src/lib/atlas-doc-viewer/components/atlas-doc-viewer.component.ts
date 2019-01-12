@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./atlas-doc-viewer.component.scss'],
 })
 export class AtlasDocViewerComponent {
-    @Input() src;
+    @Input() src: any;
 }

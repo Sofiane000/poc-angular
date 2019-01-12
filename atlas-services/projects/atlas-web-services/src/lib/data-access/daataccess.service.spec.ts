@@ -23,8 +23,7 @@ describe('DataAccessFactory', () => {
             .createService('idm.users')
             .module('idm')
             .url('users/list');
-        // tslint:disable-next-line:only-arrow-functions
-        expect(function() {
+        expect(() => {
             service.getService('idm.users');
         }).not.toThrow();
     });

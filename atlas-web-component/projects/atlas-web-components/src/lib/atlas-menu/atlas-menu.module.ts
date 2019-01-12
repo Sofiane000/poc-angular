@@ -1,13 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import {
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    MatMenuModule,
-    MatSidenavModule,
-    MatToolbarModule,
-} from '@angular/material';
+import { MatButtonModule, MatIconModule, MatListModule, MatSidenavModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { AtlasMenuItemComponent } from './components/atlas-menu-item.component';
 import { AtlasMenuComponent } from './components/atlas-menu.component';
