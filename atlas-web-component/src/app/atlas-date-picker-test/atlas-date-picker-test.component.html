@@ -33,12 +33,13 @@
                 [navigation]="showNavigation"
                 [bottomView]="'month'"
                 [activeView]="'month'"
-                [topView]="'month'"
+                [topView]="'century'"
                 [disabled]="isDisabled"
                 [readOnly]="isReadonly"
-                [min]="min"
-                [max]="max"
+                [min]=""
+                [max]=""
                 [weekNumber]="showWeeknumber"
+                [focusedDate]="dateValue"
             ></atlas-date-picker>
             <p>Data reactive form</p>
             <atlas-date-picker
@@ -51,12 +52,13 @@
                 [navigation]="showNavigation"
                 [bottomView]="'month'"
                 [activeView]="'month'"
-                [topView]="'month'"
+                [topView]="'century'"
                 [disabled]="isDisabled"
                 [readOnly]="isReadonly"
-                [min]="min"
-                [max]="max"
+                [min]=""
+                [max]=""
                 [weekNumber]="showWeeknumber"
+                [focusedDate]="dateValue"
             ></atlas-date-picker>
         </div>
         <div class="col-md-6 mat-elevation-z10">
