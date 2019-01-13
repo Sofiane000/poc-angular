@@ -46,17 +46,21 @@
         </label>
     </div>
 </div>
-
-<atlas-multiselect
-    [listItems]="data"
-    (valueChange)="valueChangeHandler($event)"
-    [filterable]="isFilterable"
-    [placeholder]="placeHolder"
-    [autoClose]="isAutoClose"
-    [showSummary]="showSummary"
-    [summaryValue]="1"
-    [clearButton]="showClear"
-    [disabled]="isDisabled"
-    [readonly]="isReadOnly"
-    [labelText]="'Test Dropdown'"
-></atlas-multiselect>
+<div class="row">
+    <div class="col-md-6">
+        <atlas-multiselect
+            [listItems]="data"
+            (valueChange)="valueChangeHandler($event)"
+            [filterable]="isFilterable"
+            [placeholder]="placeHolder"
+            [autoClose]="isAutoClose"
+            [showSummary]="showSummary"
+            [summaryValue]="1"
+            [clearButton]="showClear"
+            [disabled]="isDisabled"
+            [readonly]="isReadOnly"
+            [labelText]="'Test Dropdown'"
+            [listHeight]="150"
+        ></atlas-multiselect>
+    </div>
+</div>
