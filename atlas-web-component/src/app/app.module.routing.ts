@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AtlasButtonTestComponent } from './atlas-button-test/atlas-button-test.component';
 import { AtlasCardTestComponent } from './atlas-card-test/atlas-card-test.component';
-import { AtlasDocViewerTestComponent } from './atlas-doc-viewer-test/atlas-doc-viewer-test.component';
+import { AtlasDatePickerTestComponent } from './atlas-date-picker-test/atlas-date-picker-test.component';
 import { AtlasGridTestComponent } from './atlas-grid-test/atlas-grid-test.component';
 import { AtlasInputTestComponent } from './atlas-input-test/atlas-input-test.component';
 import { AtlasMultiSelectTestComponent } from './atlas-multiselect-test/atlas-multiselect-test.component';
@@ -42,6 +42,10 @@ const appRoutes: Routes = [
     {
         path: 'atlasmultiselect',
         component: AtlasMultiSelectTestComponent,
+    },
+    {
+        path: 'atlasdatepicker',
+        component: AtlasDatePickerTestComponent,
     },
 ];
 

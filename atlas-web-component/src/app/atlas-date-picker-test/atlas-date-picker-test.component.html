@@ -1,0 +1,73 @@
+<div class="container-fluid mat-elevation-z10">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Select options :</h3>
+            <label>
+                <input type="checkbox" [(ngModel)]="showNavigation" />
+                Show Navigation
+            </label>
+            <label>
+                <input type="checkbox" [(ngModel)]="isDisabled" />
+                Disable date picker
+            </label>
+            <label>
+                <input type="checkbox" [(ngModel)]="showWeeknumber" />
+                Show week number
+            </label>
+            <label>
+                <input type="checkbox" [(ngModel)]="isReadonly" />
+                Readonly date picker
+            </label>
+        </div>
+    </div>
+    <div class="row  mt-10" style="height: 500px;">
+        <div class="col-md-6">
+            <p>Data binding Template form</p>
+            <atlas-date-picker
+                (blur)="onBlur($event)"
+                (focus)="onFocus($event)"
+                (open)="onOpen($event)"
+                (close)="onClose($event)"
+                (valueChange)="onChange($event)"
+                [(ngModel)]="dateValue"
+                [navigation]="showNavigation"
+                [bottomView]="'month'"
+                [activeView]="'month'"
+                [topView]="'month'"
+                [disabled]="isDisabled"
+                [readOnly]="isReadonly"
+                [min]="min"
+                [max]="max"
+                [weekNumber]="showWeeknumber"
+            ></atlas-date-picker>
+            <p>Data reactive form</p>
+            <atlas-date-picker
+                [formControl]="dateFormValue"
+                (blur)="onBlur($event)"
+                (focus)="onFocus($event)"
+                (open)="onOpen($event)"
+                (close)="onClose($event)"
+                (valueChange)="onChange($event)"
+                [navigation]="showNavigation"
+                [bottomView]="'month'"
+                [activeView]="'month'"
+                [topView]="'month'"
+                [disabled]="isDisabled"
+                [readOnly]="isReadonly"
+                [min]="min"
+                [max]="max"
+                [weekNumber]="showWeeknumber"
+            ></atlas-date-picker>
+        </div>
+        <div class="col-md-6 mat-elevation-z10">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5>Events log</h5>
+                    <ul class="event-log">
+                        <li *ngFor="let event of events">{{ event }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

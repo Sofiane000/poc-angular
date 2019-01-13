@@ -17,6 +17,7 @@ import { AtlasSideNavContainerModule } from 'projects/atlas-web-components/src/l
 import { TreeTestService } from 'projects/atlas-web-components/src/lib/atlas-tree/components/tree-test.service';
 import {
     AtlasContentModule,
+    AtlasDatePickerModule,
     AtlasDialogContentModule,
     AtlasDialogFooterModule,
     AtlasDialogHeaderModule,
@@ -30,6 +31,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.module.routing';
 import { AtlasButtonTestComponent } from './atlas-button-test/atlas-button-test.component';
 import { AtlasCardTestComponent } from './atlas-card-test/atlas-card-test.component';
+import { AtlasDatePickerTestComponent } from './atlas-date-picker-test/atlas-date-picker-test.component';
 import { AtlasDialogFormTestComponent } from './atlas-dialog-form-test/atlas-dialog-form-test.component';
 import { AtlasDocViewerTestComponent } from './atlas-doc-viewer-test/atlas-doc-viewer-test.component';
 import { AtlasGridTestComponent } from './atlas-grid-test/atlas-grid-test.component';
@@ -51,6 +53,7 @@ import { ElementModule } from './element.module';
         AtlasDialogFormTestComponent,
         AtlasCardTestComponent,
         AtlasMultiSelectTestComponent,
+        AtlasDatePickerTestComponent,
     ],
     entryComponents: [AtlasDialogFormTestComponent],
     imports: [
@@ -76,6 +79,7 @@ import { ElementModule } from './element.module';
         AtlasDialogModule.forRoot(),
         MatRadioModule,
         AtlasDropdownModule,
+        AtlasDatePickerModule,
     ],
     providers: [TestService, TreeTestService],
     bootstrap: [AppComponent],

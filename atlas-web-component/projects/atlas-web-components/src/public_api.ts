@@ -6,6 +6,10 @@ export * from './lib/atlas-sidenav-container/components/atlas-sidenav-container.
 
 export * from './lib/atlas-dropdown/atlas-dropdown.module';
 export * from './lib/atlas-dropdown/components/atlas-multiselect/atlas-multiselect.component';
+
+export * from './lib/atlas-date-picker/atlas-date-picker.module';
+export * from './lib/atlas-date-picker/components/atlas-date-picker.component';
+
 export * from './lib/atlas-card/atlas-card.module';
 export * from './lib/atlas-card/components/atlas-card/atlas-card.component';
 export * from './lib/atlas-card/components/atlas-card-field/atlas-card-field.component';
