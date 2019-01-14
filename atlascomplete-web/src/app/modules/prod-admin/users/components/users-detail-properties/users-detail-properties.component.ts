@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PeopleService } from '../../services/people.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
     selector: 'app-users-detail-properties',
@@ -10,12 +10,12 @@ import { PeopleService } from '../../services/people.service';
 export class UsersDetailPropertiesComponent implements OnInit {
     userDetail: any;
 
-    constructor(private route: ActivatedRoute, private peopleService: PeopleService) {}
+    constructor(private route: ActivatedRoute, private userService: UserService) {}
 
     ngOnInit() {
         this.route.parent.params.subscribe((params) => {
             const loginSk = +params['id'];
-            this.peopleService
+            this.userService
                 .getUserById(loginSk)
                 .subscribe((userDetail) => (this.userDetail = userDetail));
         });

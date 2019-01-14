@@ -8,7 +8,6 @@ import {
     IColumnSetting,
 } from '@atlas/web-components';
 import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
-import { PeopleService } from '../../services/people.service';
 import { UserService } from '../../services/user.service';
 import { UsersDeleteDialogComponent } from '../users-dialog/users-delete-dialog.component';
 
@@ -70,7 +69,6 @@ export class UsersGridComponent implements OnInit, OnDestroy {
         mode: 'multiple',
     };
     columnsData: IColumnSetting[];
-    peopleServiceChild: PeopleService;
     userServiceChild: UserService;
     selectedKeys: any[] = [];
     selectBy = 'cf_LoginID';
@@ -81,12 +79,10 @@ export class UsersGridComponent implements OnInit, OnDestroy {
 
     constructor(
         private userService: UserService,
-        private peopleService: PeopleService,
         private router: Router,
         private dialog: MatDialog,
         private docViewer: DocumentViewerService
     ) {
-        this.peopleServiceChild = peopleService;
         this.userServiceChild = userService;
     }
 
@@ -215,6 +211,6 @@ export class UsersGridComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy(): void {
-        this.peopleService.rowId = '';
+        this.userService.rowId = '';
     }
 }

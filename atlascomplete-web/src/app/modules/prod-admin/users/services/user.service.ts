@@ -21,16 +21,27 @@ export class UserService extends AtlasGridService {
 
     fetch(state: any): Observable<any> {
         this.isLoading = true;
-        return this.getUsers().pipe(tap(() => (this.isLoading = false)));
+        return this.getUsers(state).pipe(tap(() => (this.isLoading = false)));
     }
 
-    getUsers() {
+    /*getUsers() {
         return this.dataAccess.get('', { pageSize: 2, restartRowId: '1' }).pipe(
             map((response) => {
                 // restart row is in response.restartRowId
                 return response.body.data;
             })
         );
+    }*/
+
+    getUsers(state) {
+        return this.dataAccess
+            .get('', { pageSize: state.pageSize, restartRowId: this.rowId ? this.rowId : '' })
+            .pipe(
+                map((response) => {
+                    this.rowId = response.restartRowId;
+                    return response.body.data;
+                })
+            );
     }
 
     getUserById(loginSk: number) {

@@ -25,7 +25,6 @@ import { UsersDialogComponent } from './components/users-dialog/user-dialog.comp
 import { UsersDeleteDialogComponent } from './components/users-dialog/users-delete-dialog.component';
 import { UsersDialogFormComponent } from './components/users-dialog/users-dialog-form.component';
 import { UsersGridComponent } from './components/users-grid/users-grid.component';
-import { PeopleService } from './services/people.service';
 import { UserService } from './services/user.service';
 import { UsersRoutingModule } from './users.routing.module';
 @NgModule({
@@ -58,7 +57,7 @@ import { UsersRoutingModule } from './users.routing.module';
         AtlasInputModule,
         AtlasToolbarModule,
     ],
-    providers: [UserService, PeopleService],
+    providers: [UserService],
 })
 export class UsersModule {
     constructor(private dataAccessFactory: DataAccessFactory) {
