@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AtlasSideBarComponent } from './components/atlas-sidebar.component';
 @NgModule({
     declarations: [AtlasSideBarComponent],
+    entryComponents: [AtlasSideBarComponent],
     imports: [CommonModule, RouterModule, MatIconModule, MatButtonModule, MatToolbarModule],
     exports: [RouterModule, AtlasSideBarComponent],
 })

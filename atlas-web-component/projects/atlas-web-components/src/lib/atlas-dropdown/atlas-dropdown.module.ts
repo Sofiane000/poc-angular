@@ -6,6 +6,7 @@ import { AtlasMultiselectComponent } from './components/atlas-multiselect/atlas-
 
 @NgModule({
     declarations: [AtlasMultiselectComponent],
+    entryComponents: [AtlasMultiselectComponent],
     imports: [CommonModule, DropDownsModule, FormsModule],
     exports: [AtlasMultiselectComponent],
 })

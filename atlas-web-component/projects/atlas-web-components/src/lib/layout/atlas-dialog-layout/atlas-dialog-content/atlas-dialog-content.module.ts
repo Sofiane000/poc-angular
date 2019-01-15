@@ -4,6 +4,7 @@ import { MatButtonModule, MatDialogModule, MatIconModule } from '@angular/materi
 import { AtlasDialogContentComponent } from './components/atlas-dialog-content.component';
 @NgModule({
     declarations: [AtlasDialogContentComponent],
+    entryComponents: [AtlasDialogContentComponent],
     imports: [CommonModule, MatDialogModule, MatIconModule, MatButtonModule],
     exports: [AtlasDialogContentComponent],
 })

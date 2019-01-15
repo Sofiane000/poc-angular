@@ -5,6 +5,7 @@ import { DatePickerModule } from '@progress/kendo-angular-dateinputs';
 import { AtlasDatePickerComponent } from './components/atlas-date-picker.component';
 @NgModule({
     declarations: [AtlasDatePickerComponent],
+    entryComponents: [AtlasDatePickerComponent],
     imports: [CommonModule, DatePickerModule, FormsModule],
     exports: [AtlasDatePickerComponent],
 })

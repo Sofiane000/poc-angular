@@ -7,6 +7,7 @@ import { AtlasMenuComponent } from './components/atlas-menu.component';
 
 @NgModule({
     declarations: [AtlasMenuComponent, AtlasMenuItemComponent],
+    entryComponents: [AtlasMenuComponent, AtlasMenuItemComponent],
     imports: [
         CommonModule,
         RouterModule,

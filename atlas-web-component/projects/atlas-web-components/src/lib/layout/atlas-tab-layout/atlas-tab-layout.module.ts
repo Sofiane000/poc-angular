@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AtlasTabLayoutComponent } from './components/atlas-tab-layout.component';
 @NgModule({
     declarations: [AtlasTabLayoutComponent],
+    entryComponents: [AtlasTabLayoutComponent],
     imports: [CommonModule, MatTabsModule, RouterModule],
     exports: [AtlasTabLayoutComponent, RouterModule],
 })

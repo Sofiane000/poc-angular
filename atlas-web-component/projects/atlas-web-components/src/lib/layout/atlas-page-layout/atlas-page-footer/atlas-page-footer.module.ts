@@ -4,6 +4,7 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { AtlasPageFooterComponent } from './components/atlas-page-footer.component';
 @NgModule({
     declarations: [AtlasPageFooterComponent],
+    entryComponents: [AtlasPageFooterComponent],
     imports: [CommonModule, ButtonsModule],
     exports: [AtlasPageFooterComponent],
 })
