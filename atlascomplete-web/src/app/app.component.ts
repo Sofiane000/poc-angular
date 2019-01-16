@@ -105,7 +105,11 @@ export class AppComponent implements OnInit, OnDestroy {
         } else {
             this.header.selectedOption = option;
             this.router.navigate([
-                { outlets: { sidebar: option === 'Tasks' ? 'tasks/mytasks' : 'document' } },
+                {
+                    outlets: {
+                        sidebar: option === 'Tasks' ? 'bpm/mytasks' : 'document',
+                    },
+                },
             ]);
         }
     }

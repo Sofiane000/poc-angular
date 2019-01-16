@@ -44,8 +44,6 @@
         "@angular/platform-browser": "^7.0.2",
         "@angular/platform-browser-dynamic": "^7.0.2",
         "@angular/router": "^7.0.2",
-        "@atlas/web-components": "file:../atlas-web-component/dist/atlas-web-components/atlas-web-components-0.0.1.tgz",
-        "@atlas/web-services": "file:../atlas-services/dist/atlas-web-services/atlas-web-services-0.0.1.tgz",
         "@webcomponents/custom-elements": "^1.2.1",
         "bootstrap": "^3.3.7",
         "core-js": "^2.5.4",
