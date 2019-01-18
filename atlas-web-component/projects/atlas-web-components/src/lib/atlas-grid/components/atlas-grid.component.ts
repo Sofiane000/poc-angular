@@ -26,7 +26,7 @@ import { TestService } from '../services/test-grid.service';
     templateUrl: './atlas-grid.component.html',
     styleUrls: ['./atlas-grid.component.scss'],
 })
-export class AtlasGridComponent implements OnInit, OnDestroy, AfterViewInit, IMultiRowComponent {
+export class AtlasGridComponent implements OnInit, OnDestroy, IMultiRowComponent {
     /**
      * Currently selected row index.
      */
@@ -144,6 +144,8 @@ export class AtlasGridComponent implements OnInit, OnDestroy, AfterViewInit, IMu
      * Data result that is binded to the grid data source.
      */
     @Input() gridDataResult: GridDataResult;
+
+    @Input() scrollable: any;
     /**
      * Event emitter for view details event.
      */
@@ -189,27 +191,9 @@ export class AtlasGridComponent implements OnInit, OnDestroy, AfterViewInit, IMu
     /**
      * @ignore
      */
-    ngAfterViewInit() {
-        const scrolldiv = document.getElementsByClassName('k-grid-content')[0];
-        if (scrolldiv) {
-            scrolldiv.addEventListener('scroll', this.loadMoreData.bind(this));
-        }
-    }
-
-    /**
-     * @ignore
-     */
-    loadMoreData(event) {
-        // adds more data and passed grid data.
-        const scrollAdjustment = 10;
-        if (
-            event.target.scrollTop !== 0 &&
-            event.target.clientHeight + event.target.scrollTop + scrollAdjustment >=
-                event.target.scrollHeight
-        ) {
-            if (this.gridService.rowId) {
-                this.gridService.query(this.state);
-            }
+    loadMoreData() {
+        if (this.gridService.rowId) {
+            this.gridService.query(this.state);
         }
     }
 
