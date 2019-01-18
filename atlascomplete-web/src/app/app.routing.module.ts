@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService, LoginGuardService } from '@atlas/web-services';
-import { BpmModule } from 'projects/bpm/bpm.module';
-import { DmsModule } from 'projects/dms/dms.module';
-import { IdmModule } from 'projects/idm/idm.module';
+import { BpmModule } from 'projects/bpm/src/lib/bpm.module';
+import { DmsModule } from 'projects/dms/src/lib/dms.module';
+import { IdmModule } from 'projects/idm/src/lib/idm.module';
 import { HomeComponent } from './modules/auth/components/home/home.component';
 import { LoginComponent } from './modules/auth/components/login/login.component';
 

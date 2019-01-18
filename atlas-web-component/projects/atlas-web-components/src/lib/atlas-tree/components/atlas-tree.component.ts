@@ -19,6 +19,7 @@ export class AtlasTreeComponent implements OnInit, IMultiRowComponent {
     canEdit: boolean;
     canDelete: boolean;
     expandedKeys: any[] = ['0'];
+    @Input()
     selectedKeys: [] = [];
     contextItem: any;
     treeServiceSubscription: Subscription;

@@ -11,6 +11,14 @@
         "experimentalDecorators": true,
         "target": "es5",
         "typeRoots": ["node_modules/@types"],
-        "lib": ["es2018", "dom"]
+        "lib": ["es2018", "dom"],
+        "paths": {
+            "idm": ["dist/idm"],
+            "idm/*": ["dist/idm/*"],
+            "bpm": ["dist/bpm"],
+            "bpm/*": ["dist/bpm/*"],
+            "dms": ["dist/dms"],
+            "dms/*": ["dist/dms/*"]
+        }
     }
 }
