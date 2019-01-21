@@ -193,6 +193,8 @@ mat-label {
     opacity: 0.87;
     background-color: $color-white;
     margin-top: 12px;
+    overflow-y: scroll;
+    height: 550px;
 }
 
 .mat-menu-item {
@@ -242,6 +244,10 @@ mat-label {
 .atlas-page-header {
     height: $atlas-page-header-height;
     padding: 12px 0 0 16px;
+}
+
+.mat-drawer-content.mat-sidenav-content {
+    overflow: hidden;
 }
 
 @media only screen and (min-width: 375px) and (max-width: 812px) and (-webkit-device-pixel-ratio: 3) {
