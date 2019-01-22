@@ -18,9 +18,12 @@ export class AtlasTreeComponent implements OnInit, IMultiRowComponent {
     canAdd: boolean;
     canEdit: boolean;
     canDelete: boolean;
+    @Input()
     expandedKeys: any[] = ['0'];
     @Input()
     selectedKeys: [] = [];
+    @Input()
+    selectBy: any;
     contextItem: any;
     treeServiceSubscription: Subscription;
     @ViewChild('treemenu')
@@ -44,8 +47,7 @@ export class AtlasTreeComponent implements OnInit, IMultiRowComponent {
     @Input() selectable: Selectable;
     @Input() treeViewService: AtlasGridService;
 
-    @Output() remove: EventEmitter<any> = new EventEmitter<any>();
-    @Output() edit: EventEmitter<any> = new EventEmitter<any>();
+    @Output() dblClick: EventEmitter<any> = new EventEmitter<any>();
     @Output() addMenuSelect: EventEmitter<any> = new EventEmitter<any>();
     @Output() refresh: EventEmitter<any> = new EventEmitter<any>();
     @Output() selectionChange: EventEmitter<MultiRowSelection> = new EventEmitter<
@@ -69,6 +71,12 @@ export class AtlasTreeComponent implements OnInit, IMultiRowComponent {
         this.contextItem = event.item.dataItem;
     }
 
+    dblClickHandler(event) {
+        const originalEvent = event.originalEvent;
+        originalEvent.preventDefault();
+        this.dblClick.emit(event.item.dataItem);
+    }
+
     onAddSelect({ item }): void {
         this.addMenuSelect.emit(item);
     }
@@ -85,10 +93,6 @@ export class AtlasTreeComponent implements OnInit, IMultiRowComponent {
                 selectedRowIdx: event.index,
             });
         }, 100);
-    }
-
-    selectBy(e) {
-        return e.dataItem;
     }
 
     iconClass(dataItem): any {

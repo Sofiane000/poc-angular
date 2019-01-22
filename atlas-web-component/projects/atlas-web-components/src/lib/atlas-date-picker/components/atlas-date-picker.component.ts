@@ -1,5 +1,6 @@
 import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { PopupSettings } from '@progress/kendo-angular-dropdowns';
 
 const noop = () => {};
 
@@ -155,6 +156,8 @@ export class AtlasDatePickerComponent implements OnInit, ControlValueAccessor {
     @Input()
     weekNumber: boolean;
 
+    @Input()
+    popupSettings: PopupSettings;
     @Output()
     blur: EventEmitter<any> = new EventEmitter();
     @Output()

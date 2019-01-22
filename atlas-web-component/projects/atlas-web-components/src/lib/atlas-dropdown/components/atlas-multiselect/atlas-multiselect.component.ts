@@ -1,13 +1,33 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-
+import {
+    Component,
+    EventEmitter,
+    forwardRef,
+    Input,
+    OnInit,
+    Output,
+    ViewChild,
+} from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+const noop = () => {};
 @Component({
     selector: 'atlas-multiselect',
     templateUrl: './atlas-multiselect.component.html',
     styleUrls: ['./atlas-multiselect.component.scss'],
-    providers: [],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => AtlasMultiselectComponent),
+            multi: true,
+        },
+    ],
 })
-export class AtlasMultiselectComponent implements OnInit {
+export class AtlasMultiselectComponent implements OnInit, ControlValueAccessor {
     @ViewChild('list') list;
+
+    // Placeholders for the callbacks which are later provided
+    // by the Control Value Accessor
+    private onTouchedCallback: () => void = noop;
+    private onChangeCallback: (_: any) => void = noop;
 
     // get accessor
     get value(): any {
@@ -18,6 +38,7 @@ export class AtlasMultiselectComponent implements OnInit {
     set value(v: any) {
         if (v !== this.innerValue) {
             this.innerValue = v;
+            this.onChangeCallback(v);
         }
     }
 
@@ -129,6 +150,8 @@ export class AtlasMultiselectComponent implements OnInit {
     @Output()
     valueChange: EventEmitter<any> = new EventEmitter<any>();
 
+    @Output()
+    blur: EventEmitter<any> = new EventEmitter();
     // The internal data model
     private innerValue: any[] = [];
 
@@ -138,5 +161,31 @@ export class AtlasMultiselectComponent implements OnInit {
 
     valueChangeHandler(value: any) {
         this.valueChange.emit(value);
+    }
+
+    // From ControlValueAccessor interface
+    writeValue(value: any) {
+        if (value !== this.innerValue) {
+            this.innerValue = value;
+        }
+    }
+
+    onBlurHandler(event) {
+        this.blur.emit(event);
+        this.onTouchedCallback();
+    }
+
+    // From ControlValueAccessor interface
+    registerOnChange(fn: any) {
+        this.onChangeCallback = fn;
+    }
+
+    // From ControlValueAccessor interface
+    registerOnTouched(fn: any) {
+        this.onTouchedCallback = fn;
+    }
+
+    setDisabledState?(isDisabled: boolean): void {
+        throw new Error('Method not implemented.');
     }
 }

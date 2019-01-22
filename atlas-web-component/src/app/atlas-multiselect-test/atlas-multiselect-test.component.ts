@@ -23,6 +23,7 @@ export class AtlasMultiSelectTestComponent implements OnInit, AfterViewInit {
     showClear: boolean;
     isDisabled: boolean;
     isReadOnly: boolean;
+    selectedValue: string;
 
     constructor() {}
 
