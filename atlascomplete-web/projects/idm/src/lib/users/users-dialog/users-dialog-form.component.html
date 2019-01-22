@@ -33,6 +33,16 @@
         <atlas-input label="Email" formControlName="EmailAddr" width="100%" required></atlas-input>
         <atlas-input label="Middle Name" formControlName="MiddleName" width="100%"></atlas-input>
         <atlas-input label="Last Name" formControlName="LastName" width="100%"></atlas-input>
+        <atlas-multiselect
+            [listItems]="statuses"
+            (valueChange)="valueChangeHandler($event)"
+            [filterable]="true"
+            [summaryValue]="1"
+            [clearButton]="true"
+            [labelText]="'Status'"
+            [listHeight]="150"
+            formControlName="RecStat"
+        ></atlas-multiselect>
     </form>
 </atlas-dialog-content>
 <atlas-dialog-footer

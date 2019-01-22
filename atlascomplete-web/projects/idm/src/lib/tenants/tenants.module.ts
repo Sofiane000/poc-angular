@@ -2,10 +2,12 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
+    AtlasDatePickerModule,
     AtlasDialogContentModule,
     AtlasDialogFooterModule,
     AtlasDialogHeaderModule,
     AtlasDialogModule,
+    AtlasDropdownModule,
     AtlasInputModule,
     AtlasPageContentModule,
     AtlasPageFooterModule,
@@ -45,6 +47,8 @@ import { TenantsRoutingModule } from './tenants.routing.module';
         AtlasDialogFooterModule,
         AtlasDialogContentModule,
         AtlasToolbarModule,
+        AtlasDatePickerModule,
+        AtlasDropdownModule,
         SharedModule.forRoot(),
     ],
     providers: [TenantsService],

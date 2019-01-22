@@ -7,6 +7,7 @@ import {
     AtlasDialogFooterModule,
     AtlasDialogHeaderModule,
     AtlasDialogModule,
+    AtlasDropdownModule,
     AtlasGridModule,
     AtlasInputModule,
     AtlasPageContentModule,
@@ -56,6 +57,7 @@ import { UsersRoutingModule } from './users.routing.module';
         AtlasDialogModule.forRoot(),
         AtlasInputModule,
         AtlasToolbarModule,
+        AtlasDropdownModule,
     ],
     providers: [UserService],
 })

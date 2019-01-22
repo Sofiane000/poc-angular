@@ -49,6 +49,8 @@ export class TenantsDialogComponent extends ComponentCanDeactivate implements On
         }
         this.dialogRef = this.dialog.open(TenantsDialogFormComponent, this.dialogConfig);
         if (!isNew) {
+            this.selectedTenant.EfctvEndDt = new Date(this.selectedTenant.EfctvEndDt);
+            this.selectedTenant.EfctvStartDt = new Date(this.selectedTenant.EfctvStartDt);
             this.dialogRef.componentInstance.model = this.selectedTenant;
         }
         this.dialogRef.componentInstance.isNew = isNew;

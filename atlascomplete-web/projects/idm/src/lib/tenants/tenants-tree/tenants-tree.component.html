@@ -27,6 +27,9 @@
                 (refresh)="refresh()"
                 (selectionChange)="onSelectionChange()"
                 [treeViewService]="tenantService"
+                [selectedKeys]="keys"
+                [selectable]="true"
+                (dblClick)="dblClickHandler($event)"
             ></atlas-tree>
         </div>
     </div>

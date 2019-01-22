@@ -201,6 +201,19 @@ mat-label {
     font-weight: $atlas-menu-item-font-weight;
 }
 
+.multi-select p {
+    margin: 0;
+}
+
+.k-datepicker {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.k-multiselect {
+    width: 100%;
+}
+
 .user-grid {
     background-color: $color-white;
 }

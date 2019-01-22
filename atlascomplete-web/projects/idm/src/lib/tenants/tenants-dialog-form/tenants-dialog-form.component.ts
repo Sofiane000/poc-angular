@@ -10,11 +10,8 @@ import { MatDialogRef } from '@angular/material';
 export class TenantsDialogFormComponent {
     form: FormGroup = new FormGroup({
         TenantTaxnmyName: new FormControl('', Validators.required),
-        EfctvStartDt: new FormControl(
-            new Date().toISOString().substring(0, 10),
-            Validators.required
-        ),
-        EfctvEndDt: new FormControl(new Date().toISOString().substring(0, 10), Validators.required),
+        EfctvStartDt: new FormControl(new Date(), Validators.required),
+        EfctvEndDt: new FormControl(new Date(), Validators.required),
         RootDomain: new FormControl('', Validators.required),
     });
 

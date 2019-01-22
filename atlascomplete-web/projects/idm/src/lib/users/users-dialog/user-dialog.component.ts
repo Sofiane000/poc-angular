@@ -18,7 +18,7 @@ export class UsersDialogComponent extends ComponentCanDeactivate implements OnDe
         disableClose: true,
         width: '800px',
         maxWidth: '850px',
-        height: '500px',
+        height: '550px',
         closeOnNavigation: false,
         panelClass: 'custom-dialog-container',
     };
@@ -46,7 +46,7 @@ export class UsersDialogComponent extends ComponentCanDeactivate implements OnDe
     openDialog() {
         const isNew = this.selectedUser ? false : true;
         if (!isNew) {
-            this.dialogConfig.height = '569px';
+            this.dialogConfig.height = '620px';
         }
         this.dialogRef = this.dialog.open(UsersDialogFormComponent, this.dialogConfig);
         if (!isNew) {

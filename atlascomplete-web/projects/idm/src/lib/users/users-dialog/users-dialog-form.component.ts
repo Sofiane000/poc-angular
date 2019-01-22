@@ -15,8 +15,9 @@ export class UsersDialogFormComponent {
         FirstName: new FormControl('', Validators.required),
         MiddleName: new FormControl(''),
         LastName: new FormControl(''),
+        RecStat: new FormControl([]),
     });
-
+    statuses: string[] = ['Active', 'Internal'];
     @Input() public isNew = false;
     hasChanges: boolean;
 
@@ -33,4 +34,6 @@ export class UsersDialogFormComponent {
     closeHandler(actions) {
         this.dialogRef.close();
     }
+
+    valueChangeHandler(event) {}
 }

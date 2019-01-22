@@ -11,20 +11,27 @@
             width="100%"
             required
         ></atlas-input>
-        <atlas-input
-            [showCloseIcon]="false"
-            type="date"
-            label="Effective Start Date"
+        <atlas-date-picker
             formControlName="EfctvStartDt"
-            width="100%"
-        ></atlas-input>
-        <atlas-input
-            [showCloseIcon]="false"
-            type="date"
-            label="Effective End Date"
-            formControlName="EfctvStartDt"
-            width="100%"
-        ></atlas-input>
+            [navigation]="true"
+            [bottomView]="'month'"
+            [activeView]="'month'"
+            [topView]="'century'"
+            [focusedDate]="form.get('EfctvStartDt')?.value"
+            [placeholder]="'Effective Start Date'"
+        ></atlas-date-picker>
+
+        <atlas-date-picker
+            formControlName="EfctvEndDt"
+            [navigation]="true"
+            [bottomView]="'month'"
+            [activeView]="'month'"
+            [topView]="'century'"
+            [weekNumber]="true"
+            [focusedDate]="form.get('EfctvEndDt')?.value"
+            [placeholder]="'Effective End Date'"
+        ></atlas-date-picker>
+
         <atlas-input
             label="Root Domain"
             formControlName="RootDomain"

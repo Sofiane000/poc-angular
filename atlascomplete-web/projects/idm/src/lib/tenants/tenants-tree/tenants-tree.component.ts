@@ -24,6 +24,7 @@ export class TenantsTreeComponent implements OnInit, AfterViewChecked {
     treeItems: any[] = [];
     isSibling: boolean;
     buttons: IAtlasToolbarButton[] = [];
+    keys: string[] = ['0'];
 
     constructor(
         private dialogService: MatDialog,
@@ -73,6 +74,10 @@ export class TenantsTreeComponent implements OnInit, AfterViewChecked {
             this.isSibling = false;
             this.showAddEditDialog(null);
         }
+    }
+
+    dblClickHandler(tenantObj) {
+        this.showAddEditDialog(tenantObj);
     }
 
     removeItem(dataItem: any, items: any[]): void {
