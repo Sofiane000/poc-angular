@@ -201,7 +201,7 @@ export class TenantsTreeComponent implements OnInit, AfterViewChecked {
         }, []);
     }
 
-    onSelectionChange() {}
+    onSelectionChange(event) {}
 
     private contains(textFields: string, term: string): boolean {
         return textFields.toLowerCase().indexOf(term.toLowerCase()) >= 0;

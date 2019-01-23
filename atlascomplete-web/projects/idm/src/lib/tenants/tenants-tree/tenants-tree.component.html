@@ -25,7 +25,7 @@
                 [menuItems]="menuItems"
                 (addMenuSelect)="addHandler($event)"
                 (refresh)="refresh()"
-                (selectionChange)="onSelectionChange()"
+                (selectionChange)="onSelectionChange($event)"
                 [treeViewService]="tenantService"
                 [selectedKeys]="keys"
                 [selectable]="true"
