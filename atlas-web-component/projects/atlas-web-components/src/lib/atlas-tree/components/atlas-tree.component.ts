@@ -91,6 +91,7 @@ export class AtlasTreeComponent implements OnInit, IMultiRowComponent {
             this.selectionChange.emit({
                 selectedRows: this.selectedKeys,
                 selectedRowIdx: event.index,
+                selectedItem: event.dataItem,
             });
         }, 100);
     }

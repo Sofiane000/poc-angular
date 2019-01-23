@@ -4,6 +4,7 @@ import { SelectableSettings } from '@progress/kendo-angular-grid';
 export class MultiRowSelection {
     selectedRows: any[];
     selectedRowIdx: number;
+    selectedItem?: any;
 }
 
 // tslint:disable-next-line
