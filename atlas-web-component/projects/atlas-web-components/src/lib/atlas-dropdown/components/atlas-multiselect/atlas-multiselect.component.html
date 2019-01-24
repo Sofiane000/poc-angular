@@ -1,33 +1,31 @@
 <ng-container *ngIf="!showSummary">
     <div class="multi-select">
-        <p *ngIf="labelText">{{ labelText }}</p>
-        <kendo-multiselect
-            #list
-            [data]="listItems"
-            [textField]="textField"
-            [valueField]="valueField"
-            [placeholder]="placeholder"
-            [valuePrimitive]="valuePrimitive"
-            [(ngModel)]="value"
-            [autoClose]="autoClose"
-            [clearButton]="clearButton"
-            [disabled]="disabled"
-            [loading]="loading"
-            [readonly]="readonly"
-            (valueChange)="valueChangeHandler($event)"
-            [filterable]="filterable"
-            [popupSettings]="popupSettings"
-            [listHeight]="listHeight"
-            (onBlur)="onBlurHandler($event)"
-        ></kendo-multiselect>
+        <kendo-textbox-container [floatingLabel]="floatingLabel">
+            <kendo-multiselect
+                #list
+                [data]="listItems"
+                [textField]="textField"
+                [valueField]="valueField"
+                [placeholder]="placeholder"
+                [valuePrimitive]="valuePrimitive"
+                [(ngModel)]="value"
+                [autoClose]="autoClose"
+                [clearButton]="clearButton"
+                [disabled]="disabled"
+                [loading]="loading"
+                [readonly]="readonly"
+                (valueChange)="valueChangeHandler($event)"
+                [filterable]="filterable"
+                [popupSettings]="popupSettings"
+                [listHeight]="listHeight"
+                (onBlur)="onBlurHandler($event)"
+            ></kendo-multiselect>
+        </kendo-textbox-container>
     </div>
 </ng-container>
 <ng-container *ngIf="showSummary">
     <div class="row">
-        <div class="col-md-2">
-            <label>{{ labelText }}</label>
-        </div>
-        <div class="col-md-10">
+        <kendo-textbox-container [floatingLabel]="floatingLabel">
             <kendo-multiselect
                 #list
                 [data]="listItems"
@@ -51,6 +49,6 @@
                     {{ dataItems.length }} more selected
                 </ng-template>
             </kendo-multiselect>
-        </div>
+        </kendo-textbox-container>
     </div>
 </ng-container>

@@ -34,12 +34,13 @@
         <atlas-input label="Middle Name" formControlName="MiddleName" width="100%"></atlas-input>
         <atlas-input label="Last Name" formControlName="LastName" width="100%"></atlas-input>
         <atlas-multiselect
+            placeholder=""
+            floatingLabel="Status"
             [listItems]="statuses"
             (valueChange)="valueChangeHandler($event)"
             [filterable]="true"
             [summaryValue]="1"
             [clearButton]="true"
-            [labelText]="'Status'"
             [listHeight]="150"
             formControlName="RecStat"
         ></atlas-multiselect>

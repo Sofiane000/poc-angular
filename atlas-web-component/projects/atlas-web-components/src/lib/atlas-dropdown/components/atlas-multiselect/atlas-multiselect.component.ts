@@ -61,6 +61,12 @@ export class AtlasMultiselectComponent implements OnInit, ControlValueAccessor {
     textField: string;
 
     /**
+     * Specifies the label
+     */
+    @Input()
+    floatingLabel: string;
+
+    /**
      * Sets the data item field that represents the item value. If the data contains only primitive values, do not define it.
      */
     @Input()
