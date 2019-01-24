@@ -75,6 +75,12 @@ export class AtlasDatePickerComponent implements OnInit, ControlValueAccessor {
     floatingLabel: string;
 
     /**
+     * Specifies width
+     */
+    @Input()
+    width: string;
+
+    /**
      * Sets or gets the navigation property of the Calendar and determines whether the navigation side-bar is displayed.
      */
     @Input()

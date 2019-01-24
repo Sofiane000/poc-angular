@@ -1,6 +1,6 @@
 <ng-container *ngIf="!showSummary">
     <div class="multi-select">
-        <kendo-textbox-container [floatingLabel]="floatingLabel">
+        <kendo-textbox-container [floatingLabel]="floatingLabel" [style.width]="width">
             <kendo-multiselect
                 #list
                 [data]="listItems"
@@ -25,7 +25,7 @@
 </ng-container>
 <ng-container *ngIf="showSummary">
     <div class="row">
-        <kendo-textbox-container [floatingLabel]="floatingLabel">
+        <kendo-textbox-container [floatingLabel]="floatingLabel" [style.width]="width">
             <kendo-multiselect
                 #list
                 [data]="listItems"
