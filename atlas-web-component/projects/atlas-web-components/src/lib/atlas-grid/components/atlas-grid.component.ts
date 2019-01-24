@@ -26,7 +26,16 @@ import { TestService } from '../services/test-grid.service';
     templateUrl: './atlas-grid.component.html',
     styleUrls: ['./atlas-grid.component.scss'],
 })
-export class AtlasGridComponent implements OnInit, OnDestroy, IMultiRowComponent {
+export class AtlasGridComponent implements OnInit, OnDestroy, IMultiRowComponent, AfterViewInit {
+    selectedItem: any;
+
+    /**
+     * @ignore
+     */
+
+    constructor() {
+        this.allData = this.allData.bind(this);
+    }
     /**
      * Currently selected row index.
      */
@@ -156,16 +165,11 @@ export class AtlasGridComponent implements OnInit, OnDestroy, IMultiRowComponent
     @Output() selectionChange: EventEmitter<MultiRowSelection> = new EventEmitter<
         MultiRowSelection
     >();
+    @Output() dblClick: EventEmitter<any> = new EventEmitter<any>();
 
     private gridServiceSubscription: Subscription;
 
-    /**
-     * @ignore
-     */
-
-    constructor() {
-        this.allData = this.allData.bind(this);
-    }
+    ngAfterViewInit(): void {}
 
     /**
      * @ignore
@@ -243,6 +247,7 @@ export class AtlasGridComponent implements OnInit, OnDestroy, IMultiRowComponent
      */
     onSelectionChange(e) {
         this.selectedRowIndex = e.selectedRows.length ? e.index : undefined;
+        this.selectedItem = e.selectedRows[0].dataItem;
         this.selectionChange.emit({ selectedRows: e.selectedRows, selectedRowIdx: e.index });
     }
 
@@ -273,5 +278,9 @@ export class AtlasGridComponent implements OnInit, OnDestroy, IMultiRowComponent
      */
     ngOnDestroy() {
         this.gridServiceSubscription.unsubscribe();
+    }
+
+    doubleClickHandler(event) {
+        this.dblClick.emit(this.selectedItem);
     }
 }

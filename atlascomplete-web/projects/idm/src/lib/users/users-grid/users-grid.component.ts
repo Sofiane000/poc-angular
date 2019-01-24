@@ -62,7 +62,7 @@ export class UsersGridComponent implements OnInit, OnDestroy {
     selectableSettings: any = {
         enabled: true,
         mode: 'single',
-        checkboxOnly: true,
+        checkboxOnly: false,
     };
     sortable: any = {
         allowUnsort: true,
@@ -206,6 +206,10 @@ export class UsersGridComponent implements OnInit, OnDestroy {
         setTimeout(() => {
             this.buttons[0].isDisabled = this.atlasGrid.selectedKeys.length <= 0 ? true : false;
         }, 100);
+    }
+
+    dblClickHandler(obj) {
+        this.showAddEditDialog(obj);
     }
 
     ngOnDestroy(): void {

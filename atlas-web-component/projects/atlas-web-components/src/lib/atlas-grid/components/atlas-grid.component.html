@@ -21,6 +21,7 @@
     [rowHeight]="rowHeight"
     (scrollBottom)="loadMoreData()"
     [scrollable]="scrollable"
+    (dblclick)="doubleClickHandler($event)"
 >
     <kendo-grid-checkbox-column
         *ngIf="selectable?.enabled"
