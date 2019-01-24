@@ -247,7 +247,7 @@ export class AtlasGridComponent implements OnInit, OnDestroy, IMultiRowComponent
      */
     onSelectionChange(e) {
         this.selectedRowIndex = e.selectedRows.length ? e.index : undefined;
-        this.selectedItem = e.selectedRows[0].dataItem;
+        this.selectedItem = e.selectedRows[0] ? e.selectedRows[0].dataItem : null;
         this.selectionChange.emit({ selectedRows: e.selectedRows, selectedRowIdx: e.index });
     }
 
