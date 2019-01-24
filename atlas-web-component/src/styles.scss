@@ -22,8 +22,29 @@ $fa-font-path: 'node_modules/font-awesome/fonts';
     margin-top: 40px;
 }
 
-// container
+// sidebar
 
 .right-sidebar.sideBarMini {
     width: 50px !important;
+    animation: showSidebarMini 0.5s;
+}
+
+@keyframes showSidebarMini {
+    from {
+        width: 0px;
+    }
+
+    to {
+        width: 50px !important;
+    }
+}
+
+.right-sidebar.sideBarMini .mat-drawer-inner-container {
+    overflow: hidden;
+}
+
+// spacer
+
+.spacer {
+    flex: 1;
 }

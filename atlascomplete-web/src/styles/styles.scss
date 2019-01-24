@@ -377,3 +377,11 @@ mat-label {
         white-space: inherit;
     }
 }
+
+.sideBarMini .side-bar-toolbar {
+    height: calc(100% - 50px) !important;
+}
+
+.spacer {
+    flex: 1;
+}

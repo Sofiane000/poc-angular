@@ -1,45 +1,80 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 @Component({
     selector: 'atlas-sidebar',
+
     templateUrl: './atlas-sidebar.component.html',
+
     styleUrls: ['./atlas-sidebar.component.scss'],
+
     animations: [
         // Each unique animation requires its own trigger. The first argument of the trigger function is the name
-        trigger('rotatedState', [
+
+        trigger('toolbarSmallState', [
             state(
                 'rotated',
+
                 style({
-                    transform: 'rotate(90deg)',
-                    'transform-origin': 'left top',
-                    position: 'absolute',
-                    top: '0',
-                    left: '87%',
-                    'white-space': 'nowrap',
-                    width: '630px',
+                    display: 'flex',
+
+                    height: '100%',
                 })
             ),
         ]),
-        trigger('iconRotate', [
-            state('default', style({ transform: 'rotate(0deg)' })),
+
+        trigger('toolbarRowSmallState', [
             state(
                 'rotated',
+
                 style({
-                    transform: 'rotate(-90deg)',
+                    display: 'flex',
+
+                    'flex-direction': 'column',
+
+                    flex: 1,
+
+                    'margin-top': '15px',
                 })
             ),
         ]),
-        trigger('arrowRotate', [
-            state(
-                'default',
-                style({
-                    transform: 'rotate(0deg)',
-                })
-            ),
+
+        trigger('sidebarRowSmallState', [
             state(
                 'rotated',
+
                 style({
-                    transform: 'rotate(90deg)',
+                    display: 'flex',
+
+                    'flex-direction': 'column',
+
+                    'align-items': 'start',
+
+                    flex: 1,
+                })
+            ),
+        ]),
+
+        trigger('sidebarButtonSmallState', [
+            state(
+                'rotated',
+
+                style({
+                    transform: 'scaleX(-1)',
+
+                    'margin-left': '-11px',
+                })
+            ),
+        ]),
+
+        trigger('taskHeaderSmallState', [
+            state(
+                'rotated',
+
+                style({
+                    margin: '15px 0px 0px -5px',
+
+                    'writing-mode': 'vertical-lr',
                 })
             ),
         ]),
@@ -47,8 +82,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class AtlasSideBarComponent {
     state = 'default';
+
     @Input() headerName: string;
+
     @Output() toggleSideBar: EventEmitter<any> = new EventEmitter<any>();
+
     @Output() toggleMiniMode: EventEmitter<any> = new EventEmitter<any>();
 
     isOpened: boolean;
@@ -59,6 +97,7 @@ export class AtlasSideBarComponent {
 
     rotate() {
         this.state = this.state === 'default' ? 'rotated' : 'default';
+
         if (this.state === 'default') {
             this.toggleMiniMode.emit(false);
         } else {

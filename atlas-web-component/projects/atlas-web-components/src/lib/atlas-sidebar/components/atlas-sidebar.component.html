@@ -2,33 +2,32 @@
     [class.side-bar-width]="state === 'rotated'"
     class="side-bar-toolbar"
     color="primary"
-    [@rotatedState]="state"
+    [@toolbarSmallState]="state"
 >
-    <mat-toolbar-row>
-        <div class="sidebar-row">
+    <mat-toolbar-row [@toolbarRowSmallState]="state">
+        <div class="sidebar-row" [@sidebarRowSmallState]="state">
             <span class="mat-button-wrapper">
-                <mat-icon
-                    fontSet="fontawesome"
-                    [fontIcon]="getIconClass()"
-                    [@iconRotate]="state"
-                ></mat-icon>
+                <mat-icon fontSet="fontawesome" [fontIcon]="getIconClass()"></mat-icon>
             </span>
-            <span class="tasks-header">{{ headerName }}</span>
-            <div class="sidebar-button">
+
+            <div class="tasks-header" [@taskHeaderSmallState]="state">{{ headerName }}</div>
+
+            <div class="spacer"></div>
+
+            <div class="sidebar-button" [@sidebarButtonSmallState]="state">
                 <button
                     type="button"
                     aria-label="Toggle sidebar"
                     mat-icon-button
                     (click)="rotate()"
                 >
-                    <mat-icon aria-label="Side bar toggle icon" [@arrowRotate]="state">
-                        keyboard_arrow_right
-                    </mat-icon>
+                    <mat-icon aria-label="Side bar toggle icon">keyboard_arrow_right</mat-icon>
                 </button>
             </div>
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
+
 <div class="side-bar-body" [style.display]="state == 'default' ? '' : 'none'">
     <router-outlet name="sidebar"></router-outlet>
 </div>
