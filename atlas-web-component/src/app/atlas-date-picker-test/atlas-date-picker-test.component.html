@@ -24,6 +24,8 @@
         <div class="col-md-6">
             <p>Data binding Template form</p>
             <atlas-date-picker
+                placeholder=""
+                floatingLabel="Effective Start Date"
                 (blur)="onBlur($event)"
                 (focus)="onFocus($event)"
                 (open)="onOpen($event)"
@@ -43,7 +45,9 @@
             ></atlas-date-picker>
             <p>Data reactive form</p>
             <atlas-date-picker
-                [formControl]="dateFormValue"
+                placeholder=""
+                floatingLabel="Effective Start Date"
+                [formControl]="dateValue"
                 (blur)="onBlur($event)"
                 (focus)="onFocus($event)"
                 (open)="onOpen($event)"

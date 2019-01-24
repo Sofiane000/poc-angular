@@ -8,7 +8,7 @@ import { IntlService } from '@progress/kendo-angular-intl';
     styleUrls: ['./atlas-date-picker-test.component.scss'],
 })
 export class AtlasDatePickerTestComponent implements OnInit {
-    dateValue: Date = new Date();
+    dateValue: Date;
     events: any[] = [];
     showNavigation = true;
     isDisabled: boolean;
@@ -17,6 +17,7 @@ export class AtlasDatePickerTestComponent implements OnInit {
     min: Date = new Date(2019, 1, 2);
     max: Date = new Date(2019, 12, 31);
     dateFormValue = new FormControl(new Date());
+    floatingLabel: string;
 
     constructor(private intl: IntlService) {}
 
