@@ -54,7 +54,12 @@ export class UsersDialogComponent extends ComponentCanDeactivate implements OnDe
         }
         this.dialogRef.componentInstance.isNew = isNew;
         this.dialogRef.afterClosed().subscribe((result) => {
-            this.userService.selectedUser = null;
+            if (result === 'save') {
+                this.userService.saveUser({
+                    isAdd: isNew,
+                    data: this.dialogRef.componentInstance.editForm.value,
+                });
+            }
             this.router.navigate(['idm/users']);
         });
     }

@@ -3,6 +3,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 import { Router } from '@angular/router';
 import {
     AtlasGridComponent,
+    AtlasToolbarComponent,
     ButtonAction,
     IAtlasToolbarButton,
     IColumnSetting,
@@ -76,6 +77,8 @@ export class UsersGridComponent implements OnInit, OnDestroy {
     public containerRef: ViewContainerRef;
     @ViewChild(AtlasGridComponent)
     public atlasGrid: AtlasGridComponent;
+    @ViewChild(AtlasToolbarComponent)
+    toolbar: AtlasToolbarComponent;
 
     constructor(
         private userService: UserService,
@@ -84,6 +87,9 @@ export class UsersGridComponent implements OnInit, OnDestroy {
         private docViewer: DocumentViewerService
     ) {
         this.userServiceChild = userService;
+        this.userService.getSaveSubject().subscribe((response) => {
+            this.saveUserFromDialog(response.isAdd, response.data);
+        });
     }
 
     ngOnInit() {
@@ -156,6 +162,21 @@ export class UsersGridComponent implements OnInit, OnDestroy {
         this.router.navigate(['idm/users/action/' + (isNew ? 'add' : 'edit/' + dataItem.LoginSK)]);
     }
 
+    saveUserFromDialog(isAdd, data) {
+        if (isAdd) {
+            this.atlasGrid.data.push(data);
+        } else {
+            const index = this.atlasGrid.data.findIndex(
+                (item) => (item.cf_LoginID = data.cf_LoginID)
+            );
+            if (index !== -1) {
+                this.atlasGrid.data[index] = { ...data };
+            }
+        }
+        this.atlasGrid.selectedKeys = [];
+        this.toolbar.onSelectionChanged(false);
+    }
+
     removeHandler(dataItem?: any) {
         const dialogConfig = new MatDialogConfig();
         dialogConfig.disableClose = true;
@@ -168,7 +189,7 @@ export class UsersGridComponent implements OnInit, OnDestroy {
             if (result && result.toLowerCase() === 'save') {
                 // delete row
                 const index = this.atlasGrid.data.findIndex(
-                    (item) => (item.cf_LoginID = dataItem.cf_LoginID)
+                    (item) => item.LoginSK === dataItem.LoginSK
                 );
                 if (index !== -1) {
                     this.atlasGrid.data.splice(index, 1);

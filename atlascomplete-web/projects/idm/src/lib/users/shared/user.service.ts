@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { AtlasGridService } from '@atlas/web-components';
 
 import { DataAccessFactory, DataAccessService } from '@atlas/web-services';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class UserService extends AtlasGridService {
     selectedUser: any;
     dataAccess: DataAccessService;
+    saveSubject: Subject<any> = new Subject<any>();
 
     constructor(dataAccessFactory: DataAccessFactory) {
         super();
@@ -50,5 +51,13 @@ export class UserService extends AtlasGridService {
                 return response.body.data;
             })
         );
+    }
+
+    saveUser(data) {
+        this.saveSubject.next(data);
+    }
+
+    getSaveSubject() {
+        return this.saveSubject.asObservable();
     }
 }

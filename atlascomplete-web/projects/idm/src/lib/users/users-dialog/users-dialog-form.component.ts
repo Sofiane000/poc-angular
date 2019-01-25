@@ -16,6 +16,13 @@ export class UsersDialogFormComponent {
         MiddleName: new FormControl(''),
         LastName: new FormControl(''),
         RecStat: new FormControl([]),
+        LoginSK: new FormControl(''),
+        UserTypeCode: new FormControl(''),
+        cf_UserType: new FormControl(''),
+        cf_TenantTaxnmyName: new FormControl(''),
+        cf_UserStatTypeDesc: new FormControl(''),
+        UserActvtnInd: new FormControl(),
+        UserStatTypeCode: new FormControl(),
     });
     statuses: string[] = ['Active', 'Internal'];
     @Input() public isNew = false;
@@ -32,7 +39,7 @@ export class UsersDialogFormComponent {
     }
 
     closeHandler(actions) {
-        this.dialogRef.close();
+        this.dialogRef.close(actions);
     }
 
     valueChangeHandler(event) {}
