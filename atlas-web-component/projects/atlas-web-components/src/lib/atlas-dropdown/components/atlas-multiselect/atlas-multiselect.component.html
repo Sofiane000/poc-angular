@@ -24,7 +24,7 @@
     </div>
 </ng-container>
 <ng-container *ngIf="showSummary">
-    <div class="row">
+    <div class="multi-select">
         <kendo-textbox-container [floatingLabel]="floatingLabel" [style.width]="width">
             <kendo-multiselect
                 #list
@@ -33,7 +33,7 @@
                 [valueField]="valueField"
                 [placeholder]="placeholder"
                 [valuePrimitive]="valuePrimitive"
-                [value]="value"
+                [(ngModel)]="value"
                 [autoClose]="autoClose"
                 [clearButton]="clearButton"
                 [disabled]="disabled"
