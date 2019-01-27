@@ -10,6 +10,9 @@ export * from './lib/atlas-dropdown/components/atlas-multiselect/atlas-multisele
 export * from './lib/atlas-date-picker/atlas-date-picker.module';
 export * from './lib/atlas-date-picker/components/atlas-date-picker.component';
 
+export * from './lib/atlas-splitter/atlas-splitter.module';
+export * from './lib/atlas-splitter/components/atlas-splitter.component';
+
 export * from './lib/atlas-card/atlas-card.module';
 export * from './lib/atlas-card/components/atlas-card/atlas-card.component';
 export * from './lib/atlas-card/components/atlas-card-field/atlas-card-field.component';
