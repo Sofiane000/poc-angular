@@ -18,6 +18,7 @@
         "@progress/kendo-drawing": "^1.5.8",
         "@progress/kendo-theme-default": "^3.2.0",
         "@progress/kendo-theme-material": "^2.2.0",
+        "@progress/kendo-angular-layout": "^3.2.0",
         "ng2-pdf-viewer": "^5.2.3"
     },
     "peerDependencies": {
