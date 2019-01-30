@@ -10,6 +10,7 @@ export class AtlasInputTestComponent implements OnInit {
     editForm: FormGroup = new FormGroup({
         CustomBtn: new FormControl('', Validators.required),
     });
+    value = 'Hello user';
 
     constructor() {}
 

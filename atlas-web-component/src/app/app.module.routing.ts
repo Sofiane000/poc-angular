@@ -7,9 +7,9 @@ import { AtlasDatePickerTestComponent } from './atlas-date-picker-test/atlas-dat
 import { AtlasGridTestComponent } from './atlas-grid-test/atlas-grid-test.component';
 import { AtlasInputTestComponent } from './atlas-input-test/atlas-input-test.component';
 import { AtlasMultiSelectTestComponent } from './atlas-multiselect-test/atlas-multiselect-test.component';
+import { AtlasSplitterTestComponent } from './atlas-splitter-test/atlas-splitter-test.component';
 import { AtlasToolbarTestComponent } from './atlas-toolbar-test/atlas-toolbar-test.component';
 import { AtlasTreeTestComponent } from './atlas-tree-test/atlas-tree-test.component';
-import { AtlasSplitterTestComponent } from './atlas-splitter-test/atlas-splitter-test.component';
 
 const appRoutes: Routes = [
     {

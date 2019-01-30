@@ -28,6 +28,7 @@ export class AtlasInputComponent implements OnInit, ControlValueAccessor {
     @Input() required: boolean;
     @Input() label: string;
     @Input() appearance: string;
+    @Input() name: string;
     // The internal data model
     private innerValue: any = '';
 
