@@ -6,6 +6,7 @@ import { AtlasDocViewerComponent } from './components/atlas-doc-viewer.component
 
 @NgModule({
     declarations: [AtlasDocViewerComponent],
+    entryComponents: [AtlasDocViewerComponent],
     imports: [CommonModule, PdfViewerModule, FormsModule],
     exports: [AtlasDocViewerComponent],
 })

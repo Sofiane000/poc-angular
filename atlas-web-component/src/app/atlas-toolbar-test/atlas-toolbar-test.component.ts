@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
-import { AtlasToolbarButton, ButtonAction } from 'projects/atlas-web-components/src/public_api';
+import { ButtonAction, IAtlasToolbarButton } from 'projects/atlas-web-components/src/public_api';
 import { AtlasDialogFormTestComponent } from '../atlas-dialog-form-test/atlas-dialog-form-test.component';
 
 @Component({
@@ -9,7 +9,7 @@ import { AtlasDialogFormTestComponent } from '../atlas-dialog-form-test/atlas-di
     styleUrls: ['./atlas-toolbar-test.component.scss'],
 })
 export class AtlasToolbarTestComponent implements OnInit {
-    buttons: AtlasToolbarButton[] = [
+    buttons: IAtlasToolbarButton[] = [
         {
             title: 'Print Invoice',
             action: ButtonAction.PrintInvoice,
@@ -21,8 +21,8 @@ export class AtlasToolbarTestComponent implements OnInit {
     constructor(private dialog: MatDialog) {}
 
     ngOnInit() {}
-    
-  actionHandler(eventResponse) {
+
+    actionHandler(eventResponse) {
         switch (eventResponse.action) {
             case ButtonAction.Add:
                 this.showAddDialog();

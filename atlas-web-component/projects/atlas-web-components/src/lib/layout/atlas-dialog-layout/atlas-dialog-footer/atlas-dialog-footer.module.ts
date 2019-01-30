@@ -6,6 +6,7 @@ import { AtlasDialogFooterComponent } from './components/atlas-dialog-footer.com
 
 @NgModule({
     declarations: [AtlasDialogFooterComponent],
+    entryComponents: [AtlasDialogFooterComponent],
     imports: [CommonModule, ButtonModule, MatDialogModule, MatButtonModule],
     exports: [AtlasDialogFooterComponent],
 })

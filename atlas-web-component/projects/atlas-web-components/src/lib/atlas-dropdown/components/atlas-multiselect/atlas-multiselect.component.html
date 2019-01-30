@@ -1,0 +1,54 @@
+<ng-container *ngIf="!showSummary">
+    <div class="multi-select">
+        <kendo-textbox-container [floatingLabel]="floatingLabel" [style.width]="width">
+            <kendo-multiselect
+                #list
+                [data]="listItems"
+                [textField]="textField"
+                [valueField]="valueField"
+                [placeholder]="placeholder"
+                [valuePrimitive]="valuePrimitive"
+                [(ngModel)]="value"
+                [autoClose]="autoClose"
+                [clearButton]="clearButton"
+                [disabled]="disabled"
+                [loading]="loading"
+                [readonly]="readonly"
+                (valueChange)="valueChangeHandler($event)"
+                [filterable]="filterable"
+                [popupSettings]="popupSettings"
+                [listHeight]="listHeight"
+                (onBlur)="onBlurHandler($event)"
+            ></kendo-multiselect>
+        </kendo-textbox-container>
+    </div>
+</ng-container>
+<ng-container *ngIf="showSummary">
+    <div class="multi-select">
+        <kendo-textbox-container [floatingLabel]="floatingLabel" [style.width]="width">
+            <kendo-multiselect
+                #list
+                [data]="listItems"
+                [textField]="textField"
+                [valueField]="valueField"
+                [placeholder]="placeholder"
+                [valuePrimitive]="valuePrimitive"
+                [(ngModel)]="value"
+                [autoClose]="autoClose"
+                [clearButton]="clearButton"
+                [disabled]="disabled"
+                [loading]="loading"
+                [readonly]="readonly"
+                (valueChange)="valueChangeHandler($event)"
+                [filterable]="filterable"
+                [kendoMultiSelectSummaryTag]="summaryValue"
+                [popupSettings]="popupSettings"
+                [listHeight]="listHeight"
+            >
+                <ng-template kendoMultiSelectGroupTagTemplate let-dataItems>
+                    {{ dataItems.length }} more selected
+                </ng-template>
+            </kendo-multiselect>
+        </kendo-textbox-container>
+    </div>
+</ng-container>

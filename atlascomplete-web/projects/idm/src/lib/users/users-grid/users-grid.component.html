@@ -1,0 +1,41 @@
+<atlas-page-header
+    title="User Administration"
+    fontSize="large"
+    textAlign="left"
+></atlas-page-header>
+<atlas-page-content>
+    <div class="row user-grid">
+        <div class="col-md-12 no-padding">
+            <atlas-toolbar
+                [buttons]="buttons"
+                [parent]="atlasGrid"
+                (action)="actionHandler($event)"
+            ></atlas-toolbar>
+            <atlas-grid
+                [isFilterable]="'menu'"
+                [state]="gridState"
+                [columns]="columnsData"
+                [gridService]="userServiceChild"
+                [isSortable]="sortable"
+                [isPageable]="false"
+                [selectable]="selectableSettings"
+                [showSelectAll]="false"
+                [isEditable]="true"
+                [selectedKeys]="selectedKeys"
+                [isGroupable]="true"
+                [pdfOption]="pdfOption"
+                [excelOption]="excelOption"
+                height="530"
+                routeParamProperty="LoginSK"
+                routeUrl="/tenants"
+                (viewDetail)="viewHandler($event)"
+                (selectionChange)="onSelectionChange()"
+                (dblClick)="dblClickHandler($event)"
+            ></atlas-grid>
+        </div>
+    </div>
+</atlas-page-content>
+
+<atlas-page-footer [canSave]="true" [showNumRecords]="true"></atlas-page-footer>
+<br />
+<router-outlet></router-outlet>

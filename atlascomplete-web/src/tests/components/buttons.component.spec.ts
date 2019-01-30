@@ -1,9 +1,8 @@
 import { DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AtlasButtonComponent } from 'atlas-ui-angular';
-import { ComponentsModule } from 'src/app/modules/prod-admin/components/components.module';
-import { ButtonExampleComponent } from 'src/app/modules/prod-admin/components/components/button-example/button-example.component';
+import { AtlasButtonComponent } from '@atlas/web-components';
+import { ButtonExampleComponent } from 'projects/idm/compmgmnt/button-example/button-example.component';
 
 describe('ButtonExampleComponent', () => {
     let component: ButtonExampleComponent;

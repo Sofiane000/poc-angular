@@ -1,0 +1,52 @@
+<atlas-dialog-header
+    [title]="isNew ? 'Add Tenant' : 'Edit Tenant'"
+    [isDirty]="form.dirty"
+    (close)="closeHandler($event)"
+></atlas-dialog-header>
+<atlas-dialog-content>
+    <form novalidate [formGroup]="form">
+        <atlas-input
+            label="Tenant Name"
+            formControlName="TenantTaxnmyName"
+            width="100%"
+            required
+        ></atlas-input>
+        <atlas-date-picker
+            [width]="'100%'"
+            placeholder=""
+            floatingLabel="Effective Start Date"
+            formControlName="EfctvStartDt"
+            [navigation]="true"
+            [bottomView]="'month'"
+            [activeView]="'month'"
+            [topView]="'century'"
+            [focusedDate]="form.get('EfctvStartDt')?.value"
+            [placeholder]="'Effective Start Date'"
+        ></atlas-date-picker>
+
+        <atlas-date-picker
+            [width]="'100%'"
+            placeholder=""
+            floatingLabel="Effective End Date"
+            formControlName="EfctvEndDt"
+            [navigation]="true"
+            [bottomView]="'month'"
+            [activeView]="'month'"
+            [topView]="'century'"
+            [weekNumber]="true"
+            [focusedDate]="form.get('EfctvEndDt')?.value"
+            [placeholder]="'Effective End Date'"
+        ></atlas-date-picker>
+
+        <atlas-input
+            label="Root Domain"
+            formControlName="RootDomain"
+            required
+            width="100%"
+        ></atlas-input>
+    </form>
+</atlas-dialog-content>
+<atlas-dialog-footer
+    [isSaveDisabled]="isNew ? form.invalid : !form.valid || !form.dirty"
+    (close)="closeHandler($event)"
+></atlas-dialog-footer>

@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { ContextMenuComponent } from '@progress/kendo-angular-menu';
-import { ItemLookup, TreeViewComponent } from '@progress/kendo-angular-treeview';
+import { TreeViewComponent } from '@progress/kendo-angular-treeview';
 import { Subscription } from 'rxjs';
 import { AtlasGridService } from '../../atlas-grid/services/atlas-grid.service';
 import { AtlasToolbarComponent } from '../../atlas-toolbar/components/atlas-toolbar.component';
 import {
-    MultiRowComponent,
+    IMultiRowComponent,
     MultiRowSelection,
     Selectable,
 } from '../../shared/multi-row-component/multi-row-component.service';
@@ -14,12 +14,16 @@ import {
     templateUrl: './atlas-tree.component.html',
     styleUrls: ['./atlas-tree.component.scss'],
 })
-export class AtlasTreeComponent implements OnInit, MultiRowComponent {
+export class AtlasTreeComponent implements OnInit, IMultiRowComponent {
     canAdd: boolean;
     canEdit: boolean;
     canDelete: boolean;
+    @Input()
     expandedKeys: any[] = ['0'];
+    @Input()
     selectedKeys: [] = [];
+    @Input()
+    selectBy: any;
     contextItem: any;
     treeServiceSubscription: Subscription;
     @ViewChild('treemenu')
@@ -43,8 +47,7 @@ export class AtlasTreeComponent implements OnInit, MultiRowComponent {
     @Input() selectable: Selectable;
     @Input() treeViewService: AtlasGridService;
 
-    @Output() remove: EventEmitter<any> = new EventEmitter<any>();
-    @Output() edit: EventEmitter<any> = new EventEmitter<any>();
+    @Output() dblClick: EventEmitter<any> = new EventEmitter<any>();
     @Output() addMenuSelect: EventEmitter<any> = new EventEmitter<any>();
     @Output() refresh: EventEmitter<any> = new EventEmitter<any>();
     @Output() selectionChange: EventEmitter<MultiRowSelection> = new EventEmitter<
@@ -52,8 +55,8 @@ export class AtlasTreeComponent implements OnInit, MultiRowComponent {
     >();
 
     constructor() {}
-    
-  ngOnInit(): void {
+
+    ngOnInit(): void {
         this.treeViewService.query({});
         this.treeServiceSubscription = this.treeViewService.subscribe((data) => {
             if (data) {
@@ -67,30 +70,33 @@ export class AtlasTreeComponent implements OnInit, MultiRowComponent {
         originalEvent.preventDefault();
         this.contextItem = event.item.dataItem;
     }
-    
-  onAddSelect({ item }): void {
+
+    dblClickHandler(event) {
+        const originalEvent = event.originalEvent;
+        originalEvent.preventDefault();
+        this.dblClick.emit(event.item.dataItem);
+    }
+
+    onAddSelect({ item }): void {
         this.addMenuSelect.emit(item);
     }
-    
-  addClicked(event) {
+
+    addClicked(event) {
         event.preventDefault();
         this.gridContextMenu.show({ left: event.pageX, top: event.pageY });
     }
-    
-  handleSelection(event) {
+
+    handleSelection(event) {
         setTimeout(() => {
             this.selectionChange.emit({
                 selectedRows: this.selectedKeys,
                 selectedRowIdx: event.index,
+                selectedItem: event.dataItem,
             });
         }, 100);
     }
-    
-  selectBy(e) {
-        return e.dataItem;
-    }
-    
-  iconClass(dataItem): any {
+
+    iconClass(dataItem): any {
         return {
             'fa-database': dataItem['TenantTaxnmyType'] === 'Tenant' ? true : false,
             // tslint:disable-next-line:max-line-length

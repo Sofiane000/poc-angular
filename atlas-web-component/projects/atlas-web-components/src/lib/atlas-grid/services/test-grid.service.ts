@@ -2,23 +2,6 @@ import { merge, Observable, of as observableOf } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { AtlasGridService } from './atlas-grid.service';
 
-export class TestService extends AtlasGridService {
-    query(state: any): void {
-        this.fetch(state).subscribe((x) => super.next(x));
-    }
-    
-  fetch(state: any): Observable<any> {
-        this.isLoading = true;
-        const dataMutations = [observableOf(USER_DATA)];
-        // data has to be replaced with live data
-        return merge(...dataMutations).pipe(
-            map((response) => {
-                return response;
-            }),
-            tap(() => (this.isLoading = false))
-        );
-    }
-}
 export const USER_DATA = [
     {
         UserMstrSK: 6,
@@ -151,3 +134,21 @@ export const USER_DATA = [
         daTableRowId: 'AAAAAAAKwKM=',
     },
 ];
+
+export class TestService extends AtlasGridService {
+    query(state: any): void {
+        this.fetch(state).subscribe((x) => super.next(x));
+    }
+
+    fetch(state: any): Observable<any> {
+        this.isLoading = true;
+        const dataMutations = [observableOf(USER_DATA)];
+        // data has to be replaced with live data
+        return merge(...dataMutations).pipe(
+            map((response) => {
+                return response;
+            }),
+            tap(() => (this.isLoading = false))
+        );
+    }
+}

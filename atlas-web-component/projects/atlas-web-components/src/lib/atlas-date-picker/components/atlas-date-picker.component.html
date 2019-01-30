@@ -1,0 +1,24 @@
+<kendo-textbox-container [floatingLabel]="floatingLabel" [style.width]="width">
+    <kendo-datepicker
+        (blur)="onBlur($event)"
+        (focus)="onFocus($event)"
+        (open)="onOpen($event)"
+        (close)="onClose($event)"
+        (valueChange)="onChange($event)"
+        [(ngModel)]="value"
+        [readonly]="readOnly"
+        [disabled]="disabled"
+        [focusedDate]="focusedDate"
+        [min]="min"
+        [max]="max"
+        [navigation]="navigation"
+        [format]="format"
+        [placeholder]="placeholder"
+        [formatPlaceholder]="formatPlaceholder"
+        [activeView]="activeView"
+        [bottomView]="bottomView"
+        [topView]="topView"
+        [weekNumber]="weekNumber"
+        [popupSettings]="popupSettings"
+    ></kendo-datepicker>
+</kendo-textbox-container>

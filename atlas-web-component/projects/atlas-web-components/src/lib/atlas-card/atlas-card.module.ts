@@ -7,6 +7,7 @@ import { AtlasCardComponent } from './components/atlas-card/atlas-card.component
 
 @NgModule({
     declarations: [AtlasCardComponent, AtlasCardItemComponent, AtlasCardFieldComponent],
+    entryComponents: [AtlasCardComponent, AtlasCardItemComponent, AtlasCardFieldComponent],
     imports: [CommonModule, MatCardModule],
     exports: [AtlasCardComponent, AtlasCardItemComponent, AtlasCardFieldComponent],
 })

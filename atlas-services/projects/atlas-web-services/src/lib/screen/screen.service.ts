@@ -12,6 +12,7 @@ export class DeviceSize {
     height;
 }
 
+// tslint:disable-next-line:max-classes-per-file
 @Injectable({
     providedIn: 'root',
 })

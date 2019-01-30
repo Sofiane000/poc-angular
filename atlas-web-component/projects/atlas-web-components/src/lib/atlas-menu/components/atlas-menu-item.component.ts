@@ -26,10 +26,10 @@ export class AtlasMenuItemComponent implements OnInit {
             this.depth = 0;
         }
     }
-    
-  ngOnInit(): void {}
-    
-  onItemSelected(item: IMenuItem) {
+
+    ngOnInit(): void {}
+
+    onItemSelected(item: IMenuItem) {
         if ((!item.children || !item.children.length) && item.MenuURI) {
             this.router.navigate([item.MenuURI]);
         }

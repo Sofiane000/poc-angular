@@ -19,6 +19,9 @@
     [groupable]="isGroupable"
     [group]="state?.group"
     [rowHeight]="rowHeight"
+    (scrollBottom)="loadMoreData()"
+    [scrollable]="scrollable"
+    (dblclick)="doubleClickHandler($event)"
 >
     <kendo-grid-checkbox-column
         *ngIf="selectable?.enabled"
@@ -93,7 +96,7 @@
         <ng-template kendoGridPDFTemplate let-pageNum="pageNum" let-totalPages="totalPages">
             <div class="page-template">
                 <div class="header">
-                    <div style="float: right">Page {{ pageNum }} of {{ totalPages }}</div>
+                    <div style="float: right;">Page {{ pageNum }} of {{ totalPages }}</div>
                     {{ pdfOption?.title }}
                 </div>
                 <div class="footer">Page {{ pageNum }} of {{ totalPages }}</div>

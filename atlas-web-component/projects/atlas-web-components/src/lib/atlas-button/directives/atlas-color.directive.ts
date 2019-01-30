@@ -8,9 +8,9 @@ export class AtlasColorDirective implements AfterViewInit {
     @Input()
     color: any;
 
-  constructor(private elRef: ElementRef) {}
+    constructor(private elRef: ElementRef) {}
 
-  ngAfterViewInit(): void {
+    ngAfterViewInit(): void {
         this.elRef.nativeElement.style.backgroundColor = this.color;
     }
 }

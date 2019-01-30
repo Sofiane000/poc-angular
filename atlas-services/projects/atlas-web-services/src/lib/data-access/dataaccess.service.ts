@@ -1,7 +1,7 @@
+import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams, HttpHeaders, HttpResponse } from '@angular/common/http';
 
 const serviceConfigMap = {};
 const serviceMap = {};
@@ -17,16 +17,18 @@ export class AtlasResponse {
 /**
  * Standard Response Body From Server
  */
+// tslint:disable-next-line:max-classes-per-file
 export class AtlasResponseBody {
     status: boolean;
     data: any;
-    messages: Array<any>;
-    metadata: Array<any>;
+    messages: any[];
+    metadata: any[];
 }
 
 /**
  * Standard Request Server
  */
+// tslint:disable-next-line:max-classes-per-file
 export class AtlasRequestParams {
     pageSize?: number;
     restartRowId: string;
@@ -36,10 +38,11 @@ export class AtlasRequestParams {
 /**
  * Service implementation
  */
+// tslint:disable-next-line:max-classes-per-file
 export class DataAccessService {
     constructor(private http: HttpClient, private serviceConfig: DataAccessConfig) {}
 
-    get(extraUrl?: String, svcParms?: AtlasRequestParams): Observable<AtlasResponse> {
+    get(extraUrl?: string, svcParms?: AtlasRequestParams): Observable<AtlasResponse> {
         let url = this.serviceConfig.fullUrl;
         let headers = new HttpHeaders();
         if (svcParms) {
@@ -58,7 +61,7 @@ export class DataAccessService {
         }
         return this.http
             .get<HttpResponse<any>>(url, {
-                headers: headers,
+                headers,
                 params: svcParms ? svcParms.params : void 0,
                 observe: 'response',
             })
@@ -69,7 +72,7 @@ export class DataAccessService {
             );
     }
 
-    update(data: Object): Observable<AtlasResponse> {
+    update(data: object): Observable<AtlasResponse> {
         return this.http
             .put<HttpResponse<any>>(this.serviceConfig.fullUrl, data, {
                 observe: 'response',
@@ -81,7 +84,7 @@ export class DataAccessService {
             );
     }
 
-    create(data: Object): Observable<AtlasResponse> {
+    create(data: object): Observable<AtlasResponse> {
         return this.http
             .post<HttpResponse<any>>(this.serviceConfig.fullUrl, data, {
                 observe: 'response',
@@ -107,6 +110,7 @@ export class DataAccessService {
 /**
  * Service configuration
  */
+// tslint:disable-next-line:max-classes-per-file
 export class DataAccessConfig {
     protected serviceUrl: string;
     protected serviceModule: string;
@@ -131,6 +135,7 @@ export class DataAccessConfig {
 /**
  * Service factory
  */
+// tslint:disable-next-line:max-classes-per-file
 @Injectable({
     providedIn: 'root',
 })

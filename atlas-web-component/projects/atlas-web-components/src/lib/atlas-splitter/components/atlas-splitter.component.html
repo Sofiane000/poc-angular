@@ -1,0 +1,27 @@
+<kendo-splitter [style]="splitterStyle" [orientation]="orientation">
+    <kendo-splitter-pane
+        [size]="leftPaneSetting.size"
+        [min]="leftPaneSetting.min"
+        [max]="leftPaneSetting.max"
+        [resizable]="leftPaneSetting.resizable"
+        [scrollable]="leftPaneSetting.scrollable"
+        [collapsed]="leftPaneSetting.collapsed"
+        [collapsible]="leftPaneSetting.collapsible"
+        [containsSplitter]="leftPaneSetting.containsSplitter"
+    >
+        <ng-content select=".left-panel"></ng-content>
+    </kendo-splitter-pane>
+
+    <kendo-splitter-pane
+        [size]="rightPaneSetting.size"
+        [min]="rightPaneSetting.min"
+        [max]="rightPaneSetting.max"
+        [resizable]="rightPaneSetting.resizable"
+        [scrollable]="rightPaneSetting.scrollable"
+        [collapsed]="rightPaneSetting.collapsed"
+        [collapsible]="rightPaneSetting.collapsible"
+        [containsSplitter]="rightPaneSetting.containsSplitter"
+    >
+        <ng-content select=".right-panel"></ng-content>
+    </kendo-splitter-pane>
+</kendo-splitter>

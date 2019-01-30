@@ -11,6 +11,7 @@
     [selectBy]="selectBy"
     [(selectedKeys)]="selectedKeys"
     [kendoTreeViewSelectable]="selectable"
+    (nodeDblClick)="dblClickHandler($event)"
 >
     <ng-template kendoTreeViewNodeTemplate let-dataItem>
         <span class="tree-icon" [ngClass]="iconClass(dataItem)"></span>

@@ -1,7 +1,7 @@
 import { Component, HostBinding, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { AtlasHeaderComponent, IMenuItem } from 'atlas-web-components';
-import { AppSession } from 'atlas-web-services';
+import { AtlasHeaderComponent, IMenuItem } from '@atlas/web-components';
+import { AppSession } from '@atlas/web-services';
 import { Subscription } from 'rxjs';
 import { MenuService } from './menu.service';
 
@@ -13,13 +13,13 @@ import { MenuService } from './menu.service';
 export class AppComponent implements OnInit, OnDestroy {
     isMiniMode: boolean;
     isSideBarOpened: boolean;
-    isAuthorized: Boolean;
+    isAuthorized: boolean;
+
     isAuthorizedSubscription: Subscription;
     sideBarTitle: string;
     menuItems: IMenuItem[];
     @ViewChild('container') container: any;
     @ViewChild('header') header: AtlasHeaderComponent;
-
     @HostBinding('class.isAuthorized') addClass = false;
 
     constructor(
@@ -97,6 +97,7 @@ export class AppComponent implements OnInit, OnDestroy {
         if (!this.isSideBarOpened) {
             this.toggleSidebar();
         }
+
         if (this.header.selectedOption === option) {
             this.header.selectedOption = '';
             this.toggleSidebar();
@@ -104,7 +105,11 @@ export class AppComponent implements OnInit, OnDestroy {
         } else {
             this.header.selectedOption = option;
             this.router.navigate([
-                { outlets: { sidebar: option === 'Tasks' ? 'tasks/mytasks' : 'document' } },
+                {
+                    outlets: {
+                        sidebar: option === 'Tasks' ? 'bpm/mytasks' : 'document',
+                    },
+                },
             ]);
         }
     }

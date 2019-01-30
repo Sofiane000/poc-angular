@@ -10,6 +10,7 @@ import { AtlasDialogHeaderComponent } from './components/atlas-dialog-header.com
 
 @NgModule({
     declarations: [AtlasDialogHeaderComponent],
+    entryComponents: [AtlasDialogHeaderComponent],
     imports: [CommonModule, MatDialogModule, MatIconModule, MatButtonModule, MatToolbarModule],
     exports: [AtlasDialogHeaderComponent],
 })

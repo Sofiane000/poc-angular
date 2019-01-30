@@ -8,10 +8,10 @@ export class AtlasDialogFooterComponent {
     @Input() isSaveDisabled: any;
     @Input() showYesNo: boolean;
     @Output() close = new EventEmitter<any>();
-    
-  constructor() {}
-    
-  onClose(action) {
+
+    constructor() {}
+
+    onClose(action) {
         this.close.emit(action);
     }
 }

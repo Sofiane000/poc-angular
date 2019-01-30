@@ -22,6 +22,8 @@
         "@progress/kendo-angular-dateinputs",
         "@progress/kendo-angular-popup",
         "@progress/kendo-angular-dialog",
+        "@progress/kendo-angular-layout",
+        "@progress/kendo-angular-upload",
         "ng2-pdf-viewer"
     ]
 }

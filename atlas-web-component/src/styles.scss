@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-@import '~@progress/kendo-theme-default/scss/all';
+@import '~@progress/kendo-theme-material/scss/all';
 $fa-font-path: 'node_modules/font-awesome/fonts';
 
 @import '~font-awesome/scss/font-awesome.scss';
@@ -11,4 +11,42 @@ $fa-font-path: 'node_modules/font-awesome/fonts';
 
 .mat-dialog-content {
     margin: 0 !important;
+    height: 300px;
+}
+
+.atlas-header {
+    height: 48px;
+    min-height: 48px !important;
+}
+
+.side-bar-body {
+    margin-top: 40px;
+}
+
+// sidebar
+
+.right-sidebar.sideBarMini {
+    width: 50px !important;
+    animation: showSidebarMini 0.5s;
+}
+
+@keyframes showSidebarMini {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 50px !important;
+    }
+}
+
+.right-sidebar.sideBarMini .mat-drawer-inner-container {
+    overflow: hidden;
+}
+
+// spacer
+
+.spacer {
+    flex: 1;
 }

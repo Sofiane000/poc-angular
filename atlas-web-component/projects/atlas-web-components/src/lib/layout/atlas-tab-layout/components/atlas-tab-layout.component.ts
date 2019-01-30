@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { routerTransition } from '../../../atlas-content/animations/animation';
 import { INavLink } from '../models/nav-link';
 @Component({
     selector: 'atlas-tab-layout',
@@ -10,8 +9,8 @@ import { INavLink } from '../models/nav-link';
 export class AtlasTabLayoutComponent implements OnInit {
     @Input() navLinks: INavLink[];
     activeLinkIndex: number;
-    
-  constructor(private router: Router) {}
+
+    constructor(private router: Router) {}
 
     ngOnInit(): void {
         this.router.events.subscribe((res) => {

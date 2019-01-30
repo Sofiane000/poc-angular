@@ -9,8 +9,8 @@ export class AtlasCardComponent implements OnInit {
     cardItems: any[];
     @ContentChild('cardTemplate')
     cardTemplate: TemplateRef<any>;
-    
-  constructor() {}
+
+    constructor() {}
 
     ngOnInit() {}
 }

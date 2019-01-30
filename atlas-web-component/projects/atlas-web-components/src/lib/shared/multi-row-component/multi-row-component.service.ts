@@ -4,12 +4,13 @@ import { SelectableSettings } from '@progress/kendo-angular-grid';
 export class MultiRowSelection {
     selectedRows: any[];
     selectedRowIdx: number;
+    selectedItem?: any;
 }
 
 // tslint:disable-next-line
 export interface Selectable extends SelectableSettings {}
 
-export interface MultiRowComponent {
+export interface IMultiRowComponent {
     // flag indicates whethe multi-select is supported
     selectable: Selectable;
 

@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
     selector: 'app-doc-viewer',
     templateUrl: 'doc-viewer.component.html',
-    styleUrls: ['doc-viewer.component.scss'],
 })
 export class DocumentViewerComponent implements OnInit {
     src: string;
@@ -14,11 +11,7 @@ export class DocumentViewerComponent implements OnInit {
 
     ngOnInit(): void {
         this.route.params.subscribe((params) => {
-            if (params.documentId) {
-                this.src = '/assets/' + params.documentId;
-            } else {
-                this.src = void 0;
-            }
+            this.src = params.documentId ? '/assets/' + params.documentId : void 0;
         });
     }
 }

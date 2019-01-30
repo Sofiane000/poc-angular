@@ -1,9 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router } from '@angular/router';
-import { UsersGridComponent } from 'src/app/modules/prod-admin/users/components/users-grid/users-grid.component';
-import { UsersModule } from 'src/app/modules/prod-admin/users/users.module';
-
+import { UsersGridComponent } from 'projects/idm/users/users-grid/users-grid.component';
+import { UsersModule } from 'projects/idm/users/users.module';
 let mockRouter: any;
 class MockRouter {
     //noinspection TypeScriptUnresolvedFunction

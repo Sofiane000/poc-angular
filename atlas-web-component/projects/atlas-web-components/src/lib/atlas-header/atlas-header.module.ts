@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AtlasHeaderComponent } from './components/atlas-header.component';
 @NgModule({
     declarations: [AtlasHeaderComponent],
+    entryComponents: [AtlasHeaderComponent],
     imports: [
         CommonModule,
         RouterModule,

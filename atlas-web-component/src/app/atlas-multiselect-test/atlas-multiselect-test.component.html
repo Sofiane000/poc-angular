@@ -1,0 +1,69 @@
+<div class="example-config">
+    <div>
+        <label>
+            <input type="checkbox" [(ngModel)]="isFilterable" />
+            Enable filtering
+        </label>
+    </div>
+    <div>
+        <label>
+            <input
+                type="checkbox"
+                [ngModel]="isPlaceHolder"
+                (ngModelChange)="placeHolderChange($event)"
+            />
+            Enable placeholder
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" [(ngModel)]="showSummary" />
+            Show summary
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" [(ngModel)]="isAutoClose" />
+            Enable autoclose
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" [(ngModel)]="showClear" />
+            Enable Clear button
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" [(ngModel)]="isDisabled" />
+            Enable Disabled
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="checkbox" [(ngModel)]="isReadOnly" />
+            Enable Readonly
+        </label>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <atlas-multiselect
+            [width]="'100%'"
+            placeholder=""
+            floatingLabel="Test DropDown:"
+            [listItems]="data"
+            (valueChange)="valueChangeHandler($event)"
+            [filterable]="isFilterable"
+            [placeholder]="placeHolder"
+            [autoClose]="isAutoClose"
+            [showSummary]="showSummary"
+            [summaryValue]="1"
+            [clearButton]="showClear"
+            [disabled]="isDisabled"
+            [readonly]="isReadOnly"
+            [listHeight]="150"
+            [(ngModel)]="selectedValue"
+        ></atlas-multiselect>
+    </div>
+</div>

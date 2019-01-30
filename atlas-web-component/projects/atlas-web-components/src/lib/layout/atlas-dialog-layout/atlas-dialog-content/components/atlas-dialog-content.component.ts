@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 @Component({
     selector: 'atlas-dialog-content',
     templateUrl: './atlas-dialog-content.component.html',

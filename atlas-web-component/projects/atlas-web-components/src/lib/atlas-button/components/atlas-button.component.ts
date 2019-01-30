@@ -30,12 +30,12 @@ export class AtlasButtonComponent implements OnInit {
     onSelectedChange(event) {
         this.selectionChange.emit(event);
     }
-    
-  onFocus(event) {
+
+    onFocus(event) {
         this.focus.emit(event);
     }
-    
-  onBlur(event) {
+
+    onBlur(event) {
         this.blur.emit(event);
     }
 }

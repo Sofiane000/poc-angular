@@ -1,0 +1,53 @@
+<atlas-dialog-header
+    [title]="isNew ? 'Add User' : 'Edit User'"
+    [isDirty]="editForm.dirty"
+    (close)="closeHandler($event)"
+></atlas-dialog-header>
+<atlas-dialog-content>
+    <form novalidate [formGroup]="editForm">
+        <atlas-input
+            label="Id"
+            formControlName="UserMstrSK"
+            required
+            width="100%"
+            *ngIf="!isNew"
+        ></atlas-input>
+        <atlas-input
+            label="Employee Number"
+            formControlName="PhNbr"
+            required
+            width="100%"
+        ></atlas-input>
+        <atlas-input
+            label="Username"
+            formControlName="cf_LoginID"
+            required
+            width="100%"
+        ></atlas-input>
+        <atlas-input
+            label="First Name"
+            formControlName="FirstName"
+            required
+            width="100%"
+        ></atlas-input>
+        <atlas-input label="Email" formControlName="EmailAddr" width="100%" required></atlas-input>
+        <atlas-input label="Middle Name" formControlName="MiddleName" width="100%"></atlas-input>
+        <atlas-input label="Last Name" formControlName="LastName" width="100%"></atlas-input>
+        <atlas-multiselect
+            [width]="'100%'"
+            placeholder=""
+            floatingLabel="Status"
+            [listItems]="statuses"
+            (valueChange)="valueChangeHandler($event)"
+            [filterable]="true"
+            [summaryValue]="1"
+            [clearButton]="true"
+            [listHeight]="150"
+            formControlName="RecStat"
+        ></atlas-multiselect>
+    </form>
+</atlas-dialog-content>
+<atlas-dialog-footer
+    [isSaveDisabled]="isNew ? editForm.invalid : !editForm.valid || !editForm.dirty"
+    (close)="closeHandler($event)"
+></atlas-dialog-footer>

@@ -1,4 +1,5 @@
 <p>
+    Reactive Form
     <span class="boldspan">Form data:</span>
     {{ editForm.value | json }}
 </p>
@@ -11,7 +12,24 @@
         #button
         label="Type here"
         formControlName="CustomBtn"
-        width="100%"
-        required
+        width="400px"
+        required="false"
+        name="test"
+        placeHolder="Reactive forms"
     ></atlas-input>
 </form>
+
+<p>Template forms</p>
+<p>
+    <span class="boldspan">Model data:</span>
+    {{ templateButton.value }}
+</p>
+<atlas-input
+    #templateButton
+    label="Type here"
+    [(ngModel)]="value"
+    width="400px"
+    required="true"
+    name="modelbinding"
+    placeHolder="Template forms"
+></atlas-input>
