@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     MatButtonModule,
@@ -27,6 +28,7 @@ import {
     AtlasMenuModule,
     AtlasSideBarModule,
     AtlasSplitterModule,
+    AtlasUploadModule,
 } from 'projects/atlas-web-components/src/public_api';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.module.routing';
@@ -84,6 +86,8 @@ import { ElementModule } from './element.module';
         AtlasDropdownModule,
         AtlasDatePickerModule,
         AtlasSplitterModule,
+        AtlasUploadModule,
+        HttpClientModule,
     ],
     providers: [TestService, TreeTestService],
     bootstrap: [AppComponent],

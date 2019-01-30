@@ -1,0 +1,14 @@
+<kendo-upload
+    [autoUpload]="autoUpload"
+    [saveUrl]="uploadSaveUrl"
+    [removeUrl]="uploadRemoveUrl"
+    [restrictions]="uploadRestrictions"
+    (select)="selectEventHandler($event)"
+    (clear)="clearEventHandler($event)"
+    (remove)="removeEventHandler($event)"
+    (complete)="completeEventHandler($event)"
+    [(ngModel)]="files"
+    [disabled]="disabled"
+    [multiple]="multiple"
+    [batch]="batch"
+></kendo-upload>

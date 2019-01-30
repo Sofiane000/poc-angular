@@ -35,6 +35,11 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
             isDisabled: true,
         },
         {
+            title: 'Upload',
+            action: ButtonAction.Upload,
+            icon: 'fa-upload',
+        },
+        {
             title: 'Refresh',
             action: ButtonAction.Refresh,
             icon: 'fa-refresh',

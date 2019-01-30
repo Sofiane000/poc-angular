@@ -1,0 +1,14 @@
+<atlas-dialog-header
+    [title]="title"
+    [showCloseBtn]="true"
+    (close)="closeHandler($event)"
+></atlas-dialog-header>
+<atlas-dialog-content>
+    <atlas-upload
+        [uploadRestrictions]="uploadConfig.uploadRestrictions"
+        [disabled]="uploadConfig.disabled"
+        [multiple]="uploadConfig.multiple"
+        [autoUpload]="uploadConfig.autoUpload"
+        [batch]="uploadConfig.batch"
+    ></atlas-upload>
+</atlas-dialog-content>
