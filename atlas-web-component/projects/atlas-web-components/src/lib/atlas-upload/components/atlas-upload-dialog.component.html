@@ -1,10 +1,11 @@
 <atlas-dialog-header
     [title]="title"
-    [showCloseBtn]="true"
+    [showCloseBtn]="false"
     (close)="closeHandler($event)"
 ></atlas-dialog-header>
 <atlas-dialog-content>
     <atlas-upload
+        #upload
         [uploadRestrictions]="uploadConfig.uploadRestrictions"
         [disabled]="uploadConfig.disabled"
         [multiple]="uploadConfig.multiple"
@@ -12,3 +13,8 @@
         [batch]="uploadConfig.batch"
     ></atlas-upload>
 </atlas-dialog-content>
+<atlas-dialog-footer
+    [showYesNo]="false"
+    [isSaveDisabled]="false"
+    (close)="closeHandler($event)"
+></atlas-dialog-footer>

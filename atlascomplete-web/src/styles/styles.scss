@@ -181,6 +181,7 @@ mat-label {
 
 .mat-dialog-content {
     margin: 0 !important;
+    height: 180px;
 }
 
 .mat-toolbar h2 {
@@ -261,6 +262,10 @@ mat-label {
 
 .mat-drawer-content.mat-sidenav-content {
     overflow: hidden;
+}
+
+.btn-dialog-close {
+    top: 0 !important;
 }
 
 @media only screen and (min-width: 375px) and (max-width: 812px) and (-webkit-device-pixel-ratio: 3) {

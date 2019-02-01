@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import {
     AtlasGridComponent,
     AtlasToolbarComponent,
+    AtlasUploadService,
     ButtonAction,
     IAtlasToolbarButton,
     IColumnSetting,
@@ -16,7 +17,7 @@ import { UsersDeleteDialogComponent } from '../users-dialog/users-delete-dialog.
     selector: 'app-users-grid',
     templateUrl: './users-grid.component.html',
     styleUrls: ['./users-grid.component.scss'],
-    providers: [DocumentViewerService],
+    providers: [DocumentViewerService, AtlasUploadService],
 })
 export class UsersGridComponent implements OnInit, OnDestroy {
     buttons: IAtlasToolbarButton[] = [
@@ -84,7 +85,8 @@ export class UsersGridComponent implements OnInit, OnDestroy {
         private userService: UserService,
         private router: Router,
         private dialog: MatDialog,
-        private docViewer: DocumentViewerService
+        private docViewer: DocumentViewerService,
+        private uploadService: AtlasUploadService
     ) {
         this.userServiceChild = userService;
         this.userService.getSaveSubject().subscribe((response) => {
@@ -226,7 +228,35 @@ export class UsersGridComponent implements OnInit, OnDestroy {
             case ButtonAction.PrintInvoice:
                 this.docViewer.showDocument('sample.pdf');
                 break;
+            case ButtonAction.Upload:
+                this.showUploadDialog();
+                break;
         }
+    }
+
+    showUploadDialog() {
+        const dialogConfig = new MatDialogConfig();
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '600px';
+        dialogConfig.height = '300px';
+        dialogConfig.closeOnNavigation = true;
+        dialogConfig.panelClass = 'custom-dialog-container';
+
+        this.uploadService
+            .show(
+                'Upload Reference Data',
+                dialogConfig,
+                {
+                    uploadRestrictions: { allowedExtensions: [] },
+                    autoUpload: false,
+                    multiple: true,
+                },
+                null,
+                null
+            )
+            .subscribe((result) => {
+                console.log(result);
+            });
     }
 
     onSelectionChange() {
