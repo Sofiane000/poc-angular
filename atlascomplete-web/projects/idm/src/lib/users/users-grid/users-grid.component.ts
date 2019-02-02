@@ -9,6 +9,7 @@ import {
     IAtlasToolbarButton,
     IColumnSetting,
 } from '@atlas/web-components';
+import { FileUploadService } from '@atlas/web-services';
 import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
 import { UserService } from '../shared/user.service';
 import { UsersDeleteDialogComponent } from '../users-dialog/users-delete-dialog.component';
@@ -86,7 +87,8 @@ export class UsersGridComponent implements OnInit, OnDestroy {
         private router: Router,
         private dialog: MatDialog,
         private docViewer: DocumentViewerService,
-        private uploadService: AtlasUploadService
+        private uploadService: AtlasUploadService,
+        private fileUploadService: FileUploadService
     ) {
         this.userServiceChild = userService;
         this.userService.getSaveSubject().subscribe((response) => {
@@ -240,14 +242,14 @@ export class UsersGridComponent implements OnInit, OnDestroy {
         dialogConfig.width = '600px';
         dialogConfig.height = '300px';
         dialogConfig.closeOnNavigation = true;
-        dialogConfig.panelClass = 'custom-dialog-container';
+        dialogConfig.panelClass = 'custom-dialog-container-upload';
 
         this.uploadService
             .show(
                 'Upload Reference Data',
                 dialogConfig,
                 {
-                    uploadRestrictions: { allowedExtensions: [] },
+                    uploadRestrictions: { allowedExtensions: ['.xlsx', '.csv'] },
                     autoUpload: false,
                     multiple: true,
                 },
@@ -255,6 +257,9 @@ export class UsersGridComponent implements OnInit, OnDestroy {
                 null
             )
             .subscribe((result) => {
+                if (result.action === 'save') {
+                    this.fileUploadService.uploadFile('emprt', result.files);
+                }
                 console.log(result);
             });
     }
