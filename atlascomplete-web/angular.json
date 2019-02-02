@@ -227,6 +227,105 @@
                     }
                 }
             }
+        },
+        "dataExtract": {
+            "root": "projects/encounters/data-extract",
+            "sourceRoot": "projects/encounters/data-extract/src",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "projects/encounters/data-extract/tsconfig.lib.json",
+                        "project": "projects/encounters/data-extract/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/encounters/data-extract/src/test.ts",
+                        "tsConfig": "projects/encounters/data-extract/tsconfig.spec.json",
+                        "karmaConfig": "projects/encounters/data-extract/karma.conf.js"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "projects/encounters/data-extract/tsconfig.lib.json",
+                            "projects/encounters/data-extract/tsconfig.spec.json"
+                        ],
+                        "exclude": ["**/node_modules/**"]
+                    }
+                }
+            }
+        },
+        "taskConfiguration": {
+            "root": "projects/encounters/task-configuration",
+            "sourceRoot": "projects/encounters/task-configuration/src",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "projects/task-configuration/tsconfig.lib.json",
+                        "project": "projects/task-configuration/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/encounters/task-configuration/src/test.ts",
+                        "tsConfig": "projects/encounters/task-configuration/tsconfig.spec.json",
+                        "karmaConfig": "projects/encounters/task-configuration/karma.conf.js"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "projects/encounters/task-configuration/tsconfig.lib.json",
+                            "projects/encounters/task-configuration/tsconfig.spec.json"
+                        ],
+                        "exclude": ["**/node_modules/**"]
+                    }
+                }
+            }
+        },
+        "taskScheduler": {
+            "root": "projects/encounters/task-scheduler",
+            "sourceRoot": "projects/encounters/task-scheduler/src",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "projects/encounters/task-scheduler/tsconfig.lib.json",
+                        "project": "projects/encounters/task-scheduler/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/encounters/task-scheduler/src/test.ts",
+                        "tsConfig": "projects/encounters/task-scheduler/tsconfig.spec.json",
+                        "karmaConfig": "projects/encounters/task-scheduler/karma.conf.js"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "projects/encounters/task-scheduler/tsconfig.lib.json",
+                            "projects/encounters/task-scheduler/tsconfig.spec.json"
+                        ],
+                        "exclude": ["**/node_modules/**"]
+                    }
+                }
+            }
         }
     },
     "defaultProject": "atlascomplete-web"
