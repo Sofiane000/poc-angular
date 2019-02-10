@@ -4,10 +4,12 @@ import { Router } from '@angular/router';
 import {
     AtlasGridComponent,
     AtlasToolbarComponent,
+    AtlasUploadService,
     ButtonAction,
     IAtlasToolbarButton,
     IColumnSetting,
 } from '@atlas/web-components';
+import { FileUploadService } from '@atlas/web-services';
 import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
 import { UserService } from '../shared/user.service';
 import { UsersDeleteDialogComponent } from '../users-dialog/users-delete-dialog.component';
@@ -16,7 +18,7 @@ import { UsersDeleteDialogComponent } from '../users-dialog/users-delete-dialog.
     selector: 'app-users-grid',
     templateUrl: './users-grid.component.html',
     styleUrls: ['./users-grid.component.scss'],
-    providers: [DocumentViewerService],
+    providers: [DocumentViewerService, AtlasUploadService],
 })
 export class UsersGridComponent implements OnInit, OnDestroy {
     buttons: IAtlasToolbarButton[] = [
@@ -84,7 +86,9 @@ export class UsersGridComponent implements OnInit, OnDestroy {
         private userService: UserService,
         private router: Router,
         private dialog: MatDialog,
-        private docViewer: DocumentViewerService
+        private docViewer: DocumentViewerService,
+        private uploadService: AtlasUploadService,
+        private fileUploadService: FileUploadService
     ) {
         this.userServiceChild = userService;
         this.userService.getSaveSubject().subscribe((response) => {
@@ -226,7 +230,38 @@ export class UsersGridComponent implements OnInit, OnDestroy {
             case ButtonAction.PrintInvoice:
                 this.docViewer.showDocument('sample.pdf');
                 break;
+            case ButtonAction.Upload:
+                this.showUploadDialog();
+                break;
         }
+    }
+
+    showUploadDialog() {
+        const dialogConfig = new MatDialogConfig();
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '600px';
+        dialogConfig.height = '300px';
+        dialogConfig.closeOnNavigation = true;
+        dialogConfig.panelClass = 'custom-dialog-container-upload';
+
+        this.uploadService
+            .show(
+                'Upload Reference Data',
+                dialogConfig,
+                {
+                    uploadRestrictions: { allowedExtensions: ['.xlsx', '.csv'] },
+                    autoUpload: false,
+                    multiple: true,
+                },
+                null,
+                null
+            )
+            .subscribe((result) => {
+                if (result.action === 'save') {
+                    this.fileUploadService.uploadFile('emprt', result.files);
+                }
+                console.log(result);
+            });
     }
 
     onSelectionChange() {

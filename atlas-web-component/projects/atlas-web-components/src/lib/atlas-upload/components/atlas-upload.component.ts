@@ -1,18 +1,39 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+    Component,
+    EventEmitter,
+    Input,
+    OnInit,
+    Output,
+    ViewChild,
+    ViewEncapsulation,
+} from '@angular/core';
 import {
     ClearEvent,
     FileInfo,
     FileRestrictions,
     RemoveEvent,
     SelectEvent,
+    UploadComponent,
 } from '@progress/kendo-angular-upload';
 
 @Component({
     selector: 'atlas-upload',
     templateUrl: './atlas-upload.component.html',
-    styleUrls: ['./atlas-upload.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    styles: [
+        `
+            .k-widget.k-upload .k-action-buttons {
+                display: none;
+            }
+            .k-upload .k-upload-files {
+                padding-bottom: 0;
+            }
+        `,
+    ],
 })
 export class AtlasUploadComponent implements OnInit {
+    @ViewChild(UploadComponent)
+    public upload: UploadComponent;
     @Input()
     uploadRestrictions: FileRestrictions = {
         allowedExtensions: ['.jpg', '.png'],
@@ -31,7 +52,7 @@ export class AtlasUploadComponent implements OnInit {
     uploadRemoveUrl: any; // should represent an actual API endpoint
 
     @Input()
-    files: FileInfo[];
+    files: FileInfo[] = [];
 
     @Input()
     disabled: boolean;
@@ -65,7 +86,15 @@ export class AtlasUploadComponent implements OnInit {
         this.remove.emit(e);
     }
 
-    selectEventHandler(e: SelectEvent): void {
+    selectEventHandler (e: SelectEvent): void {
         this.select.emit(e);
+    }
+
+    uploadHandler(event) {
+        console.log(event);
+    }
+
+    uploadFile() {
+        this.upload.uploadFiles();
     }
 }

@@ -15,6 +15,7 @@ export * from './lib/atlas-splitter/components/atlas-splitter.component';
 
 export * from './lib/atlas-upload/atlas-upload.module';
 export * from './lib/atlas-upload/components/atlas-upload.component';
+export * from './lib/atlas-upload/services/atlas-upload.service';
 
 export * from './lib/atlas-card/atlas-card.module';
 export * from './lib/atlas-card/components/atlas-card/atlas-card.component';

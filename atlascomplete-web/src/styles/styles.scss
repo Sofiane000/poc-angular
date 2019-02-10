@@ -183,6 +183,10 @@ mat-label {
     margin: 0 !important;
 }
 
+.custom-dialog-container-upload .mat-dialog-content {
+    height: 170px;
+}
+
 .mat-toolbar h2 {
     font-weight: $atlas-dialog-header-font-weight;
     font-size: $atlas-dialog-header-font-size;
@@ -219,6 +223,10 @@ mat-label {
 }
 
 .custom-dialog-container .mat-dialog-container {
+    padding: 0;
+}
+
+.custom-dialog-container-upload .mat-dialog-container {
     padding: 0;
 }
 
@@ -261,6 +269,10 @@ mat-label {
 
 .mat-drawer-content.mat-sidenav-content {
     overflow: hidden;
+}
+
+.btn-dialog-close {
+    top: 0 !important;
 }
 
 @media only screen and (min-width: 375px) and (max-width: 812px) and (-webkit-device-pixel-ratio: 3) {

@@ -15,6 +15,7 @@ import {
     AtlasPageHeaderModule,
     AtlasTabLayoutModule,
     AtlasToolbarModule,
+    AtlasUploadModule,
 } from '@atlas/web-components';
 import { DataAccessFactory } from '@atlas/web-services';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
@@ -58,6 +59,7 @@ import { UsersRoutingModule } from './users.routing.module';
         AtlasInputModule,
         AtlasToolbarModule,
         AtlasDropdownModule,
+        AtlasUploadModule,
     ],
     providers: [UserService],
 })

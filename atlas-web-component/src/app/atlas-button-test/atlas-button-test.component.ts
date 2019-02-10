@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogConfig } from '@angular/material';
-import { AtlasUploadService } from 'projects/atlas-web-components/src/lib/atlas-upload/services/atlas-upload.services';
+import { AtlasUploadService } from 'projects/atlas-web-components/src/lib/atlas-upload/services/atlas-upload.service';
 @Component({
     selector: 'atlas-button-test',
     templateUrl: './atlas-button-test.component.html',
@@ -16,7 +16,7 @@ export class AtlasButtonTestComponent implements OnInit {
         const dialogConfig = new MatDialogConfig();
         dialogConfig.disableClose = true;
         dialogConfig.width = '600px';
-        dialogConfig.height = '400px';
+        dialogConfig.height = '300px';
         dialogConfig.closeOnNavigation = true;
         dialogConfig.panelClass = 'custom-dialog-container';
 
