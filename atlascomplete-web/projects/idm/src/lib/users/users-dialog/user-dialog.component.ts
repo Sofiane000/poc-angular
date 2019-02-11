@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AtlasDialogBoxConfig, AtlasDialogBoxService } from '@atlas/web-components';
 import { ComponentCanDeactivate } from '@atlas/web-services';
 import { Subscription } from 'rxjs';
 import { UserService } from '../shared/user.service';
@@ -14,7 +15,7 @@ export class UsersDialogComponent extends ComponentCanDeactivate implements OnDe
     routeSubscription: Subscription;
     selectedUser: any;
     dialogRef: any;
-    dialogConfig: MatDialogConfig = {
+    dialogConfig: AtlasDialogBoxConfig = {
         disableClose: true,
         width: '800px',
         maxWidth: '850px',
@@ -27,7 +28,8 @@ export class UsersDialogComponent extends ComponentCanDeactivate implements OnDe
         private userService: UserService,
         private dialog: MatDialog,
         private router: Router,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private dialogBox: AtlasDialogBoxService
     ) {
         super();
         this.routeSubscription = this.route.params.subscribe((params) => {
@@ -48,7 +50,7 @@ export class UsersDialogComponent extends ComponentCanDeactivate implements OnDe
         if (!isNew) {
             this.dialogConfig.height = '620px';
         }
-        this.dialogRef = this.dialog.open(UsersDialogFormComponent, this.dialogConfig);
+        this.dialogRef = this.dialogBox.open(UsersDialogFormComponent, this.dialogConfig);
         if (!isNew) {
             this.dialogRef.componentInstance.model = this.selectedUser;
         }

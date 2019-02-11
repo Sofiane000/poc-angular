@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material';
 import {
+    AtlasDialogBoxModule,
     AtlasDialogContentModule,
     AtlasDialogFooterModule,
     AtlasDialogHeaderModule,
@@ -60,6 +61,7 @@ import { UsersRoutingModule } from './users.routing.module';
         AtlasToolbarModule,
         AtlasDropdownModule,
         AtlasUploadModule,
+        AtlasDialogBoxModule,
     ],
     providers: [UserService],
 })
