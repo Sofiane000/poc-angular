@@ -1,12 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material';
+import { IAtlasFooterbtn } from '@atlas/web-components';
 @Component({
     selector: 'app-users-dialog-form',
     templateUrl: './users-dialog-form.component.html',
     styleUrls: ['./users-dialog-form.component.scss'],
 })
-export class UsersDialogFormComponent {
+export class UsersDialogFormComponent implements OnInit {
+    buttons: IAtlasFooterbtn[];
+
     editForm: FormGroup = new FormGroup({
         UserMstrSK: new FormControl(),
         PhNbr: new FormControl('', Validators.required),
@@ -36,6 +39,22 @@ export class UsersDialogFormComponent {
         this.editForm.valueChanges.subscribe((changes) => {
             this.hasChanges = true;
         });
+    }
+
+    ngOnInit() {
+        this.buttons = [
+            {
+                text: 'Cancel',
+                action: 'close',
+                title: 'Cancel',
+            },
+            {
+                text: 'Save',
+                action: 'save',
+                title: 'Save',
+                primary: true,
+            },
+        ];
     }
 
     closeHandler(actions) {

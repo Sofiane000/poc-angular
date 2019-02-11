@@ -50,4 +50,5 @@
 <atlas-dialog-footer
     [isSaveDisabled]="isNew ? editForm.invalid : !editForm.valid || !editForm.dirty"
     (close)="closeHandler($event)"
+    [useButtons]="buttons"
 ></atlas-dialog-footer>

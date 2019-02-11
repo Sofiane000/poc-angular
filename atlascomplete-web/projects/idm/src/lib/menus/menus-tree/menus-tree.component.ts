@@ -103,7 +103,7 @@ export class MenusTreeComponent implements OnInit, AfterViewChecked {
         const dialogConfig = new MatDialogConfig();
         dialogConfig.disableClose = true;
         dialogConfig.width = '500px';
-        dialogConfig.height = '137px';
+        dialogConfig.height = '150px';
         dialogConfig.closeOnNavigation = true;
         dialogConfig.panelClass = 'custom-dialog-container';
         const dialogRef = this.dialogService.open(MenusDeleteDialogComponent, dialogConfig);
