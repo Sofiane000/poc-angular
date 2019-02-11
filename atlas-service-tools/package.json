@@ -5,7 +5,8 @@
     "scripts": {
         "start": "nodemon server/webserver.js --watch server",
         "format": "prettier --write \"**/*.{html,js,md,ts,css,sass,scss,less,graphql,yaml,yml,scss,json,vue}\"",
-        "build-release": "npm run format && npm run publish"
+        "build-release": "npm run format && npm run publish",
+        "test": "nodemon --ignore **/*.json --exec jasmine"
     },
     "husky": {
         "hooks": {
@@ -22,12 +23,12 @@
     "dependencies": {
         "body-parser": "^1.18.3",
         "express": "^4.16.4",
-        "lodash": "^4.17.11",
-        "nodemon": "^1.18.6"
+        "lodash": "^4.17.11"
     },
     "devDependencies": {
         "husky": "^1.3.1",
         "lint-staged": "^8.1.0",
+        "nodemon": "^1.18.10",
         "prettier": "^1.15.3"
     }
 }

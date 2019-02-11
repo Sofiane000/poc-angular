@@ -4,6 +4,19 @@ const _ = require('lodash');
 const mockConfig = require('./config');
 
 class MockLib {
+    async saveMock(pathToMock, data) {
+        const dataToSave = JSON.stringify(data.$payload, void 0, 4);
+        return new Promise((resolve, reject) => {
+            fs.writeFile(mockConfig.baseFolder + pathToMock, dataToSave, (err, data) => {
+                if (err) {
+                    return reject(err);
+                } else {
+                    return resolve(data);
+                }
+            });
+        });
+    }
+
     async loadMock(pathToMock, req, filterCb) {
         let rawMockData = await this.__loadMock(mockConfig.baseFolder + pathToMock);
         const pageSize = +req.get('pageSize');
@@ -33,29 +46,96 @@ class MockLib {
     }
 
     serveMockAsTree(req, res, pathToMock, keyField, parentKeyField) {
-        this.loadMock(pathToMock, req, null).then(
+        return this.loadMock(pathToMock, req, null).then(
             (data) => {
                 data.$payload = this.convertToTree(data.$payload, keyField, parentKeyField);
-                this.serveSuccess(req, res, data);
+                return this.serveSuccess(req, res, data);
+            },
+            (error) => this.serveFailed(req, res, error)
+        );
+    }
+
+    createMock(req, res, pathToMock, saveResult) {
+        const createPayload = _.isArray(req.body) ? req.body : [req.body];
+        return this.loadMock(pathToMock, req).then(
+            async (data) => {
+                _.forEach(createPayload, (createRow) => {
+                    data.$payload.push(createRow);
+                });
+                if (saveResult) {
+                    await this.saveMock(pathToMock, data);
+                }
+                return this.serveSuccess(req, res, data);
+            },
+            (error) => this.serveFailed(req, res, error)
+        );
+    }
+
+    updateMock(req, res, idField, pathToMock, saveResult) {
+        const updatePayload = _.isArray(req.body) ? req.body : [req.body];
+        return this.loadMock(pathToMock, req).then(
+            async (data) => {
+                for (const mockRow of data.$payload) {
+                    const idFieldValue = mockRow[idField];
+                    let updateRow = _.find(updatePayload, (updateRow) => {
+                        return updateRow[idField] == idFieldValue;
+                    });
+                    if (updateRow) {
+                        _.extend(mockRow, updateRow);
+                    }
+                }
+                if (saveResult) {
+                    await this.saveMock(pathToMock, data);
+                }
+                return this.serveSuccess(req, res, data);
+            },
+            (error) => this.serveFailed(req, res, error)
+        );
+    }
+
+    deleteMock(req, res, idField, pathToMock, saveResult) {
+        let deletePayload;
+        if (req.params && req.params[idField]) {
+            deletePayload = [{}];
+            deletePayload[0][idField] = req.params[idField];
+        } else {
+            deletePayload = _.isArray(req.body) ? req.body : [req.body];
+        }
+        return this.loadMock(pathToMock, req).then(
+            async (data) => {
+                for (let idx = data.$payload.length - 1; idx >= 0; idx--) {
+                    const mockRow = data.$payload[idx];
+                    const idFieldValue = mockRow[idField];
+                    let deleteRow = _.find(deletePayload, (deleteRow) => {
+                        return deleteRow[idField] == idFieldValue;
+                    });
+                    if (deleteRow) {
+                        data.$payload.splice(idx, 1);
+                    }
+                }
+                if (saveResult) {
+                    await this.saveMock(pathToMock, data);
+                }
+                return this.serveSuccess(req, res, data);
             },
             (error) => this.serveFailed(req, res, error)
         );
     }
 
     serveMock(req, res, pathToMock, filterCb) {
-        this.loadMock(pathToMock, req, filterCb).then(
+        return this.loadMock(pathToMock, req, filterCb).then(
             (data) => this.serveSuccess(req, res, data),
             (error) => this.serveFailed(req, res, error)
         );
     }
 
     serveMockById(req, res, pathToMock, idField, idValue) {
-        this.loadMock(pathToMock, req, null).then(
+        return this.loadMock(pathToMock, req, null).then(
             (data) => {
                 data.$payload = _.find(data.$payload, (entry) => {
                     return entry[idField] == idValue;
                 });
-                this.serveSuccess(req, res, data);
+                return this.serveSuccess(req, res, data);
             },
             (error) => this.serveFailed(req, res, error)
         );

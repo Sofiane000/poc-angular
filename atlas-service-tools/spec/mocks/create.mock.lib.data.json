@@ -1,0 +1,12 @@
+{
+    "rowNum": 11,
+    "taskId": 3505,
+    "taskName": "InvoiceManagement#3505::Review Invoice Charges",
+    "taskTitle": "New Invoice Charges",
+    "timeStarted": "2018-11-15T22:38:38.413Z",
+    "dueDate": "2018-12-05T18:38:38.436Z",
+    "processName": "InvoiceManagement",
+    "taskStatus": "I_ASSIGNED",
+    "performer": "aliaks",
+    "priority": "low"
+}
