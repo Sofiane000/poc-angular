@@ -193,6 +193,36 @@
         "daTableRowId": "AAAAAAAGgNc="
     },
     {
+        "MenuSK": 178,
+        "ParentMenuSK": null,
+        "MenuName": "Encounters",
+        "MenuType": "LeftNav",
+        "MenuURI": null,
+        "MenuSortOrder": 0,
+        "CreatedBy": "bstark",
+        "CreatedTs": "2018-11-05T15:41:09.765-05:00",
+        "LastModfdBy": "bstark",
+        "LastModfdTs": "2018-11-30T12:14:50.281-05:00",
+        "RecStat": "A",
+        "cf_CmpntSK": 487,
+        "daTableRowId": "AAAAAAAGgNE="
+    },
+    {
+        "MenuSK": 179,
+        "ParentMenuSK": 178,
+        "MenuName": "Enterprise Reports",
+        "MenuType": "LeftNav",
+        "MenuURI": "/encounters/enterprise-reports",
+        "MenuSortOrder": 0,
+        "CreatedBy": "bstark",
+        "CreatedTs": "2018-11-05T15:41:09.765-05:00",
+        "LastModfdBy": "bstark",
+        "LastModfdTs": "2018-11-30T12:14:50.281-05:00",
+        "RecStat": "A",
+        "cf_CmpntSK": 487,
+        "daTableRowId": "AAAAAAAGgNE="
+    },
+    {
         "MenuSK": 144,
         "ParentMenuSK": null,
         "MenuName": "Members",

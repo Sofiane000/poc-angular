@@ -1,19 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-taskConfiguration',
-  template: `
-    <p>
-      task-configuration works!
-    </p>
-  `,
-  styles: []
+    selector: 'app-task-configuration',
+    template: `
+        <p>
+            task-configuration works!
+        </p>
+    `,
+    styles: [],
 })
 export class TaskConfigurationComponent implements OnInit {
+    constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+    ngOnInit() {}
 }
