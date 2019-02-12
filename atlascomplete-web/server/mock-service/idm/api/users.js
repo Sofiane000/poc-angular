@@ -18,7 +18,7 @@ router.post('/', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    mockLib.serveMock(req, res, 'idm/users/list.of.users.json');
+    mockLib.deleteMock(req, res, 'LoginSK', 'idm/users/list.of.users.json');
 });
 
 module.exports = router;

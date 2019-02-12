@@ -98,7 +98,9 @@ export class DataAccessService {
 
     deleteById(id: string | number): Observable<AtlasResponse> {
         return this.http
-            .delete<HttpResponse<any>>(this.serviceConfig.fullUrl, { observe: 'response' })
+            .delete<HttpResponse<any>>(this.serviceConfig.fullUrl + '/' + id, {
+                observe: 'response',
+            })
             .pipe(
                 map((response: HttpResponse<any>) => {
                     return new AtlasResponse(response.body, response.headers.get('restartRowId'));

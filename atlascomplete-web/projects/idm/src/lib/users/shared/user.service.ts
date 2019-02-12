@@ -53,6 +53,14 @@ export class UserService extends AtlasGridService {
         );
     }
 
+    deleteById(loginSk: number) {
+        return this.dataAccess.deleteById(`${loginSk}`).pipe(
+            map((response) => {
+                return response.body.data;
+            })
+        );
+    }
+
     saveUser(data) {
         this.saveSubject.next(data);
     }

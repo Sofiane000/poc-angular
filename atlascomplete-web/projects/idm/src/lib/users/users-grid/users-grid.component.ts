@@ -192,12 +192,15 @@ export class UsersGridComponent implements OnInit, OnDestroy {
         dialogRef.afterClosed().subscribe((result: any) => {
             if (result && result.toLowerCase() === 'save') {
                 // delete row
-                const index = this.atlasGrid.data.findIndex(
-                    (item) => item.LoginSK === dataItem.LoginSK
-                );
-                if (index !== -1) {
-                    this.atlasGrid.data.splice(index, 1);
-                }
+                this.userService.deleteById(dataItem.LoginSK).subscribe((res) => {
+                    console.log(res);
+                    const index = this.atlasGrid.data.findIndex(
+                        (item) => item.LoginSK === dataItem.LoginSK
+                    );
+                    if (index !== -1) {
+                        this.atlasGrid.data.splice(index, 1);
+                    }
+                });
             }
             this.selectedKeys = [];
             this.onSelectionChange();
