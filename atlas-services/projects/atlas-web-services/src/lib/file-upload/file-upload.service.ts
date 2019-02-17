@@ -8,12 +8,17 @@ import { map } from 'rxjs/operators';
 export class FileUploadService {
     constructor(private http: HttpClient) {}
 
-    uploadFile(url: string, files: any[]): Observable<boolean> {
+    // need to add object here
+    uploadFile(url: string, files: any[], formValues: any): Observable<boolean> {
         const formData = new FormData();
-
+        console.log(formValues);
         for (const file of files) {
-            formData.append(file[0].name, file[0]);
+            formData.append(file.fileName, file);
         }
+        for (const formValue of formValues) {
+            formData.append(formValue.key, formValue.value);
+        }
+
         return this.http.post(url, formData).pipe(
             map(() => {
                 return true;

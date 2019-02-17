@@ -10,6 +10,7 @@ import {
     IColumnSetting,
 } from '@atlas/web-components';
 import { FileUploadService } from '@atlas/web-services';
+import { AnyARecord } from 'dns';
 import { DocumentViewerService } from 'src/app/modules/doc-viewer/services/doc-viewer.service';
 import { UserService } from '../shared/user.service';
 import { UsersDeleteDialogComponent } from '../users-dialog/users-delete-dialog.component';
@@ -246,6 +247,8 @@ export class UsersGridComponent implements OnInit, OnDestroy {
         dialogConfig.height = '300px';
         dialogConfig.closeOnNavigation = true;
         dialogConfig.panelClass = 'custom-dialog-container-upload';
+        const listOfFields = new Map<string, any>();
+        listOfFields.set('name', 'hello');
 
         this.uploadService
             .show(
@@ -261,7 +264,7 @@ export class UsersGridComponent implements OnInit, OnDestroy {
             )
             .subscribe((result) => {
                 if (result.action === 'save') {
-                    this.fileUploadService.uploadFile('emprt', result.files);
+                    this.fileUploadService.uploadFile('emprt', result.files, listOfFields);
                 }
                 console.log(result);
             });
