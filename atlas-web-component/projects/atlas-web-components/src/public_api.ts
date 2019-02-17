@@ -69,6 +69,7 @@ export * from './lib/layout/atlas-dialog-layout/atlas-dialog-footer/models/atlas
 
 export * from './lib/layout/atlas-dialog-layout/atlas-dialog-footer/atlas-dialog-footer.module';
 export * from './lib/layout/atlas-dialog-layout/atlas-dialog-footer/components/atlas-dialog-footer.component';
+export * from './lib/layout/atlas-dialog-layout/atlas-dialog-footer/models/atlas-footer-btn';
 
 export * from './lib/layout/atlas-dialog-layout/atlas-dialog-header/atlas-dialog-header.module';
 export * from './lib/layout/atlas-dialog-layout/atlas-dialog-header/components/atlas-dialog-header.component';

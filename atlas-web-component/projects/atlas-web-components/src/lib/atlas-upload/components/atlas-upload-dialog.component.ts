@@ -1,5 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
+import { IAtlasFooterbtn } from '../../layout/atlas-dialog-layout/atlas-dialog-footer/models/atlas-footer-btn';
 import { IUploadConfig } from '../models/upload-config';
 import { AtlasUploadComponent } from './atlas-upload.component';
 @Component({
@@ -13,8 +14,26 @@ export class AtlasUploadDialogComponent {
     uploadConfig: IUploadConfig;
     @ViewChild(AtlasUploadComponent)
     public atlasUpload: AtlasUploadComponent;
+    buttons: IAtlasFooterbtn[];
 
     constructor(private dialogRef: MatDialogRef<AtlasUploadDialogComponent>) {}
+
+    // tslint:disable-next-line:use-life-cycle-interface
+    ngOnInit(): void {
+        this.buttons = [
+            {
+                text: 'Cancel',
+                action: 'close',
+                title: 'Cancel',
+            },
+            {
+                text: 'Save',
+                action: 'save',
+                title: 'Save',
+                primary: true,
+            },
+        ];
+    }
 
     closeHandler(actions) {
         if (actions === 'save') {
