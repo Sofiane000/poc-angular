@@ -86,7 +86,7 @@ export class AtlasUploadComponent implements OnInit {
         this.remove.emit(e);
     }
 
-    selectEventHandler (e: SelectEvent): void {
+    selectEventHandler(e: SelectEvent): void {
         this.select.emit(e);
     }
 
