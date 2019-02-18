@@ -53,6 +53,12 @@
       ],
       "task-scheduler/*": [
         "dist/task-scheduler/*"
+      ],
+      "encounters": [
+        "dist/encounters"
+      ],
+      "encounters/*": [
+        "dist/encounters/*"
       ]
     }
   }
