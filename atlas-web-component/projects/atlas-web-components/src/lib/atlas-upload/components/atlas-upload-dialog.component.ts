@@ -15,6 +15,7 @@ export class AtlasUploadDialogComponent {
     @ViewChild(AtlasUploadComponent)
     public atlasUpload: AtlasUploadComponent;
     buttons: IAtlasFooterbtn[];
+    isSaveDisabled = true;
 
     constructor(private dialogRef: MatDialogRef<AtlasUploadDialogComponent>) {}
 
@@ -50,5 +51,15 @@ export class AtlasUploadDialogComponent {
                 files: null,
             });
         }
+    }
+
+    selectHandler(event) {
+        this.isSaveDisabled = event.files.length > 0 ? false : true;
+    }
+
+    clearHandler() {
+        setTimeout(() => {
+            this.isSaveDisabled = this.atlasUpload.upload.fileList.files.length > 0 ? false : true;
+        }, 100);
     }
 }

@@ -11,11 +11,13 @@
         [multiple]="uploadConfig.multiple"
         [autoUpload]="uploadConfig.autoUpload"
         [batch]="uploadConfig.batch"
+        (select)="selectHandler($event)"
+        (remove)="clearHandler()"
     ></atlas-upload>
 </atlas-dialog-content>
 <atlas-dialog-footer
     [showYesNo]="false"
-    [isSaveDisabled]="false"
+    [isSaveDisabled]="isSaveDisabled"
     (close)="closeHandler($event)"
     [useButtons]="buttons"
 ></atlas-dialog-footer>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { AtlasGridComponent } from '../../atlas-grid/components/atlas-grid.component';
 import {
     IMultiRowComponent,
     MultiRowSelection,
@@ -71,6 +72,9 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         if (!this.parent) {
             return; // no parent
+        }
+        if (!(this.parent instanceof AtlasGridComponent)) {
+            this.actionButtons.splice(3, 1).map((item) => item);
         }
 
         this.useButtons = this.showAddEditButtons
