@@ -8,4 +8,5 @@ export interface IAtlasToolbarButton {
     class?: string;
     isTextButton?: boolean;
     text?: string;
+    isHidden?: boolean;
 }

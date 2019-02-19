@@ -15,6 +15,7 @@
             [disabled]="button.isDisabled"
             (click)="onBtnClick($event, button.action)"
             [ngClass]="button.class"
+            [hidden]="button.isHidden"
         >
             <mat-icon
                 aria-label="button.title"
@@ -28,6 +29,9 @@
             [title]="button.title"
             mat-button
             [disabled]="button.isDisabled"
+            (click)="onBtnClick($event, button.action)"
+            [ngClass]="button.class"
+            [hidden]="button.isHidden"
         >
             {{ button.text }}
         </button>
