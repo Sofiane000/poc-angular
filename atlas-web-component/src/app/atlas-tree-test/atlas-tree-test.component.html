@@ -12,4 +12,10 @@
     [treeViewService]="treeTestServiceChild"
     [selectable]="true"
     [selectedKeys]="keys"
+    [hasDetails]="true"
+    [multiselect]="true"
+    [triStateChecking]="true"
+    [(checkedKeys)]="checkedKeys"
+    (checkedChange)="onCheckedChange($event)"
+    (viewDetail)="onViewDetail($event)"
 ></atlas-tree>

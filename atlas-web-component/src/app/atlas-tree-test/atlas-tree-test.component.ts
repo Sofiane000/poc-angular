@@ -11,6 +11,7 @@ export class AtlasTreeTestComponent implements OnInit {
     menuItems: any[] = [{ text: 'Add Sibling', icon: 'plus' }, { text: 'Add Child', icon: 'plus' }];
     isExpanded = true;
     keys: string[] = ['0'];
+    checkedKeys: any[] = [];
 
     constructor(private treeService: TreeTestService) {
         this.treeTestServiceChild = treeService;
@@ -19,4 +20,14 @@ export class AtlasTreeTestComponent implements OnInit {
     ngOnInit() {}
 
     onSelectionChange() {}
+
+    onViewDetail(event) {
+        console.log('detail', event);
+    }
+
+    onCheckedChange(event) {
+        setTimeout(() => {
+            console.log('atlas component test', this.checkedKeys);
+        }, 500);
+    }
 }

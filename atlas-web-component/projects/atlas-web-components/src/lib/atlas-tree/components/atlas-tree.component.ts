@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { ContextMenuComponent } from '@progress/kendo-angular-menu';
-import { TreeViewComponent } from '@progress/kendo-angular-treeview';
+import { CheckableSettings, TreeViewComponent } from '@progress/kendo-angular-treeview';
 import { Subscription } from 'rxjs';
 import { AtlasGridService } from '../../atlas-grid/services/atlas-grid.service';
 import { AtlasToolbarComponent } from '../../atlas-toolbar/components/atlas-toolbar.component';
@@ -35,7 +35,7 @@ export class AtlasTreeComponent implements OnInit, IMultiRowComponent {
     @Input() data: any[];
     partialData: any[] = [];
     @Input() showToolbar: boolean;
-    @Input() isEditable: boolean;
+    @Input() hasDetails: boolean;
     @Input() showRefresh: boolean;
     @Input() isFilterable: boolean;
     @Input() menuItems: any[];
@@ -45,6 +45,9 @@ export class AtlasTreeComponent implements OnInit, IMultiRowComponent {
     @Input() children;
     @Input() hasChildren;
     @Input() selectable: Selectable;
+    @Input() multiselect: boolean;
+    @Input() triStateChecking: boolean;
+    @Input() checkedKeys: any[] = [];
     @Input() treeViewService: AtlasGridService;
 
     @Output() dblClick: EventEmitter<any> = new EventEmitter<any>();
@@ -53,6 +56,8 @@ export class AtlasTreeComponent implements OnInit, IMultiRowComponent {
     @Output() selectionChange: EventEmitter<MultiRowSelection> = new EventEmitter<
         MultiRowSelection
     >();
+    @Output() checkedChange: EventEmitter<any> = new EventEmitter<any>();
+    @Output() viewDetail: EventEmitter<any> = new EventEmitter<any>();
 
     constructor() {}
 
@@ -117,6 +122,29 @@ export class AtlasTreeComponent implements OnInit, IMultiRowComponent {
             'fa-file-text ': dataItem['TenantTaxnmyType'] === 'PopGrp' ? true : false,
             'fa-globe': dataItem['TenantTaxnmyType'] === 'Global' ? true : false,
             fa: true,
+        };
+    }
+
+    onViewDetail(item: { dataItem }) {
+        this.viewDetail.emit(item);
+    }
+
+    handleChecking(event) {
+        this.checkedChange.emit(event.item.dataItem);
+        setTimeout(() => {
+            console.log('web component', this.checkedKeys);
+        }, 500);
+    }
+
+    checkBy(item) {
+        return item.dataItem;
+    }
+
+    get checkableSettings(): CheckableSettings {
+        return {
+            checkChildren: this.triStateChecking,
+            checkParents: this.triStateChecking,
+            enabled: this.multiselect,
         };
     }
 }

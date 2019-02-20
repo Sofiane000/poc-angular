@@ -11,11 +11,23 @@
     [selectBy]="selectBy"
     [(selectedKeys)]="selectedKeys"
     [kendoTreeViewSelectable]="selectable"
+    [kendoTreeViewCheckable]="checkableSettings"
+    [(checkedKeys)]="checkedKeys"
+    [checkBy]="checkBy"
+    (checkedChange)="handleChecking($event)"
     (nodeDblClick)="dblClickHandler($event)"
 >
     <ng-template kendoTreeViewNodeTemplate let-dataItem>
         <span class="tree-icon" [ngClass]="iconClass(dataItem)"></span>
         {{ dataItem[textFields] }}
+        <div class="spacer"></div>
+        <button mat-icon-button *ngIf="hasDetails" (click)="onViewDetail(dataItem)">
+            <mat-icon
+                aria-label="Details"
+                fontSet="fontawesome"
+                fontIcon="fa-arrow-circle-right"
+            ></mat-icon>
+        </button>
     </ng-template>
 </kendo-treeview>
 <kendo-contextmenu #treemenu [items]="menuItems" (select)="onAddSelect($event)"></kendo-contextmenu>
