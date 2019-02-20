@@ -34,7 +34,7 @@
         "ParentMenuSK": 3,
         "MenuName": "Reference Data",
         "MenuType": "LeftNav",
-        "MenuURI": "administration/reference",
+        "MenuURI": "ref-data/administration",
         "MenuSortOrder": 7,
         "CreatedBy": "bStark",
         "CreatedTs": "2018-04-20T17:25:06.448-04:00",
@@ -133,20 +133,6 @@
         "RecStat": "A",
         "cf_CmpntSK": 478,
         "daTableRowId": "AAAAAAAGgMw="
-    },
-    {
-        "MenuSK": 155,
-        "ParentMenuSK": 3,
-        "MenuName": "admin test menu  2",
-        "MenuType": "Grid Menu",
-        "MenuURI": "/administration/test",
-        "MenuSortOrder": 3,
-        "CreatedBy": "bstark",
-        "CreatedTs": "2018-09-19T12:16:19.135-04:00",
-        "LastModfdBy": "bstark",
-        "LastModfdTs": "2018-11-06T11:37:05.531-05:00",
-        "RecStat": "A",
-        "daTableRowId": "AAAAAAAGgM0="
     },
     {
         "MenuSK": 67,

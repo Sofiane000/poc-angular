@@ -1,0 +1,62 @@
+[
+    {
+        "ListTypeSK": 1238,
+        "ListTypeName": "AcctPayblSrcType",
+        "EfctvStartDt": "1900-01-01",
+        "EfctvEndDt": "9999-12-31",
+        "LastModfdBy": "m2299",
+        "LastModfdTs": "2018-08-07T17:53:17.508-04:00",
+        "RecStat": "A",
+        "ListTypeDesc": "A code defining the source of the accounts payable category.",
+        "ReadOnlyInd": false,
+        "daTableRowId": "AAAAAAAEBEA="
+    },
+    {
+        "ListTypeSK": 1239,
+        "ListTypeName": "AddrType",
+        "EfctvStartDt": "1900-01-01",
+        "EfctvEndDt": "9999-12-31",
+        "LastModfdBy": "m2299",
+        "LastModfdTs": "2018-08-07T17:53:17.533-04:00",
+        "RecStat": "A",
+        "ListTypeDesc": "Identifies the intended use of an address",
+        "ReadOnlyInd": false,
+        "daTableRowId": "AAAAAAAEBEE="
+    },
+    {
+        "ListTypeSK": 1240,
+        "ListTypeName": "AddrVldtnType",
+        "EfctvStartDt": "1900-01-01",
+        "EfctvEndDt": "9999-12-31",
+        "LastModfdBy": "m2299",
+        "LastModfdTs": "2018-08-07T17:53:17.543-04:00",
+        "RecStat": "A",
+        "ListTypeDesc": "all Melissa generated codes from every service the company offers to provide more detail around individual record success or failure",
+        "ReadOnlyInd": false,
+        "daTableRowId": "AAAAAAAEBEI="
+    },
+    {
+        "ListTypeSK": 1241,
+        "ListTypeName": "AutoVoluntaryIndicator",
+        "EfctvStartDt": "1900-01-01",
+        "EfctvEndDt": "9999-12-31",
+        "LastModfdBy": "m2299",
+        "LastModfdTs": "2018-08-07T17:53:17.554-04:00",
+        "RecStat": "A",
+        "ListTypeDesc": "Indicates how the member was enrolled auto or voluntary",
+        "ReadOnlyInd": false,
+        "daTableRowId": "AAAAAAAEBEM="
+    },
+    {
+        "ListTypeSK": 1242,
+        "ListTypeName": "BankAcctType",
+        "EfctvStartDt": "1900-01-01",
+        "EfctvEndDt": "9999-12-31",
+        "LastModfdBy": "m2299",
+        "LastModfdTs": "2018-08-07T17:53:17.566-04:00",
+        "RecStat": "A",
+        "ListTypeDesc": "A code used to indicate the type of bank account used to generate a payment such as checking or savings account.",
+        "ReadOnlyInd": false,
+        "daTableRowId": "AAAAAAAEBEQ="
+    }
+]

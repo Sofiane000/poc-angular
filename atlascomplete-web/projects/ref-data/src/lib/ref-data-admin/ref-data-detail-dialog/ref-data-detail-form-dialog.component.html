@@ -1,0 +1,40 @@
+<atlas-dialog-header
+    [title]="isNew ? 'Add Reference Data' : 'Edit Reference Data'"
+    [isDirty]="editForm.dirty"
+    (close)="closeHandler($event)"
+></atlas-dialog-header>
+<atlas-dialog-content>
+    <form novalidate [formGroup]="editForm">
+        <atlas-input
+            label="Reference Data Code"
+            formControlName="ListDtlCode"
+            required
+            width="100%"
+        ></atlas-input>
+        <atlas-input
+            label="Reference Data Value"
+            formControlName="ListDtlDesc"
+            required
+            width="100%"
+        ></atlas-input>
+        <atlas-date-picker
+            width="100%"
+            floatingLabel="Effective Start Date"
+            formControlName="EfctvStartDt"
+        ></atlas-date-picker>
+        <atlas-date-picker
+            width="100%"
+            floatingLabel="Effective End Date"
+            formControlName="EfctvEndDt"
+        ></atlas-date-picker>
+        <label>
+            <input type="checkbox" width="100%" formControlName="cf_ListItemIncluded" />
+            Included
+        </label>
+    </form>
+</atlas-dialog-content>
+<atlas-dialog-footer
+    [isSaveDisabled]="isNew ? editForm.invalid : !editForm.valid || !editForm.dirty"
+    (close)="closeHandler($event)"
+    [useButtons]="buttons"
+></atlas-dialog-footer>

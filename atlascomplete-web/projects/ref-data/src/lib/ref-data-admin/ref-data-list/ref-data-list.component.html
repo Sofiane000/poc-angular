@@ -1,0 +1,58 @@
+<atlas-page-header title="Reference Data" fontSize="large" textAlign="left"></atlas-page-header>
+<atlas-page-content>
+    <atlas-splitter
+        [splitterStyle]="'height: 100%;'"
+        [leftPaneSetting]="leftPaneSetting"
+        [rightPaneSetting]="rightPaneSetting"
+        orientation="horizontal"
+    >
+        <div class="no-padding left-panel">
+            <atlas-toolbar
+                [canSearch]="true"
+                [parent]="treeView"
+                [buttons]="treeButtons"
+                [showAddEditButtons]="false"
+                (action)="actionHandler($event)"
+            ></atlas-toolbar>
+            <atlas-tree
+                [data]="treeData"
+                [isTreeViewExpandable]="true"
+                [isTreeViewHierarchyBinding]="true"
+                textFields="TenantTaxnmyName"
+                [children]="'children'"
+                isEditable="true"
+                isFilterable="true"
+                showRefresh="false"
+                (refresh)="refresh()"
+                (selectionChange)="onTreeSelectionChange($event)"
+                [treeViewService]="tenantService"
+                [(selectedKeys)]="selectedTreeKeys"
+            ></atlas-tree>
+        </div>
+        <div class="no-padding right-panel">
+            <atlas-toolbar
+                [canSearch]="true"
+                [parent]="atlasGrid"
+                [buttons]="gridButtons"
+                (action)="actionHandler($event)"
+            ></atlas-toolbar>
+            <atlas-grid
+                [isFilterable]="'menu'"
+                [state]="gridState"
+                [columns]="columnsData"
+                [gridService]="refDataListChild"
+                [isSortable]="sortable"
+                [isPageable]="false"
+                [selectable]="selectableSettings"
+                [showSelectAll]="false"
+                isEditable="true"
+                [selectedKeys]="selectedGridKeys"
+                [isGroupable]="true"
+                (viewDetail)="viewHandler($event)"
+                (dblclick)="dblClickHandler($event)"
+            ></atlas-grid>
+        </div>
+    </atlas-splitter>
+</atlas-page-content>
+<atlas-page-footer [canSave]="false" [showNumRecords]="false"></atlas-page-footer>
+<router-outlet></router-outlet>

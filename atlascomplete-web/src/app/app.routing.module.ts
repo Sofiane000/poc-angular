@@ -4,6 +4,7 @@ import { AuthGuardService, LoginGuardService } from '@atlas/web-services';
 import { BpmModule } from 'projects/bpm/src/lib/bpm.module';
 import { DmsModule } from 'projects/dms/src/lib/dms.module';
 import { IdmModule } from 'projects/idm/src/lib/idm.module';
+import { RefDataModule } from 'projects/ref-data/src/lib/ref-data.module';
 import { HomeComponent } from './modules/auth/components/home/home.component';
 import { LoginComponent } from './modules/auth/components/login/login.component';
 
@@ -33,6 +34,11 @@ const appRoutes: Routes = [
     {
         path: 'dms',
         loadChildren: () => DmsModule,
+        canActivate: [AuthGuardService],
+    },
+    {
+        path: 'ref-data',
+        loadChildren: () => RefDataModule,
         canActivate: [AuthGuardService],
     },
     // {

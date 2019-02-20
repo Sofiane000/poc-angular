@@ -1,0 +1,26 @@
+<atlas-dialog-header
+    [title]="isNew ? 'Add Reference List' : 'Edit Reference List'"
+    [isDirty]="editForm.dirty"
+    (close)="closeHandler($event)"
+></atlas-dialog-header>
+<atlas-dialog-content>
+    <form novalidate [formGroup]="editForm">
+        <atlas-input
+            label="Reference List Name"
+            formControlName="ListTypeName"
+            required
+            width="100%"
+        ></atlas-input>
+        <atlas-input
+            label="Reference List Description"
+            formControlName="ListTypeDesc"
+            required
+            width="100%"
+        ></atlas-input>
+    </form>
+</atlas-dialog-content>
+<atlas-dialog-footer
+    [isSaveDisabled]="isNew ? editForm.invalid : !editForm.valid || !editForm.dirty"
+    (close)="closeHandler($event)"
+    [useButtons]="buttons"
+></atlas-dialog-footer>
