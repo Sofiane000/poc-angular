@@ -58,6 +58,7 @@ export class AtlasGridTestComponent implements OnInit {
                 title: 'Last Name',
                 width: 60,
                 isFilterable: true,
+                hidden: true,
             },
             {
                 field: 'cf_LoginID',
