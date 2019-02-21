@@ -100,6 +100,10 @@ export class RefDataListComponent implements OnInit {
     }
 
     viewHandler({ dataItem }) {
+        this.selectedTenantSK = this.selectedTenantSK
+            ? this.selectedTenantSK
+            : this.treeView.partialData[0].TenantTaxnmySK;
+
         this.router.navigate([
             '/ref-data/administration/tenant/' +
                 this.selectedTenantSK +
