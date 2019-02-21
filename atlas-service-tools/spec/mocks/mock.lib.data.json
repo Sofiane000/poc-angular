@@ -1,23 +1,23 @@
 [
     {
-        "rowNum": 1,
-        "taskId": 3241,
-        "taskName": "FinanceNotification#3241::Acknowledge Error Invoice",
-        "taskTitle": "Acknowledge Error Invoice",
-        "timeStarted": "2018-11-12T15:45:08.212Z",
-        "dueDate": "2018-11-12T17:45:08.212Z",
-        "processName": "FinanceNotification",
-        "taskStatus": "I_ASSIGNED",
-        "performer": "bstark",
-        "priority": "medium"
-    },
-    {
         "rowNum": 2,
         "taskId": 3243,
         "taskName": "FinanceNotification#3243::Acknowledge Error Invoice",
         "taskTitle": "Acknowledge Error Invoice",
         "timeStarted": "2018-11-12T21:32:15.497Z",
         "dueDate": "2018-11-12T23:32:15.497Z",
+        "processName": "FinanceNotification",
+        "taskStatus": "I_ASSIGNED",
+        "performer": "bstark",
+        "priority": "medium"
+    },
+    {
+        "rowNum": 1,
+        "taskId": 3241,
+        "taskName": "FinanceNotification#3241::Acknowledge Error Invoice",
+        "taskTitle": "Acknowledge Error Invoice",
+        "timeStarted": "2018-11-12T15:45:08.212Z",
+        "dueDate": "2018-11-12T17:45:08.212Z",
         "processName": "FinanceNotification",
         "taskStatus": "I_ASSIGNED",
         "performer": "bstark",
@@ -85,7 +85,7 @@
     },
     {
         "rowNum": 8,
-        "taskId": 3486,
+        "taskId": 3240,
         "taskName": "InvoiceManagement#3486::Review Invoice Charges",
         "taskTitle": "Review Invoice Charges",
         "timeStarted": "2018-11-15T22:38:31.345Z",
@@ -97,7 +97,7 @@
     },
     {
         "rowNum": 9,
-        "taskId": 3489,
+        "taskId": 3240,
         "taskName": "InvoiceManagement#3489::Review Invoice Charges",
         "taskTitle": "Review Invoice Charges",
         "timeStarted": "2018-11-15T22:38:32.419Z",

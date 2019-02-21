@@ -17,10 +17,61 @@ class MockLib {
         });
     }
 
+    // support =/eq, <>/ne, >/gt, </lt, >=/ge, <=le, like (*abc*vvv*)
+    __applyFilter(mockData, filter) {
+        _.forEach(filter, (filterCondition) => {
+            let likeRegEx;
+            if (filterCondition.operator === 'like') {
+                let filterRegEx = filterCondition.value.replace(/\*/g, '.*').replace(/\?/g, '.?');
+                try {
+                    likeRegEx = new RegExp('^' + filterRegEx + '$');
+                } catch (ex) {
+                    console.log(ex);
+                }
+            }
+            mockData = _.filter(mockData, (mockRow) => {
+                if (filterCondition.operator === 'eq' || filterCondition.operator === '=') {
+                    return mockRow[filterCondition.property] == filterCondition.value;
+                } else if (filterCondition.operator === 'ne' || filterCondition.operator === '<>') {
+                    return mockRow[filterCondition.property] != filterCondition.value;
+                } else if (filterCondition.operator === 'gt' || filterCondition.operator === '>') {
+                    return mockRow[filterCondition.property] > filterCondition.value;
+                } else if (filterCondition.operator === 'lt' || filterCondition.operator === '<') {
+                    return mockRow[filterCondition.property] < filterCondition.value;
+                } else if (filterCondition.operator === 'le' || filterCondition.operator === '<=') {
+                    return mockRow[filterCondition.property] <= filterCondition.value;
+                } else if (filterCondition.operator === 'ge' || filterCondition.operator === '>=') {
+                    return mockRow[filterCondition.property] >= filterCondition.value;
+                } else if (filterCondition.operator === 'like') {
+                    return likeRegEx.test(mockRow[filterCondition.property]);
+                }
+            });
+        });
+        return mockData;
+    }
+
+    __applySort(mockData, sort) {
+        const sortFields = []; // field
+        const sortModes = []; // asc|desc
+        _.forEach(sort, (sortCriteria) => {
+            sortFields.push(sortCriteria.property);
+            sortModes.push(sortCriteria.direction);
+        });
+        return _.orderBy(mockData, sortFields, sortModes);
+    }
+
     async loadMock(pathToMock, req, filterCb) {
         let rawMockData = await this.__loadMock(mockConfig.baseFolder + pathToMock);
         const pageSize = +req.get('pageSize');
         const restartRowId = +req.get('restartRowId');
+        const filterString = req.get('filter'); // [{operator: "like", value: "Lisa", property: "name", dataType: "character"}]
+        const sortString = req.get('sort'); // [{property: "name", direction: "asc"}]
+        if (filterString) {
+            rawMockData = this.__applyFilter(rawMockData, JSON.parse(filterString));
+        }
+        if (sortString) {
+            rawMockData = this.__applySort(rawMockData, JSON.parse(sortString));
+        }
         const headers = {};
         let mockData;
         if (filterCb) {

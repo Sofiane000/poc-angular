@@ -11,7 +11,13 @@ describe('Mocking library', () => {
     beforeEach(() => {
         config.baseFolder = './spec/mocks/';
         request = {
-            get: function(header) {},
+            mockHeaders: {},
+            get: function(header) {
+                return this.mockHeaders[header];
+            },
+            set: function(header, value) {
+                this.mockHeaders[header] = value;
+            },
         };
         response = {
             mockStatus: void 0,
@@ -146,5 +152,127 @@ describe('Mocking library', () => {
         });
         expect(updatedResult).not.toBeDefined();
         expect(mockLib.saveMock).toHaveBeenCalledWith(jasmine.any(String), jasmine.any(Object));
+    });
+
+    it('should not sort result', async () => {
+        await mockLib.serveMock(request, response, 'mock.lib.data.json');
+        expect(response.mockBody.data).toBeDefined();
+        expect(response.mockBody.data[0].rowNum).toEqual(2);
+    });
+
+    it('should sort result ascending', async () => {
+        request.set('sort', '[{"property": "rowNum", "direction": "asc"}]');
+        await mockLib.serveMock(request, response, 'mock.lib.data.json');
+        expect(response.mockBody.data).toBeDefined();
+        expect(response.mockBody.data[0].rowNum).toEqual(1);
+    });
+
+    it('should sort result descending', async () => {
+        request.set('sort', '[{"property": "rowNum", "direction": "desc"}]');
+        await mockLib.serveMock(request, response, 'mock.lib.data.json');
+        expect(response.mockBody.data).toBeDefined();
+        expect(response.mockBody.data[0].rowNum).toEqual(10);
+    });
+
+    it('should sort by mutliple fields in different directions', async () => {
+        request.set(
+            'sort',
+            '[{"property": "taskId", "direction": "asc"},{"property": "rowNum", "direction": "desc"}]'
+        );
+        await mockLib.serveMock(request, response, 'mock.lib.data.json');
+        expect(response.mockBody.data).toBeDefined();
+        expect(response.mockBody.data[0].taskId).toEqual(3240);
+        expect(response.mockBody.data[0].rowNum).toEqual(9);
+    });
+
+    it('should filter using equal operator', async () => {
+        request.set(
+            'filter',
+            '[{"operator": "eq", "value": 7, "property": "rowNum", "dataType": "character"}]'
+        );
+        await mockLib.serveMock(request, response, 'mock.lib.data.json');
+        expect(response.mockBody.data).toBeDefined();
+        expect(response.mockBody.data.length).toEqual(1);
+        expect(response.mockBody.data[0].rowNum).toEqual(7);
+    });
+
+    it('should filter using not-equal operator', async () => {
+        request.set(
+            'filter',
+            '[{"operator": "ne", "value": 2, "property": "rowNum", "dataType": "character"}]'
+        );
+        await mockLib.serveMock(request, response, 'mock.lib.data.json');
+        expect(response.mockBody.data).toBeDefined();
+        expect(response.mockBody.data.length).toEqual(9);
+        expect(response.mockBody.data[0].rowNum).toEqual(1);
+    });
+
+    it('should filter using greater than operator', async () => {
+        request.set(
+            'filter',
+            '[{"operator": "gt", "value": 2, "property": "rowNum", "dataType": "character"}]'
+        );
+        await mockLib.serveMock(request, response, 'mock.lib.data.json');
+        expect(response.mockBody.data).toBeDefined();
+        expect(response.mockBody.data.length).toEqual(8);
+        expect(response.mockBody.data[0].rowNum).toEqual(3);
+    });
+
+    it('should filter using greater than or equal operator', async () => {
+        request.set(
+            'filter',
+            '[{"operator": "ge", "value": 2, "property": "rowNum", "dataType": "character"}]'
+        );
+        await mockLib.serveMock(request, response, 'mock.lib.data.json');
+        expect(response.mockBody.data).toBeDefined();
+        expect(response.mockBody.data.length).toEqual(9);
+        expect(response.mockBody.data[0].rowNum).toEqual(2);
+    });
+
+    it('should filter using less than operator', async () => {
+        request.set(
+            'filter',
+            '[{"operator": "lt", "value": 2, "property": "rowNum", "dataType": "character"}]'
+        );
+        await mockLib.serveMock(request, response, 'mock.lib.data.json');
+        expect(response.mockBody.data).toBeDefined();
+        expect(response.mockBody.data.length).toEqual(1);
+        expect(response.mockBody.data[0].rowNum).toEqual(1);
+    });
+
+    it('should filter using less than or equal operator', async () => {
+        request.set(
+            'filter',
+            '[{"operator": "le", "value": 2, "property": "rowNum", "dataType": "character"}]'
+        );
+        await mockLib.serveMock(request, response, 'mock.lib.data.json');
+        expect(response.mockBody.data).toBeDefined();
+        expect(response.mockBody.data.length).toEqual(2);
+        expect(response.mockBody.data[0].rowNum).toEqual(2);
+    });
+
+    it('should filter using like operator', async () => {
+        request.set(
+            'filter',
+            '[{"operator": "like", "value": "*Error*", "property": "taskTitle", "dataType": "character"}]'
+        );
+        await mockLib.serveMock(request, response, 'mock.lib.data.json');
+        expect(response.mockBody.data).toBeDefined();
+        expect(response.mockBody.data.length).toEqual(2);
+        expect(response.mockBody.data[0].taskTitle).toEqual('Acknowledge Error Invoice');
+        expect(response.mockBody.data[1].taskTitle).toEqual('Acknowledge Error Invoice');
+    });
+
+    it('should filter and sort', async () => {
+        request.set(
+            'filter',
+            '[{"operator": "like", "value": "*Error*", "property": "taskTitle", "dataType": "character"}]'
+        );
+        request.set('sort', '[{"property": "rowNum", "direction": "asc"}]');
+        await mockLib.serveMock(request, response, 'mock.lib.data.json');
+        expect(response.mockBody.data).toBeDefined();
+        expect(response.mockBody.data.length).toEqual(2);
+        expect(response.mockBody.data[0].taskTitle).toEqual('Acknowledge Error Invoice');
+        expect(response.mockBody.data[0].rowNum).toEqual(1);
     });
 });
