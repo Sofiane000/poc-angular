@@ -15,6 +15,7 @@ import {
     styleUrls: ['./atlas-tree.component.scss'],
 })
 export class AtlasTreeComponent implements OnInit, IMultiRowComponent {
+    private currentCheckedKeys: any[] = [];
     canAdd: boolean;
     canEdit: boolean;
     canDelete: boolean;
@@ -47,7 +48,14 @@ export class AtlasTreeComponent implements OnInit, IMultiRowComponent {
     @Input() selectable: Selectable;
     @Input() multiselect: boolean;
     @Input() triStateChecking: boolean;
-    @Input() checkedKeys: any[] = [];
+    @Input() set checkedKeys(keys: any[]) {
+        this.currentCheckedKeys = keys;
+        this.checkedKeysChange.emit(keys);
+    }
+    get checkedKeys(): any[] {
+        return this.currentCheckedKeys;
+    }
+    @Output() checkedKeysChange: EventEmitter<any[]> = new EventEmitter<any[]>();
     @Input() treeViewService: AtlasGridService;
 
     @Output() dblClick: EventEmitter<any> = new EventEmitter<any>();
