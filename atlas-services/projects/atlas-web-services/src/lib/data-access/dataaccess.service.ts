@@ -26,13 +26,44 @@ export class AtlasResponseBody {
 }
 
 /**
+ * Standard Request Filter
+ */
+// tslint:disable-next-line:max-classes-per-file
+export class AtlasFilter {
+  operator: String;
+  value: String | Number | Date;
+  property: String;
+  dataType?: String;
+}
+
+/**
+ * Available Sort Directions
+ */
+// tslint:disable-next-line:max-classes-per-file
+export enum AtlasSortDirection {
+  Ascending = "asc",
+  Descending = "desc",
+}
+
+/**
+ * Standard Sort Criteria
+ */
+// tslint:disable-next-line:max-classes-per-file
+export class AtlasSort {
+  property: String;
+  direction: AtlasSortDirection;
+}
+
+/**
  * Standard Request Server
  */
 // tslint:disable-next-line:max-classes-per-file
 export class AtlasRequestParams {
-    pageSize?: number;
-    restartRowId: string;
-    params?: HttpParams;
+  pageSize?: number;
+  restartRowId: string;
+  params?: HttpParams;
+  filter?: Array<AtlasFilter>;
+  sort?: Array<AtlasSort>;
 }
 
 /**
@@ -41,6 +72,15 @@ export class AtlasRequestParams {
 // tslint:disable-next-line:max-classes-per-file
 export class DataAccessService {
     constructor(private http: HttpClient, private serviceConfig: DataAccessConfig) {}
+
+    private buildFilter(filter: Array<AtlasFilter>): string {
+      filter.forEach(filterCondition => {
+        if (!filterCondition.dataType) {
+          filterCondition.dataType = typeof filterCondition.value;
+        }
+      });
+      return JSON.stringify(filter);
+    }
 
     get(extraUrl?: string, svcParms?: AtlasRequestParams): Observable<AtlasResponse> {
         let url = this.serviceConfig.fullUrl;
@@ -51,6 +91,12 @@ export class DataAccessService {
             }
             if (svcParms.restartRowId) {
                 headers = headers.append('restartRowId', svcParms.restartRowId);
+            }
+            if (svcParms.filter) {
+                headers = headers.append('filter', this.buildFilter(svcParms.filter));
+            }
+            if (svcParms.sort) {
+                headers = headers.append('sort', JSON.stringify(svcParms.sort));
             }
         }
         if (extraUrl) {
