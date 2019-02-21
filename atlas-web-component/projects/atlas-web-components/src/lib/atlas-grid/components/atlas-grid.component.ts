@@ -279,6 +279,7 @@ export class AtlasGridComponent implements OnInit, OnDestroy, IMultiRowComponent
     ngOnDestroy() {
         if (this.gridServiceSubscription) {
             this.gridServiceSubscription.unsubscribe();
+            this.gridService.next(null);
         }
     }
 
