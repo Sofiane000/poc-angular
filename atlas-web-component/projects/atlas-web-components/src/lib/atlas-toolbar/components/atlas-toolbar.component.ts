@@ -92,6 +92,22 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
         }
     }
 
+    hideAddButton(isHidden: boolean) {
+        this.useButtons[0].isHidden = isHidden;
+    }
+
+    hideEditButton(isHidden: boolean) {
+        this.useButtons[1].isHidden = isHidden;
+    }
+
+    hideDeleteButton(isHidden: boolean) {
+        this.useButtons[2].isHidden = isHidden;
+    }
+
+    hideUploadButton(isHidden: boolean) {
+        this.useButtons[3].isHidden = isHidden;
+    }
+
     onSelectionChanged(hasRowsSelected: boolean) {
         this.actionButtons[1].isDisabled = !hasRowsSelected;
         this.actionButtons[2].isDisabled = !hasRowsSelected;

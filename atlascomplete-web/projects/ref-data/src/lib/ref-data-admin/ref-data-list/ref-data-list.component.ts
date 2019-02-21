@@ -3,6 +3,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 import { Router } from '@angular/router';
 import {
     AtlasGridComponent,
+    AtlasToolbarComponent,
     AtlasTreeComponent,
     ButtonAction,
     IAtlasToolbarButton,
@@ -46,6 +47,7 @@ export class RefDataListComponent implements OnInit {
     gridButtons: IAtlasToolbarButton[] = [];
     @ViewChild(AtlasTreeComponent) treeView: AtlasTreeComponent;
     @ViewChild(AtlasGridComponent) public atlasGrid: AtlasGridComponent;
+    @ViewChild('gridToolbar') public gridToolbar: AtlasToolbarComponent;
 
     constructor(
         private tenantService: TenantsService,
@@ -103,7 +105,6 @@ export class RefDataListComponent implements OnInit {
         this.selectedTenantSK = this.selectedTenantSK
             ? this.selectedTenantSK
             : this.treeView.partialData[0].TenantTaxnmySK;
-
         this.router.navigate([
             '/ref-data/administration/tenant/' +
                 this.selectedTenantSK +
@@ -113,6 +114,17 @@ export class RefDataListComponent implements OnInit {
     }
 
     onTreeSelectionChange(event) {
+        if (event.selectedRowIdx === '0') {
+            this.gridToolbar.hideEditButton(false);
+            this.gridToolbar.hideAddButton(false);
+            this.gridToolbar.hideUploadButton(false);
+            this.gridToolbar.hideDeleteButton(false);
+        } else {
+            this.gridToolbar.hideEditButton(true);
+            this.gridToolbar.hideAddButton(true);
+            this.gridToolbar.hideDeleteButton(true);
+            this.gridToolbar.hideUploadButton(true);
+        }
         this.selectedTenantSK = event.selectedItem.TenantTaxnmySK;
     }
 

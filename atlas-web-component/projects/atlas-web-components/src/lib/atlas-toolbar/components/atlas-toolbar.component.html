@@ -15,7 +15,7 @@
             [disabled]="button.isDisabled"
             (click)="onBtnClick($event, button.action)"
             [ngClass]="button.class"
-            [hidden]="button.isHidden"
+            [style.display]="button.isHidden ? 'none' : 'inline-block'"
         >
             <mat-icon
                 aria-label="button.title"
@@ -31,7 +31,7 @@
             [disabled]="button.isDisabled"
             (click)="onBtnClick($event, button.action)"
             [ngClass]="button.class"
-            [hidden]="button.isHidden"
+            [style.display]="button.isHidden ? 'none' : 'inline-block'"
         >
             {{ button.text }}
         </button>
