@@ -18,9 +18,7 @@ export class AtlasDialogFooterComponent implements OnChanges {
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        this.useButtons.find((e) => e.action === 'save').isDisabled = changes.isSaveDisabled
-            .currentValue
-            ? true
-            : false;
+        this.useButtons.find((e) => e.action === 'save').isDisabled =
+            changes.isSaveDisabled && changes.isSaveDisabled.currentValue ? true : false;
     }
 }
