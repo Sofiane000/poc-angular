@@ -3,6 +3,12 @@
  */
 export * from './lib/file-upload/file-upload.service';
 export * from './lib/data-access/dataaccess.service';
+export * from './lib/models/atlas-filter';
+export * from './lib/models/atlas-request-params';
+export * from './lib/models/atlas-response-body';
+export * from './lib/models/atlas-sort';
+export * from './lib/models/atlas-sort-direction';
+
 export * from './lib/screen/screen.service';
 export * from './lib/session/session.service';
 export * from './lib/guards/component-candeactivate';

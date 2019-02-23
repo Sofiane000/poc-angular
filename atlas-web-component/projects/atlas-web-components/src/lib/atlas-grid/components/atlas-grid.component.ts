@@ -183,7 +183,7 @@ export class AtlasGridComponent implements OnInit, OnDestroy, IMultiRowComponent
                         this.data = [];
                     }
                     this.data.push(...response);
-                    this.gridDataResult = process(this.data, this.state);
+                    this.gridDataResult = { data: this.data, total: this.data.length };
                 }
             });
         } else {
@@ -206,9 +206,12 @@ export class AtlasGridComponent implements OnInit, OnDestroy, IMultiRowComponent
      *  @param event selected grid state.
      */
     dataStateChange(event: DataStateChangeEvent) {
-        this.state = event;
-        // this.gridService.query(event);
-        this.gridDataResult = process(this.data, this.state);
+        this.state = { ...this.state, ...event };
+        this.gridDataResult = null;
+        this.data = [];
+        this.gridService.rowId = null;
+        this.gridService.query(this.state);
+        // this.gridDataResult = process(this.data, this.state);
     }
 
     /**
@@ -228,8 +231,11 @@ export class AtlasGridComponent implements OnInit, OnDestroy, IMultiRowComponent
      */
     refreshGrid() {
         this.state.skip = 0;
-        // this.gridService.query({});
-        this.gridDataResult = process(this.data, this.state);
+        this.gridDataResult = null;
+        this.data = [];
+        this.gridService.query({});
+
+        // this.gridDataResult = process(this.data, this.state);
         this.selectedKeys = [];
     }
 

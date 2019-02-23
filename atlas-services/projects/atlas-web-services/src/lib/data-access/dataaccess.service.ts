@@ -1,7 +1,10 @@
-import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AtlasFilter } from '../models/atlas-filter';
+import { AtlasRequestParams } from '../models/atlas-request-params';
+import { AtlasResponseBody } from '../models/atlas-response-body';
 
 const serviceConfigMap = {};
 const serviceMap = {};
@@ -15,71 +18,19 @@ export class AtlasResponse {
 }
 
 /**
- * Standard Response Body From Server
- */
-// tslint:disable-next-line:max-classes-per-file
-export class AtlasResponseBody {
-    status: boolean;
-    data: any;
-    messages: any[];
-    metadata: any[];
-}
-
-/**
- * Standard Request Filter
- */
-// tslint:disable-next-line:max-classes-per-file
-export class AtlasFilter {
-  operator: String;
-  value: String | Number | Date;
-  property: String;
-  dataType?: String;
-}
-
-/**
- * Available Sort Directions
- */
-// tslint:disable-next-line:max-classes-per-file
-export enum AtlasSortDirection {
-  Ascending = "asc",
-  Descending = "desc",
-}
-
-/**
- * Standard Sort Criteria
- */
-// tslint:disable-next-line:max-classes-per-file
-export class AtlasSort {
-  property: String;
-  direction: AtlasSortDirection;
-}
-
-/**
- * Standard Request Server
- */
-// tslint:disable-next-line:max-classes-per-file
-export class AtlasRequestParams {
-  pageSize?: number;
-  restartRowId: string;
-  params?: HttpParams;
-  filter?: Array<AtlasFilter>;
-  sort?: Array<AtlasSort>;
-}
-
-/**
  * Service implementation
  */
 // tslint:disable-next-line:max-classes-per-file
 export class DataAccessService {
     constructor(private http: HttpClient, private serviceConfig: DataAccessConfig) {}
 
-    private buildFilter(filter: Array<AtlasFilter>): string {
-      filter.forEach(filterCondition => {
-        if (!filterCondition.dataType) {
-          filterCondition.dataType = typeof filterCondition.value;
-        }
-      });
-      return JSON.stringify(filter);
+    private buildFilter(filter: AtlasFilter[]): string {
+        filter.forEach((filterCondition) => {
+            if (!filterCondition.dataType) {
+                filterCondition.dataType = typeof filterCondition.value;
+            }
+        });
+        return JSON.stringify(filter);
     }
 
     get(extraUrl?: string, svcParms?: AtlasRequestParams): Observable<AtlasResponse> {

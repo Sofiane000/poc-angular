@@ -1,7 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AtlasGridService } from '@atlas/web-components';
 
-import { DataAccessFactory, DataAccessService } from '@atlas/web-services';
+import {
+    AtlasRequestParams,
+    AtlasSort,
+    AtlasSortDirection,
+    DataAccessFactory,
+    DataAccessService,
+} from '@atlas/web-services';
 import { Observable, Subject } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
@@ -35,14 +41,35 @@ export class UserService extends AtlasGridService {
     }*/
 
     getUsers(state) {
-        return this.dataAccess
-            .get('', { pageSize: state.pageSize, restartRowId: this.rowId ? this.rowId : '' })
-            .pipe(
-                map((response) => {
-                    this.rowId = response.restartRowId;
-                    return response.body.data;
-                })
-            );
+        const params: AtlasRequestParams = new AtlasRequestParams();
+
+        if (state.sort) {
+            params.sort = state.sort
+                .filter((item) => item.dir)
+                .map((item) => {
+                    if (item.dir) {
+                        const obj = new AtlasSort();
+                        obj.property = item.field;
+                        obj.direction =
+                            item.dir === 'asc'
+                                ? AtlasSortDirection.Ascending
+                                : AtlasSortDirection.Descending;
+                        return obj;
+                    }
+                });
+        }
+        if (state.filter) {
+            // params.filter = [{ operator: 'like', property: 'myField', value: '*search*' }];
+        }
+        params.pageSize = state.pageSize;
+        params.restartRowId = this.rowId ? this.rowId : '';
+
+        return this.dataAccess.get('', params).pipe(
+            map((response) => {
+                this.rowId = response.restartRowId;
+                return response.body.data;
+            })
+        );
     }
 
     getUserById(loginSk: number) {
