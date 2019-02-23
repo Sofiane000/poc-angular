@@ -1,0 +1,1121 @@
+[
+  {
+      "IndvSK": 1918209,
+      "FirstName": "John",
+      "LastName": "Harper",
+      "DOB": "1965-05-08",
+      "AddrSK": 1477147,
+      "AddrLine1": "1645 W LE MOYNE ST",
+      "City": "CHICAGO",
+      "PstlCode": "60622",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 3570540,
+              "IndvSK": 1918209,
+              "MbrCardID": "177614674",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1918644,
+      "FirstName": "John",
+      "LastName": "Wells",
+      "DOB": "1940-03-13",
+      "PhNbr": "0000000000",
+      "AddrSK": 1031298,
+      "AddrLine1": "250 East 10th Street",
+      "City": "Chattanooga",
+      "PstlCode": "37402",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 1354340,
+              "IndvSK": 1918644,
+              "MbrCardID": "AB0001425",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": false
+          },
+          {
+              "MbrshpSK": 2374678,
+              "IndvSK": 1918644,
+              "MbrCardID": "AB0001425",
+              "cf_LOBTypeCode": "Medicare",
+              "cf_MbrshpStatus": true
+          },
+          {
+              "MbrshpSK": 2711892,
+              "IndvSK": 1918644,
+              "MbrCardID": "AB0001425",
+              "cf_LOBTypeCode": "Medicare",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1935490,
+      "FirstName": "John",
+      "LastName": "Kapanowski",
+      "DOB": "2005-01-21",
+      "AddrSK": 944379,
+      "AddrLine1": "4263 EARNEY RD",
+      "City": "WOODSTOCK",
+      "PstlCode": "30188",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 52796,
+              "IndvSK": 1935490,
+              "MbrCardID": "QAX24557344E",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1935536,
+      "FirstName": "John",
+      "LastName": "Lewis",
+      "DOB": "1966-04-26",
+      "SSN": "371929167",
+      "PhNbr": "6789863138",
+      "AddrSK": 1057892,
+      "AddrLine1": "31 GREATWOOD DRIVE",
+      "City": "WHITE",
+      "PstlCode": "30184",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 2709560,
+              "IndvSK": 1935536,
+              "MbrCardID": "QAX22821873E",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1935540,
+      "FirstName": "John",
+      "LastName": "Lindner",
+      "DOB": "1996-08-23",
+      "SSN": "254970721",
+      "AddrSK": 1580454,
+      "AddrLine1": "321 REDDIN DR",
+      "City": "CANTON",
+      "PstlCode": "30114",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 2353507,
+              "IndvSK": 1935540,
+              "MbrCardID": "QAX20916838E",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1946959,
+      "FirstName": "John",
+      "LastName": "Papke",
+      "DOB": "1959-11-25",
+      "SSN": "369666094",
+      "PhNbr": "8107323833",
+      "AddrSK": 615833,
+      "AddrLine1": "2156 Monaco St",
+      "City": "Flint",
+      "PstlCode": "48532",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 1569050,
+              "IndvSK": 1946959,
+              "MedicaidID": "0026698134",
+              "MbrCardID": "0026698134",
+              "cf_LOBTypeCode": "Medicaid",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1946977,
+      "FirstName": "John",
+      "LastName": "Gettelman",
+      "DOB": "1957-01-03",
+      "PhNbr": "9999999999",
+      "AddrSK": 1780154,
+      "AddrLine1": "1714 N PROSPECT AVE APT 1",
+      "City": "MILWAUKEE",
+      "PstlCode": "53202",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 1897839,
+              "IndvSK": 1946977,
+              "MbrCardID": "040120723",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1946997,
+      "FirstName": "John",
+      "LastName": "Browarsky",
+      "DOB": "1970-12-12",
+      "SSN": "271660983",
+      "AddrSK": 491540,
+      "AddrLine1": "1510 OLDBRIDGE ROAD",
+      "City": "CINCINNATI",
+      "PstlCode": "45230",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 3499115,
+              "IndvSK": 1946997,
+              "MbrCardID": "257110001600",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1947055,
+      "FirstName": "John",
+      "LastName": "Lewis",
+      "DOB": "1974-12-21",
+      "SSN": "380029848",
+      "AddrSK": 822835,
+      "AddrLine1": "815 N Connecticut Ave",
+      "City": "Royal Oak",
+      "PstlCode": "48067",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 3272657,
+              "IndvSK": 1947055,
+              "MbrCardID": "26712431",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1947079,
+      "FirstName": "John",
+      "LastName": "Doe",
+      "DOB": "1954-01-01",
+      "PhNbr": "2318672519",
+      "AddrSK": 859782,
+      "AddrLine1": "PO Box 228",
+      "AddrLine2": "James Hauser",
+      "City": "Rodney",
+      "PstlCode": "49342",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 2138718,
+              "IndvSK": 1947079,
+              "MedicaidID": "0026715557",
+              "MbrCardID": "0026715557",
+              "cf_LOBTypeCode": "Medicaid",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1947160,
+      "FirstName": "John",
+      "LastName": "Wiegand",
+      "DOB": "1971-03-29",
+      "SSN": "373982547",
+      "PhNbr": "7349155816",
+      "AddrSK": 1083994,
+      "AddrLine1": "7610 Lakeshore Dr",
+      "City": "Newport",
+      "PstlCode": "48166",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 3539735,
+              "IndvSK": 1947160,
+              "MedicaidID": "0026735219",
+              "MbrCardID": "0026735219",
+              "cf_LOBTypeCode": "Medicaid",
+              "cf_MbrshpStatus": false
+          },
+          {
+              "MbrshpSK": 3539736,
+              "IndvSK": 1947160,
+              "MedicaidID": "0026735219",
+              "MbrCardID": "0026735219",
+              "cf_LOBTypeCode": "Medicaid",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1947206,
+      "FirstName": "John",
+      "LastName": "Constantino",
+      "DOB": "1956-08-07",
+      "PhNbr": "0000000000",
+      "AddrSK": 1377187,
+      "AddrLine1": "1910 California Street Bldg A",
+      "City": "Eureka",
+      "PstlCode": "95501",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 2171067,
+              "IndvSK": 1947206,
+              "MbrCardID": "RCP021024",
+              "cf_LOBTypeCode": "Medicaid",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1947295,
+      "FirstName": "John",
+      "LastName": "Grabowski",
+      "DOB": "1986-01-29",
+      "SSN": "378112070",
+      "AddrSK": 786771,
+      "AddrLine1": "20853 Indiana Ave",
+      "City": "Brownstown Township",
+      "PstlCode": "48183",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 2088071,
+              "IndvSK": 1947295,
+              "MbrCardID": "26750701",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1947348,
+      "FirstName": "John",
+      "LastName": "Hornack",
+      "DOB": "1927-11-26",
+      "PhNbr": "9999999999",
+      "AddrSK": 665934,
+      "AddrLine1": "910 85TH ST APT 123",
+      "City": "KENOSHA",
+      "PstlCode": "53143",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 3686245,
+              "IndvSK": 1947348,
+              "MbrCardID": "040120835",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1947459,
+      "FirstName": "John",
+      "LastName": "Toomey",
+      "DOB": "1960-03-20",
+      "SSN": "271708876",
+      "AddrSK": 1467392,
+      "AddrLine1": "725 WOODLAKE DR",
+      "City": "AURORA",
+      "PstlCode": "44202",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 1996953,
+              "IndvSK": 1947459,
+              "MbrCardID": "253720009900",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1947484,
+      "FirstName": "John",
+      "LastName": "Schillo",
+      "DOB": "1954-10-13",
+      "SSN": "272569577",
+      "AddrSK": 663040,
+      "AddrLine1": "4325 W. 152ND ST",
+      "City": "CLEVELAND",
+      "PstlCode": "44135",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 62674,
+              "IndvSK": 1947484,
+              "MbrCardID": "261600000900",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1947487,
+      "FirstName": "John",
+      "LastName": "Scheerer",
+      "DOB": "1961-11-29",
+      "SSN": "287542415",
+      "AddrSK": 125520,
+      "AddrLine1": "3476 ZENOBIA RD",
+      "City": "NORWALK",
+      "PstlCode": "44857",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 2727023,
+              "IndvSK": 1947487,
+              "MbrCardID": "261600000800",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1947505,
+      "FirstName": "John",
+      "LastName": "Havrilla",
+      "DOB": "1967-10-06",
+      "SSN": "378621324",
+      "AddrSK": 695125,
+      "AddrLine1": "28624 COTTAGE LN",
+      "City": "NEW HUDSON",
+      "PstlCode": "48165",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 979006,
+              "IndvSK": 1947505,
+              "MbrCardID": "306570009100",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1947833,
+      "FirstName": "John",
+      "LastName": "Clark",
+      "DOB": "1976-03-27",
+      "SSN": "362926615",
+      "PhNbr": "5178855869",
+      "AddrSK": 369756,
+      "AddrLine1": "1116 Seymour Ave",
+      "City": "Lansing",
+      "PstlCode": "48906",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 949678,
+              "IndvSK": 1947833,
+              "MedicaidID": "0026789331",
+              "MbrCardID": "0026789331",
+              "cf_LOBTypeCode": "Medicaid",
+              "cf_MbrshpStatus": false
+          },
+          {
+              "MbrshpSK": 949679,
+              "IndvSK": 1947833,
+              "MedicaidID": "0026789331",
+              "MbrCardID": "0026789331",
+              "cf_LOBTypeCode": "Medicaid",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1948061,
+      "FirstName": "John",
+      "LastName": "Graham",
+      "DOB": "1948-03-01",
+      "PhNbr": "7735647574",
+      "AddrSK": 949521,
+      "AddrLine1": "820 W LAWRENCE AVE",
+      "City": "CHICAGO",
+      "PstlCode": "60640",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 981893,
+              "IndvSK": 1948061,
+              "MbrCardID": "922799788",
+              "cf_LOBTypeCode": "HIX",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1948113,
+      "FirstName": "John",
+      "LastName": "Allen",
+      "DOB": "2005-08-08",
+      "PhNbr": "7083004029",
+      "AddrSK": 42805,
+      "AddrLine1": "203 LESTER RD",
+      "City": "PARK FOREST",
+      "PstlCode": "60466",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 3501545,
+              "IndvSK": 1948113,
+              "MbrCardID": "221090376",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1948271,
+      "FirstName": "John",
+      "LastName": "Carr",
+      "DOB": "1962-01-03",
+      "PhNbr": "7082090898",
+      "AddrSK": 1730084,
+      "AddrLine1": "1833 S 18TH AVE",
+      "City": "MAYWOOD",
+      "PstlCode": "60153",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 983725,
+              "IndvSK": 1948271,
+              "MbrCardID": "087453213",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1948354,
+      "FirstName": "John",
+      "LastName": "Wallace",
+      "DOB": "1976-06-11",
+      "AddrSK": 1264269,
+      "AddrLine1": "7924 S RIDGELAND AVE",
+      "City": "CHICAGO",
+      "PstlCode": "60617",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 717040,
+              "IndvSK": 1948354,
+              "MbrCardID": "209178656",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1948689,
+      "FirstName": "John",
+      "LastName": "Joyce",
+      "DOB": "1964-03-19",
+      "AddrSK": 1692190,
+      "AddrLine1": "300 W 117TH ST",
+      "City": "CHICAGO",
+      "PstlCode": "60628",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 3070302,
+              "IndvSK": 1948689,
+              "MbrCardID": "190002097",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1948831,
+      "FirstName": "John",
+      "LastName": "Baines",
+      "DOB": "1966-07-06",
+      "PhNbr": "2172451481",
+      "AddrSK": 1160356,
+      "AddrLine1": "4328 W AUGUSTA BLVD",
+      "City": "CHICAGO",
+      "PstlCode": "60651",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 3769741,
+              "IndvSK": 1948831,
+              "MbrCardID": "083316141",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1948876,
+      "FirstName": "John",
+      "LastName": "Lammers",
+      "DOB": "2004-07-14",
+      "SSN": "366313275",
+      "PhNbr": "2696234263",
+      "AddrSK": 1217438,
+      "AddrLine1": "3288 W Halbert Rd",
+      "City": "Battle Creek",
+      "PstlCode": "49017",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 181689,
+              "IndvSK": 1948876,
+              "MedicaidID": "0026812499",
+              "MbrCardID": "0026812499",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1949044,
+      "FirstName": "John",
+      "LastName": "Pierce",
+      "DOB": "1962-04-21",
+      "PhNbr": "7737837343",
+      "AddrSK": 473533,
+      "AddrLine1": "7203 S EVANS AVE FL 1",
+      "City": "CHICAGO",
+      "PstlCode": "60619",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 3506674,
+              "IndvSK": 1949044,
+              "MbrCardID": "142861731",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1949241,
+      "FirstName": "John",
+      "LastName": "Beach",
+      "DOB": "1976-04-12",
+      "SSN": "365828416",
+      "PhNbr": "2317948761",
+      "AddrSK": 1599320,
+      "AddrLine1": "384 2nd St",
+      "City": "Manistee",
+      "PstlCode": "49660",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 3137790,
+              "IndvSK": 1949241,
+              "MedicaidID": "0026845619",
+              "MbrCardID": "0026845619",
+              "cf_LOBTypeCode": "Medicaid",
+              "cf_MbrshpStatus": false
+          },
+          {
+              "MbrshpSK": 3137791,
+              "IndvSK": 1949241,
+              "MedicaidID": "0026845619",
+              "MbrCardID": "0026845619",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1949320,
+      "FirstName": "John",
+      "LastName": "Lopez",
+      "DOB": "1960-08-19",
+      "SSN": "527435820",
+      "AddrSK": 358820,
+      "AddrLine1": "5340 W Minton St",
+      "City": "Laveen",
+      "PstlCode": "85339",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 2705000,
+              "IndvSK": 1949320,
+              "MbrCardID": "25846661",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1949647,
+      "FirstName": "John",
+      "LastName": "Hammond",
+      "DOB": "2004-07-13",
+      "SSN": "368311232",
+      "PhNbr": "5178176515",
+      "AddrSK": 82068,
+      "AddrLine1": "907 HAGUE AVE",
+      "City": "JACKSON",
+      "PstlCode": "49203",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 310415,
+              "IndvSK": 1949647,
+              "MedicaidID": "0026916752",
+              "MbrCardID": "0026916752",
+              "cf_LOBTypeCode": "Medicaid",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1949755,
+      "FirstName": "John",
+      "LastName": "Spor",
+      "DOB": "1957-01-16",
+      "PhNbr": "9999999999",
+      "AddrSK": 564183,
+      "AddrLine1": "9047 W GREENFIELD AVE",
+      "City": "WEST ALLIS",
+      "PstlCode": "53214",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 2340196,
+              "IndvSK": 1949755,
+              "MbrCardID": "040014337",
+              "cf_LOBTypeCode": "Medicaid",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1949839,
+      "FirstName": "John",
+      "LastName": "Ormond",
+      "DOB": "1969-08-20",
+      "SSN": "295542005",
+      "PhNbr": "7404539986",
+      "AddrSK": 1323753,
+      "AddrLine1": "2698 E RIDGEWOOD CIR",
+      "City": "ZANESVILLE",
+      "PstlCode": "43701",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 3684607,
+              "IndvSK": 1949839,
+              "MbrCardID": "298669282",
+              "cf_LOBTypeCode": "HIX",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1949858,
+      "FirstName": "John",
+      "LastName": "Rosch",
+      "DOB": "1948-08-19",
+      "PhNbr": "9999999999",
+      "AddrSK": 45227,
+      "AddrLine1": "3524 7TH AVE APT 201",
+      "City": "KENOSHA",
+      "PstlCode": "53140",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 611804,
+              "IndvSK": 1949858,
+              "MbrCardID": "040120447",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1949884,
+      "FirstName": "John",
+      "LastName": "Yocis",
+      "DOB": "2009-09-15",
+      "SSN": "421654895",
+      "PhNbr": "3347016557",
+      "AddrSK": 258394,
+      "AddrLine1": "18956 Farmington Rd",
+      "City": "Livonia",
+      "PstlCode": "48152",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 1522695,
+              "IndvSK": 1949884,
+              "MbrCardID": "27994361",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1949962,
+      "FirstName": "John",
+      "LastName": "Lairsey",
+      "DOB": "1964-01-19",
+      "SSN": "253339354",
+      "AddrSK": 1819959,
+      "AddrLine1": "3805 COWAN CIRCLE",
+      "City": "ACWORTH",
+      "PstlCode": "30101",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 1996895,
+              "IndvSK": 1949962,
+              "MbrCardID": "256260000600",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1949991,
+      "FirstName": "John",
+      "LastName": "Brennan",
+      "DOB": "1957-08-26",
+      "AddrSK": 814514,
+      "AddrLine1": "1930 S Broad St",
+      "City": "Philadelphia",
+      "PstlCode": "19145",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 2060355,
+              "IndvSK": 1949991,
+              "MbrCardID": "ML001142475",
+              "cf_LOBTypeCode": "Medicare",
+              "cf_MbrshpStatus": false
+          },
+          {
+              "MbrshpSK": 2172684,
+              "IndvSK": 1949991,
+              "MbrCardID": "ML001142475",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1949999,
+      "FirstName": "John",
+      "LastName": "Cannon",
+      "DOB": "1946-07-27",
+      "AddrSK": 814514,
+      "AddrLine1": "1930 S Broad St",
+      "City": "Philadelphia",
+      "PstlCode": "19145",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 792856,
+              "IndvSK": 1949999,
+              "MbrCardID": "ML001133653",
+              "cf_LOBTypeCode": "Medicare",
+              "cf_MbrshpStatus": false
+          },
+          {
+              "MbrshpSK": 2041414,
+              "IndvSK": 1949999,
+              "MbrCardID": "ML001133653",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1950037,
+      "FirstName": "John",
+      "LastName": "Furlow",
+      "DOB": "1944-10-03",
+      "AddrSK": 814514,
+      "AddrLine1": "1930 S Broad St",
+      "City": "Philadelphia",
+      "PstlCode": "19145",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 54177,
+              "IndvSK": 1950037,
+              "MbrCardID": "ML00173983",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          },
+          {
+              "MbrshpSK": 3505933,
+              "IndvSK": 1950037,
+              "MbrCardID": "ML00173983",
+              "cf_LOBTypeCode": "Medicare",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1950043,
+      "FirstName": "John",
+      "LastName": "Gerhard",
+      "DOB": "1931-04-06",
+      "AddrSK": 814514,
+      "AddrLine1": "1930 S Broad St",
+      "City": "Philadelphia",
+      "PstlCode": "19145",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 413683,
+              "IndvSK": 1950043,
+              "MbrCardID": "ML00161103",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          },
+          {
+              "MbrshpSK": 793198,
+              "IndvSK": 1950043,
+              "MbrCardID": "ML00161103",
+              "cf_LOBTypeCode": "Medicare",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1950089,
+      "FirstName": "John",
+      "LastName": "Mccullian",
+      "DOB": "1958-11-01",
+      "AddrSK": 814514,
+      "AddrLine1": "1930 S Broad St",
+      "City": "Philadelphia",
+      "PstlCode": "19145",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 2145230,
+              "IndvSK": 1950089,
+              "MbrCardID": "ML001102729",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          },
+          {
+              "MbrshpSK": 3284579,
+              "IndvSK": 1950089,
+              "MbrCardID": "ML001102729",
+              "cf_LOBTypeCode": "Medicare",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1950093,
+      "FirstName": "John",
+      "LastName": "Mcintyre",
+      "DOB": "1937-03-24",
+      "AddrSK": 814514,
+      "AddrLine1": "1930 S Broad St",
+      "City": "Philadelphia",
+      "PstlCode": "19145",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 436615,
+              "IndvSK": 1950093,
+              "MbrCardID": "ML001149053",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          },
+          {
+              "MbrshpSK": 792828,
+              "IndvSK": 1950093,
+              "MbrCardID": "ML001149053",
+              "cf_LOBTypeCode": "Medicare",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1950110,
+      "FirstName": "John",
+      "LastName": "Murphy",
+      "DOB": "1940-08-06",
+      "AddrSK": 814514,
+      "AddrLine1": "1930 S Broad St",
+      "City": "Philadelphia",
+      "PstlCode": "19145",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 2171381,
+              "IndvSK": 1950110,
+              "MbrCardID": "ML00173330",
+              "cf_LOBTypeCode": "Medicare",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1950125,
+      "FirstName": "John",
+      "LastName": "Paylor",
+      "DOB": "1955-08-01",
+      "PhNbr": "(555)-555-5555",
+      "AddrSK": 814514,
+      "AddrLine1": "1930 S Broad St",
+      "City": "Philadelphia",
+      "PstlCode": "19145",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 1717410,
+              "IndvSK": 1950125,
+              "MbrCardID": "ML001127814",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": false
+          },
+          {
+              "MbrshpSK": 2171193,
+              "IndvSK": 1950125,
+              "MbrCardID": "ML001127814",
+              "cf_LOBTypeCode": "Medicare",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1950143,
+      "FirstName": "John",
+      "LastName": "Riendeau",
+      "DOB": "1935-01-13",
+      "AddrSK": 814514,
+      "AddrLine1": "1930 S Broad St",
+      "City": "Philadelphia",
+      "PstlCode": "19145",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 55460,
+              "IndvSK": 1950143,
+              "MbrCardID": "ML00136785",
+              "cf_LOBTypeCode": "Medicare",
+              "cf_MbrshpStatus": false
+          },
+          {
+              "MbrshpSK": 980383,
+              "IndvSK": 1950143,
+              "MbrCardID": "ML00136785",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1950178,
+      "FirstName": "John",
+      "LastName": "Taylor",
+      "DOB": "1939-03-08",
+      "AddrSK": 814514,
+      "AddrLine1": "1930 S Broad St",
+      "City": "Philadelphia",
+      "PstlCode": "19145",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 2555528,
+              "IndvSK": 1950178,
+              "MbrCardID": "ML0016552",
+              "cf_LOBTypeCode": "Medicare",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1950195,
+      "FirstName": "John",
+      "LastName": "Wesolowski",
+      "DOB": "1940-07-22",
+      "AddrSK": 814514,
+      "AddrLine1": "1930 S Broad St",
+      "City": "Philadelphia",
+      "PstlCode": "19145",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 2060665,
+              "IndvSK": 1950195,
+              "MbrCardID": "ML00153096",
+              "cf_LOBTypeCode": "Medicare",
+              "cf_MbrshpStatus": false
+          },
+          {
+              "MbrshpSK": 2353989,
+              "IndvSK": 1950195,
+              "MbrCardID": "ML00153096",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1950232,
+      "FirstName": "John",
+      "LastName": "Warren",
+      "DOB": "1952-02-20",
+      "AddrSK": 814514,
+      "AddrLine1": "1930 S Broad St",
+      "City": "Philadelphia",
+      "PstlCode": "19145",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 979647,
+              "IndvSK": 1950232,
+              "MbrCardID": "ML00197688",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          },
+          {
+              "MbrshpSK": 2009718,
+              "IndvSK": 1950232,
+              "MbrCardID": "ML00197688",
+              "cf_LOBTypeCode": "Medicaid",
+              "cf_MbrshpStatus": false
+          },
+          {
+              "MbrshpSK": 2556110,
+              "IndvSK": 1950232,
+              "MbrCardID": "ML00197688",
+              "cf_LOBTypeCode": "Medicare",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1950236,
+      "FirstName": "John",
+      "LastName": "Mami",
+      "DOB": "1928-03-19",
+      "AddrSK": 814514,
+      "AddrLine1": "1930 S Broad St",
+      "City": "Philadelphia",
+      "PstlCode": "19145",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 1890463,
+              "IndvSK": 1950236,
+              "MbrCardID": "ML00174839",
+              "cf_LOBTypeCode": "Commercial",
+              "cf_MbrshpStatus": true
+          },
+          {
+              "MbrshpSK": 2010416,
+              "IndvSK": 1950236,
+              "MbrCardID": "ML00174839",
+              "cf_LOBTypeCode": "Medicare",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  },
+  {
+      "IndvSK": 1950741,
+      "FirstName": "John",
+      "LastName": "Wilson",
+      "DOB": "1990-11-08",
+      "AddrSK": 232140,
+      "AddrLine1": "4850 CONNECTICUT AVE NW",
+      "AddrLine2": "APT 305",
+      "City": "WASHINGTON",
+      "PstlCode": "20008",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 2001705,
+              "IndvSK": 1950741,
+              "MbrCardID": "70902878",
+              "cf_LOBTypeCode": "Medicaid",
+              "cf_MbrshpStatus": true
+          }
+      ]
+  },
+  {
+      "IndvSK": 1950795,
+      "FirstName": "John",
+      "LastName": "Brainerd",
+      "DOB": "1976-03-06",
+      "SSN": "372788103",
+      "AddrSK": 1579609,
+      "AddrLine1": "155 S Burkett Rd",
+      "City": "Lake City",
+      "PstlCode": "49651",
+      "vtIndvMbrshp": [
+          {
+              "MbrshpSK": 3137802,
+              "IndvSK": 1950795,
+              "MedicaidID": "0027024351",
+              "MbrCardID": "0027024351",
+              "cf_LOBTypeCode": "Medicaid",
+              "cf_MbrshpStatus": false
+          }
+      ]
+  }
+]

@@ -1,0 +1,113 @@
+.chase-grid > .atlas-panel,
+.chase-search > .chase-detail-panel {
+  margin-top: 15px;
+}
+
+.chase-search-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.chase-filter-options {
+  display: flex;
+}
+
+.chase-filter-options > atlas-multiselect {
+  flex: 50%;
+  margin: 10px;
+}
+
+.chase-search-details {
+  display: flex;
+}
+
+.chase-search-details > .chase-details {
+  flex: 100%;
+  margin: 10px;
+}
+
+.chase-detail {
+  display: flex;
+  margin-right: 215px;
+}
+
+.chase-detail > atlas-input {
+  flex: 100%;
+}
+
+.chase-detail > atlas-button {
+  flex: 50%;
+}
+
+.atlas-panel-body {
+  padding: 0px;
+}
+
+.chase-search-details,
+.chase-filter-options {
+  padding: 5px 15px !important;
+}
+
+.chase-filter-details {
+  margin: 10px 0px;
+  padding: 0px !important;
+}
+
+.find-chase > atlas-button {
+  float: right !important;
+}
+
+.error {
+  color: #f00;
+  font-size: 11px;
+}
+
+.member-details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.displayfield {
+  display: flex;
+  flex-direction: column;
+}
+
+.displayfield > label,
+.displayfield > span {
+  margin-right: 15px;
+}
+
+// atlas-panel
+
+.atlas-panel {
+  padding-top: 0px;
+    box-shadow:
+ rgba(0, 0, 0, 0.14) 0 2px 2px 0,
+ rgba(0, 0, 0, 0.12) 0 1px 5px 0,
+        rgba(0, 0, 0, 0.2) 0 3px 1px -2px !important;
+}
+
+.atlas-panel-header {
+    min-height: 48px;
+    background-color: #e9e1d7;
+    background-image: none;
+    display: flex;
+    align-items: center;
+}
+
+.atlas-panel-title {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.atlas-panel-body {
+    height: 100%;
+    padding: 30px;
+}
+
+form {
+    margin: 100px;
+}

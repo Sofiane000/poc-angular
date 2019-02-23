@@ -1,0 +1,16 @@
+form {
+  margin: 0;
+  margin-top: 10px;
+  display: flex;
+}
+
+form > atlas-input,
+form > atlas-multiselect,
+form > atlas-button {
+  margin: auto;
+}
+
+.error {
+  color: #f00;
+  font-size: 11px;
+}

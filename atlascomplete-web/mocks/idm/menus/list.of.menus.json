@@ -135,6 +135,20 @@
         "daTableRowId": "AAAAAAAGgMw="
     },
     {
+        "MenuSK": 155,
+        "ParentMenuSK": 3,
+        "MenuName": "admin test menu  2",
+        "MenuType": "Grid Menu",
+        "MenuURI": "/administration/test",
+        "MenuSortOrder": 3,
+        "CreatedBy": "bstark",
+        "CreatedTs": "2018-09-19T12:16:19.135-04:00",
+        "LastModfdBy": "bstark",
+        "LastModfdTs": "2018-11-06T11:37:05.531-05:00",
+        "RecStat": "A",
+        "daTableRowId": "AAAAAAAGgM0="
+    },
+    {
         "MenuSK": 67,
         "ParentMenuSK": null,
         "MenuName": "Finance Services",
@@ -237,5 +251,50 @@
         "RecStat": "A",
         "cf_CmpntSK": 487,
         "daTableRowId": "AAAAAAAGgNE="
+    },
+    {
+        "MenuSK": 160,
+        "ParentMenuSK": null,
+        "MenuName": "QMS",
+        "MenuType": "LeftNav",
+        "MenuURI": "qms/main",
+        "MenuSortOrder": 1,
+        "CreatedBy": "bstark",
+        "CreatedTs": "2018-07-24T17:15:01.181-04:00",
+        "LastModfdBy": "bstark",
+        "LastModfdTs": "2018-11-07T17:11:20.997-05:00",
+        "RecStat": "A",
+        "cf_CmpntSK": 428,
+        "daTableRowId": "AAAAAAAGgMA="
+    },
+    {
+        "MenuSK": 161,
+        "ParentMenuSK": 160,
+        "MenuName": "Chases",
+        "MenuType": "LeftNav",
+        "MenuURI": "qms/chases",
+        "MenuSortOrder": 1,
+        "CreatedBy": "bstark",
+        "CreatedTs": "2018-07-24T17:15:01.181-04:00",
+        "LastModfdBy": "bstark",
+        "LastModfdTs": "2018-11-07T17:11:20.997-05:00",
+        "RecStat": "A",
+        "cf_CmpntSK": 428,
+        "daTableRowId": "AAAAAAAGgMA="
+    },
+    {
+        "MenuSK": 162,
+        "ParentMenuSK": 161,
+        "MenuName": "Chase Management",
+        "MenuType": "LeftNav",
+        "MenuURI": "qms/chases/management",
+        "MenuSortOrder": 1,
+        "CreatedBy": "bstark",
+        "CreatedTs": "2018-07-24T17:15:01.181-04:00",
+        "LastModfdBy": "bstark",
+        "LastModfdTs": "2018-11-07T17:11:20.997-05:00",
+        "RecStat": "A",
+        "cf_CmpntSK": 428,
+        "daTableRowId": "AAAAAAAGgMA="
     }
 ]

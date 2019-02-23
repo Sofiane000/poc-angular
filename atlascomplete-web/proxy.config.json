@@ -22,5 +22,17 @@
         "secure": false,
         "logLevel": "info",
         "changeOrigin": true
+    },
+    "/api/members/*": {
+        "target": "http://localhost:4201",
+        "secure": false,
+        "logLevel": "info",
+        "changeOrigin": true
+    },
+    "/api/qms/*": {
+        "target": "http://localhost:4201",
+        "secure": false,
+        "logLevel": "info",
+        "changeOrigin": true
     }
 }
