@@ -53,6 +53,10 @@ export class AppComponent implements OnInit {
                 MenuName: 'Atlas Splitter',
                 MenuURI: 'atlassplitter',
             },
+            {
+                MenuName: 'Atlas Select',
+                MenuURI: 'atlasselect',
+            },
         ];
     }
 

@@ -1,0 +1,31 @@
+<mat-form-field>
+    <mat-select
+        #selectControl="ngModel"
+        [placeholder]="placeHolder"
+        [(ngModel)]="value"
+        [required]="required"
+        [disabled]="disableSelect"
+        [multiple]="isMultiple"
+        [disableRipple]="disableRipple"
+    >
+        <mat-select-trigger *ngIf="isMultiple">
+            {{ value ? value[0] : '' }}
+            <span *ngIf="value?.length > 1" class="example-additional-selection">
+                (+{{ value.length - 1 }} {{ value?.length === 2 ? 'other' : 'others' }})
+            </span>
+        </mat-select-trigger>
+        <mat-option *ngFor="let item of values" [value]="item.key" [disabled]="item.disabled">
+            {{ item.value }}
+        </mat-option>
+    </mat-select>
+    <mat-error
+        *ngIf="
+            showError &&
+            selectControl.invalid &&
+            selectControl.errors.required &&
+            (selectControl.dirty || selectControl.touched)
+        "
+    >
+        Field is required
+    </mat-error>
+</mat-form-field>
