@@ -44,6 +44,12 @@ class MockLib {
                     return mockRow[filterCondition.property] >= filterCondition.value;
                 } else if (filterCondition.operator === 'like') {
                     return likeRegEx.test(mockRow[filterCondition.property]);
+                } else if (filterCondition.operator === 'contains') {
+                    return (
+                        mockRow[filterCondition.property]
+                            .toLowerCase()
+                            .indexOf(filterCondition.value.toLowerCase()) >= 0
+                    );
                 }
             });
         });

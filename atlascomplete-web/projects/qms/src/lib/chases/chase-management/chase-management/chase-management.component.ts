@@ -1,7 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AtlasGridComponent, ButtonAction, IAtlasToolbarButton, IColumnSetting } from '@atlas/web-components';
+import {
+    AtlasGridComponent,
+    ButtonAction,
+    IAtlasToolbarButton,
+    IColumnSetting,
+} from '@atlas/web-components';
 import { ChaseService } from '../shared/chase.service';
 
 @Component({
@@ -15,7 +20,7 @@ export class ChaseManagementComponent implements OnInit {
         Initiative: new FormControl([], Validators.required),
         Assignee: new FormControl([]),
         MemberID: new FormControl(''),
-        ProviderID: new FormControl('')
+        ProviderID: new FormControl(''),
     });
     buttons: IAtlasToolbarButton[] = [
         {
@@ -30,14 +35,14 @@ export class ChaseManagementComponent implements OnInit {
             icon: 'fa-edit',
             class: 'chase-assign',
             action: ButtonAction.Edit,
-            isDisabled: true
+            isDisabled: true,
         },
         {
             title: 'Assign to Work Queue',
             icon: 'fa-user',
             class: 'chase-assign',
             action: ButtonAction.Add,
-            isDisabled: true
+            isDisabled: true,
         },
         {
             title: 'Export As Pdf',
@@ -184,7 +189,7 @@ export class ChaseManagementComponent implements OnInit {
         ];
     }
 
-    actionHandler() { }
+    actionHandler() {}
 
     chaseActionHandler(eventResponse: any) {
         switch (eventResponse.action) {
@@ -211,13 +216,15 @@ export class ChaseManagementComponent implements OnInit {
 
     onSelectionChange() {
         setTimeout(() => {
-            this.chaseButtons[0].isDisabled = this.atlasGrid.selectedKeys.length <= 0 ? true : false;
-            this.chaseButtons[1].isDisabled = this.atlasGrid.selectedKeys.length <= 0 ? true : false;
+            this.chaseButtons[0].isDisabled =
+                this.atlasGrid.selectedKeys.length <= 0 ? true : false;
+            this.chaseButtons[1].isDisabled =
+                this.atlasGrid.selectedKeys.length <= 0 ? true : false;
         }, 100);
     }
 
     onFindChases() {
-        const filters = this.getFilters();    
+        const filters = this.getFilters();
 
         console.log(filters);
 
@@ -234,9 +241,9 @@ export class ChaseManagementComponent implements OnInit {
         for (const value in formValues) {
             if (formValues[value] !== '') {
                 if (!Array.isArray(formValues[value])) {
-                    this.addFilter("begins","character",value,formValues[value]);
+                    this.addFilter('begins', 'character', value, formValues[value]);
                 } else if (formValues[value].length > 0) {
-                    this.addFilter("begins", "character", value, formValues[value][0]);
+                    this.addFilter('begins', 'character', value, formValues[value][0]);
                 }
             }
         }
@@ -256,7 +263,6 @@ export class ChaseManagementComponent implements OnInit {
     clearFilters() {
         this.filters = [];
     }
-    
 
     onInitiativesChanged(selection) {
         if (selection !== null && selection.length > 0) {
@@ -287,8 +293,8 @@ export class ChaseManagementComponent implements OnInit {
             this.isMemberSelected = true;
             this.selectedMember = {
                 Name: data[0].FirstName + ' ' + data[0].LastName,
-                DOB: data[0].DOB
-            }
+                DOB: data[0].DOB,
+            };
         }
     }
 
@@ -302,7 +308,7 @@ export class ChaseManagementComponent implements OnInit {
 
         this.selectedKeys = [];
         this.chaseService.selectedChaseMembers = [];
-        this.atlasGrid.refreshGrid();
+        // this.atlasGrid.refreshGrid();
     }
 
     assignChase(data) {

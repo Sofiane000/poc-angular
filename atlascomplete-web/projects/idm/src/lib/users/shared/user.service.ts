@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AtlasGridService } from '@atlas/web-components';
 
 import {
+    AtlasFilter,
     AtlasRequestParams,
     AtlasSort,
     AtlasSortDirection,
@@ -58,8 +59,25 @@ export class UserService extends AtlasGridService {
                     }
                 });
         }
+        const filters: AtlasFilter[] = [];
         if (state.filter) {
-            // params.filter = [{ operator: 'like', property: 'myField', value: '*search*' }];
+            state.filter.filters.map((item) => {
+                item.filters.map((filter) => {
+                    filters.push({
+                        operator: filter.operator,
+                        property: filter.field,
+                        value: filter.value,
+                    });
+                });
+            });
+            params.filter = [...filters];
+        }
+        if (state.searchFilters) {
+            if (params.filter && params.filter.length > 0) {
+                params.filter.push(state.searchFilters);
+            } else {
+                params.filter = [...state.searchFilters];
+            }
         }
         params.pageSize = state.pageSize;
         params.restartRowId = this.rowId ? this.rowId : '';
@@ -67,6 +85,14 @@ export class UserService extends AtlasGridService {
         return this.dataAccess.get('', params).pipe(
             map((response) => {
                 this.rowId = response.restartRowId;
+                return response.body.data;
+            })
+        );
+    }
+
+    addUser(userObj: any) {
+        return this.dataAccess.create(userObj).pipe(
+            map((response) => {
                 return response.body.data;
             })
         );
@@ -82,6 +108,14 @@ export class UserService extends AtlasGridService {
 
     deleteById(loginSk: number) {
         return this.dataAccess.deleteById(`${loginSk}`).pipe(
+            map((response) => {
+                return response.body.data;
+            })
+        );
+    }
+
+    updateUser(userObj: any) {
+        return this.dataAccess.update(userObj).pipe(
             map((response) => {
                 return response.body.data;
             })

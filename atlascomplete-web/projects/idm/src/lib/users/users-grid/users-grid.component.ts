@@ -168,14 +168,21 @@ export class UsersGridComponent implements OnInit, OnDestroy {
 
     saveUserFromDialog(isAdd, data) {
         if (isAdd) {
-            this.atlasGrid.data.push(data);
+            this.userService.addUser(data).subscribe((result) => {
+                this.atlasGrid.data = [...result];
+                this.atlasGrid.gridDataResult = {
+                    data: this.atlasGrid.data,
+                    total: this.atlasGrid.data.length,
+                };
+            });
         } else {
-            const index = this.atlasGrid.data.findIndex(
-                (item) => (item.cf_LoginID = data.cf_LoginID)
-            );
-            if (index !== -1) {
-                this.atlasGrid.data[index] = { ...data };
-            }
+            this.userService.updateUser(data).subscribe((result) => {
+                this.atlasGrid.data = [...result];
+                this.atlasGrid.gridDataResult = {
+                    data: this.atlasGrid.data,
+                    total: this.atlasGrid.data.length,
+                };
+            });
         }
         this.atlasGrid.selectedKeys = [];
         this.toolbar.onSelectionChanged(false);
@@ -236,7 +243,32 @@ export class UsersGridComponent implements OnInit, OnDestroy {
             case ButtonAction.Upload:
                 this.showUploadDialog();
                 break;
+            case ButtonAction.Search:
+                this.searchGrid();
+                break;
+            case ButtonAction.SearchClear:
+                this.clearSearchGrid();
+                break;
         }
+    }
+
+    searchGrid(): any {
+        this.gridState.searchFilters = [
+            {
+                operator: 'contains', // filter.operator
+                property: 'FirstName',
+                value: this.toolbar.filterValue,
+            },
+        ];
+        this.userService.rowId = '';
+        this.atlasGrid.data = [];
+        this.atlasGrid.gridDataResult = null;
+        this.userService.query(this.gridState);
+    }
+
+    clearSearchGrid(): any {
+        this.gridState.searchFilters = [];
+        this.userService.query(this.gridState);
     }
 
     showUploadDialog() {

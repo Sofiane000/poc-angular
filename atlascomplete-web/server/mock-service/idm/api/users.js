@@ -10,11 +10,11 @@ router.get('/:loginSk', (req, res) => {
 });
 
 router.put('/', (req, res) => {
-    mockLib.serveMirror(req, res);
+    mockLib.updateMock(req, res, 'LoginSK', 'idm/users/list.of.users.json');
 });
 
 router.post('/', (req, res) => {
-    mockLib.serveMirror(req, res);
+    mockLib.createMock(req, res, 'idm/users/list.of.users.json');
 });
 
 router.delete('/:id', (req, res) => {
