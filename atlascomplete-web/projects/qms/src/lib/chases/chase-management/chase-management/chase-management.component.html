@@ -1,83 +1,136 @@
 <atlas-page-header title="Chase Management" fontSize="large" textAlign="left"></atlas-page-header>
 <atlas-page-content>
-  <div class="row chase-management">
-    <div class="col-md-12 no-padding">
-      <form novalidate [formGroup]="chaseForm">
-        <div class="chase-search">
-          <div class="atlas-panel">
-            <div class="atlas-panel-header">
-              <div class="atlas-panel-title">Chase Options</div>
-            </div>
-            <div class="atlas-panel-body chase-search-options">
-              <div class="chase-filter-options">
-                <atlas-multiselect formControlName="Initiative" [floatingLabel]="'Initiative'" [width]="initiativeWidth"
-                  [listItems]="initiatives" [clearButton]=true (valueChange)="onInitiativesChanged($event)" required></atlas-multiselect>
-                <atlas-multiselect formControlName="Assignee" *ngIf="showSearch" [floatingLabel]="'Assignee'" [width]="'50%'"
-                  [listItems]="assignees" [clearButton]=true></atlas-multiselect>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div *ngIf="showSearch" class="chase-filter-details">
-          <div class="atlas-panel chase-detail-panel">
-            <div class="atlas-panel-header">
-              <div class="atlas-panel-title">Chase Details</div>
-            </div>
-            <div class="atlas-panel-body chase-search-details">
-              <div class="chase-details">
-                <label>Member Details</label>
-                <div class="chase-detail">
-                  <!-- Will be type ahead dropdown -->
-                  <atlas-input formControlName="MemberID" [width]="'100%'" [label]="'Member ID'"></atlas-input>
-                  <atlas-button [iconValue]="'search'" [primary]="true" (btnClick)="onClickHandler('member')"></atlas-button>
-                  <!-- <atlas-button (click)="onMemberSelect($event)">Select</atlas-button> -->
+    <div class="row chase-management">
+        <div class="col-md-12 no-padding">
+            <form novalidate [formGroup]="chaseForm">
+                <div class="chase-search">
+                    <div class="atlas-panel">
+                        <div class="atlas-panel-header">
+                            <div class="atlas-panel-title">Chase Options</div>
+                        </div>
+                        <div class="atlas-panel-body chase-search-options">
+                            <div class="chase-filter-options">
+                                <atlas-select
+                                    [values]="initiatives"
+                                    formControlName="Initiative"
+                                    [placeHolder]="'Initiative'"
+                                    [required]="true"
+                                    [showNone]="true"
+                                ></atlas-select>
+                                <atlas-select
+                                    *ngIf="showSearch"
+                                    [values]="assignees"
+                                    formControlName="Assignee"
+                                    [placeHolder]="'Assignee'"
+                                ></atlas-select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div *ngIf="isMemberSelected" class="member-details">
-                  <div class="displayfield">
-                    <label>Name</label>
-                    <span>{{ selectedMember?.Name }}</span>
-                  </div>
-                  <div class="displayfield">
-                    <label>Date of Birth</label>
-                    <span>{{ selectedMember?.DOB }}</span>
-                  </div>
+                <div *ngIf="showSearch" class="chase-filter-details">
+                    <div class="atlas-panel chase-detail-panel">
+                        <div class="atlas-panel-header">
+                            <div class="atlas-panel-title">Chase Details</div>
+                        </div>
+                        <div class="atlas-panel-body chase-search-details">
+                            <div class="chase-details">
+                                <label>Member Details</label>
+                                <div class="chase-detail">
+                                    <!-- Will be type ahead dropdown -->
+                                    <atlas-input
+                                        formControlName="MemberID"
+                                        [width]="'100%'"
+                                        [label]="'Member ID'"
+                                    ></atlas-input>
+                                    <atlas-button
+                                        [iconValue]="'search'"
+                                        [primary]="true"
+                                        (btnClick)="onClickHandler('member')"
+                                    ></atlas-button>
+                                    <!-- <atlas-button (click)="onMemberSelect($event)">Select</atlas-button> -->
+                                </div>
+                                <div *ngIf="isMemberSelected" class="member-details">
+                                    <div class="displayfield">
+                                        <label>Name</label>
+                                        <span>{{ selectedMember?.Name }}</span>
+                                    </div>
+                                    <div class="displayfield">
+                                        <label>Date of Birth</label>
+                                        <span>{{ selectedMember?.DOB }}</span>
+                                    </div>
+                                </div>
+                                <label *ngIf="!isMemberFound" class="error">
+                                    *Member Not Found
+                                </label>
+                            </div>
+                            <div class="chase-details">
+                                <label>Provider Details</label>
+                                <div class="chase-detail">
+                                    <!-- Will be type ahead dropdown -->
+                                    <atlas-input
+                                        formControlName="ProviderID"
+                                        [width]="'100%'"
+                                        [label]="'Provider ID'"
+                                    ></atlas-input>
+                                    <atlas-button
+                                        iconValue="search"
+                                        [primary]="true"
+                                        (btnClick)="onClickHandler('provider')"
+                                    ></atlas-button>
+                                    <!-- <atlas-button>Select</atlas-button> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <label *ngIf="!isMemberFound" class="error">*Member Not Found</label>
-              </div>
-              <div class="chase-details">
-                <label>Provider Details</label>
-                <div class="chase-detail">
-                  <!-- Will be type ahead dropdown -->
-                  <atlas-input formControlName="ProviderID" [width]="'100%'" [label]="'Provider ID'"></atlas-input>
-                  <atlas-button iconValue="search" [primary]="true" (btnClick)="onClickHandler('provider')"></atlas-button>
-                  <!-- <atlas-button>Select</atlas-button> -->
-                </div>
-              </div>
+            </form>
+            <div class="find-chase">
+                <atlas-button
+                    class="find-chase-btn"
+                    (click)="onFindChases($event)"
+                    [primary]="true"
+                    [isDisabled]="!showSearch"
+                >
+                    Find Chases
+                </atlas-button>
             </div>
-          </div>
+            <br />
+            <br />
+            <div class="chase-grid">
+                <div class="atlas-panel">
+                    <div class="atlas-panel-header">
+                        <div class="atlas-panel-title">Chases</div>
+                    </div>
+                    <div class="atlas-panel-body chase-grid-result">
+                        <atlas-toolbar
+                            [buttons]="chaseButtons"
+                            [showAddEditButtons]="false"
+                            [parent]="'chaseGrid'"
+                            (action)="chaseActionHandler($event)"
+                        ></atlas-toolbar>
+                        <atlas-grid
+                            [isFilterable]="'menu'"
+                            [state]="gridState"
+                            [columns]="columnsData"
+                            [gridService]="chaseServiceChild"
+                            [isSortable]="sortable"
+                            [isPageable]="false"
+                            [selectable]="selectableSettings"
+                            [showSelectAll]="true"
+                            [isEditable]="false"
+                            [selectedKeys]="selectedKeys"
+                            [isGroupable]="true"
+                            height="530"
+                            (selectionChange)="onSelectionChange()"
+                            (dblClick)="dblClickHandler($event)"
+                            [pdfOption]="pdfOption"
+                            [excelOption]="excelOption"
+                        ></atlas-grid>
+                    </div>
+                </div>
+            </div>
         </div>
-      </form>
-      <div class="find-chase">
-        <atlas-button class="find-chase-btn" (click)="onFindChases($event)" [primary]=true [isDisabled]="!showSearch">Find
-          Chases</atlas-button>
-      </div>
-      <br><br>
-      <div class="chase-grid">
-        <div class="atlas-panel">
-          <div class="atlas-panel-header">
-            <div class="atlas-panel-title">Chases</div>
-          </div>
-          <div class="atlas-panel-body chase-grid-result">
-            <atlas-toolbar [buttons]="chaseButtons" [showAddEditButtons]=false [parent]="'chaseGrid'" (action)="chaseActionHandler($event)"></atlas-toolbar>
-            <atlas-grid [isFilterable]="'menu'" [state]="gridState" [columns]="columnsData" [gridService]="chaseServiceChild"
-              [isSortable]="sortable" [isPageable]="false" [selectable]="selectableSettings" [showSelectAll]="true"
-              [isEditable]="false" [selectedKeys]="selectedKeys" [isGroupable]="true" height="530" (selectionChange)="onSelectionChange()"
-              (dblClick)="dblClickHandler($event)" [pdfOption]="pdfOption" [excelOption]="excelOption"></atlas-grid>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </atlas-page-content>
 <br />
 <router-outlet></router-outlet>

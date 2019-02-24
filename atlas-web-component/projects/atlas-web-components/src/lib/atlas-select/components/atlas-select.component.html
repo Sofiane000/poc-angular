@@ -1,4 +1,4 @@
-<mat-form-field>
+<mat-form-field [style.width]="width">
     <mat-select
         #selectControl="ngModel"
         [placeholder]="placeHolder"
@@ -14,6 +14,7 @@
                 (+{{ value.length - 1 }} {{ value?.length === 2 ? 'other' : 'others' }})
             </span>
         </mat-select-trigger>
+        <mat-option *ngIf="showNone">None</mat-option>
         <mat-option *ngFor="let item of values" [value]="item.key" [disabled]="item.disabled">
             {{ item.value }}
         </mat-option>

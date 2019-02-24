@@ -15,6 +15,7 @@ import {
     AtlasPageContentModule,
     AtlasPageFooterModule,
     AtlasPageHeaderModule,
+    AtlasSelectModule,
     AtlasTabLayoutModule,
     AtlasToolbarModule,
 } from '@atlas/web-components';
@@ -54,6 +55,7 @@ import { UpdateChaseStatusFormComponent } from './update-chase-status-form/updat
         AtlasDialogHeaderModule,
         AtlasDialogFooterModule,
         AtlasDialogContentModule,
+        AtlasSelectModule,
         AtlasDialogModule,
         MatTabsModule,
         AtlasDialogModule.forRoot(),

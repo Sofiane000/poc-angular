@@ -14,7 +14,11 @@ const noop = () => {};
 })
 export class AtlasSelectComponent implements ControlValueAccessor {
     @Input()
+    width: any;
+    @Input()
     placeHolder: string;
+    @Input()
+    showNone: boolean;
     // Placeholders for the callbacks which are later provided
     // by the Control Value Accessor
     private onTouchedCallback: () => void = noop;

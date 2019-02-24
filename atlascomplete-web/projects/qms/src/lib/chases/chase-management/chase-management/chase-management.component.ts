@@ -84,8 +84,18 @@ export class ChaseManagementComponent implements OnInit {
     };
     initiativeWidth = '25%';
     columnsData: IColumnSetting[];
-    initiatives: any[] = ['Initiative 1', 'Initiative 2', 'Initiative 3', 'Initiative 4'];
-    assignees: any[] = ['Assignee 1', 'Assignee 2', 'Assignee 3', 'Assignee 4'];
+    initiatives: any[] = [
+        { key: 'Initiative 1', value: 'Initiative 1' },
+        { key: 'Initiative 2', value: 'Initiative 2' },
+        { key: 'Initiative 3', value: 'Initiative 3' },
+        { key: 'Initiative 4', value: 'Initiative 4' },
+    ];
+    assignees: any[] = [
+        { key: 'Assignee 1', value: 'Assignee 1' },
+        { key: 'Assignee 2', value: 'Assignee 2' },
+        { key: 'Assignee 3', value: 'Assignee 3' },
+        { key: 'Assignee 4', value: 'Assignee 4' },
+    ];
     selectedKeys: any[] = [];
     selectBy = 'key';
     @ViewChild(AtlasGridComponent)
@@ -110,6 +120,9 @@ export class ChaseManagementComponent implements OnInit {
 
     ngOnInit() {
         this.initialization();
+        this.chaseForm.controls['Initiative'].valueChanges.subscribe((newValue) => {
+            this.onInitiativesChanged(newValue);
+        });
     }
 
     initialization() {
@@ -253,10 +266,10 @@ export class ChaseManagementComponent implements OnInit {
 
     addFilter(operator: string, dataType: string, property: string, value: any) {
         this.filters.push({
-            "operator": operator,
-            "dataType": dataType,
-            "property": property,
-            "value": value
+            operator,
+            dataType,
+            property,
+            value,
         });
     }
 
@@ -265,7 +278,7 @@ export class ChaseManagementComponent implements OnInit {
     }
 
     onInitiativesChanged(selection) {
-        if (selection !== null && selection.length > 0) {
+        if (selection && selection.length > 0) {
             if (!this.chaseServiceChild) {
                 this.chaseServiceChild = this.chaseService;
             }

@@ -13,6 +13,11 @@ export * from './lib/atlas-date-picker/components/atlas-date-picker.component';
 export * from './lib/atlas-splitter/atlas-splitter.module';
 export * from './lib/atlas-splitter/components/atlas-splitter.component';
 
+export * from './lib/atlas-select/atlas-select.module';
+export * from './lib/atlas-select/models/atlas-select';
+
+export * from './lib/atlas-select/components/atlas-select.component';
+
 export * from './lib/atlas-upload/atlas-upload.module';
 export * from './lib/atlas-upload/components/atlas-upload.component';
 export * from './lib/atlas-upload/services/atlas-upload.service';
