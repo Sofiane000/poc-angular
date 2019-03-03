@@ -34,7 +34,6 @@
         [field]="column.field"
         [width]="column.width"
         [title]="column.title"
-        [hidden]="column.hidden"
         [filterable]="column.isFilterable"
         [format]="column.format"
         [filter]="column.type"
@@ -42,6 +41,7 @@
         [headerStyle]="column.headerStyle"
         [media]="column.media"
         [style]="column.style"
+        [hidden]="column.hidden"
     >
         <ng-template kendoGridCellTemplate let-dataItem *ngIf="column.type == 'boolean'">
             <mat-checkbox
@@ -98,11 +98,20 @@
             <div class="page-template">
                 <div class="header">
                     <div style="float: right;">Page {{ pageNum }} of {{ totalPages }}</div>
+
                     {{ pdfOption?.title }}
                 </div>
+
                 <div class="footer">Page {{ pageNum }} of {{ totalPages }}</div>
             </div>
         </ng-template>
+
+        <div *ngFor="let column of columns">
+            <kendo-grid-column
+                field="{{ column.field }}"
+                title="{{ column.title }}"
+            ></kendo-grid-column>
+        </div>
     </kendo-grid-pdf>
 
     <kendo-grid-excel
@@ -115,5 +124,12 @@
         [paddingCellOptions]="excelOption?.paddingCellOptions"
         [proxyURL]="excelOption?.proxyURL"
         [fetchData]="allData"
-    ></kendo-grid-excel>
+    >
+        <div *ngFor="let column of columns">
+            <kendo-excelexport-column
+                field="{{ column.field }}"
+                title="{{ column.title }}"
+            ></kendo-excelexport-column>
+        </div>
+    </kendo-grid-excel>
 </kendo-grid>
