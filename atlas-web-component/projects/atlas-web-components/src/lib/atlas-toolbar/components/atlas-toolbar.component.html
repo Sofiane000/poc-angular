@@ -9,7 +9,39 @@
     </mat-form-field>
     <ng-template ngFor let-button [ngForOf]="useButtons">
         <button
-            *ngIf="!button.isTextButton"
+            *ngIf="button.isFilterMenu"
+            [matMenuTriggerFor]="filterMenu"
+            [title]="button.title"
+            mat-icon-button
+            [disabled]="button.isDisabled"
+            [ngClass]="button.class"
+            [style.display]="button.isHidden ? 'none' : 'inline-block'"
+        >
+            <mat-icon
+                aria-label="button.title"
+                [class.disable]="button.isDisabled"
+                fontSet="fontawesome"
+                [fontIcon]="button.icon"
+            ></mat-icon>
+        </button>
+        <button
+            *ngIf="button.isColumnsMenu"
+            [matMenuTriggerFor]="columnsMenu"
+            [title]="button.title"
+            mat-icon-button
+            [disabled]="button.isDisabled"
+            [ngClass]="button.class"
+            [style.display]="button.isHidden ? 'none' : 'inline-block'"
+        >
+            <mat-icon
+                aria-label="button.title"
+                [class.disable]="button.isDisabled"
+                fontSet="fontawesome"
+                [fontIcon]="button.icon"
+            ></mat-icon>
+        </button>
+        <button
+            *ngIf="!button.isTextButton && !button.isFilterMenu && !button.isColumnsMenu"
             [title]="button.title"
             mat-icon-button
             [disabled]="button.isDisabled"
@@ -25,7 +57,7 @@
             ></mat-icon>
         </button>
         <button
-            *ngIf="button.isTextButton"
+            *ngIf="button.isTextButton && !button.isFilterMenu && !button.isColumnsMenu"
             [title]="button.title"
             mat-button
             [disabled]="button.isDisabled"
@@ -36,6 +68,61 @@
             {{ button.text }}
         </button>
     </ng-template>
+    <mat-menu #filterMenu="matMenu" [overlapTrigger]="false">
+        <ng-template ngFor let-button [ngForOf]="filterButtons">
+            <button
+                mat-menu-item
+                [title]="button.title"
+                [disabled]="button.isDisabled"
+                (click)="onBtnClick($event, button.action)"
+                [ngClass]="button.class"
+                [style.display]="button.isHidden ? 'none' : 'inline-block'"
+            >
+                <mat-icon
+                    aria-label="button.title"
+                    [class.disable]="button.isDisabled"
+                    fontSet="fontawesome"
+                    [fontIcon]="button.icon"
+                ></mat-icon>
+                <span>{{ button.text }}</span>
+            </button>
+        </ng-template>
+    </mat-menu>
+    <mat-menu #columnsMenu="matMenu" [overlapTrigger]="false">
+        <ng-template ngFor let-button [ngForOf]="useButtons">
+            <button *ngIf="button.isMatMenu" mat-button [matMenuTriggerFor]="filterMenu">
+                {{ 'hello' }}
+            </button>
+            <button
+                *ngIf="!button.isTextButton"
+                [title]="button.title"
+                mat-icon-button
+                [disabled]="button.isDisabled"
+                (click)="onBtnClick($event, button.action)"
+                [ngClass]="button.class"
+                [style.display]="button.isHidden ? 'none' : 'inline-block'"
+            >
+                <mat-icon
+                    aria-label="button.title"
+                    [class.disable]="button.isDisabled"
+                    fontSet="fontawesome"
+                    [fontIcon]="button.icon"
+                ></mat-icon>
+            </button>
+            <button
+                *ngIf="button.isTextButton"
+                [title]="button.title"
+                mat-button
+                [disabled]="button.isDisabled"
+                (click)="onBtnClick($event, button.action)"
+                [ngClass]="button.class"
+                [style.display]="button.isHidden ? 'none' : 'inline-block'"
+            >
+                {{ button.text }}
+            </button>
+        </ng-template>
+    </mat-menu>
+
     <div class="k-textbox search-wrapper" *ngIf="canSearch">
         <span class="fa fa-search"></span>
         <input

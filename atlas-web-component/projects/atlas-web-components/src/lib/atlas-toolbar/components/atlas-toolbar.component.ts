@@ -15,6 +15,8 @@ import { ButtonAction } from '../models/button-action';
 export class AtlasToolbarComponent implements OnInit, OnDestroy {
     filterValue: string;
     subscription: any;
+    @Input()
+    filterButtons: IAtlasToolbarButton[];
 
     useButtons: IAtlasToolbarButton[];
     private actionButtons: IAtlasToolbarButton[] = [

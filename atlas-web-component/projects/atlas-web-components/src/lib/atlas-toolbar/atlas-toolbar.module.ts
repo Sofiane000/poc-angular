@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Injector, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
+    MatMenuModule,
     MatSelectModule,
 } from '@angular/material';
 import { AtlasToolbarComponent } from './components/atlas-toolbar.component';
@@ -19,6 +20,7 @@ import { AtlasToolbarComponent } from './components/atlas-toolbar.component';
         FormsModule,
         MatFormFieldModule,
         MatSelectModule,
+        MatMenuModule,
     ],
     exports: [AtlasToolbarComponent],
     providers: [],

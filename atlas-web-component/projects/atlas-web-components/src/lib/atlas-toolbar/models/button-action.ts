@@ -10,5 +10,5 @@ export enum ButtonAction {
     PrintInvoice,
     Sort,
     Filter,
-    Upload,
+    Upload
 }

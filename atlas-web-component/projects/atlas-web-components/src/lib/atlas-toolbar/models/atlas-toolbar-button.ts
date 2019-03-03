@@ -9,4 +9,6 @@ export interface IAtlasToolbarButton {
     isTextButton?: boolean;
     text?: string;
     isHidden?: boolean;
+    isFilterMenu?: boolean;
+    isColumnsMenu?: boolean;
 }

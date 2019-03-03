@@ -16,6 +16,29 @@ export class AtlasToolbarTestComponent implements OnInit {
             icon: 'fa-print',
             class: 'grid-pdf',
         },
+        {
+            title: 'Print Invoice',
+            action: ButtonAction.PrintInvoice,
+            icon: 'fa-print',
+            class: 'grid-pdf',
+            isFilterMenu: true,
+        },
+    ];
+    filterButtons = [
+        {
+            title: 'Export As Pdf',
+            action: ButtonAction.ExportAsPdf,
+            icon: 'fa-file-pdf-o',
+            class: 'grid-pdf',
+            text: 'Export PDF',
+        },
+        {
+            title: 'Export As Excel',
+            action: ButtonAction.ExportAsExcel,
+            icon: 'fa-file-excel-o',
+            class: 'grid-excel',
+            text: 'Export Excel',
+        },
     ];
 
     constructor(private dialog: MatDialog) {}
