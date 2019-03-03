@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
     MatButtonModule,
+    MatCheckboxModule,
     MatFormFieldModule,
     MatIconModule,
     MatMenuModule,
@@ -21,6 +22,7 @@ import { AtlasToolbarComponent } from './components/atlas-toolbar.component';
         MatFormFieldModule,
         MatSelectModule,
         MatMenuModule,
+        MatCheckboxModule,
     ],
     exports: [AtlasToolbarComponent],
     providers: [],

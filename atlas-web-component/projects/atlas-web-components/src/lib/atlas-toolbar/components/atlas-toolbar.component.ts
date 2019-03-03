@@ -17,7 +17,8 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
     subscription: any;
     @Input()
     filterButtons: IAtlasToolbarButton[];
-
+    @Input()
+    columnButtons: IAtlasToolbarButton[];
     useButtons: IAtlasToolbarButton[];
     private actionButtons: IAtlasToolbarButton[] = [
         {
@@ -66,6 +67,7 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
         'Priority',
     ];
     @Output() action: EventEmitter<any> = new EventEmitter();
+    @Output() checkBoxChange: EventEmitter<any> = new EventEmitter();
 
     onBtnClick(event: any, buttonAction: ButtonAction) {
         this.action.emit({ event, action: buttonAction });
@@ -113,6 +115,14 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
     onSelectionChanged(hasRowsSelected: boolean) {
         this.actionButtons[1].isDisabled = !hasRowsSelected;
         this.actionButtons[2].isDisabled = !hasRowsSelected;
+    }
+
+    checkBoxHandler(event) {
+        event.stopPropagation();
+    }
+
+    checkBoxChangeHandler(item, changeEvent) {
+        this.checkBoxChange.emit({ data: item, event: changeEvent });
     }
 
     ngOnDestroy(): void {

@@ -1,3 +1,4 @@
+import { IToolbarCheckBox } from './atlas-toolbar-checkbox';
 import { ButtonAction } from './button-action';
 
 export interface IAtlasToolbarButton {
@@ -11,4 +12,5 @@ export interface IAtlasToolbarButton {
     isHidden?: boolean;
     isFilterMenu?: boolean;
     isColumnsMenu?: boolean;
+    checkbox?: IToolbarCheckBox;
 }

@@ -89,36 +89,26 @@
         </ng-template>
     </mat-menu>
     <mat-menu #columnsMenu="matMenu" [overlapTrigger]="false">
-        <ng-template ngFor let-button [ngForOf]="useButtons">
-            <button *ngIf="button.isMatMenu" mat-button [matMenuTriggerFor]="filterMenu">
-                {{ 'hello' }}
-            </button>
+        <ng-template ngFor let-button [ngForOf]="columnButtons">
             <button
-                *ngIf="!button.isTextButton"
+                mat-menu-item
                 [title]="button.title"
-                mat-icon-button
                 [disabled]="button.isDisabled"
-                (click)="onBtnClick($event, button.action)"
+                (click)="checkBoxHandler($event)"
                 [ngClass]="button.class"
                 [style.display]="button.isHidden ? 'none' : 'inline-block'"
             >
-                <mat-icon
-                    aria-label="button.title"
-                    [class.disable]="button.isDisabled"
-                    fontSet="fontawesome"
-                    [fontIcon]="button.icon"
-                ></mat-icon>
-            </button>
-            <button
-                *ngIf="button.isTextButton"
-                [title]="button.title"
-                mat-button
-                [disabled]="button.isDisabled"
-                (click)="onBtnClick($event, button.action)"
-                [ngClass]="button.class"
-                [style.display]="button.isHidden ? 'none' : 'inline-block'"
-            >
-                {{ button.text }}
+                <mat-checkbox
+                    #ref
+                    [ngClass]="button.checkbox.class"
+                    [(ngModel)]="button.checkbox.value"
+                    [(indeterminate)]="button.checkbox.indeterminate"
+                    [labelPosition]="button.checkbox.labelPosition"
+                    [disabled]="button.checkbox.isDisabled"
+                    (change)="checkBoxChangeHandler(button.checkbox, ref)"
+                >
+                    {{ button.checkbox.text }}
+                </mat-checkbox>
             </button>
         </ng-template>
     </mat-menu>
