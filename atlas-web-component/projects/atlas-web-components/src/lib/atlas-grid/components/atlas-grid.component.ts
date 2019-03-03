@@ -167,6 +167,7 @@ export class AtlasGridComponent implements OnInit, OnDestroy, IMultiRowComponent
     >();
     @Output() dblClick: EventEmitter<any> = new EventEmitter<any>();
 
+    @Output() buttonClick: EventEmitter<any> = new EventEmitter<any>();
     private gridServiceSubscription: Subscription;
 
     ngAfterViewInit(): void {}
@@ -277,6 +278,10 @@ export class AtlasGridComponent implements OnInit, OnDestroy, IMultiRowComponent
      */
     exportAsExcel() {
         this.grid.saveAsExcel();
+    }
+
+    onBtnClick (selectedDataitem) {
+        this.buttonClick.emit(selectedDataitem);
     }
 
     /**

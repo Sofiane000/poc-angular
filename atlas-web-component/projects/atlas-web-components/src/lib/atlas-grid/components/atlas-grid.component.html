@@ -49,6 +49,18 @@
                 [(ngModel)]="dataItem[column.field]"
             ></mat-checkbox>
         </ng-template>
+        <ng-template kendoGridCellTemplate let-dataItem *ngIf="column.type == 'button'">
+            <button
+                [title]="column.button.title"
+                mat-button
+                [disabled]="column.button.isDisabled"
+                (click)="onBtnClick(dataItem)"
+                [ngClass]="column.button.class"
+                [style.display]="column.button.isHidden ? 'none' : 'inline-block'"
+            >
+                {{ column.button.text }}
+            </button>
+        </ng-template>
     </kendo-grid-column>
 
     <kendo-grid-command-column title="Details" width="40" *ngIf="isEditable">

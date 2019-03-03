@@ -1,3 +1,5 @@
+import { IAtlasToolbarButton } from '../../atlas-toolbar/models/atlas-toolbar-button';
+
 export interface IColumnSetting {
     /** The field to which the column is bound.*/
     field: string;
@@ -12,7 +14,7 @@ export interface IColumnSetting {
     /** Defines the editor type. Used when the column enters the edit mode.
      *  The default value is text.
      */
-    type?: 'text' | 'numeric' | 'boolean' | 'date';
+    type?: 'text' | 'numeric' | 'boolean' | 'date' | 'button';
     /** Sets the custom CSS classes to the column header cell
      */
     headerClass?: any;
@@ -30,4 +32,5 @@ export interface IColumnSetting {
      */
     style?: { [key: string]: string };
     showTemplate?: boolean;
+    button?: IAtlasToolbarButton;
 }
