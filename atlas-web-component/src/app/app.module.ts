@@ -11,6 +11,7 @@ import {
     MatSidenavModule,
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AtlasAutoCompleteModule } from 'projects/atlas-web-components/src/lib/atlas-auto-complete/atlas-auto-complete.module';
 import { AtlasCardModule } from 'projects/atlas-web-components/src/lib/atlas-card/atlas-card.module';
 import { AtlasDropdownModule } from 'projects/atlas-web-components/src/lib/atlas-dropdown/atlas-dropdown.module';
 import { TestService } from 'projects/atlas-web-components/src/lib/atlas-grid/services/test-grid.service';
@@ -33,6 +34,7 @@ import {
 } from 'projects/atlas-web-components/src/public_api';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.module.routing';
+import { AtlasAutoCompleteTestComponent } from './atlas-auto-complete-test/atlas-auto-complete-test.component';
 import { AtlasButtonTestComponent } from './atlas-button-test/atlas-button-test.component';
 import { AtlasCardTestComponent } from './atlas-card-test/atlas-card-test.component';
 import { AtlasDatePickerTestComponent } from './atlas-date-picker-test/atlas-date-picker-test.component';
@@ -62,6 +64,7 @@ import { ElementModule } from './element.module';
         AtlasDatePickerTestComponent,
         AtlasSplitterTestComponent,
         AtlasSelectTestComponent,
+        AtlasAutoCompleteTestComponent,
     ],
     entryComponents: [AtlasDialogFormTestComponent],
     imports: [
@@ -84,6 +87,7 @@ import { ElementModule } from './element.module';
         MatSidenavModule,
         AtlasSideBarModule,
         AtlasDocViewerModule,
+        AtlasAutoCompleteModule,
         MatDialogModule,
         AtlasDialogModule.forRoot(),
         MatRadioModule,

@@ -57,6 +57,10 @@ export class AppComponent implements OnInit {
                 MenuName: 'Atlas Select',
                 MenuURI: 'atlasselect',
             },
+            {
+                MenuName: 'Atlas Auto Complete',
+                MenuURI: 'atlasautocomplete',
+            },
         ];
     }
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AtlasAutoCompleteTestComponent } from './atlas-auto-complete-test/atlas-auto-complete-test.component';
 import { AtlasButtonTestComponent } from './atlas-button-test/atlas-button-test.component';
 import { AtlasCardTestComponent } from './atlas-card-test/atlas-card-test.component';
 import { AtlasDatePickerTestComponent } from './atlas-date-picker-test/atlas-date-picker-test.component';
@@ -56,6 +57,10 @@ const appRoutes: Routes = [
     {
         path: 'atlasselect',
         component: AtlasSelectTestComponent,
+    },
+    {
+        path: 'atlasautocomplete',
+        component: AtlasAutoCompleteTestComponent,
     },
 ];
 

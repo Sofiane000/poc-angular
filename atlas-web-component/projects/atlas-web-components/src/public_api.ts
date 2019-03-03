@@ -18,6 +18,9 @@ export * from './lib/atlas-select/models/atlas-select';
 
 export * from './lib/atlas-select/components/atlas-select.component';
 
+export * from './lib/atlas-auto-complete/components/atlas-auto-complete.component';
+export * from './lib/atlas-auto-complete/atlas-auto-complete.module';
+
 export * from './lib/atlas-upload/atlas-upload.module';
 export * from './lib/atlas-upload/components/atlas-upload.component';
 export * from './lib/atlas-upload/services/atlas-upload.service';
@@ -35,6 +38,8 @@ export * from './lib/atlas-toolbar/atlas-toolbar.module';
 export * from './lib/atlas-toolbar/components/atlas-toolbar.component';
 export * from './lib/atlas-toolbar/models/atlas-toolbar-button';
 export * from './lib/atlas-toolbar/models/button-action';
+export * from './lib/atlas-toolbar/models/atlas-toolbar-checkbox';
+
 export * from './lib/atlas-input/atlas-input.module';
 export * from './lib/atlas-input/components/atlas-input.component';
 export * from './lib/atlas-grid/services/atlas-grid.service';
