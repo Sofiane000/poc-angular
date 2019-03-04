@@ -201,6 +201,13 @@ export class AtlasGridComponent implements OnInit, OnDestroy, IMultiRowComponent
             this.gridService.query(this.state);
         }
     }
+    public get gridColumns() {
+        return this.columns;
+    }
+
+    setColumnHidden(columnName: string, isHidden: boolean) {
+        this.columns.filter((item) => item.title === columnName)[0].hidden = isHidden;
+    }
 
     /**
      * This method process and bind the data according to currently selected filters.
@@ -280,7 +287,7 @@ export class AtlasGridComponent implements OnInit, OnDestroy, IMultiRowComponent
         this.grid.saveAsExcel();
     }
 
-    onBtnClick (selectedDataitem) {
+    onBtnClick(selectedDataitem) {
         this.buttonClick.emit(selectedDataitem);
     }
 

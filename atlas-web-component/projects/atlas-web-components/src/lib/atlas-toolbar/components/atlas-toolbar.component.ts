@@ -1,4 +1,13 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import {
+    AfterViewChecked,
+    AfterViewInit,
+    Component,
+    EventEmitter,
+    Input,
+    OnDestroy,
+    OnInit,
+    Output,
+} from '@angular/core';
 import { AtlasGridComponent } from '../../atlas-grid/components/atlas-grid.component';
 import {
     IMultiRowComponent,
@@ -12,13 +21,23 @@ import { ButtonAction } from '../models/button-action';
     templateUrl: 'atlas-toolbar.component.html',
     styleUrls: ['atlas-toolbar.component.scss'],
 })
-export class AtlasToolbarComponent implements OnInit, OnDestroy {
+export class AtlasToolbarComponent implements OnInit, OnDestroy, AfterViewInit {
     filterValue: string;
     subscription: any;
     @Input()
     filterButtons: IAtlasToolbarButton[];
-    @Input()
-    columnButtons: IAtlasToolbarButton[];
+
+    columnButtons: IAtlasToolbarButton[] = [
+        {
+            title: 'Show All',
+            checkbox: {
+                value: true,
+                text: 'Show All',
+            },
+            class: 'show-all-checkbox',
+        },
+    ];
+
     useButtons: IAtlasToolbarButton[];
     private actionButtons: IAtlasToolbarButton[] = [
         {
@@ -67,7 +86,6 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
         'Priority',
     ];
     @Output() action: EventEmitter<any> = new EventEmitter();
-    @Output() checkBoxChange: EventEmitter<any> = new EventEmitter();
 
     onBtnClick(event: any, buttonAction: ButtonAction) {
         this.action.emit({ event, action: buttonAction });
@@ -96,6 +114,21 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
         }
     }
 
+    ngAfterViewInit() {
+        if (this.parent instanceof AtlasGridComponent) {
+            const buttons = this.parent.gridColumns.map((item) => {
+                return {
+                    title: item.title,
+                    checkbox: {
+                        value: true,
+                        text: item.title,
+                    },
+                };
+            });
+            this.columnButtons.push(...buttons);
+        }
+    }
+
     hideAddButton(isHidden: boolean) {
         this.useButtons[0].isHidden = isHidden;
     }
@@ -121,8 +154,30 @@ export class AtlasToolbarComponent implements OnInit, OnDestroy {
         event.stopPropagation();
     }
 
-    checkBoxChangeHandler(item, changeEvent) {
-        this.checkBoxChange.emit({ data: item, event: changeEvent });
+    checkBoxChangeHandler(dataItem) {
+        if (this.columnButtons.filter((item) => item.checkbox.value).length !== 0) {
+            if (dataItem.text === 'Show All') {
+                this.columnButtons.map((item) => {
+                    if (item.title !== 'Show All' && dataItem.value) {
+                        item.checkbox.value = dataItem.value;
+                    }
+                });
+                if (dataItem.text === 'Show All' && dataItem.value) {
+                    (this.parent as AtlasGridComponent).gridColumns.map((item) => {
+                        item.hidden = !dataItem.value;
+                    });
+                }
+            } else {
+                (this.parent as AtlasGridComponent).setColumnHidden(dataItem.text, !dataItem.value);
+                this.columnButtons[0].checkbox.value = false;
+                if (
+                    this.columnButtons.filter((x) => x.checkbox.value).length ===
+                    this.columnButtons.length - 1
+                ) {
+                    this.columnButtons[0].checkbox.value = true;
+                }
+            }
+        }
     }
 
     ngOnDestroy(): void {
