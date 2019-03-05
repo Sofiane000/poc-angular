@@ -1,13 +1,21 @@
-<atlas-dialog-header [title]="'Update Chase Status'"></atlas-dialog-header>
+<atlas-dialog-header [title]="'Update Chase Status'"></atlas-dialog-header>
 <atlas-dialog-content>
-  <form novalidate [formGroup]="updateForm">
-    <atlas-multiselect [width]="'100%'" placeholder="" floatingLabel="Status" [listItems]="statuses" [filterable]="true"
-      [summaryValue]="1" [clearButton]="true" [listHeight]="150" formControlName="Status" required></atlas-multiselect>
-    <atlas-multiselect [width]="'100%'" placeholder="" floatingLabel="Resolution" [listItems]="resolutions"
-      [filterable]="true" [summaryValue]="1" [clearButton]="true" [listHeight]="150" formControlName="Resolution"
-      required></atlas-multiselect>
-    <atlas-input label="Notes" formControlName="Notes" width="100%"></atlas-input>
-  </form>
+    <form novalidate [formGroup]="updateForm">
+        <atlas-select
+            width="100%"
+            [placeHolder]="'Status'"
+            [values]="statuses"
+            formControlName="Status"
+            required
+        ></atlas-select>
+        <atlas-select
+            width="100%"
+            [placeHolder]="'Resolution'"
+            [values]="resolutions"
+            formControlName="Resolution"
+            required
+        ></atlas-select>
+        <atlas-input label="Notes" formControlName="Notes" width="100%"></atlas-input>
+    </form>
 </atlas-dialog-content>
-<atlas-dialog-footer (close)="closeHandler($event)" [useButtons]="buttons">
-</atlas-dialog-footer>
+<atlas-dialog-footer (close)="closeHandler($event)" [useButtons]="buttons"></atlas-dialog-footer>

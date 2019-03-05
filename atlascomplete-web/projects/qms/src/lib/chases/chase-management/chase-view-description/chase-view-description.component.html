@@ -1,0 +1,7 @@
+<atlas-dialog-header [title]="'View Notes'"></atlas-dialog-header>
+<atlas-dialog-content>
+    <div [style.height]="'150px'">
+        <span>{{ note }}</span>
+    </div>
+</atlas-dialog-content>
+<atlas-dialog-footer (close)="closeHandler($event)" [useButtons]="buttons"></atlas-dialog-footer>

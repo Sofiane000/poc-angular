@@ -13,7 +13,10 @@ export class AssignWorkQueueFormComponent implements OnInit {
     assignForm: FormGroup = new FormGroup({
         Assignee: new FormControl([], Validators.required),
     });
-    assignees: string[] = ['Paquette, John', 'Tabasan, Kevin'];
+    assignees: any[] = [
+        { key: 'Assignee 1', value: 'Assignee 1' },
+        { key: 'Assignee 2', value: 'Assignee 2' },
+    ];
     buttons: IAtlasFooterbtn[] = [
         {
             text: 'Cancel',
@@ -22,7 +25,7 @@ export class AssignWorkQueueFormComponent implements OnInit {
         },
         {
             text: 'Assign',
-            action: 'save',
+            action: 'assign',
             title: 'Assign',
             primary: true,
             isDisabled: true,

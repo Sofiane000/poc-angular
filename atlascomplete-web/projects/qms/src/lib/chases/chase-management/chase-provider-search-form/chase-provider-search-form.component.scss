@@ -1,12 +1,8 @@
-.error {
-  color: #f00;
-  font-size: 11px;
-}
-
 form {
-  display: flex;
-}
+    display: flex;
+    margin-top: 10px;
 
-form > atlas-input {
-  flex: 50%;
+    atlas-input {
+        flex: 50%;
+    }
 }

@@ -1,14 +1,16 @@
 <atlas-dialog-header [title]="'Member Search'"></atlas-dialog-header>
 <atlas-dialog-content>
   <form novalidate [formGroup]="memberSearchForm">
-    <atlas-input label="Member Information" formControlName="Member" width="100%" required></atlas-input>
+    <atlas-input label="Member Information" formControlName="FirstName" width="100%" required></atlas-input>
     <atlas-date-picker floatingLabel="Date of Birth" formControlName="DOB" [navigation]=true [bottomView]="'month'"
       [activeView]="'month'"></atlas-date-picker>
-    <atlas-button class="search-btn" (click)="onSearch($event)" [primary]=true>Search</atlas-button>
+    <atlas-button class="search-btn" [isDisabled]="isDisabled" (btnClick)="onSearch($event)" [primary]=true>Search</atlas-button>
   </form>
-  <atlas-grid [isFilterable]="'menu'" [state]="gridState" [columns]="columnsData"
-    [isSortable]="sortable" [isPageable]="false" [selectable]="selectableSettings" [isEditable]="false"
-    [selectedKeys]="selectedKeys"  height="450" (selectionChange)="onSelectionChange($event)" (dblClick)="dblClickHandler($event)" [gridService]="membersServiceChild"></atlas-grid>
+  <div class="chase-member-grid">
+    <atlas-grid [isFilterable]="'menu'" [state]="gridState" [columns]="columnsData" [isSortable]="sortable"
+      [isPageable]="false" [selectable]="selectableSettings" [isEditable]="false" [selectedKeys]="selectedKeys" height="450"
+      (selectionChange)="onSelectionChange($event)" (dblClick)="dblClickHandler($event)" [gridService]="membersServiceChild"></atlas-grid>
+  </div>
 </atlas-dialog-content>
 <atlas-dialog-footer (close)="closeHandler($event)" [useButtons]="buttons">
 </atlas-dialog-footer>

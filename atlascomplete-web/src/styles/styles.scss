@@ -201,12 +201,25 @@ mat-label {
     height: 550px;
 }
 
+.cdk-overlay-container .mat-menu-panel {
+    max-width: 200px;
+    width: 100vw;
+}
+
+.cdk-overlay-container .mat-menu-panel .fa {
+    color: $atlas-icon;
+}
+
 .mat-menu-item {
     font-weight: $atlas-menu-item-font-weight;
 }
 
 .multi-select p {
     margin: 0;
+}
+
+.k-grid .mat-button .mat-button-wrapper {
+    color: cornflowerblue;
 }
 
 .k-datepicker {
@@ -396,4 +409,22 @@ mat-label {
 
 .spacer {
     flex: 1;
+}
+
+// chase management
+
+.chase-grid .k-grid tr td:first-child {
+    text-align: center;
+}
+
+.chase-grid .k-grid thead tr th:first-child {
+    text-align: center;
+}
+
+.chase-member-grid .k-grid tr td:first-child {
+    text-align: center;
+}
+
+.chase-provider-grid .k-grid tr td:first-child {
+    text-align: center;
 }

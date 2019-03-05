@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material';
 import {
+    AtlasAutoCompleteModule,
     AtlasButtonModule,
     AtlasDatePickerModule,
     AtlasDialogContentModule,
@@ -29,6 +30,7 @@ import { ChaseManagementRoutingModule } from './chase-management-routing.module'
 import { ChaseManagementComponent } from './chase-management/chase-management.component';
 import { ChaseMemberSearchFormComponent } from './chase-member-search-form/chase-member-search-form.component';
 import { ChaseProviderSearchFormComponent } from './chase-provider-search-form/chase-provider-search-form.component';
+import { ChaseViewDescriptionComponent } from './chase-view-description/chase-view-description.component';
 import { ChaseMembersService } from './shared/chase-members.service';
 import { ChaseService } from './shared/chase.service';
 import { UpdateChaseStatusFormComponent } from './update-chase-status-form/update-chase-status-form.component';
@@ -41,6 +43,7 @@ import { UpdateChaseStatusFormComponent } from './update-chase-status-form/updat
         AssignWorkQueueFormComponent,
         ChaseMemberSearchFormComponent,
         ChaseProviderSearchFormComponent,
+        ChaseViewDescriptionComponent,
     ],
     imports: [
         CommonModule,
@@ -64,12 +67,14 @@ import { UpdateChaseStatusFormComponent } from './update-chase-status-form/updat
         AtlasDropdownModule,
         AtlasButtonModule,
         AtlasDatePickerModule,
+        AtlasAutoCompleteModule,
     ],
     entryComponents: [
         UpdateChaseStatusFormComponent,
         AssignWorkQueueFormComponent,
         ChaseMemberSearchFormComponent,
         ChaseProviderSearchFormComponent,
+        ChaseViewDescriptionComponent,
     ],
     providers: [ChaseService, ChaseMembersService],
 })
@@ -85,5 +90,10 @@ export class ChaseManagementModule {
             .createService('qms.members')
             .module('qms')
             .url('members');
+
+        this.dataAccessFactory
+            .createService('qms.providers')
+            .module('qms')
+            .url('providers');
     }
 }

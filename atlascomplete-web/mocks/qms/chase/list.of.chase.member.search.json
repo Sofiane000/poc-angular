@@ -1,396 +1,431 @@
 [
-  {
-    "IndvSK": 3080969,
-    "FirstName": "John",
-    "LastName": "Snow",
-    "DOB": "1980-01-01",
-    "SSN": "",
-    "AddrSK": 3347812,
-    "AddrLine1": "20450 Greenfield Rd",
-    "AddrLine2": "",
-    "City": "Detroit",
-    "PstlCode": "48235",
-    "vtIndvMbrshp": [
-      {
-        "MbrshpSK": 3687705,
+    {
         "IndvSK": 3080969,
+        "FirstName": "John",
+        "LastName": "Snow",
+        "DOB": "1980-01-01",
+        "SSN": "",
+        "AddrSK": 3347812,
+        "AddrLine1": "20450 Greenfield Rd",
+        "AddrLine2": "",
+        "City": "Detroit",
+        "PstlCode": "48235",
+        "Gender": "Male",
+        "MbrshpSK": 3687705,
         "MbrCardID": "432524342",
         "cf_LOBTypeCode": "Commercial",
         "cf_MbrshpStatus": true
-      }
-    ]
-  },
-  {
-    "IndvSK": 3081004,
-    "FirstName": "John",
-    "LastName": "Cheryl",
-    "DOB": "2003-11-29",
-    "SSN": "308444837",
-    "AddrSK": 3347845,
-    "AddrLine1": "3734 Edwards Spur Suite 722",
-    "AddrLine2": "345 d",
-    "City": "Dearborn",
-    "PstlCode": "48226",
-    "vtIndvMbrshp": [
-      {
-        "MbrshpSK": 3687740,
+    },
+    {
         "IndvSK": 3081004,
+        "FirstName": "John",
+        "LastName": "Cheryl",
+        "DOB": "2003-11-29",
+        "SSN": "308444837",
+        "AddrSK": 3347845,
+        "AddrLine1": "3734 Edwards Spur Suite 722",
+        "AddrLine2": "345 d",
+        "City": "Dearborn",
+        "PstlCode": "48226",
+        "Gender": "Male",
+        "MbrshpSK": 3687740,
         "MedicaidID": "8200121744",
         "MbrCardID": "8200121744",
         "cf_LOBTypeCode": "Medicaid",
         "cf_MbrshpStatus": true
-      }
-    ]
-  },
-  {
-    "IndvSK": 3081009,
-    "FirstName": "John",
-    "LastName": "Joseph",
-    "DOB": "2004-04-03",
-    "SSN": "308444838",
-    "AddrSK": 3347845,
-    "AddrLine1": "3734 Edwards Spur Suite 722",
-    "AddrLine2": "345 d",
-    "City": "Dearborn",
-    "PstlCode": "48226",
-    "vtIndvMbrshp": [
-      {
-        "MbrshpSK": 3687743,
+    },
+    {
         "IndvSK": 3081009,
+        "FirstName": "John",
+        "LastName": "Joseph",
+        "DOB": "2004-04-03",
+        "SSN": "308444838",
+        "AddrSK": 3347845,
+        "AddrLine1": "3734 Edwards Spur Suite 722",
+        "AddrLine2": "345 d",
+        "City": "Dearborn",
+        "PstlCode": "48226",
+        "Gender": "Male",
+        "MbrshpSK": 3687743,
         "MedicaidID": "8200121745",
         "MbrCardID": "8200121745",
         "cf_LOBTypeCode": "Medicaid",
         "cf_MbrshpStatus": true
-      }
-    ]
-  },
-  {
-    "IndvSK": 3081185,
-    "FirstName": "JOHN",
-    "LastName": "VANDEWATER",
-    "DOB": "2003-07-24",
-    "SSN": "378297917"
-  },
-  {
-    "IndvSK": 3081880,
-    "FirstName": "JOHN",
-    "LastName": "CHAMBERS",
-    "DOB": "2006-11-08",
-    "SSN": "377332930"
-  },
-  {
-    "IndvSK": 3082440,
-    "FirstName": "JOHN",
-    "LastName": "YEAKEY",
-    "DOB": "2011-04-15",
-    "SSN": "367396278"
-  },
-  {
-    "IndvSK": 3082682,
-    "FirstName": "JOHN",
-    "LastName": "WOODLEY",
-    "DOB": "2009-09-22",
-    "SSN": "371373904"
-  },
-  {
-    "IndvSK": 3082999,
-    "FirstName": "JOHN",
-    "LastName": "MACDONALD",
-    "DOB": "2007-09-29",
-    "SSN": "366357377"
-  },
-  {
-    "IndvSK": 3083106,
-    "FirstName": "JOHN",
-    "LastName": "BUSH",
-    "DOB": "2015-05-21",
-    "SSN": "328776164"
-  },
-  {
-    "IndvSK": 3083334,
-    "FirstName": "JOHN",
-    "LastName": "MARSHALL",
-    "DOB": "2004-01-10",
-    "SSN": "383297685"
-  },
-  {
-    "IndvSK": 3083534,
-    "FirstName": "JOHN",
-    "LastName": "LAMBERT",
-    "DOB": "2006-07-07",
-    "SSN": "372335862"
-  },
-  {
-    "IndvSK": 3083976,
-    "FirstName": "JOHN",
-    "LastName": "SALVATORE",
-    "DOB": "2008-04-17",
-    "SSN": "373359619"
-  },
-  {
-    "IndvSK": 3084038,
-    "FirstName": "JOHN",
-    "LastName": "QUICK",
-    "DOB": "2015-04-04",
-    "SSN": "804036439"
-  },
-  {
-    "IndvSK": 3084340,
-    "FirstName": "JOHN",
-    "LastName": "BACHMANN",
-    "DOB": "2009-05-11",
-    "SSN": "365371765"
-  },
-  {
-    "IndvSK": 3084477,
-    "FirstName": "JOHN",
-    "LastName": "DEYARMOND",
-    "DOB": "2014-09-25",
-    "SSN": "891061129"
-  },
-  {
-    "IndvSK": 3084743,
-    "FirstName": "JOHN",
-    "LastName": "HARDWICK",
-    "DOB": "2014-12-09",
-    "SSN": "483713593"
-  },
-  {
-    "IndvSK": 3084992,
-    "FirstName": "JOHN",
-    "LastName": "MANUEL",
-    "DOB": "1999-09-04",
-    "SSN": "365257765"
-  },
-  {
-    "IndvSK": 3085184,
-    "FirstName": "JOHN",
-    "LastName": "MCKENZIE",
-    "DOB": "2011-11-09",
-    "SSN": "164042214"
-  },
-  {
-    "IndvSK": 3085917,
-    "FirstName": "JOHN",
-    "LastName": "HONAKER",
-    "DOB": "1968-03-24",
-    "SSN": "380946389"
-  },
-  {
-    "IndvSK": 3086243,
-    "FirstName": "JOHN",
-    "LastName": "HARVEY",
-    "DOB": "1962-03-13",
-    "SSN": "366666946"
-  },
-  {
-    "IndvSK": 3086427,
-    "FirstName": "JOHN",
-    "LastName": "EVANS",
-    "DOB": "1974-01-11",
-    "SSN": "384822112"
-  },
-  {
-    "IndvSK": 3086453,
-    "FirstName": "JOHN",
-    "LastName": "CURCIO",
-    "DOB": "1963-01-15",
-    "SSN": "377822091"
-  },
-  {
-    "IndvSK": 3086611,
-    "FirstName": "JOHN",
-    "LastName": "REED",
-    "DOB": "1998-08-11",
-    "SSN": "368235177"
-  },
-  {
-    "IndvSK": 3086612,
-    "FirstName": "JOHN",
-    "LastName": "ROBERTS",
-    "DOB": "1955-04-16",
-    "SSN": "325501017"
-  },
-  {
-    "IndvSK": 3086682,
-    "FirstName": "JOHN",
-    "LastName": "TROLZ",
-    "DOB": "1965-08-08",
-    "SSN": "370940174"
-  },
-  {
-    "IndvSK": 3086850,
-    "FirstName": "JOHN",
-    "LastName": "TIPPEN",
-    "DOB": "1960-12-29",
-    "SSN": "365701265"
-  },
-  {
-    "IndvSK": 3086880,
-    "FirstName": "JOHN",
-    "LastName": "THOMPSON",
-    "DOB": "1986-12-19",
-    "SSN": "362111673"
-  },
-  {
-    "IndvSK": 3086881,
-    "FirstName": "JOHN",
-    "LastName": "ELLIS",
-    "DOB": "1974-09-18",
-    "SSN": "286602125"
-  },
-  {
-    "IndvSK": 3086911,
-    "FirstName": "JOHN",
-    "LastName": "VEST",
-    "DOB": "1977-05-02",
-    "SSN": "367048850"
-  },
-  {
-    "IndvSK": 3086975,
-    "FirstName": "JOHN",
-    "LastName": "POWELL",
-    "DOB": "1953-04-14",
-    "SSN": "378585130"
-  },
-  {
-    "IndvSK": 3086996,
-    "FirstName": "JOHN",
-    "LastName": "BETTS",
-    "DOB": "1963-08-04",
-    "SSN": "370824531"
-  },
-  {
-    "IndvSK": 3087023,
-    "FirstName": "JOHN",
-    "LastName": "TOWNSEND",
-    "DOB": "1970-06-14",
-    "SSN": "384668924"
-  },
-  {
-    "IndvSK": 3087216,
-    "FirstName": "JOHN",
-    "LastName": "TEACHOUT",
-    "DOB": "1975-12-30",
-    "SSN": "372047071"
-  },
-  {
-    "IndvSK": 3087275,
-    "FirstName": "JOHN",
-    "LastName": "YOUNAN",
-    "DOB": "1963-12-12",
-    "SSN": "378158947"
-  },
-  {
-    "IndvSK": 3087367,
-    "FirstName": "JOHN",
-    "LastName": "MCBAINE",
-    "DOB": "1969-11-25",
-    "SSN": "368949621"
-  },
-  {
-    "IndvSK": 3087368,
-    "FirstName": "JOHN",
-    "LastName": "SCHULTZ",
-    "DOB": "1984-01-24",
-    "SSN": "366945717"
-  },
-  {
-    "IndvSK": 3087427,
-    "FirstName": "JOHN",
-    "LastName": "WALTOS",
-    "DOB": "1960-12-08",
-    "SSN": "370782993"
-  },
-  {
-    "IndvSK": 3087544,
-    "FirstName": "JOHN",
-    "LastName": "MILLER",
-    "DOB": "1964-12-21",
-    "SSN": "368801293"
-  },
-  {
-    "IndvSK": 3087587,
-    "FirstName": "JOHN",
-    "LastName": "KNUTH",
-    "DOB": "1964-06-04",
-    "SSN": "364782107"
-  },
-  {
-    "IndvSK": 3087606,
-    "FirstName": "JOHN",
-    "LastName": "FERGUSON",
-    "DOB": "1961-07-26",
-    "SSN": "368748827"
-  },
-  {
-    "IndvSK": 3087647,
-    "FirstName": "JOHN",
-    "LastName": "MCCULLOUGH",
-    "DOB": "1960-03-02",
-    "SSN": "369763852"
-  },
-  {
-    "IndvSK": 3087848,
-    "FirstName": "JOHN",
-    "LastName": "ORWIG",
-    "DOB": "1963-07-19",
-    "SSN": "384728075"
-  },
-  {
-    "IndvSK": 3088014,
-    "FirstName": "JOHN",
-    "LastName": "REID",
-    "DOB": "1964-08-05",
-    "SSN": "380721139"
-  },
-  {
-    "IndvSK": 3088053,
-    "FirstName": "JOHN",
-    "LastName": "GERVASI",
-    "DOB": "1990-04-11",
-    "SSN": "371110581"
-  },
-  {
-    "IndvSK": 3088132,
-    "FirstName": "JOHN",
-    "LastName": "IVERSON",
-    "DOB": "1959-11-24",
-    "SSN": "386727098"
-  },
-  {
-    "IndvSK": 3088147,
-    "FirstName": "JOHN",
-    "LastName": "PAYNE",
-    "DOB": "1976-10-31",
-    "SSN": "365920072"
-  },
-  {
-    "IndvSK": 3088191,
-    "FirstName": "JOHN",
-    "LastName": "GOLSTON",
-    "DOB": "1975-03-09",
-    "SSN": "385049247"
-  },
-  {
-    "IndvSK": 3088288,
-    "FirstName": "JOHN",
-    "LastName": "LAFRENIERE",
-    "DOB": "1990-08-14",
-    "SSN": "383113747"
-  },
-  {
-    "IndvSK": 3088346,
-    "FirstName": "JOHN",
-    "LastName": "THURMAN",
-    "DOB": "1964-04-05",
-    "SSN": "382768741"
-  },
-  {
-    "IndvSK": 3088476,
-    "FirstName": "JOHN",
-    "LastName": "SHEPHERD",
-    "DOB": "1961-03-27",
-    "SSN": "379549329"
-  }
+    },
+    {
+        "IndvSK": 3081185,
+        "FirstName": "JOHN",
+        "LastName": "VANDEWATER",
+        "DOB": "2003-07-24",
+        "Gender": "Male",
+        "SSN": "378297917"
+    },
+    {
+        "IndvSK": 3081880,
+        "FirstName": "JOHN",
+        "LastName": "CHAMBERS",
+        "DOB": "2006-11-08",
+        "Gender": "Male",
+        "SSN": "377332930"
+    },
+    {
+        "IndvSK": 3082440,
+        "FirstName": "JOHN",
+        "LastName": "YEAKEY",
+        "DOB": "2011-04-15",
+        "Gender": "Male",
+        "SSN": "367396278"
+    },
+    {
+        "IndvSK": 3082682,
+        "FirstName": "JOHN",
+        "LastName": "WOODLEY",
+        "DOB": "2009-09-22",
+        "Gender": "Male",
+        "SSN": "371373904"
+    },
+    {
+        "IndvSK": 3082999,
+        "FirstName": "JOHN",
+        "LastName": "MACDONALD",
+        "DOB": "2007-09-29",
+        "Gender": "Male",
+        "SSN": "366357377"
+    },
+    {
+        "IndvSK": 3083106,
+        "FirstName": "JOHN",
+        "LastName": "BUSH",
+        "DOB": "2015-05-21",
+        "Gender": "Male",
+        "SSN": "328776164"
+    },
+    {
+        "IndvSK": 3083334,
+        "FirstName": "JOHN",
+        "LastName": "MARSHALL",
+        "DOB": "2004-01-10",
+        "Gender": "Male",
+        "SSN": "383297685"
+    },
+    {
+        "IndvSK": 3083534,
+        "FirstName": "JOHN",
+        "LastName": "LAMBERT",
+        "DOB": "2006-07-07",
+        "Gender": "Male",
+        "SSN": "372335862"
+    },
+    {
+        "IndvSK": 3083976,
+        "FirstName": "JOHN",
+        "LastName": "SALVATORE",
+        "DOB": "2008-04-17",
+        "Gender": "Male",
+        "SSN": "373359619"
+    },
+    {
+        "IndvSK": 3084038,
+        "FirstName": "JOHN",
+        "LastName": "QUICK",
+        "DOB": "2015-04-04",
+        "Gender": "Male",
+        "SSN": "804036439"
+    },
+    {
+        "IndvSK": 3084340,
+        "FirstName": "JOHN",
+        "LastName": "BACHMANN",
+        "DOB": "2009-05-11",
+        "Gender": "Male",
+        "SSN": "365371765"
+    },
+    {
+        "IndvSK": 3084477,
+        "FirstName": "JOHN",
+        "LastName": "DEYARMOND",
+        "DOB": "2014-09-25",
+        "Gender": "Male",
+        "SSN": "891061129"
+    },
+    {
+        "IndvSK": 3084743,
+        "FirstName": "JOHN",
+        "LastName": "HARDWICK",
+        "DOB": "2014-12-09",
+        "Gender": "Male",
+        "SSN": "483713593"
+    },
+    {
+        "IndvSK": 3084992,
+        "FirstName": "JOHN",
+        "LastName": "MANUEL",
+        "DOB": "1999-09-04",
+        "Gender": "Male",
+        "SSN": "365257765"
+    },
+    {
+        "IndvSK": 3085184,
+        "FirstName": "JOHN",
+        "LastName": "MCKENZIE",
+        "DOB": "2011-11-09",
+        "Gender": "Male",
+        "SSN": "164042214"
+    },
+    {
+        "IndvSK": 3085917,
+        "FirstName": "JOHN",
+        "LastName": "HONAKER",
+        "DOB": "1968-03-24",
+        "Gender": "Male",
+        "SSN": "380946389"
+    },
+    {
+        "IndvSK": 3086243,
+        "FirstName": "JOHN",
+        "LastName": "HARVEY",
+        "DOB": "1962-03-13",
+        "Gender": "Male",
+        "SSN": "366666946"
+    },
+    {
+        "IndvSK": 3086427,
+        "FirstName": "JOHN",
+        "LastName": "EVANS",
+        "DOB": "1974-01-11",
+        "Gender": "Male",
+        "SSN": "384822112"
+    },
+    {
+        "IndvSK": 3086453,
+        "FirstName": "JOHN",
+        "LastName": "CURCIO",
+        "DOB": "1963-01-15",
+        "Gender": "Male",
+        "SSN": "377822091"
+    },
+    {
+        "IndvSK": 3086611,
+        "FirstName": "JOHN",
+        "LastName": "REED",
+        "DOB": "1998-08-11",
+        "Gender": "Male",
+        "SSN": "368235177"
+    },
+    {
+        "IndvSK": 3086612,
+        "FirstName": "JOHN",
+        "LastName": "ROBERTS",
+        "DOB": "1955-04-16",
+        "Gender": "Male",
+        "SSN": "325501017"
+    },
+    {
+        "IndvSK": 3086682,
+        "FirstName": "JOHN",
+        "LastName": "TROLZ",
+        "DOB": "1965-08-08",
+        "Gender": "Male",
+        "SSN": "370940174"
+    },
+    {
+        "IndvSK": 3086850,
+        "FirstName": "JOHN",
+        "LastName": "TIPPEN",
+        "DOB": "1960-12-29",
+        "Gender": "Male",
+        "SSN": "365701265"
+    },
+    {
+        "IndvSK": 3086880,
+        "FirstName": "JOHN",
+        "LastName": "THOMPSON",
+        "DOB": "1986-12-19",
+        "Gender": "Male",
+        "SSN": "362111673"
+    },
+    {
+        "IndvSK": 3086881,
+        "FirstName": "JOHN",
+        "LastName": "ELLIS",
+        "DOB": "1974-09-18",
+        "Gender": "Male",
+        "SSN": "286602125"
+    },
+    {
+        "IndvSK": 3086911,
+        "FirstName": "JOHN",
+        "LastName": "VEST",
+        "DOB": "1977-05-02",
+        "Gender": "Male",
+        "SSN": "367048850"
+    },
+    {
+        "IndvSK": 3086975,
+        "FirstName": "JOHN",
+        "LastName": "POWELL",
+        "DOB": "1953-04-14",
+        "Gender": "Male",
+        "SSN": "378585130"
+    },
+    {
+        "IndvSK": 3086996,
+        "FirstName": "JOHN",
+        "LastName": "BETTS",
+        "DOB": "1963-08-04",
+        "Gender": "Male",
+        "SSN": "370824531"
+    },
+    {
+        "IndvSK": 3087023,
+        "FirstName": "JOHN",
+        "LastName": "TOWNSEND",
+        "DOB": "1970-06-14",
+        "Gender": "Male",
+        "SSN": "384668924"
+    },
+    {
+        "IndvSK": 3087216,
+        "FirstName": "JOHN",
+        "LastName": "TEACHOUT",
+        "DOB": "1975-12-30",
+        "Gender": "Male",
+        "SSN": "372047071"
+    },
+    {
+        "IndvSK": 3087275,
+        "FirstName": "JOHN",
+        "LastName": "YOUNAN",
+        "DOB": "1963-12-12",
+        "Gender": "Male",
+        "SSN": "378158947"
+    },
+    {
+        "IndvSK": 3087367,
+        "FirstName": "JOHN",
+        "LastName": "MCBAINE",
+        "DOB": "1969-11-25",
+        "Gender": "Male",
+        "SSN": "368949621"
+    },
+    {
+        "IndvSK": 3087368,
+        "FirstName": "JOHN",
+        "LastName": "SCHULTZ",
+        "DOB": "1984-01-24",
+        "Gender": "Male",
+        "SSN": "366945717"
+    },
+    {
+        "IndvSK": 3087427,
+        "FirstName": "JOHN",
+        "LastName": "WALTOS",
+        "DOB": "1960-12-08",
+        "Gender": "Male",
+        "SSN": "370782993"
+    },
+    {
+        "IndvSK": 3087544,
+        "FirstName": "JOHN",
+        "LastName": "MILLER",
+        "DOB": "1964-12-21",
+        "Gender": "Male",
+        "SSN": "368801293"
+    },
+    {
+        "IndvSK": 3087587,
+        "FirstName": "JOHN",
+        "LastName": "KNUTH",
+        "DOB": "1964-06-04",
+        "Gender": "Male",
+        "SSN": "364782107"
+    },
+    {
+        "IndvSK": 3087606,
+        "FirstName": "JOHN",
+        "LastName": "FERGUSON",
+        "DOB": "1961-07-26",
+        "Gender": "Male",
+        "SSN": "368748827"
+    },
+    {
+        "IndvSK": 3087647,
+        "FirstName": "JOHN",
+        "LastName": "MCCULLOUGH",
+        "DOB": "1960-03-02",
+        "Gender": "Male",
+        "SSN": "369763852"
+    },
+    {
+        "IndvSK": 3087848,
+        "FirstName": "JOHN",
+        "LastName": "ORWIG",
+        "DOB": "1963-07-19",
+        "Gender": "Male",
+        "SSN": "384728075"
+    },
+    {
+        "IndvSK": 3088014,
+        "FirstName": "JOHN",
+        "LastName": "REID",
+        "DOB": "1964-08-05",
+        "Gender": "Male",
+        "SSN": "380721139"
+    },
+    {
+        "IndvSK": 3088053,
+        "FirstName": "JOHN",
+        "LastName": "GERVASI",
+        "DOB": "1990-04-11",
+        "Gender": "Male",
+        "SSN": "371110581"
+    },
+    {
+        "IndvSK": 3088132,
+        "FirstName": "JOHN",
+        "LastName": "IVERSON",
+        "DOB": "1959-11-24",
+        "Gender": "Male",
+        "SSN": "386727098"
+    },
+    {
+        "IndvSK": 3088147,
+        "FirstName": "JOHN",
+        "LastName": "PAYNE",
+        "DOB": "1976-10-31",
+        "Gender": "Male",
+        "SSN": "365920072"
+    },
+    {
+        "IndvSK": 3088191,
+        "FirstName": "JOHN",
+        "LastName": "GOLSTON",
+        "DOB": "1975-03-09",
+        "Gender": "Male",
+        "SSN": "385049247"
+    },
+    {
+        "IndvSK": 3088288,
+        "FirstName": "JOHN",
+        "LastName": "LAFRENIERE",
+        "DOB": "1990-08-14",
+        "Gender": "Male",
+        "SSN": "383113747"
+    },
+    {
+        "IndvSK": 3088346,
+        "FirstName": "JOHN",
+        "LastName": "THURMAN",
+        "DOB": "1964-04-05",
+        "Gender": "Male",
+        "SSN": "382768741"
+    },
+    {
+        "IndvSK": 3088476,
+        "FirstName": "JOHN",
+        "LastName": "SHEPHERD",
+        "DOB": "1961-03-27",
+        "Gender": "Male",
+        "SSN": "379549329"
+    }
 ]

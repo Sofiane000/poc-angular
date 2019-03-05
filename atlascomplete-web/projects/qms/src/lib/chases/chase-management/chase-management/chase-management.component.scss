@@ -1,91 +1,8 @@
-.chase-grid > .atlas-panel,
-.chase-search > .chase-detail-panel {
-  margin-top: 15px;
-}
-
-.chase-search-options {
-  display: flex;
-  flex-direction: column;
-}
-
-.chase-filter-options {
-  display: flex;
-}
-
-.chase-filter-options > atlas-multiselect {
-  flex: 50%;
-  margin: 10px;
-}
-
-.chase-search-details {
-  display: flex;
-}
-
-.chase-search-details > .chase-details {
-  flex: 100%;
-  margin: 10px;
-}
-
-.chase-detail {
-  display: flex;
-  margin-right: 215px;
-}
-
-.chase-detail > atlas-input {
-  flex: 100%;
-}
-
-.chase-detail > atlas-button {
-  flex: 50%;
-}
-
-.atlas-panel-body {
-  padding: 0px;
-}
-
-.chase-search-details,
-.chase-filter-options {
-  padding: 5px 15px !important;
-}
-
-.chase-filter-details {
-  margin: 10px 0px;
-  padding: 0px !important;
-}
-
-.find-chase > atlas-button {
-  float: right !important;
-}
-
-.error {
-  color: #f00;
-  font-size: 11px;
-}
-
-.member-details {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-top: 3rem;
-}
-
-.displayfield {
-  display: flex;
-  flex-direction: column;
-}
-
-.displayfield > label,
-.displayfield > span {
-  margin-right: 15px;
-}
-
 // atlas-panel
 
 .atlas-panel {
-  padding-top: 0px;
-    box-shadow:
- rgba(0, 0, 0, 0.14) 0 2px 2px 0,
- rgba(0, 0, 0, 0.12) 0 1px 5px 0,
+    padding-top: 0px;
+    box-shadow: rgba(0, 0, 0, 0.14) 0 2px 2px 0, rgba(0, 0, 0, 0.12) 0 1px 5px 0,
         rgba(0, 0, 0, 0.2) 0 3px 1px -2px !important;
 }
 
@@ -105,9 +22,84 @@
 
 .atlas-panel-body {
     height: 100%;
-    padding: 30px;
 }
 
-form {
-    margin: 100px;
+// displayfield
+
+.displayfield {
+    display: flex;
+    flex-direction: column;
+}
+
+.displayfield > label,
+.displayfield > span {
+    margin-right: 15px;
+}
+
+// chase management
+
+.chase-management {
+    display: flex;
+    flex-direction: column;
+
+    .chase-search-form {
+        display: flex;
+        margin: 30px 0px;
+
+        .atlas-panel-header {
+            background-color: rgb(31, 147, 161);
+        }
+
+        .atlas-panel-title {
+            color: #fff;
+        }
+
+        .chase-options {
+            margin: 0px 40px;
+            width: 566px;
+            height: fit-content;
+
+            .chase-search-options {
+                display: flex;
+                padding: 5px 15px !important;
+
+                atlas-select {
+                    margin: 10px;
+                }
+            }
+        }
+
+        .chase-details {
+            margin: 0px 40px;
+            width: 566px;
+            padding: 0px !important;
+
+            .chase-search-details {
+                padding: 5px 15px !important;
+                display: flex;
+
+                .chase-search-detail {
+                    margin: 10px 8px;
+                    display: flex;
+                    flex-direction: column;
+
+                    .chase-detail-input {
+                        display: flex;
+                    }
+
+                    .chase-detail-selected {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+        }
+    }
+
+    .find-chase {
+        atlas-button {
+            float: right !important;
+        }
+    }
 }

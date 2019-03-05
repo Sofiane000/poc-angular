@@ -15,8 +15,14 @@ export class UpdateChaseStatusFormComponent implements OnInit {
     Resolution: new FormControl([], Validators.required),
     Notes: new FormControl('')
   });
-  statuses: string[] = ['Open', 'Closed'];
-  resolutions: string[] = ['Found', 'Not Found'];
+  statuses: any[] = [
+    { key: 'Open', value: 'Open' },
+    { key: 'Closed', value: 'Closed' }
+  ];
+  resolutions: any[] = [
+    { key: 'Found', value: 'Found' },
+    { key: 'Not Found', value: 'Not Found' }
+  ];
   isDisabled = true;
   buttons: IAtlasFooterbtn[] = [{
     text: 'Cancel',

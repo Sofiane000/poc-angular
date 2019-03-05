@@ -12,16 +12,18 @@ import {
     DataAccessService,
 } from '@atlas/web-services';
 
-@Injectable()
-export class ChaseMembersService extends AtlasGridService {
-    selectedMember: any;
+@Injectable({
+    providedIn: 'root',
+})
+export class ChaseProviderService extends AtlasGridService {
+    selectedProvider: any;
     dataAccess: DataAccessService;
-    saveMemberSubject: Subject<any> = new Subject<any>();
+    saveProviderSubject: Subject<any> = new Subject<any>();
     autoLoad = false;
 
     constructor(dataAccessFactory: DataAccessFactory) {
         super();
-        this.dataAccess = dataAccessFactory.getService('qms.members');
+        this.dataAccess = dataAccessFactory.getService('qms.providers');
     }
 
     query(state: any): void {
@@ -32,10 +34,10 @@ export class ChaseMembersService extends AtlasGridService {
 
     fetch(state: any): Observable<any> {
         this.isLoading = true;
-        return this.getMembers(state).pipe(tap(() => (this.isLoading = false)));
+        return this.getProviders(state).pipe(tap(() => (this.isLoading = false)));
     }
 
-    getMembers(state) {
+    getProviders(state) {
         const params: AtlasRequestParams = new AtlasRequestParams();
 
         if (state.sort) {
@@ -88,7 +90,7 @@ export class ChaseMembersService extends AtlasGridService {
         );
     }
 
-    getMembersAutoComplete(state) {
+    getProvidersAutoComplete(state) {
         const params: AtlasRequestParams = new AtlasRequestParams();
 
         if (state.searchFilters) {
@@ -109,11 +111,11 @@ export class ChaseMembersService extends AtlasGridService {
         );
     }
 
-    saveSelectedMember(data) {
-        this.saveMemberSubject.next(data);
+    saveSelectedProvider(data) {
+        this.saveProviderSubject.next(data);
     }
 
-    getSaveMemberSubject() {
-        return this.saveMemberSubject.asObservable();
+    getSaveProviderSubject() {
+        return this.saveProviderSubject.asObservable();
     }
 }

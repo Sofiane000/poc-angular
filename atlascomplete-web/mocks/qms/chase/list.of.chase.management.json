@@ -1,72 +1,112 @@
 [
-  {
-    "key": "3570772e-86a7-43b1-8744-835507433d8d",
-    "modifyTime": "2019-02-08T19:29:50.91Z",
-    "memberFirstName": "Talon",
-    "memberMiddleName": "Langs",
-    "memberLastName": "Bivens",
-    "memberDOB": "2016-09-25",
-    "note": null,
-    "createdOn": "2018-12-26T21:05:32.304Z",
-    "providerFirstName": "",
-    "providerMiddleName": "",
-    "providerLastName": "Henry Ford Optimeyes",
-    "addressLine1": "5701 Oakton St",
-    "addressLine2": "",
-    "city": "Skokie",
-    "state": "IL",
-    "postalCode": "600772630",
-    "measureName": "COL",
-    "measureVerName": "2019 October Update",
-    "chaseStatus": "Open",
-    "resolution": "Found",
-    "assigneeFirstName": "Andrew",
-    "assigneeMiddleName": null,
-    "assigneeLastName": "Bailey",
-    "measureElements": [
-      {
-        "measureElementKey": "97f8c26b-0fad-46f0-85ab-98c5014370d9"
-      }
-    ],
-    "services": [
-      {
-        "serviceTypeKey": "f7367c00-0683-4a3f-b027-dadde658d151"
-      }
-    ]
-  },
-  {
-    "key": "3570772e-86a7-43b1-8744-835507433d8d",
-    "modifyTime": "2019-02-08T19:29:50.91Z",
-    "memberFirstName": "Talon Sample",
-    "memberMiddleName": "Langs Sample",
-    "memberLastName": "Bivens Sample",
-    "memberDOB": "2016-09-25 Sample",
-    "note": null,
-    "createdOn": "2018-12-26T21:05:32.304Z",
-    "providerFirstName": "",
-    "providerMiddleName": "",
-    "providerLastName": "Henry Ford Optimeyes",
-    "addressLine1": "5701 Oakton St Sample",
-    "addressLine2": "",
-    "city": "Skokie",
-    "state": "IL",
-    "postalCode": "600772630",
-    "measureName": "COL Sample",
-    "measureVerName": "2019 October Update",
-    "chaseStatus": "Open",
-    "resolution": "Found",
-    "assigneeFirstName": "Andrew",
-    "assigneeMiddleName": null,
-    "assigneeLastName": "Bailey",
-    "measureElements": [
-      {
-        "measureElementKey": "97f8c26b-0fad-46f0-85ab-98c5014370d9"
-      }
-    ],
-    "services": [
-      {
-        "serviceTypeKey": "f7367c00-0683-4a3f-b027-dadde658d151"
-      }
-    ]
-  }
+    {
+        "key": "3570772e-86a7-43b1-8744-835507433d8d",
+        "modifyTime": "2019-02-08T19:29:50.91Z",
+        "MemberID": 3080969,
+        "ProviderID": 123456,
+        "memberFirstName": "John",
+        "memberMiddleName": "Langs",
+        "memberLastName": "Snow",
+        "memberDOB": "1980-01-01",
+        "note": null,
+        "createdOn": "2018-12-26T21:05:32.304Z",
+        "providerFirstName": "Provider 1",
+        "providerMiddleName": "",
+        "providerLastName": "Henry Ford Optimeyes",
+        "addressLine1": "5701 Oakton St",
+        "addressLine2": "",
+        "city": "Skokie",
+        "state": "IL",
+        "postalCode": "600772630",
+        "measureName": "COL",
+        "measureVerName": "2019 October Update",
+        "chaseStatus": "Open",
+        "resolution": "Found",
+        "Assignee": "Assignee 1",
+        "assigneeMiddleName": null,
+        "assigneeLastName": "Bailey",
+        "initiative": "Initiative 1",
+        "measureElements": [
+            {
+                "measureElementKey": "97f8c26b-0fad-46f0-85ab-98c5014370d9"
+            }
+        ],
+        "services": [
+            {
+                "serviceTypeKey": "f7367c00-0683-4a3f-b027-dadde658d151"
+            }
+        ]
+    },
+    {
+        "key": "3570772e-86a7-43b1-8744-835507433d8d",
+        "modifyTime": "2019-02-08T19:29:50.91Z",
+        "memberFirstName": "Talon",
+        "memberMiddleName": "Langs",
+        "memberLastName": "Bivens",
+        "memberDOB": "2016-09-25",
+        "note": null,
+        "createdOn": "2018-12-26T21:05:32.304Z",
+        "providerFirstName": "",
+        "providerMiddleName": "",
+        "providerLastName": "Henry Ford Optimeyes",
+        "addressLine1": "5701 Oakton St",
+        "addressLine2": "",
+        "city": "Skokie",
+        "state": "IL",
+        "postalCode": "600772630",
+        "measureName": "COL",
+        "measureVerName": "2019 October Update",
+        "chaseStatus": "Open",
+        "resolution": "Found",
+        "Assignee": "Assignee 1",
+        "assigneeMiddleName": null,
+        "assigneeLastName": "Bailey",
+        "initiative": "Initiative 1",
+        "measureElements": [
+            {
+                "measureElementKey": "97f8c26b-0fad-46f0-85ab-98c5014370d9"
+            }
+        ],
+        "services": [
+            {
+                "serviceTypeKey": "f7367c00-0683-4a3f-b027-dadde658d151"
+            }
+        ]
+    },
+    {
+        "key": "3570772e-86a7-43b1-8744-835507433d8d",
+        "modifyTime": "2019-02-08T19:29:50.91Z",
+        "memberFirstName": "John",
+        "memberMiddleName": "Snow",
+        "memberLastName": "Bivens Sample",
+        "memberDOB": "2016-09-25 Sample",
+        "note": null,
+        "createdOn": "2018-12-26T21:05:32.304Z",
+        "providerFirstName": "",
+        "providerMiddleName": "",
+        "providerLastName": "Henry Ford Optimeyes",
+        "addressLine1": "5701 Oakton St Sample",
+        "addressLine2": "",
+        "city": "Skokie",
+        "state": "IL",
+        "postalCode": "600772630",
+        "measureName": "COL Sample",
+        "measureVerName": "2019 October Update",
+        "chaseStatus": "Open",
+        "resolution": "Found",
+        "initiative": "Initiative 2",
+        "Assignee": "Assignee 1",
+        "assigneeMiddleName": null,
+        "assigneeLastName": "Bailey",
+        "measureElements": [
+            {
+                "measureElementKey": "97f8c26b-0fad-46f0-85ab-98c5014370d9"
+            }
+        ],
+        "services": [
+            {
+                "serviceTypeKey": "f7367c00-0683-4a3f-b027-dadde658d151"
+            }
+        ]
+    }
 ]
